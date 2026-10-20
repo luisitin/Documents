@@ -1,12 +1,15 @@
-# caa-probe — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.4;
-# doc 13 §12.6 adapted). Ownership: handed to WP5 by the commit "handoff: workflow skeletons →
-# WP5 (refresh, probe, staleness), WP11 (ci), WP10 (ci web block)".
+# caa-probe — WP5 (07-implementation-plan.md WP5; 03-data-pipeline.md §6.4; doc 13 §12.6 adapted).
+# Handed over from the WP0 skeleton by the commit "handoff: workflow skeletons → WP5 (refresh, probe,
+# staleness), WP11 (ci), WP10 (ci web block)".
 #
 # Triggers (orchestrator override 3): push to claude/cuban-immigration-tracker-b6y4b1 touching the
 # ingestion package or this file, workflow_dispatch, and the weekly schedule (main only).
-# This workflow NEVER commits (contents: read): it prints PROBE-REPORT.md to the job log and the
-# job summary and uploads probe-out/ as a workflow artifact. The build sandbox cannot reach any
-# government host, so this CI run produces the real probe report.
+# This workflow NEVER commits (contents: read). It prints PROBE-REPORT.md to the job log and the
+# job summary, and uploads probe-out/ as a workflow artifact. The build sandbox cannot reach any
+# government host, so this CI run produces the real probe report (data/samples/PROBE-REPORT.md
+# records the blocked local run).
+# The lint-workflows job checks the caa-*.yml files with actionlint from the rhysd/actionlint GitHub
+# release (07 WP5 acceptance; the npm "actionlint" wrapper is not used).
 name: caa-probe
 
 on:
@@ -66,7 +69,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
-        run: npm run --if-present probe
+          USCIS_CLIENT_ID: ${{ secrets.USCIS_CLIENT_ID }}
+          USCIS_CLIENT_SECRET: ${{ secrets.USCIS_CLIENT_SECRET }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: npm run probe
 
       - if: ${{ always() && steps.present.outputs.ok == 'true' }}
         name: Print PROBE-REPORT.md to the log and the job summary
@@ -85,3 +91,31 @@ jobs:
           path: cuban-immigration-tracker/probe-out/
           if-no-files-found: warn
           retention-days: 30
+
+  lint-workflows:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: .
+    env:
+      ACTIONLINT_VERSION: "1.7.12"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: actionlint (release binary, checksum-verified)
+        run: |
+          base="https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}"
+          tarball="actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          curl -fsSLO "$base/$tarball"
+          curl -fsSLO "$base/actionlint_${ACTIONLINT_VERSION}_checksums.txt"
+          # TODO(WP5→owner): pin the tarball sha256 here once read from a trusted copy of the release
+          # (the build sandbox could not reach github.com release assets); the checksums file of the
+          # same pinned release is verified meanwhile.
+          sha256sum --check --ignore-missing "actionlint_${ACTIONLINT_VERSION}_checksums.txt"
+          tar -xzf "$tarball" actionlint
+          ./actionlint -version
+          ./actionlint -color .github/workflows/caa-*.yml

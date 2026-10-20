@@ -1,0 +1,557 @@
+{
+  "rows": [
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 1
+      },
+      "form": "I-485 (Cuban)",
+      "received": 24909,
+      "approved": 4098,
+      "denied": 373,
+      "completions": 4471,
+      "pendingWorkbook": 327255,
+      "medianMonths": 10.4,
+      "fytd": {
+        "received": 24909,
+        "approved": 4098,
+        "denied": 373,
+        "completions": 4471
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 1
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 1
+      },
+      "form": "I-485 (Refugee)",
+      "received": 25746,
+      "approved": 3387,
+      "denied": 149,
+      "completions": 3536,
+      "pendingWorkbook": 109700,
+      "medianMonths": 7.6,
+      "fytd": {
+        "received": 25746,
+        "approved": 3387,
+        "denied": 149,
+        "completions": 3536
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 1
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 1
+      },
+      "form": "I-485 (Asylum)",
+      "received": 13008,
+      "approved": 4084,
+      "denied": 272,
+      "completions": 4356,
+      "pendingWorkbook": 102484,
+      "medianMonths": 12.1,
+      "fytd": {
+        "received": 13008,
+        "approved": 4084,
+        "denied": 272,
+        "completions": 4356
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 1
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 1
+      },
+      "form": "I-765 (Adjustment Of Status)",
+      "received": 164763,
+      "approved": 63429,
+      "denied": 23327,
+      "completions": 86756,
+      "pendingWorkbook": 461884,
+      "medianMonths": 4.4,
+      "fytd": {
+        "received": 164763,
+        "approved": 63429,
+        "denied": 23327,
+        "completions": 86756
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 1
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 1
+      },
+      "form": "I-765 (All Other)",
+      "received": 151156,
+      "approved": 139555,
+      "denied": 13725,
+      "completions": 153280,
+      "pendingWorkbook": 875191,
+      "medianMonths": 4.1,
+      "fytd": {
+        "received": 151156,
+        "approved": 139555,
+        "denied": 13725,
+        "completions": 153280
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 1
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "form": "I-485 (Cuban)",
+      "received": 15312,
+      "approved": 50,
+      "denied": 45,
+      "completions": 95,
+      "pendingWorkbook": 341232,
+      "medianMonths": 19.5,
+      "fytd": {
+        "received": 40221,
+        "approved": 4148,
+        "denied": 418,
+        "completions": 4566
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4a5c2471aa93dff0e5c986489c7d21840d4ec40e7fbdc9924da95da76c8eea11",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "form": "I-485 (Refugee)",
+      "received": 23448,
+      "approved": 80,
+      "denied": 41,
+      "completions": 121,
+      "pendingWorkbook": 132538,
+      "medianMonths": 14.6,
+      "fytd": {
+        "received": 49194,
+        "approved": 3467,
+        "denied": 190,
+        "completions": 3657
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4a5c2471aa93dff0e5c986489c7d21840d4ec40e7fbdc9924da95da76c8eea11",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "form": "I-485 (Asylum)",
+      "received": 12195,
+      "approved": 1465,
+      "denied": 197,
+      "completions": 1662,
+      "pendingWorkbook": 113567,
+      "medianMonths": 22,
+      "fytd": {
+        "received": 25203,
+        "approved": 5549,
+        "denied": 469,
+        "completions": 6018
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4a5c2471aa93dff0e5c986489c7d21840d4ec40e7fbdc9924da95da76c8eea11",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "form": "I-765 (Adjustment Of Status)",
+      "received": 144512,
+      "approved": 38122,
+      "denied": 11145,
+      "completions": 49267,
+      "pendingWorkbook": 584851,
+      "medianMonths": 4.3,
+      "fytd": {
+        "received": 309275,
+        "approved": 101551,
+        "denied": 34472,
+        "completions": 136023
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4a5c2471aa93dff0e5c986489c7d21840d4ec40e7fbdc9924da95da76c8eea11",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "form": "I-765 (All Other)",
+      "received": 205995,
+      "approved": 111071,
+      "denied": 14445,
+      "completions": 125516,
+      "pendingWorkbook": 998662,
+      "medianMonths": 4.5,
+      "fytd": {
+        "received": 357156,
+        "approved": 250628,
+        "denied": 28170,
+        "completions": 278798
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4a5c2471aa93dff0e5c986489c7d21840d4ec40e7fbdc9924da95da76c8eea11",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-485 (Cuban)",
+      "received": 6279,
+      "approved": 139,
+      "denied": 447,
+      "completions": 586,
+      "pendingWorkbook": 342360,
+      "medianMonths": 16.3,
+      "fytd": {
+        "received": 46500,
+        "approved": 4287,
+        "denied": 865,
+        "completions": 5152
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-485 (Refugee)",
+      "received": 16819,
+      "approved": 103,
+      "denied": 45,
+      "completions": 148,
+      "pendingWorkbook": 149470,
+      "medianMonths": 17.6,
+      "fytd": {
+        "received": 66013,
+        "approved": 3570,
+        "denied": 235,
+        "completions": 3805
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-485 (Asylum)",
+      "received": 15141,
+      "approved": 2350,
+      "denied": 292,
+      "completions": 2642,
+      "pendingWorkbook": 126267,
+      "medianMonths": 25.6,
+      "fytd": {
+        "received": 40344,
+        "approved": 7899,
+        "denied": 761,
+        "completions": 8660
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-765 (Adjustment Of Status)",
+      "received": 153039,
+      "approved": 46405,
+      "denied": 35767,
+      "completions": 82172,
+      "pendingWorkbook": 671362,
+      "medianMonths": 6.4,
+      "fytd": {
+        "received": 462314,
+        "approved": 147956,
+        "denied": 70239,
+        "completions": 218195
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
+        "evidence": "F"
+      }
+    },
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-765 (All Other)",
+      "received": 212410,
+      "approved": 125656,
+      "denied": 19787,
+      "completions": 145443,
+      "pendingWorkbook": 1098913,
+      "medianMonths": 3.3,
+      "fytd": {
+        "received": 569566,
+        "approved": 376284,
+        "denied": 47957,
+        "completions": 424241
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
+        "evidence": "F"
+      }
+    }
+  ],
+  "historicMedians": [
+    {
+      "fy": 2023,
+      "months": 3.3,
+      "cutDate": null,
+      "fyToDate": false,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    },
+    {
+      "fy": 2024,
+      "months": 4.6,
+      "cutDate": null,
+      "fyToDate": false,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    },
+    {
+      "fy": 2025,
+      "months": 7,
+      "cutDate": null,
+      "fyToDate": false,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    },
+    {
+      "fy": 2026,
+      "months": 11.8,
+      "cutDate": "2026-07-31",
+      "fyToDate": true,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    },
+    {
+      "fy": 2026,
+      "months": 12.3,
+      "cutDate": "2026-08-30",
+      "fyToDate": true,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    }
+  ],
+  "approvalBaselines": [
+    {
+      "label": {
+        "es": "Año fiscal 2026, trimestre 1 (oct–dic 2025)",
+        "en": "FY2026 Q1 (Oct–Dec 2025)"
+      },
+      "numerator": 4098,
+      "denominator": 4471,
+      "share": 0.9165734734958623,
+      "period": "FY2026 Q1",
+      "kind": "share"
+    },
+    {
+      "label": {
+        "es": "Año fiscal 2026, trimestre 2 (ene–mar 2026)",
+        "en": "FY2026 Q2 (Jan–Mar 2026)"
+      },
+      "numerator": 50,
+      "denominator": 95,
+      "share": 0.5263157894736842,
+      "period": "FY2026 Q2",
+      "kind": "share"
+    },
+    {
+      "label": {
+        "es": "Año fiscal 2026, trimestre 3 (abr–jun 2026)",
+        "en": "FY2026 Q3 (Apr–Jun 2026)"
+      },
+      "numerator": 139,
+      "denominator": 586,
+      "share": 0.23720136518771331,
+      "period": "FY2026 Q3",
+      "kind": "share"
+    },
+    {
+      "label": {
+        "es": "Año fiscal 2026 hasta el trimestre 3",
+        "en": "FY2026 through Q3"
+      },
+      "numerator": 4287,
+      "denominator": 5152,
+      "share": 0.8321040372670807,
+      "period": "FY2026 Q1–Q3",
+      "kind": "share"
+    }
+  ]
+}

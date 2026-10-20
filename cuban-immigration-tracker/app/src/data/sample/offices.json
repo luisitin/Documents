@@ -1,0 +1,6047 @@
+{
+  "offices": [
+    {
+      "code": "MGA",
+      "name": "Montgomery",
+      "state": "AL",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "ANC",
+      "name": "Anchorage",
+      "state": "AK",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "PHO",
+      "name": "Phoenix",
+      "state": "AZ",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "TUC",
+      "name": "Tucson",
+      "state": "AZ",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "FSA",
+      "name": "Fort Smith",
+      "state": "AR",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CVC",
+      "name": "Chula Vista",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "FRE",
+      "name": "Fresno",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "IMP",
+      "name": "Imperial",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LOS",
+      "name": "Los Angeles",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LAC",
+      "name": "Los Angeles County",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SAC",
+      "name": "Sacramento",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SBD",
+      "name": "San Bernardino",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SND",
+      "name": "San Diego",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SFV",
+      "name": "San Fernando Valley",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SFR",
+      "name": "San Francisco",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SNJ",
+      "name": "San Jose",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SAA",
+      "name": "Santa Ana",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "DEN",
+      "name": "Denver",
+      "state": "CO",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "HAR",
+      "name": "Hartford",
+      "state": "CT",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "DVD",
+      "name": "Dover",
+      "state": "DE",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "WAS",
+      "name": "Washington",
+      "state": "DC",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "HIA",
+      "name": "Hialeah",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "JAC",
+      "name": "Jacksonville",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "KND",
+      "name": "Kendall",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "MIA",
+      "name": "Miami",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "OFM",
+      "name": "Fort Myers",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "OKL",
+      "name": "Oakland Park",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "ORL",
+      "name": "Orlando",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "TAM",
+      "name": "Tampa",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "WPB",
+      "name": "West Palm Beach",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "ATL",
+      "name": "Atlanta",
+      "state": "GA",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "HHW",
+      "name": "Honolulu",
+      "state": "HI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "BOI",
+      "name": "Boise",
+      "state": "ID",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CHI",
+      "name": "Chicago",
+      "state": "IL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "INP",
+      "name": "Indianapolis",
+      "state": "IN",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "DSM",
+      "name": "Des Moines",
+      "state": "IA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "WIC",
+      "name": "Wichita",
+      "state": "KS",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LOU",
+      "name": "Louisville",
+      "state": "KY",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "NOL",
+      "name": "New Orleans",
+      "state": "LA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "POM",
+      "name": "Portland",
+      "state": "ME",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "BAL",
+      "name": "Baltimore",
+      "state": "MD",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "BOS",
+      "name": "Boston",
+      "state": "MA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LAW",
+      "name": "Lawrence",
+      "state": "MA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "DET",
+      "name": "Detroit",
+      "state": "MI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SPM",
+      "name": "St. Paul",
+      "state": "MN",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "KAN",
+      "name": "Kansas City",
+      "state": "MO",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "STL",
+      "name": "St. Louis",
+      "state": "MO",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "HEL",
+      "name": "Helena",
+      "state": "MT",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "OMA",
+      "name": "Omaha",
+      "state": "NE",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LVG",
+      "name": "Las Vegas",
+      "state": "NV",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "REN",
+      "name": "Reno",
+      "state": "NV",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "MAN",
+      "name": "Manchester",
+      "state": "NH",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "MTL",
+      "name": "Mount Laurel",
+      "state": "NJ",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "NEW",
+      "name": "Newark",
+      "state": "NJ",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "NJC",
+      "name": "New Jersey Central",
+      "state": "NJ",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "ABQ",
+      "name": "Albuquerque",
+      "state": "NM",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "ALB",
+      "name": "Albany",
+      "state": "NY",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "BNY",
+      "name": "Brooklyn",
+      "state": "NY",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "BUF",
+      "name": "Buffalo",
+      "state": "NY",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "LNY",
+      "name": "Long Island",
+      "state": "NY",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "NYC",
+      "name": "New York",
+      "state": "NY",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "QNS",
+      "name": "Queens",
+      "state": "NY",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CLT",
+      "name": "Charlotte",
+      "state": "NC",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "RAL",
+      "name": "Raleigh",
+      "state": "NC",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CIN",
+      "name": "Cincinnati",
+      "state": "OH",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CLE",
+      "name": "Cleveland",
+      "state": "OH",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CLM",
+      "name": "Columbus",
+      "state": "OH",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "OKC",
+      "name": "Oklahoma City",
+      "state": "OK",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "POO",
+      "name": "Portland",
+      "state": "OR",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "PHI",
+      "name": "Philadelphia",
+      "state": "PA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "PIT",
+      "name": "Pittsburgh",
+      "state": "PA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "PRO",
+      "name": "Providence",
+      "state": "RI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CHL",
+      "name": "Charleston",
+      "state": "SC",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "GRR",
+      "name": "Greer",
+      "state": "SC",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "MEM",
+      "name": "Memphis",
+      "state": "TN",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "NTN",
+      "name": "Nashville",
+      "state": "TN",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "DAL",
+      "name": "Dallas",
+      "state": "TX",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "ELP",
+      "name": "El Paso",
+      "state": "TX",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "HLG",
+      "name": "Harlingen",
+      "state": "TX",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "HOU",
+      "name": "Houston",
+      "state": "TX",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "SNA",
+      "name": "San Antonio",
+      "state": "TX",
+      "cubanFocus": true,
+      "kind": "field_office"
+    },
+    {
+      "code": "SLC",
+      "name": "Salt Lake City",
+      "state": "UT",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "STA",
+      "name": "St. Albans",
+      "state": "VT",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "NOR",
+      "name": "Norfolk",
+      "state": "VA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SEA",
+      "name": "Seattle",
+      "state": "WA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SPO",
+      "name": "Spokane",
+      "state": "WA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "YAK",
+      "name": "Yakima",
+      "state": "WA",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CHS",
+      "name": "Charleston",
+      "state": "WV",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "MIL",
+      "name": "Milwaukee",
+      "state": "WI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "AGA",
+      "name": "Agana",
+      "state": "GU",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CHA",
+      "name": "Charlotte Amalie",
+      "state": "VI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "CHR",
+      "name": "Christiansted",
+      "state": "VI",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "SAJ",
+      "name": "San Juan",
+      "state": "PR",
+      "cubanFocus": false,
+      "kind": "field_office"
+    },
+    {
+      "code": "WSC",
+      "name": "California",
+      "state": "CA",
+      "cubanFocus": false,
+      "kind": "service_center"
+    },
+    {
+      "code": "NSC",
+      "name": "Nebraska",
+      "state": "NE",
+      "cubanFocus": false,
+      "kind": "service_center"
+    },
+    {
+      "code": "SSC",
+      "name": "Texas",
+      "state": "TX",
+      "cubanFocus": false,
+      "kind": "service_center"
+    },
+    {
+      "code": "ESC",
+      "name": "Vermont",
+      "state": "VT",
+      "cubanFocus": false,
+      "kind": "service_center"
+    }
+  ],
+  "stateOffices": {
+    "AL": [
+      "MGA"
+    ],
+    "AK": [
+      "ANC"
+    ],
+    "AZ": [
+      "PHO",
+      "TUC"
+    ],
+    "AR": [
+      "FSA"
+    ],
+    "CA": [
+      "CVC",
+      "FRE",
+      "IMP",
+      "LOS",
+      "LAC",
+      "SAC",
+      "SBD",
+      "SND",
+      "SFV",
+      "SFR",
+      "SNJ",
+      "SAA"
+    ],
+    "CO": [
+      "DEN"
+    ],
+    "CT": [
+      "HAR"
+    ],
+    "DE": [
+      "DVD"
+    ],
+    "DC": [
+      "WAS"
+    ],
+    "FL": [
+      "HIA",
+      "JAC",
+      "KND",
+      "MIA",
+      "OFM",
+      "OKL",
+      "ORL",
+      "TAM",
+      "WPB"
+    ],
+    "GA": [
+      "ATL"
+    ],
+    "HI": [
+      "HHW"
+    ],
+    "ID": [
+      "BOI"
+    ],
+    "IL": [
+      "CHI"
+    ],
+    "IN": [
+      "INP"
+    ],
+    "IA": [
+      "DSM"
+    ],
+    "KS": [
+      "WIC"
+    ],
+    "KY": [
+      "LOU"
+    ],
+    "LA": [
+      "NOL"
+    ],
+    "ME": [
+      "POM"
+    ],
+    "MD": [
+      "BAL"
+    ],
+    "MA": [
+      "BOS",
+      "LAW"
+    ],
+    "MI": [
+      "DET"
+    ],
+    "MN": [
+      "SPM"
+    ],
+    "MO": [
+      "KAN",
+      "STL"
+    ],
+    "MT": [
+      "HEL"
+    ],
+    "NE": [
+      "OMA"
+    ],
+    "NV": [
+      "LVG",
+      "REN"
+    ],
+    "NH": [
+      "MAN"
+    ],
+    "NJ": [
+      "MTL",
+      "NEW",
+      "NJC"
+    ],
+    "NM": [
+      "ABQ"
+    ],
+    "NY": [
+      "ALB",
+      "BNY",
+      "BUF",
+      "LNY",
+      "NYC",
+      "QNS"
+    ],
+    "NC": [
+      "CLT",
+      "RAL"
+    ],
+    "OH": [
+      "CIN",
+      "CLE",
+      "CLM"
+    ],
+    "OK": [
+      "OKC"
+    ],
+    "OR": [
+      "POO"
+    ],
+    "PA": [
+      "PHI",
+      "PIT"
+    ],
+    "RI": [
+      "PRO"
+    ],
+    "SC": [
+      "CHL",
+      "GRR"
+    ],
+    "TN": [
+      "MEM",
+      "NTN"
+    ],
+    "TX": [
+      "DAL",
+      "ELP",
+      "HLG",
+      "HOU",
+      "SNA"
+    ],
+    "UT": [
+      "SLC"
+    ],
+    "VT": [
+      "STA"
+    ],
+    "VA": [
+      "NOR"
+    ],
+    "WA": [
+      "SEA",
+      "SPO",
+      "YAK"
+    ],
+    "WV": [
+      "CHS"
+    ],
+    "WI": [
+      "MIL"
+    ],
+    "GU": [
+      "AGA"
+    ],
+    "VI": [
+      "CHA",
+      "CHR"
+    ],
+    "PR": [
+      "SAJ"
+    ]
+  },
+  "processingTimes": [
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MIA",
+      "months80": null,
+      "inquiryDate": "2023-06-17",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HIA",
+      "months80": null,
+      "inquiryDate": "2024-07-05",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "KND",
+      "months80": null,
+      "inquiryDate": "2024-05-28",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "TAM",
+      "months80": null,
+      "inquiryDate": "2024-08-07",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "ORL",
+      "months80": null,
+      "inquiryDate": "2024-01-28",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "WPB",
+      "months80": null,
+      "inquiryDate": "2024-05-18",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OFM",
+      "months80": null,
+      "inquiryDate": "2024-05-11",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OKL",
+      "months80": null,
+      "inquiryDate": "2023-07-19",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "JAC",
+      "months80": null,
+      "inquiryDate": "2024-02-08",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HOU",
+      "months80": null,
+      "inquiryDate": "2023-10-29",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SNA",
+      "months80": null,
+      "inquiryDate": "2024-10-11",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LOU",
+      "months80": null,
+      "inquiryDate": "2024-10-03",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LVG",
+      "months80": null,
+      "inquiryDate": "2023-10-31",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NYC",
+      "months80": null,
+      "inquiryDate": "2024-01-13",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CHI",
+      "months80": null,
+      "inquiryDate": "2023-06-13",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-765",
+      "subtype": "147-C9",
+      "officeCode": "NBC",
+      "months80": null,
+      "inquiryDate": "2025-06-13",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": false,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    },
+    {
+      "form": "I-765",
+      "subtype": "147-C11",
+      "officeCode": "NBC",
+      "months80": null,
+      "inquiryDate": "2025-04-26",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": false,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
+        "via": "curated",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "evidence": "S"
+      }
+    }
+  ],
+  "quarterly": [
+    {
+      "officeCode": "MGA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 262,
+      "approved": 3,
+      "denied": 0,
+      "pending": 2693,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ANC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 51,
+      "approved": 0,
+      "denied": 3,
+      "pending": 661,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PHO",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 838,
+      "approved": 12,
+      "denied": 0,
+      "pending": 9170,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "TUC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 164,
+      "approved": 0,
+      "denied": 0,
+      "pending": 2165,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "FSA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 86,
+      "approved": 1,
+      "denied": 5,
+      "pending": 590,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CVC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "FRE",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 415,
+      "approved": 0,
+      "denied": 0,
+      "pending": 4872,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "IMP",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 7,
+      "approved": 0,
+      "denied": 0,
+      "pending": 399,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LOS",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 597,
+      "approved": 125,
+      "denied": 7,
+      "pending": 6375,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 462,
+      "approved": 113,
+      "denied": 20,
+      "pending": 5014,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 848,
+      "approved": 147,
+      "denied": 21,
+      "pending": 9093,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SBD",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 383,
+      "approved": 62,
+      "denied": 3,
+      "pending": 5313,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SND",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 382,
+      "approved": 3,
+      "denied": 3,
+      "pending": 5743,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SFV",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 234,
+      "approved": 47,
+      "denied": 5,
+      "pending": 4239,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SFR",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 669,
+      "approved": 88,
+      "denied": 3,
+      "pending": 7673,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SNJ",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 373,
+      "approved": 84,
+      "denied": 2,
+      "pending": 4376,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 259,
+      "approved": 6,
+      "denied": 1,
+      "pending": 4369,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DEN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 747,
+      "approved": 2,
+      "denied": 0,
+      "pending": 7172,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HAR",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 272,
+      "approved": 1,
+      "denied": 1,
+      "pending": 2964,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DVD",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WAS",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1198,
+      "approved": 55,
+      "denied": 7,
+      "pending": 9267,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1480,
+      "approved": 2,
+      "denied": 0,
+      "pending": 36682,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "JAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 670,
+      "approved": 5,
+      "denied": 1,
+      "pending": 8370,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "KND",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1618,
+      "approved": 10,
+      "denied": 3,
+      "pending": 40256,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 971,
+      "approved": 6,
+      "denied": 0,
+      "pending": 20401,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OFM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 829,
+      "approved": 22,
+      "denied": 0,
+      "pending": 18353,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OKL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 321,
+      "approved": 12,
+      "denied": 5,
+      "pending": 5959,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ORL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 711,
+      "approved": 3,
+      "denied": 0,
+      "pending": 11540,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "TAM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1712,
+      "approved": 33,
+      "denied": 1,
+      "pending": 33514,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WPB",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 510,
+      "approved": 12,
+      "denied": 5,
+      "pending": 11523,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ATL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1093,
+      "approved": 4,
+      "denied": 1,
+      "pending": 7021,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HHW",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 38,
+      "approved": 2,
+      "denied": 0,
+      "pending": 734,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BOI",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 244,
+      "approved": 1,
+      "denied": 0,
+      "pending": 1990,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHI",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1243,
+      "approved": 10,
+      "denied": 2,
+      "pending": 9286,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "INP",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 834,
+      "approved": 35,
+      "denied": 3,
+      "pending": 5943,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DSM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 850,
+      "approved": 0,
+      "denied": 8,
+      "pending": 5106,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WIC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 202,
+      "approved": 0,
+      "denied": 0,
+      "pending": 2040,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LOU",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1494,
+      "approved": 2,
+      "denied": 1,
+      "pending": 17444,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NOL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 198,
+      "approved": 4,
+      "denied": 1,
+      "pending": 2255,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "POM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 365,
+      "approved": 1,
+      "denied": 0,
+      "pending": 2177,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1241,
+      "approved": 26,
+      "denied": 3,
+      "pending": 9197,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BOS",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 351,
+      "approved": 6,
+      "denied": 1,
+      "pending": 3844,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LAW",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 406,
+      "approved": 5,
+      "denied": 4,
+      "pending": 3708,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DET",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1262,
+      "approved": 7,
+      "denied": 1,
+      "pending": 9522,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SPM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1624,
+      "approved": 6,
+      "denied": 1,
+      "pending": 8361,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "KAN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 710,
+      "approved": 5,
+      "denied": 0,
+      "pending": 5864,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "STL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 377,
+      "approved": 0,
+      "denied": 1,
+      "pending": 1942,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HEL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 30,
+      "approved": 0,
+      "denied": 0,
+      "pending": 246,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OMA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 943,
+      "approved": 0,
+      "denied": 2,
+      "pending": 10962,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LVG",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 773,
+      "approved": 1,
+      "denied": 2,
+      "pending": 11994,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "REN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 25,
+      "approved": 0,
+      "denied": 0,
+      "pending": 421,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MAN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 95,
+      "approved": 0,
+      "denied": 0,
+      "pending": 1022,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MTL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 131,
+      "approved": 8,
+      "denied": 0,
+      "pending": 2234,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NEW",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 393,
+      "approved": 27,
+      "denied": 3,
+      "pending": 4991,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NJC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 136,
+      "approved": 19,
+      "denied": 1,
+      "pending": 2023,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ABQ",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 159,
+      "approved": 7,
+      "denied": 0,
+      "pending": 1504,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ALB",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 205,
+      "approved": 29,
+      "denied": 4,
+      "pending": 1870,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BNY",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 542,
+      "approved": 129,
+      "denied": 22,
+      "pending": 5573,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BUF",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1809,
+      "approved": 37,
+      "denied": 0,
+      "pending": 9963,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LNY",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 236,
+      "approved": 26,
+      "denied": 5,
+      "pending": 3303,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NYC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 528,
+      "approved": 41,
+      "denied": 9,
+      "pending": 5153,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "QNS",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 682,
+      "approved": 54,
+      "denied": 14,
+      "pending": 7615,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLT",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 693,
+      "approved": 1,
+      "denied": 1,
+      "pending": 5935,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "RAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 390,
+      "approved": 0,
+      "denied": 0,
+      "pending": 3557,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CIN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 313,
+      "approved": 3,
+      "denied": 0,
+      "pending": 2882,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLE",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 605,
+      "approved": 2,
+      "denied": 0,
+      "pending": 3863,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 386,
+      "approved": 1,
+      "denied": 0,
+      "pending": 3093,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OKC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 528,
+      "approved": 0,
+      "denied": 0,
+      "pending": 4723,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "POO",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 656,
+      "approved": 65,
+      "denied": 2,
+      "pending": 5403,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PHI",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 837,
+      "approved": 21,
+      "denied": 4,
+      "pending": 6990,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PIT",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 293,
+      "approved": 3,
+      "denied": 1,
+      "pending": 2222,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PRO",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 157,
+      "approved": 1,
+      "denied": 0,
+      "pending": 1154,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 222,
+      "approved": 0,
+      "denied": 0,
+      "pending": 1696,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "GRR",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 169,
+      "approved": 3,
+      "denied": 0,
+      "pending": 1261,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MEM",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 175,
+      "approved": 0,
+      "denied": 0,
+      "pending": 1551,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NTN",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 450,
+      "approved": 2,
+      "denied": 0,
+      "pending": 4822,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1772,
+      "approved": 10,
+      "denied": 3,
+      "pending": 14631,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ELP",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 366,
+      "approved": 0,
+      "denied": 0,
+      "pending": 6771,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HLG",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 12,
+      "approved": 0,
+      "denied": 0,
+      "pending": 484,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HOU",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 2603,
+      "approved": 38,
+      "denied": 4,
+      "pending": 32749,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SNA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1489,
+      "approved": 6,
+      "denied": 2,
+      "pending": 16833,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SLC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 334,
+      "approved": 0,
+      "denied": 1,
+      "pending": 3489,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "STA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 126,
+      "approved": 3,
+      "denied": 0,
+      "pending": 1034,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NOR",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 331,
+      "approved": 12,
+      "denied": 0,
+      "pending": 1986,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SEA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 884,
+      "approved": 22,
+      "denied": 3,
+      "pending": 8000,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SPO",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 195,
+      "approved": 1,
+      "denied": 0,
+      "pending": 1527,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "YAK",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 67,
+      "approved": 0,
+      "denied": 0,
+      "pending": 1264,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHS",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MIL",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 566,
+      "approved": 0,
+      "denied": 1,
+      "pending": 3714,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "AGA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 356,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 9,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHR",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAJ",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 10,
+      "approved": 1,
+      "denied": 0,
+      "pending": 550,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 5,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 12,
+      "approved": 0,
+      "denied": 0,
+      "pending": 158,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 5,
+      "approved": 1,
+      "denied": 0,
+      "pending": 159,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ESC",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 21,
+      "approved": 3,
+      "denied": 8,
+      "pending": 410,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MGA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 224,
+      "approved": 1,
+      "denied": 0,
+      "pending": 2927,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ANC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 57,
+      "approved": 14,
+      "denied": 3,
+      "pending": 695,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PHO",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 411,
+      "approved": 3,
+      "denied": 6,
+      "pending": 9935,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "TUC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 157,
+      "approved": 1,
+      "denied": 9,
+      "pending": 2018,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "FSA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 50,
+      "approved": 0,
+      "denied": 0,
+      "pending": 630,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CVC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "FRE",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 279,
+      "approved": 56,
+      "denied": 11,
+      "pending": 3982,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "IMP",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 2,
+      "denied": 0,
+      "pending": 218,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LOS",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 656,
+      "approved": 479,
+      "denied": 23,
+      "pending": 6652,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 502,
+      "approved": 190,
+      "denied": 21,
+      "pending": 5412,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 670,
+      "approved": 128,
+      "denied": 8,
+      "pending": 8667,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SBD",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 368,
+      "approved": 151,
+      "denied": 8,
+      "pending": 5512,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SND",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 214,
+      "approved": 33,
+      "denied": 9,
+      "pending": 5996,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SFV",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 208,
+      "approved": 96,
+      "denied": 19,
+      "pending": 3728,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SFR",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 808,
+      "approved": 186,
+      "denied": 11,
+      "pending": 7295,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SNJ",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 392,
+      "approved": 45,
+      "denied": 7,
+      "pending": 4230,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 253,
+      "approved": 8,
+      "denied": 3,
+      "pending": 4649,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DEN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 451,
+      "approved": 1,
+      "denied": 7,
+      "pending": 7625,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HAR",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 273,
+      "approved": 7,
+      "denied": 1,
+      "pending": 3324,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DVD",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WAS",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1211,
+      "approved": 69,
+      "denied": 10,
+      "pending": 10358,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 661,
+      "approved": 1,
+      "denied": 3,
+      "pending": 37486,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "JAC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 452,
+      "approved": 8,
+      "denied": 3,
+      "pending": 8891,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "KND",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 716,
+      "approved": 25,
+      "denied": 26,
+      "pending": 41248,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 413,
+      "approved": 21,
+      "denied": 29,
+      "pending": 20662,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OFM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 342,
+      "approved": 7,
+      "denied": 5,
+      "pending": 18992,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OKL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 212,
+      "approved": 24,
+      "denied": 19,
+      "pending": 6215,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ORL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 425,
+      "approved": 4,
+      "denied": 11,
+      "pending": 11958,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "TAM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 846,
+      "approved": 84,
+      "denied": 14,
+      "pending": 34695,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WPB",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 242,
+      "approved": 20,
+      "denied": 4,
+      "pending": 11828,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ATL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1022,
+      "approved": 14,
+      "denied": 1,
+      "pending": 7979,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HHW",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 40,
+      "approved": 0,
+      "denied": 1,
+      "pending": 822,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BOI",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 136,
+      "approved": 3,
+      "denied": 0,
+      "pending": 2078,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHI",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1097,
+      "approved": 10,
+      "denied": 3,
+      "pending": 10275,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "INP",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 713,
+      "approved": 15,
+      "denied": 8,
+      "pending": 6537,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DSM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 606,
+      "approved": 0,
+      "denied": 1,
+      "pending": 5711,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WIC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 97,
+      "approved": 0,
+      "denied": 0,
+      "pending": 2098,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LOU",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 901,
+      "approved": 7,
+      "denied": 18,
+      "pending": 18176,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NOL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 177,
+      "approved": 1,
+      "denied": 1,
+      "pending": 2411,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "POM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 306,
+      "approved": 15,
+      "denied": 0,
+      "pending": 2496,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1428,
+      "approved": 62,
+      "denied": 14,
+      "pending": 10401,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BOS",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 397,
+      "approved": 4,
+      "denied": 2,
+      "pending": 4298,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LAW",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 317,
+      "approved": 22,
+      "denied": 0,
+      "pending": 3984,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DET",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 552,
+      "approved": 2,
+      "denied": 3,
+      "pending": 10132,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SPM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 908,
+      "approved": 5,
+      "denied": 4,
+      "pending": 8987,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "KAN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 468,
+      "approved": 7,
+      "denied": 6,
+      "pending": 6331,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "STL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 317,
+      "approved": 1,
+      "denied": 0,
+      "pending": 2259,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HEL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 61,
+      "approved": 1,
+      "denied": 2,
+      "pending": 259,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OMA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 614,
+      "approved": 0,
+      "denied": 2,
+      "pending": 11502,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LVG",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 394,
+      "approved": 1,
+      "denied": 3,
+      "pending": 12592,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "REN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 31,
+      "approved": 0,
+      "denied": 0,
+      "pending": 458,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MAN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 70,
+      "approved": 2,
+      "denied": 0,
+      "pending": 1106,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MTL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 143,
+      "approved": 6,
+      "denied": 3,
+      "pending": 2432,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NEW",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 379,
+      "approved": 118,
+      "denied": 10,
+      "pending": 5147,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NJC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 150,
+      "approved": 4,
+      "denied": 2,
+      "pending": 2319,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ABQ",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 70,
+      "approved": 0,
+      "denied": 0,
+      "pending": 1562,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ALB",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 178,
+      "approved": 17,
+      "denied": 0,
+      "pending": 2020,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BNY",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 660,
+      "approved": 120,
+      "denied": 17,
+      "pending": 5977,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "BUF",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1662,
+      "approved": 5,
+      "denied": 4,
+      "pending": 11636,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "LNY",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 308,
+      "approved": 23,
+      "denied": 1,
+      "pending": 3571,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NYC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 709,
+      "approved": 32,
+      "denied": 11,
+      "pending": 5687,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "QNS",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 744,
+      "approved": 169,
+      "denied": 33,
+      "pending": 7995,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLT",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 579,
+      "approved": 13,
+      "denied": 0,
+      "pending": 6522,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "RAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 235,
+      "approved": 2,
+      "denied": 0,
+      "pending": 3784,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CIN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 240,
+      "approved": 3,
+      "denied": 1,
+      "pending": 3102,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLE",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 613,
+      "approved": 2,
+      "denied": 1,
+      "pending": 4471,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CLM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 191,
+      "approved": 5,
+      "denied": 0,
+      "pending": 3297,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "OKC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 383,
+      "approved": 0,
+      "denied": 0,
+      "pending": 5125,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "POO",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 323,
+      "approved": 63,
+      "denied": 1,
+      "pending": 5563,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PHI",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 719,
+      "approved": 12,
+      "denied": 2,
+      "pending": 7817,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PIT",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 189,
+      "approved": 15,
+      "denied": 0,
+      "pending": 2433,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "PRO",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 110,
+      "approved": 5,
+      "denied": 0,
+      "pending": 1262,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 239,
+      "approved": 0,
+      "denied": 2,
+      "pending": 1925,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "GRR",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 142,
+      "approved": 3,
+      "denied": 1,
+      "pending": 1406,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MEM",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 205,
+      "approved": 1,
+      "denied": 0,
+      "pending": 1753,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NTN",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 458,
+      "approved": 2,
+      "denied": 4,
+      "pending": 5252,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "DAL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1456,
+      "approved": 10,
+      "denied": 1,
+      "pending": 16238,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ELP",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 235,
+      "approved": 4,
+      "denied": 0,
+      "pending": 7039,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HLG",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 21,
+      "approved": 3,
+      "denied": 3,
+      "pending": 412,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HOU",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 1678,
+      "approved": 24,
+      "denied": 10,
+      "pending": 34665,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SNA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 863,
+      "approved": 0,
+      "denied": 6,
+      "pending": 17858,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SLC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 398,
+      "approved": 0,
+      "denied": 1,
+      "pending": 3904,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "STA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 31,
+      "approved": 8,
+      "denied": 0,
+      "pending": 1046,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NOR",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 316,
+      "approved": 8,
+      "denied": 1,
+      "pending": 2286,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SEA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 626,
+      "approved": 23,
+      "denied": 2,
+      "pending": 7665,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SPO",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 236,
+      "approved": 4,
+      "denied": 0,
+      "pending": 1592,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "YAK",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 92,
+      "approved": 0,
+      "denied": 0,
+      "pending": 952,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHS",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "MIL",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 495,
+      "approved": 1,
+      "denied": 0,
+      "pending": 4225,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "AGA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 3,
+      "approved": 1,
+      "denied": 0,
+      "pending": 162,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 10,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "CHR",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 0,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SAJ",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 4,
+      "approved": 0,
+      "denied": 0,
+      "pending": 547,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "WSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 4,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "NSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 0,
+      "approved": 0,
+      "denied": 0,
+      "pending": 228,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "SSC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 3,
+      "approved": 1,
+      "denied": 0,
+      "pending": 222,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "ESC",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 8,
+      "approved": 4,
+      "denied": 16,
+      "pending": 262,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
+        "evidence": "F"
+      }
+    }
+  ],
+  "inquiryDateHistory": [
+    {
+      "officeCode": "CHI",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2023-06-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "HIA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2023-02-03"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-07-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "HOU",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2022-03-27"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2023-10-29"
+        }
+      ]
+    },
+    {
+      "officeCode": "JAC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2021-09-26"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-02-08"
+        }
+      ]
+    },
+    {
+      "officeCode": "KND",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2022-11-06"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-05-28"
+        }
+      ]
+    },
+    {
+      "officeCode": "LOU",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-10-03"
+        }
+      ]
+    },
+    {
+      "officeCode": "LVG",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2023-10-31"
+        }
+      ]
+    },
+    {
+      "officeCode": "MIA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2020-10-07"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2023-06-17"
+        }
+      ]
+    },
+    {
+      "officeCode": "NYC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-01-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "OFM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2022-01-29"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-05-11"
+        }
+      ]
+    },
+    {
+      "officeCode": "OKL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2021-10-28"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2023-07-19"
+        }
+      ]
+    },
+    {
+      "officeCode": "ORL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2022-06-24"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-01-28"
+        }
+      ]
+    },
+    {
+      "officeCode": "SNA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-10-11"
+        }
+      ]
+    },
+    {
+      "officeCode": "TAM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2023-01-24"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-08-07"
+        }
+      ]
+    },
+    {
+      "officeCode": "WPB",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2022-07-13"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-05-18"
+        }
+      ]
+    },
+    {
+      "officeCode": "NBC",
+      "subtype": "147-C11",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2024-06-27"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2025-04-26"
+        }
+      ]
+    },
+    {
+      "officeCode": "NBC",
+      "subtype": "147-C9",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2024-04-13"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2025-06-13"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "myths": [
+    {
+      "id": "may-memo-ended-caa",
+      "claim": {
+        "es": "El memo de mayo eliminó la Ley de Ajuste Cubano.",
+        "en": "The May memo ended the Cuban Adjustment Act."
+      },
+      "verdict": "false",
+      "since": "2026-05-22",
+      "explanation": {
+        "es": "Falso. Un memo de USCIS no puede derogar una ley del Congreso. PM-602-0199 no menciona la Ley de Ajuste Cubano y el gobierno dijo a un tribunal federal en Tampa que no se aplica a estas solicitudes. La ley de 1966 sigue igual; lo que sí se aplica es la discreción general del oficial.",
+        "en": "False. A USCIS memo cannot repeal a law passed by Congress. PM-602-0199 does not mention the Cuban Adjustment Act, and the government told a federal court in Tampa that it does not apply to these applications. The 1966 law is unchanged; what does apply is the officer's general discretion."
+      },
+      "sources": [
+        {
+          "label": "USCIS, PM-602-0199 (May 21, 2026)",
+          "url": "https://www.uscis.gov/sites/default/files/document/memos/PM-602-0199-AdjustmentOfStatusAndDiscretion-20260521.pdf",
+          "evidence": "S"
+        },
+        {
+          "label": "Acosta Reynoso v. USCIS, M.D. Fla. 8:26-cv-01314, ECF 41",
+          "url": "https://ecf.flmd.uscourts.gov/cgi-bin/show_public_doc?2026-01314-41-8-cv=",
+          "evidence": "S-sec"
+        }
+      ]
+    },
+    {
+      "id": "rfe-before-denial",
+      "claim": {
+        "es": "USCIS siempre manda una Solicitud de Evidencia (RFE) antes de negar.",
+        "en": "USCIS always sends a Request for Evidence (RFE) before denying."
+      },
+      "verdict": "false",
+      "since": "2026-08-05",
+      "explanation": {
+        "es": "Falso desde el 5 de agosto de 2026. Con PA-2026-05, USCIS puede negar sin RFE ni Notificación de Intención de Denegar (NOID) cuando falta evidencia inicial o el expediente no prueba la elegibilidad. Que no le llegue una RFE ya no es una buena señal por sí sola; conviene que el expediente esté completo desde el principio.",
+        "en": "False since August 5, 2026. Under PA-2026-05, USCIS may deny without an RFE or a Notice of Intent to Deny (NOID) when initial evidence is missing or the file does not establish eligibility. Not receiving an RFE is no longer a good sign by itself; a complete file from the start matters."
+      },
+      "sources": [
+        {
+          "label": "AILA: USCIS policy alert on evidence, RFEs and NOIDs",
+          "url": "https://www.aila.org/library/uscis-issues-policy-alert-on-evidence-rfes-and-noids",
+          "evidence": "S"
+        }
+      ]
+    },
+    {
+      "id": "notario-converts-i220a",
+      "claim": {
+        "es": "Un notario puede convertir su I-220A en parole.",
+        "en": "A notario can turn your I-220A into parole."
+      },
+      "verdict": "false",
+      "explanation": {
+        "es": "Falso y peligroso. Según la Junta de Apelaciones de Inmigración (Matter of Cabrera-Fernández, 2023), una salida con I-220A no es parole, y ningún tribunal ha dicho lo contrario todavía. Nadie puede garantizarle una aprobación ni «convertir» un I-220A en parole. Desconfíe de quien le cobre por eso.",
+        "en": "False and dangerous. Under the Board of Immigration Appeals (Matter of Cabrera-Fernández, 2023), a release on an I-220A is not parole, and no court has held otherwise yet. No one can guarantee an approval or “convert” an I-220A into parole. Be wary of anyone charging for that."
+      },
+      "sources": [
+        {
+          "label": "Univision 23 Miami: advertencia a cubanos con I-220A",
+          "url": "https://www.univision.com/local/miami-wltv/advertencia-cubanos-i-220a-usando-notarios-falsificar-parole",
+          "evidence": "S-sec"
+        },
+        {
+          "label": "CiberCuba: I-220A y parole, lo que deben saber los cubanos (Oct 20, 2026)",
+          "url": "https://en.cibercuba.com/noticias/2026-10-20-u1-e129488-s27061-nid343316-220a-parole-deben-saber-cubanos-ley-ajuste",
+          "evidence": "S-sec"
+        }
+      ]
+    },
+    {
+      "id": "hold-violated-constitution",
+      "claim": {
+        "es": "La corte dijo que la pausa violaba la Constitución.",
+        "en": "The court said the hold violated the Constitution."
+      },
+      "verdict": "false",
+      "since": "2026-06-05",
+      "explanation": {
+        "es": "No. Los tribunales anularon (vacatur) las pausas porque USCIS no siguió la ley administrativa: la Ley de Procedimiento Administrativo (APA) y la ley de inmigración. Ningún tribunal decidió el asunto con base en la Constitución. Importa porque una anulación así puede revocarse en apelación o quedar sin efecto con una política nueva.",
+        "en": "No. The courts vacated the holds because USCIS did not follow administrative law: the Administrative Procedure Act (APA) and the immigration statute. No court decided the matter on constitutional grounds. This matters because such a vacatur can be reversed on appeal or overtaken by a new policy."
+      },
+      "sources": [
+        {
+          "label": "Cyrus Mehta blog: Dorcas v. USCIS (June 2026)",
+          "url": "https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html",
+          "evidence": "S"
+        },
+        {
+          "label": "USCIS Press Unpause tracker: Dorcas",
+          "url": "https://uscis-pause-tracker.com/cases/dfdb50fe-3ed9-40f1-ac88-ff1e8371d88a",
+          "evidence": "S"
+        }
+      ]
+    },
+    {
+      "id": "terminated-parole-no-adjustment",
+      "claim": {
+        "es": "Si le cancelaron el parole, ya no puede ajustarse.",
+        "en": "If your parole was cancelled, you can no longer adjust."
+      },
+      "verdict": "false",
+      "explanation": {
+        "es": "Falso, según la ley y la práctica publicada. La Ley de Ajuste Cubano pregunta si usted fue admitido o recibió parole y si tiene un año de presencia física; un parole vencido o cancelado sigue contando. El riesgo real es migratorio (por ejemplo, la deportación acelerada) y la pérdida del permiso de trabajo por parole (c)(11). Consulte a un abogado o representante acreditado sobre su situación.",
+        "en": "False, according to the law and published practice. The Cuban Adjustment Act asks whether you were admitted or paroled and have one year of physical presence; an expired or cancelled parole still counts. The real risk is enforcement (for example, expedited removal) and the loss of the parole-based (c)(11) work permit. Consult an attorney or accredited representative about your situation."
+      },
+      "sources": [
+        {
+          "label": "USCIS: green card for a Cuban native or citizen",
+          "url": "https://www.uscis.gov/green-card/green-card-eligibility/green-card-for-a-cuban-native-or-citizen",
+          "evidence": "S"
+        },
+        {
+          "label": "CLINIC: Enforcement and Termination of Parole (practice advisory)",
+          "url": "https://www.cliniclegal.org/file-download/download/public/77477",
+          "evidence": "S"
+        }
+      ]
+    },
+    {
+      "id": "ead-speeds-green-card",
+      "claim": {
+        "es": "Tener permiso de trabajo acelera la residencia.",
+        "en": "Having a work permit speeds up the green card."
+      },
+      "verdict": "unknown",
+      "explanation": {
+        "es": "No hay evidencia. El permiso de trabajo (c)(9) se decide en una fila distinta de la del I-485, y los datos publicados no muestran que tenerlo adelante la residencia. Por eso el estimado da la misma probabilidad con o sin permiso y solo usa el permiso para ampliar el rango.",
+        "en": "There is no evidence. The (c)(9) work permit is decided in a separate queue from the I-485, and the published data do not show that having one speeds up the green card. That is why the estimate gives the same probability with or without a permit and uses the permit only to widen the range."
+      },
+      "sources": [
+        {
+          "label": "USCIS quarterly All Forms workbook, FY2026 Q3 (separate I-765 rows)",
+          "url": "https://www.uscis.gov/sites/default/files/document/data/quarterly_all_forms_fy2026_q3_v1.xlsx",
+          "evidence": "F"
+        }
+      ]
+    },
+    {
+      "id": "approved-screenshot",
+      "claim": {
+        "es": "Una captura de pantalla de «aprobado» prueba que su caso avanza.",
+        "en": "An “approved” screenshot proves your case is moving."
+      },
+      "verdict": "false",
+      "explanation": {
+        "es": "No. Una captura puede ser falsa o de otro caso, y USCIS no sigue un orden estricto de llegada. La aprobación de un vecino no dice nada sobre su caso; verifique siempre en el sitio oficial de USCIS con su número de recibo.",
+        "en": "No. A screenshot can be fake or from another case, and USCIS does not follow a strict first-come order. A neighbour's approval says nothing about your case; always check on the official USCIS site with your receipt number."
+      },
+      "sources": [
+        {
+          "label": "CubaHeadlines: viral ‘approved’ screenshot story",
+          "url": "https://www.cubaheadlines.com/articles/333033",
+          "evidence": "S-sec"
+        }
+      ]
+    }
+  ],
+  "peerReasons": [
+    {
+      "id": "chnv_r1",
+      "text": {
+        "es": "Su caso entró en la pausa de parolees (14 feb–9 jun 2025). Alguien que entró por CBP One no estaba en esa pausa según el memo.",
+        "en": "Your case fell inside the parolee hold (Feb 14–Jun 9, 2025). Someone who entered through CBP One was not in that hold, according to the memo."
+      },
+      "confidence": "medium",
+      "source": "doc 16 §3"
+    },
+    {
+      "id": "cbp_one_no_r1",
+      "text": {
+        "es": "La pausa de 2025 nombró CHNV, U4U y FRP, no CBP One; su caso pudo avanzar antes (confianza baja).",
+        "en": "The 2025 hold named CHNV, U4U and FRP, not CBP One; your case may have moved earlier (low confidence)."
+      },
+      "confidence": "low",
+      "source": "doc 16 §3.3"
+    },
+    {
+      "id": "ead_before_r3",
+      "text": {
+        "es": "Su verificación terminó antes del 2 dic 2025. Quien seguía pendiente ese día cayó en la pausa por país y recibió su permiso solo después de jun 2026.",
+        "en": "Your vetting finished before Dec 2, 2025. Anyone still pending that day fell into the country hold and got their permit only after Jun 2026."
+      },
+      "confidence": "medium_high",
+      "source": "doc 07 §5.1"
+    },
+    {
+      "id": "ead_swept_r3",
+      "text": {
+        "es": "Probablemente su I-765 seguía pendiente el 2 dic 2025 y quedó congelado hasta jun 2026; hoy se reportan esperas de 12–12.5 meses.",
+        "en": "Your I-765 was probably still pending on Dec 2, 2025 and stayed frozen until Jun 2026; waits of 12–12.5 months are reported today."
+      },
+      "confidence": "medium",
+      "source": "doc 07 §5.1; master timeline 2026-10-17 [S-sec]"
+    },
+    {
+      "id": "c9_erequest_available",
+      "text": {
+        "es": "Ya puede presentar una consulta de caso fuera del tiempo normal de procesamiento para su permiso de trabajo (c)(9).",
+        "en": "You can already file a “case outside normal processing time” inquiry for your (c)(9) work permit."
+      },
+      "confidence": "high",
+      "source": "doc 15 §2.2"
+    },
+    {
+      "id": "renewal_no_autoext",
+      "text": {
+        "es": "Las renovaciones presentadas desde el 30 oct 2025 no se extienden automáticamente.",
+        "en": "Renewals filed on or after Oct 30, 2025 are not extended automatically."
+      },
+      "confidence": "high",
+      "source": "key facts §2"
+    },
+    {
+      "id": "non_fifo",
+      "text": {
+        "es": "USCIS decidió 820 casos en agosto de 2026 entre 355,520 pendientes y no sigue un orden estricto de llegada.",
+        "en": "USCIS decided 820 cases in August 2026 out of 355,520 pending and does not follow a strict first-come order."
+      },
+      "confidence": "medium",
+      "source": "doc 08 §5.4–5.5; doc 04 §1.1 (Aug 2026 [F])"
+    },
+    {
+      "id": "office_diff",
+      "text": {
+        "es": "Las oficinas avanzan a ritmos distintos (pocos datos).",
+        "en": "Offices move at different speeds (little data)."
+      },
+      "confidence": "low",
+      "source": "doc 08 §7.3"
+    }
+  ],
+  "glossaryExtra": [
+    {
+      "term": {
+        "es": "Ley de Ajuste Cubano (CAA)",
+        "en": "Cuban Adjustment Act (CAA)"
+      },
+      "definition": {
+        "es": "Ley de 1966 que permite a cubanos admitidos o con parole solicitar la residencia después de un año de presencia física.",
+        "en": "1966 law that lets admitted or paroled Cubans apply for a green card after one year of physical presence."
+      }
+    },
+    {
+      "term": {
+        "es": "Parole humanitario CHNV",
+        "en": "CHNV parole"
+      },
+      "definition": {
+        "es": "Proceso de parole de 2023 a 2025 para cubanos, haitianos, nicaragüenses y venezolanos, con patrocinador (I-134A) y llegada por avión.",
+        "en": "2023–2025 parole process for Cubans, Haitians, Nicaraguans and Venezuelans, with a supporter (I-134A) and arrival by air."
+      }
+    },
+    {
+      "term": {
+        "es": "Parole por cita de CBP One",
+        "en": "CBP One parole"
+      },
+      "definition": {
+        "es": "Parole en un puerto de entrada terrestre después de una cita de CBP One (enero de 2023 a enero de 2025); el I-94 suele decir «DT».",
+        "en": "Parole at a land port of entry after a CBP One appointment (January 2023 to January 2025); the I-94 usually says “DT”."
+      }
+    },
+    {
+      "term": {
+        "es": "Parole (Permiso de Permanencia Temporal)",
+        "en": "Humanitarian parole"
+      },
+      "definition": {
+        "es": "Entrada discrecional bajo la sección 212(d)(5) de la ley de inmigración; cuenta para la Ley de Ajuste aunque luego termine.",
+        "en": "Discretionary entry under section 212(d)(5) of the immigration law; it counts for the Cuban Adjustment Act even after it ends."
+      }
+    },
+    {
+      "term": {
+        "es": "Registro I-94",
+        "en": "I-94 Arrival/Departure Record"
+      },
+      "definition": {
+        "es": "Muestra la clase de entrada («DT» o «parole») y las fechas del parole; la fecha original puede diferir de la reescrita el 24 abr 2026.",
+        "en": "Shows the entry class (“DT” or “parole”) and the parole dates; the original date may differ from the one rewritten on Apr 24, 2026."
+      }
+    },
+    {
+      "term": {
+        "es": "I-134A (Declaración de apoyo financiero)",
+        "en": "I-134A (Declaration of Financial Support)"
+      },
+      "definition": {
+        "es": "Formulario del patrocinador en el proceso CHNV.",
+        "en": "The supporter's form in the CHNV process."
+      }
+    },
+    {
+      "term": {
+        "es": "I-485 (Solicitud de residencia permanente)",
+        "en": "I-485 (Application to Adjust Status)"
+      },
+      "definition": {
+        "es": "La solicitud de la tarjeta de residencia (green card).",
+        "en": "The green-card application."
+      }
+    },
+    {
+      "term": {
+        "es": "Permiso de trabajo (c)(9)",
+        "en": "(c)(9) work permit (EAD)"
+      },
+      "definition": {
+        "es": "Permiso de trabajo (EAD) mientras el I-485 está pendiente.",
+        "en": "Employment Authorization Document (EAD) while the I-485 is pending."
+      }
+    },
+    {
+      "term": {
+        "es": "Permiso de trabajo (c)(11)",
+        "en": "(c)(11) work permit (parole EAD)"
+      },
+      "definition": {
+        "es": "Permiso de trabajo ligado al parole; se revocó con la terminación del parole (CHNV en junio de 2025, CBP One en abril de 2026).",
+        "en": "Work permit tied to parole; revoked when parole was terminated (CHNV in June 2025, CBP One in April 2026)."
+      }
+    },
+    {
+      "term": {
+        "es": "Permiso de viaje (I-131, advance parole)",
+        "en": "Advance parole (I-131)"
+      },
+      "definition": {
+        "es": "Documento para viajar mientras el I-485 está pendiente.",
+        "en": "Travel document while the I-485 is pending."
+      }
+    },
+    {
+      "term": {
+        "es": "Examen médico (I-693)",
+        "en": "Medical exam (I-693)"
+      },
+      "definition": {
+        "es": "Se presenta junto con el I-485 y vale solo mientras ese I-485 siga pendiente.",
+        "en": "Filed with the I-485 and valid only while that I-485 is pending."
+      }
+    },
+    {
+      "term": {
+        "es": "Notificación de recibo (I-797C)",
+        "en": "Receipt notice (I-797C)"
+      },
+      "definition": {
+        "es": "Prueba de que USCIS recibió la solicitud; incluye el número de recibo.",
+        "en": "Proof that USCIS received the application; it includes the receipt number."
+      }
+    },
+    {
+      "term": {
+        "es": "Cita biométrica",
+        "en": "Biometrics appointment"
+      },
+      "definition": {
+        "es": "Cita en un Centro de Apoyo a Solicitantes (ASC) para huellas y foto.",
+        "en": "Appointment at an Application Support Center (ASC) for fingerprints and photo."
+      }
+    },
+    {
+      "term": {
+        "es": "Solicitud de Evidencia (RFE)",
+        "en": "Request for Evidence (RFE)"
+      },
+      "definition": {
+        "es": "Pedido de documentos de USCIS; desde el 5 ago 2026 hay hasta 12 semanas para responder.",
+        "en": "A USCIS request for documents; since Aug 5, 2026 there are up to 12 weeks to respond."
+      }
+    },
+    {
+      "term": {
+        "es": "Notificación de Intención de Denegar (NOID)",
+        "en": "Notice of Intent to Deny (NOID)"
+      },
+      "definition": {
+        "es": "Aviso de que USCIS piensa negar; hay 30 días para responder (más 3 por correo).",
+        "en": "Notice that USCIS intends to deny; there are 30 days to respond (plus 3 for mail)."
+      }
+    },
+    {
+      "term": {
+        "es": "Notificación de comparecencia (NTA)",
+        "en": "Notice to Appear (NTA)"
+      },
+      "definition": {
+        "es": "Documento que inicia un proceso de deportación ante un juez de inmigración.",
+        "en": "Document that starts removal proceedings before an immigration judge."
+      }
+    },
+    {
+      "term": {
+        "es": "Orden de liberación bajo palabra (I-220A)",
+        "en": "Order of Release on Recognizance (I-220A)"
+      },
+      "definition": {
+        "es": "No es parole según la Junta de Apelaciones de Inmigración; con ella no se puede usar la Ley de Ajuste por ahora.",
+        "en": "Not parole according to the Board of Immigration Appeals; it does not qualify for the Cuban Adjustment Act for now."
+      }
+    },
+    {
+      "term": {
+        "es": "Entrada sin inspección (EWI)",
+        "en": "Entry without inspection (EWI)"
+      },
+      "definition": {
+        "es": "Entrada sin pasar por un control migratorio; no permite usar la Ley de Ajuste.",
+        "en": "Entry without going through immigration inspection; it does not qualify for the Cuban Adjustment Act."
+      }
+    },
+    {
+      "term": {
+        "es": "Residente permanente legal (LPR)",
+        "en": "Lawful permanent resident (LPR)"
+      },
+      "definition": {
+        "es": "Persona con tarjeta de residencia (green card).",
+        "en": "A green-card holder."
+      }
+    },
+    {
+      "term": {
+        "es": "Retroactividad de la fecha de residencia",
+        "en": "Rollback of the residence date"
+      },
+      "definition": {
+        "es": "La fecha de residencia puede contarse hasta 30 meses antes de la aprobación (sin ser anterior a la llegada).",
+        "en": "The residence date can be counted up to 30 months before approval (but not before arrival)."
+      }
+    },
+    {
+      "term": {
+        "es": "Códigos CU6 / CU7",
+        "en": "CU6 / CU7 class codes"
+      },
+      "definition": {
+        "es": "Códigos de clase de admisión de la Ley de Ajuste: CU6 para el solicitante principal, CU7 para su cónyuge o hijo.",
+        "en": "Cuban Adjustment Act admission class codes: CU6 for the principal, CU7 for the spouse or child."
+      }
+    },
+    {
+      "term": {
+        "es": "Pausa (congelamiento) de adjudicación",
+        "en": "Adjudication hold (freeze)"
+      },
+      "definition": {
+        "es": "Periodo en que USCIS no decidía casos: R1 para beneficiarios de parole (2025) y R3 por país (2025–2026).",
+        "en": "A period when USCIS did not decide cases: R1 for parolees (2025) and R3 by country (2025–2026)."
+      }
+    },
+    {
+      "term": {
+        "es": "Pausa y re-revisión por país",
+        "en": "Country hold and re-review"
+      },
+      "definition": {
+        "es": "Política de PM-602-0192 y PM-602-0194 que congeló los casos de 39 países, incluida Cuba, y ordenó revisar aprobaciones.",
+        "en": "The PM-602-0192 and PM-602-0194 policy that froze cases from 39 countries, including Cuba, and ordered approvals reviewed."
+      }
+    },
+    {
+      "term": {
+        "es": "Anulación judicial (vacatur)",
+        "en": "Vacatur"
+      },
+      "definition": {
+        "es": "Cuando un tribunal anula una política; por ejemplo, Dorcas el 5 jun 2026.",
+        "en": "When a court vacates (strikes down) a policy; for example, Dorcas on Jun 5, 2026."
+      }
+    },
+    {
+      "term": {
+        "es": "Medida cautelar / orden de restricción temporal",
+        "en": "Preliminary injunction / temporary restraining order"
+      },
+      "definition": {
+        "es": "Órdenes judiciales provisionales; por ejemplo, la de Red Eagle del 24 ago 2026.",
+        "en": "Temporary court orders; for example, the Red Eagle order of Aug 24, 2026."
+      }
+    },
+    {
+      "term": {
+        "es": "Miembro de la clase",
+        "en": "Class member"
+      },
+      "definition": {
+        "es": "Persona incluida en una clase certificada por un tribunal (por ejemplo, Red Eagle o Doe v. DHS).",
+        "en": "A person included in a class certified by a court (for example, Red Eagle or Doe v. DHS)."
+      }
+    },
+    {
+      "term": {
+        "es": "Discreción (del oficial)",
+        "en": "Discretion (officer's)"
+      },
+      "definition": {
+        "es": "La Ley de Ajuste es discrecional; se aplican los factores del Manual de Políticas de USCIS.",
+        "en": "The Cuban Adjustment Act is discretionary; the USCIS Policy Manual factors apply."
+      }
+    },
+    {
+      "term": {
+        "es": "Tiempo de procesamiento (80 %)",
+        "en": "Processing time (80%)"
+      },
+      "definition": {
+        "es": "Tiempo en que USCIS completó el 80 % de los casos, según su herramienta oficial.",
+        "en": "Time within which USCIS completed 80% of cases, according to its official tool."
+      }
+    },
+    {
+      "term": {
+        "es": "Fecha de recibo para una consulta de caso",
+        "en": "Receipt date for a case inquiry"
+      },
+      "definition": {
+        "es": "Si su recibo es anterior a esta fecha, puede hacer una consulta; equivale a cerca del 93 % de los casos, según fuentes secundarias.",
+        "en": "If your receipt is earlier than this date, you can make an inquiry; it is about the 93rd percentile, according to secondary sources."
+      }
+    },
+    {
+      "term": {
+        "es": "Consulta de caso fuera del tiempo normal de procesamiento",
+        "en": "Case outside normal processing time (e-Request)"
+      },
+      "definition": {
+        "es": "Consulta en línea a USCIS cuando un caso pasó la fecha de consulta publicada.",
+        "en": "Online inquiry to USCIS when a case is past the published inquiry date."
+      }
+    },
+    {
+      "term": {
+        "es": "Solicitud de procesamiento expedito",
+        "en": "Expedite request"
+      },
+      "definition": {
+        "es": "Pedido de trámite urgente por pérdida financiera grave, emergencias y razones humanitarias urgentes o un error claro de USCIS.",
+        "en": "Request for urgent handling due to severe financial loss, emergencies and urgent humanitarian reasons, or a clear USCIS error."
+      }
+    },
+    {
+      "term": {
+        "es": "Oficina del Ombudsman (Formulario DHS-7001)",
+        "en": "CIS Ombudsman (Form DHS-7001)"
+      },
+      "definition": {
+        "es": "Oficina del Ombudsman de Servicios de Ciudadanía e Inmigración; con el DHS-7001 se pide asistencia de caso. Hoy casi no responde.",
+        "en": "The Citizenship and Immigration Services Ombudsman; Form DHS-7001 requests case assistance. It barely responds today."
+      }
+    },
+    {
+      "term": {
+        "es": "Consulta congresional",
+        "en": "Congressional inquiry"
+      },
+      "definition": {
+        "es": "Gestión de la oficina de un congresista ante USCIS; requiere un formulario de autorización de privacidad.",
+        "en": "Casework by a member of Congress's office with USCIS; it requires a privacy release form."
+      }
+    },
+    {
+      "term": {
+        "es": "Demanda (recurso) de mandamus",
+        "en": "Writ of mandamus"
+      },
+      "definition": {
+        "es": "Demanda federal por demora irrazonable para pedir que USCIS decida un caso.",
+        "en": "Federal suit over unreasonable delay asking that USCIS decide a case."
+      }
+    },
+    {
+      "term": {
+        "es": "Centro de Contacto de USCIS",
+        "en": "USCIS Contact Center"
+      },
+      "definition": {
+        "es": "Línea 1-800-375-5283; para español, oprima 2.",
+        "en": "Line 1-800-375-5283; press 2 for Spanish."
+      }
+    },
+    {
+      "term": {
+        "es": "Oficina local (de campo) de USCIS",
+        "en": "USCIS field office"
+      },
+      "definition": {
+        "es": "Lugar de la entrevista; atiende solo con cita, sin visitas sin cita.",
+        "en": "The interview location; appointments only, no walk-ins."
+      }
+    },
+    {
+      "term": {
+        "es": "Deportación acelerada (expedited removal)",
+        "en": "Expedited removal"
+      },
+      "definition": {
+        "es": "Deportación sin juez; desde el 11 ago 2026 vuelve a alcanzar a ex beneficiarios de parole de puerto de entrada.",
+        "en": "Removal without a judge; since Aug 11, 2026 it again reaches former port-of-entry parolees."
+      }
+    },
+    {
+      "term": {
+        "es": "Centro Nacional de Beneficios (NBC)",
+        "en": "National Benefits Center (NBC)"
+      },
+      "definition": {
+        "es": "Centro de USCIS que prepara los casos y decide muchos permisos de trabajo (c)(9).",
+        "en": "USCIS center that pre-processes cases and decides many (c)(9) work permits."
+      }
+    },
+    {
+      "term": {
+        "es": "Lockbox (centro de recepción)",
+        "en": "USCIS Lockbox"
+      },
+      "definition": {
+        "es": "Centro donde USCIS recibe los paquetes por correo.",
+        "en": "Facility where USCIS receives mailed packages."
+      }
+    },
+    {
+      "term": {
+        "es": "Carga pública",
+        "en": "Public charge"
+      },
+      "definition": {
+        "es": "Prueba sobre la posible dependencia de ayudas públicas; la Ley de Ajuste está exenta.",
+        "en": "Test of likely reliance on public benefits; the Cuban Adjustment Act is exempt."
+      }
+    },
+    {
+      "term": {
+        "es": "Días adjudicables",
+        "en": "Adjudicable days"
+      },
+      "definition": {
+        "es": "Días de espera que no cayeron dentro de una pausa; el estimado los usa en lugar de los días totales.",
+        "en": "Days of waiting that did not fall inside a hold; the estimate uses them instead of total days."
+      }
+    },
+    {
+      "term": {
+        "es": "Régimen de política (R0–R4)",
+        "en": "Policy regime (R0–R4)"
+      },
+      "definition": {
+        "es": "Etapas de política que usa el estimado: vía rápida, pausa de parole, reanudación, pausa por país y discreción general.",
+        "en": "Policy stages the estimate uses: fast lane, parolee hold, catch-up, country hold and general discretion."
+      }
+    },
+    {
+      "term": {
+        "es": "Procesamiento prioritario (I-907)",
+        "en": "Premium processing (I-907)"
+      },
+      "definition": {
+        "es": "No existe para el I-485 ni para el permiso de trabajo (c)(9).",
+        "en": "Not available for the I-485 or the (c)(9) work permit."
+      }
+    }
+  ]
+}

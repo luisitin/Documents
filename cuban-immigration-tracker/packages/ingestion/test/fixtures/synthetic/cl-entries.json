@@ -1,0 +1,9 @@
+{
+  "_comment": "SYNTHETIC SAMPLE of a CourtListener v4 docket-entries response, for parser tests only (shape per doc 13 §7, §12.5; entries invented).",
+  "count": 2,
+  "next": null,
+  "results": [
+    { "id": 900000002, "entry_number": 41, "date_filed": "2026-10-19", "description": "SAMPLE ORDER entered" },
+    { "id": 900000001, "entry_number": 40, "date_filed": "2026-09-01", "description": "SAMPLE older entry" }
+  ]
+}

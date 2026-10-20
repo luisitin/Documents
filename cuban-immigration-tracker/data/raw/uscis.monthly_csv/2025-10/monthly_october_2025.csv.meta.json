@@ -1,0 +1,17 @@
+{
+  "sourceId": "uscis.monthly_csv",
+  "period": "2025-10",
+  "file": "monthly_october_2025.csv",
+  "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2025.csv",
+  "via": "mirror.visualizer",
+  "status": 200,
+  "sha256": "4983b99055945eb3c9ebba37dd080a3a474402b660a424a417cf63245bc7417f",
+  "bytes": 3604,
+  "retrievedAt": "2026-10-20T23:35:05Z",
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "content-length": "1504",
+    "etag": "W/\"45f88c927a3af2dea8c8fc8abae1d795200e1bb7781152fe41997c8472569b31\"",
+    "date": "Tue, 20 Oct 2026 23:35:24 GMT"
+  }
+}

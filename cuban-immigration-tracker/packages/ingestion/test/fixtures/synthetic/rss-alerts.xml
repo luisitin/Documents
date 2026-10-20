@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYNTHETIC SAMPLE of a USCIS RSS 2.0 feed, for parser tests only (structure per doc 13 §9; items invented). -->
+<rss version="2.0"><channel><title>Alerts</title><link>https://www.uscis.gov/news/alerts</link>
+<item><title>SAMPLE: Update on adjudication holds for certain applicants</title><link>https://www.uscis.gov/newsroom/alerts/sample-one</link><pubDate>Mon, 19 Oct 2026 12:00:00 -0400</pubDate><description>&lt;p&gt;Sample text about a hold.&lt;/p&gt;</description></item>
+<item><title>SAMPLE: New edition of Form N-400</title><link>https://www.uscis.gov/newsroom/alerts/sample-two</link><pubDate>Mon, 19 Oct 2026 12:00:00 -0400</pubDate><description>Unrelated sample item.</description></item>
+<item><title>SAMPLE: Cuban Adjustment Act filing reminder (PA-2026-05)</title><link>https://www.uscis.gov/newsroom/alerts/sample-three</link></item>
+</channel></rss>

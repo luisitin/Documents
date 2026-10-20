@@ -1,0 +1,10 @@
+{
+  "_comment": "SYNTHETIC SAMPLE of a Federal Register documents.json response, for parser tests only. Document numbers and titles are the real ones cited in docs/research/13-live-data-endpoints-and-probe-plan.md §5-§6; abstracts and URLs are shortened.",
+  "count": 2,
+  "total_pages": 1,
+  "next_page_url": null,
+  "results": [
+    { "document_number": "2025-22744", "title": "Termination of Family Reunification Parole Processes for Colombians, Cubans, Ecuadorians, Guatemalans, Haitians, Hondurans, and Salvadorans", "type": "Notice", "publication_date": "2025-12-15", "html_url": "https://www.federalregister.gov/documents/2025/12/15/2025-22744/x", "abstract": null },
+    { "document_number": "2025-05128", "title": "Termination of Parole Processes for Cubans, Haitians, Nicaraguans, and Venezuelans", "type": "Notice", "publication_date": "2025-03-25", "html_url": "https://www.federalregister.gov/documents/2025/03/25/2025-05128/x", "abstract": "CHNV parole processes are terminated." }
+  ]
+}

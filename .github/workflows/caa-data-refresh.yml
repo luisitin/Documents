@@ -1,21 +1,21 @@
-# caa-data-refresh — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.1).
-# Ownership: handed to WP5 by the commit "handoff: workflow skeletons → WP5 (refresh, probe,
-# staleness), WP11 (ci), WP10 (ci web block)". WP0 never edits this file after that commit.
+# caa-data-refresh — WP5 (07-implementation-plan.md WP5; 03-data-pipeline.md §6.1). Handed over from the
+# WP0 skeleton by the commit "handoff: workflow skeletons → WP5 (refresh, probe, staleness), WP11 (ci),
+# WP10 (ci web block)".
 #
 # Triggers (orchestrator override 3, which replaces the plan's push: claude/** trigger):
-# - schedule: runs ONLY on the default branch (main); off the hour (doc 09 §5.2).
+# - schedule: runs ONLY on the default branch (main) [T]; off the hour (doc 09 §5.2).
 # - workflow_dispatch: manual; GitHub needs this file on main before it can be dispatched
-#   (01 §10 R4), then `gh workflow run caa-data-refresh.yml --ref <branch>`.
+#   (03 §6.2), then `gh workflow run caa-data-refresh.yml --ref <branch>`. Dispatch runs COMMIT unless
+#   dry_run is ticked.
 # - push to claude/cuban-immigration-tracker-b6y4b1 ONLY when cuban-immigration-tracker/data/.refresh-request
-#   changes (the orchestrator touches it once after the build, so bot data commits never race
-#   agent pushes). GitHub's runners have open internet, so this run fetches the real
+#   changes. The orchestrator touches that file once, after the build, so bot data commits never race
+#   agent pushes. That run COMMITS: GitHub's runners have open internet, so it fetches the real
 #   USCIS / Federal Register / CourtListener data that the build sandbox cannot reach.
-# Commits only under cuban-immigration-tracker/data/ (never data/curated), with contents: write on
-# the refresh job only, the default GITHUB_TOKEN, and `git pull --rebase` before `git push`.
-#
-# SKELETON BEHAVIOUR: the ingest step runs `data:refresh -- --dry-run` and is a green no-op until
-# WP5 adds packages/ingestion/src/cli.ts. A dry run never sets should_commit, so the skeleton
-# never commits. WP5 replaces the ingest step with the real refresh (03 §6.1).
+# Least privilege: nothing at workflow level; contents: write on the refresh job only (default
+# GITHUB_TOKEN, no PAT); issues: write on the separate notify job. The bot commits ONLY under
+# cuban-immigration-tracker/data/ and never data/curated (human-reviewed inputs), with `git pull --rebase`
+# before `git push`. `[skip ci]` keeps CI off bot commits; the push path filter cannot match the files the
+# bot writes, so there is no loop.
 name: caa-data-refresh
 
 on:
@@ -25,7 +25,7 @@ on:
   workflow_dispatch:
     inputs:
       only:
-        description: "comma list of source keys (blank = all)"
+        description: "comma list of source keys (blank = all): uscis.monthly_csv, uscis.quarterly_all_forms, uscis.i485_by_office, mirror.jzebedee, fr.api, uscis.rss, courtlistener.v4, curated"
         required: false
         default: ""
       dry_run:
@@ -69,7 +69,7 @@ jobs:
         name: Code present on this ref?
         working-directory: .
         run: |
-          if [ -f cuban-immigration-tracker/package.json ]; then
+          if [ -f cuban-immigration-tracker/package.json ] && [ -f cuban-immigration-tracker/packages/ingestion/src/cli.ts ]; then
             echo "ok=true" >> "$GITHUB_OUTPUT"
           else
             echo "code not on this ref yet"
@@ -88,34 +88,43 @@ jobs:
 
       - id: ingest
         if: ${{ steps.present.outputs.ok == 'true' }}
-        name: Ingest (skeleton = dry run)
+        name: Ingest (03 §2–§7; writes data/ only when content changed or the 7-day heartbeat is due)
         env:
           GITHUB_TOKEN: ${{ github.token }}
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           ONLY: ${{ inputs.only }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          if [ -f packages/ingestion/src/cli.ts ]; then
-            npm run --if-present data:refresh -- --dry-run --only "$ONLY" --github-output "$GITHUB_OUTPUT"
-          else
-            echo "packages/ingestion/src/cli.ts not present yet (WP5); nothing to ingest"
-          fi
+          # Inputs arrive through env, never interpolated into the script (injection-safe).
+          set -- --only "$ONLY" --github-output "$GITHUB_OUTPUT"
+          if [ "$DRY_RUN" = "true" ]; then set -- "$@" --dry-run; fi
+          npm run data:refresh -- "$@"
 
       - id: commit
         name: Commit data/** only (content changed or 7-day heartbeat)
         if: ${{ steps.present.outputs.ok == 'true' && github.event_name != 'pull_request' && inputs.dry_run != true && steps.ingest.outputs.should_commit == 'true' }}
         env:
           SUMMARY: ${{ steps.ingest.outputs.summary }}
+          NEW_MONTH: ${{ steps.ingest.outputs.new_month }}
+          DATA_MONTH: ${{ steps.ingest.outputs.data_month }}
           BRANCH: ${{ github.ref_name }}
         run: |
           git config user.name "caa-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git reset -q -- data/curated
+          git reset -q -- data/curated data/.refresh-request
           if git diff --cached --quiet; then echo "nothing staged"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m "data: ${SUMMARY} [skip ci]"
           for i in 1 2 3; do
             if git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH"; then
               echo "committed=true" >> "$GITHUB_OUTPUT"
+              # 03 §7: a lightweight tag per new official month (covered by contents: write).
+              if [ "$NEW_MONTH" = "true" ] && [ -n "$DATA_MONTH" ]; then
+                tag="caa-data-${DATA_MONTH}"
+                if ! git ls-remote --exit-code --tags origin "refs/tags/$tag" >/dev/null 2>&1; then
+                  git tag "$tag" && git push origin "refs/tags/$tag" || echo "tag $tag not pushed"
+                fi
+              fi
               exit 0
             fi
             sleep $((i * 10))
@@ -147,7 +156,7 @@ jobs:
           }
           RUN="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
           if [ "$RESULT" = "failure" ]; then upsert "CAA data job failed" "Run: $RUN"; fi
-          if [ -n "$QA" ] && [ "$QA" != "ok" ]; then upsert "CAA data QA: $QA" "Run: $RUN (see data/quarantine/)"; fi
+          if [ -n "$QA" ] && [ "$QA" != "ok" ]; then upsert "CAA data QA: $QA" "Run: $RUN (see cuban-immigration-tracker/data/quarantine/)"; fi
           if [ "$NEWM" = "true" ] || [ "$NEWQ" = "true" ] || [ "$ALERTS" = "true" ]; then
             upsert "Republish CAA Tracker artifact" "New data (month=$NEWM quarter=$NEWQ alerts=$ALERTS). Follow docs/planning/03-data-pipeline.md §9. Run: $RUN"
           fi

@@ -1,0 +1,17 @@
+{
+  "sourceId": "uscis.monthly_csv",
+  "period": "2025-07",
+  "file": "monthly_july_2025.csv",
+  "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2025.csv",
+  "via": "mirror.visualizer",
+  "status": 200,
+  "sha256": "37892de3a7e74b3418b214d37a49d7ba015b74b8c0ad30d44e1b25a07f36f395",
+  "bytes": 3594,
+  "retrievedAt": "2026-10-20T23:35:05Z",
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "content-length": "1505",
+    "etag": "W/\"96aa1c5a04636fd1b397ae66e005481bd3f9ec370528e730aa11e7c07bb78f9b\"",
+    "date": "Tue, 20 Oct 2026 23:35:21 GMT"
+  }
+}

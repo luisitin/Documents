@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "display": "@caa/ingestion (Node 22 + tsx; 03-data-pipeline.md; 07 WP5)",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}

@@ -1,0 +1,17 @@
+{
+  "sourceId": "uscis.quarterly_all_forms",
+  "period": "FY2026-Q1",
+  "file": "quarterly_all_forms_fy2026_q1_v1.xlsx",
+  "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q1_v1.xlsx",
+  "via": "mirror.visualizer",
+  "status": 200,
+  "sha256": "1bf1a19cec8e754efa60d8cdbb810a84578dd1aa3aa95cf067156a816173cc85",
+  "bytes": 783927,
+  "retrievedAt": "2026-10-20T23:35:05Z",
+  "headers": {
+    "content-type": "application/octet-stream",
+    "content-length": "783927",
+    "etag": "W/\"4140d2aa8466f5b54dd02f9d30aef0c3c4125302b23f63b8871a5a994c91bfbe\"",
+    "date": "Tue, 20 Oct 2026 23:35:37 GMT"
+  }
+}

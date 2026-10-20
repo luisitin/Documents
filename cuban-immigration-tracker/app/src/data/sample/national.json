@@ -1,0 +1,884 @@
+{
+  "rows": [
+    {
+      "ym": "2024-07",
+      "received": 12590,
+      "approved": 6920,
+      "denied": 1692,
+      "pending": 156790,
+      "pendingOver6": 90723,
+      "avgMonths": 7.1,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "e62b92889aa29239e6f0ca2f5b36911fd274ac13853b8d8475c63639dc28e26c",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-09",
+      "received": 10833,
+      "approved": 13464,
+      "denied": 202,
+      "pending": 151425,
+      "pendingOver6": 97685,
+      "avgMonths": 6.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_september_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-09",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "97b5db5402d257ee27fafaf269d20dfb1bef3a4fe2a060cf5c9eeff15f53ac4e",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-10",
+      "received": 17448,
+      "approved": 10807,
+      "denied": 299,
+      "pending": 157703,
+      "pendingOver6": 98392,
+      "avgMonths": 8.9,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-10",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "0d0a55adcffbace71fa0926ba6410112cf5e3bf7c3fc39415e01e703ac921ad2",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-11",
+      "received": 19892,
+      "approved": 7269,
+      "denied": 326,
+      "pending": 169727,
+      "pendingOver6": 101700,
+      "avgMonths": 10.1,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_november_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-11",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "71f5c7bc2f5b5825e81b7d5904f0dadd6e972dc8bf0b82973c97be53d93e6f05",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-12",
+      "received": 20685,
+      "approved": 8663,
+      "denied": 309,
+      "pending": 181390,
+      "pendingOver6": 104912,
+      "avgMonths": 8.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_december_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-12",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "6cb266662a3086ebfe97f4670259758c7c46880b1ca8a3cd037e4fcb85a9d1bf",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-01",
+      "received": 22880,
+      "approved": 10034,
+      "denied": 275,
+      "pending": 194437,
+      "pendingOver6": 106558,
+      "avgMonths": 8.3,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_january_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-01",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "8d0bbc268ce5bc73fa9316c2352f0ee2e3dbd8e6dfeae4a37480a40a4cc25dcf",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-02",
+      "received": 24385,
+      "approved": 10984,
+      "denied": 298,
+      "pending": 207564,
+      "pendingOver6": 109059,
+      "avgMonths": 8.2,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_february_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-02",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "a3f10c674fca3f9454a1050b87fedbd0a8356a033dd117c460b517a027b7f831",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-03",
+      "received": 26187,
+      "approved": 8065,
+      "denied": 302,
+      "pending": 225208,
+      "pendingOver6": 114521,
+      "avgMonths": 8.3,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_march_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-03",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "518ebefdbc04ea2297a0daef7a16318e3f034b3e81b93abff7bb066c3da996f7",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-04",
+      "received": 27173,
+      "approved": 5662,
+      "denied": 282,
+      "pending": 246689,
+      "pendingOver6": 123202,
+      "avgMonths": 8.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_april_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-04",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "aaf933867dfd060122abece0c368abe9577f0edd7917d0e6eab236c4f6c0ddd5",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-05",
+      "received": 23881,
+      "approved": 3376,
+      "denied": 226,
+      "pending": 267090,
+      "pendingOver6": 136077,
+      "avgMonths": 9.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_may_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-05",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "10b0da1b486f171174930c3ba60dabb4463358d9cb994634f8eb3f121f3c1b3f",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-06",
+      "received": 21510,
+      "approved": 1647,
+      "denied": 277,
+      "pending": 286309,
+      "pendingOver6": 148186,
+      "avgMonths": 11.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_june_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-06",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "d371940c5ad27d3c3479200299a9e5994f8efe247ad0cb1273147d559ddc86a3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-07",
+      "received": 19354,
+      "approved": 2265,
+      "denied": 207,
+      "pending": 302775,
+      "pendingOver6": 167277,
+      "avgMonths": 11.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "37892de3a7e74b3418b214d37a49d7ba015b74b8c0ad30d44e1b25a07f36f395",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-08",
+      "received": 13748,
+      "approved": 2784,
+      "denied": 190,
+      "pending": 312913,
+      "pendingOver6": 191660,
+      "avgMonths": 11.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-08",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1897651af7fc8ec563f049a3fafd23dd814e254fda7c0d9fb1cf501b1434996e",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-09",
+      "received": 11152,
+      "approved": 3529,
+      "denied": 215,
+      "pending": 318763,
+      "pendingOver6": 212644,
+      "avgMonths": 11.4,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_september_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-09",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "86ab9e2b771f6eb4b25850875a546534577f096ed3809a5c3da5cd3b6feb13c7",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-10",
+      "received": 9059,
+      "approved": 1954,
+      "denied": 186,
+      "pending": 323471,
+      "pendingOver6": 235832,
+      "avgMonths": 12.9,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-10",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4983b99055945eb3c9ebba37dd080a3a474402b660a424a417cf63245bc7417f",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-11",
+      "received": 7265,
+      "approved": 2111,
+      "denied": 175,
+      "pending": 327987,
+      "pendingOver6": 254767,
+      "avgMonths": 12.9,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_november_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-11",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "c0a5a8f25bef38a79f449d83b9443854e2bc5b074535c3a9c6d9327752df9683",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-12",
+      "received": 8598,
+      "approved": 41,
+      "denied": 14,
+      "pending": 336589,
+      "pendingOver6": 274207,
+      "avgMonths": 19.4,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_december_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-12",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "52a23b3d4d398cfef4640dd58001131a7528af93b8906c8064bf8eb566a0d4fe",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-01",
+      "received": 7086,
+      "approved": 15,
+      "denied": 4,
+      "pending": 343656,
+      "pendingOver6": 291001,
+      "avgMonths": 27.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_january_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-01",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "8d92450416ed001d9349c7de24c43a0b47154365c924fc82250498465d09ddd3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-02",
+      "received": 4813,
+      "approved": 10,
+      "denied": 21,
+      "pending": 348318,
+      "pendingOver6": 302719,
+      "avgMonths": 23.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_february_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-02",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "b1b6dda0b78e7d88bca359b2ddb1ccafad0b7a4a355abb382b15de6601c2cbe3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-03",
+      "received": 3439,
+      "approved": 25,
+      "denied": 21,
+      "pending": 351423,
+      "pendingOver6": 312848,
+      "avgMonths": 21.3,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_march_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-03",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "130ec4e3c9ff621f35c5792af6f47def0d8fee83f089efcd451314948ccd0f51",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-04",
+      "received": 2665,
+      "approved": 23,
+      "denied": 38,
+      "pending": 353450,
+      "pendingOver6": 321681,
+      "avgMonths": 29.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_april_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-04",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7ac005048e7b1b1fdb58b81d3fd245b6224fe45b33c17844183d6db650ee6c7b",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-05",
+      "received": 1846,
+      "approved": 27,
+      "denied": 129,
+      "pending": 354649,
+      "pendingOver6": 329417,
+      "avgMonths": 23.2,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_may_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-05",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7d54e87c2b53b1bd91939f25eb38de6be90c6067b575d8cac1655f117ec898b1",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-06",
+      "received": 1774,
+      "approved": 89,
+      "denied": 281,
+      "pending": 355371,
+      "pendingOver6": 336679,
+      "avgMonths": 21.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_june_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-06",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "972e8bbce8bb54bc98cf43d7543eaaceb139d1130aa4345105f84d52a92d8610",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-07",
+      "received": 1355,
+      "approved": 308,
+      "denied": 318,
+      "pending": 355379,
+      "pendingOver6": 342636,
+      "avgMonths": 22.2,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3e0e73d28c07b39d2771ffd3084d3772259368d9ba8db6a53af73d7bae295413",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-08",
+      "received": 1213,
+      "approved": 386,
+      "denied": 434,
+      "pending": 355520,
+      "pendingOver6": 345741,
+      "avgMonths": 20.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-08",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
+        "evidence": "F"
+      }
+    }
+  ],
+  "i765National": [
+    {
+      "ym": "2024-07",
+      "received": 416776,
+      "approved": 395766,
+      "denied": 42350,
+      "pending": 1292801,
+      "avgMonths": 3.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "e62b92889aa29239e6f0ca2f5b36911fd274ac13853b8d8475c63639dc28e26c",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-09",
+      "received": 356947,
+      "approved": 411996,
+      "denied": 27490,
+      "pending": 1196046,
+      "avgMonths": 3.2,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_september_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-09",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "97b5db5402d257ee27fafaf269d20dfb1bef3a4fe2a060cf5c9eeff15f53ac4e",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-10",
+      "received": 428860,
+      "approved": 419971,
+      "denied": 29829,
+      "pending": 1178128,
+      "avgMonths": 3,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-10",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "0d0a55adcffbace71fa0926ba6410112cf5e3bf7c3fc39415e01e703ac921ad2",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-11",
+      "received": 423242,
+      "approved": 369824,
+      "denied": 23880,
+      "pending": 1202301,
+      "avgMonths": 2.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_november_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-11",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "71f5c7bc2f5b5825e81b7d5904f0dadd6e972dc8bf0b82973c97be53d93e6f05",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-12",
+      "received": 415609,
+      "approved": 401008,
+      "denied": 26989,
+      "pending": 1190183,
+      "avgMonths": 3,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_december_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-12",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "6cb266662a3086ebfe97f4670259758c7c46880b1ca8a3cd037e4fcb85a9d1bf",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-01",
+      "received": 516330,
+      "approved": 443947,
+      "denied": 51664,
+      "pending": 1219526,
+      "avgMonths": 3.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_january_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-01",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "8d0bbc268ce5bc73fa9316c2352f0ee2e3dbd8e6dfeae4a37480a40a4cc25dcf",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-02",
+      "received": 496399,
+      "approved": 258214,
+      "denied": 27519,
+      "pending": 1420295,
+      "avgMonths": 4.1,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_february_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-02",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "a3f10c674fca3f9454a1050b87fedbd0a8356a033dd117c460b517a027b7f831",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-03",
+      "received": 528151,
+      "approved": 297357,
+      "denied": 22488,
+      "pending": 2100110,
+      "avgMonths": 3.5,
+      "caveat": "cxi_status_flips_2025_03_04",
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_march_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-03",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "518ebefdbc04ea2297a0daef7a16318e3f034b3e81b93abff7bb066c3da996f7",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-04",
+      "received": 492135,
+      "approved": 357844,
+      "denied": 24130,
+      "pending": 1870157,
+      "avgMonths": 2.9,
+      "caveat": "cxi_status_flips_2025_03_04",
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_april_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-04",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "aaf933867dfd060122abece0c368abe9577f0edd7917d0e6eab236c4f6c0ddd5",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-05",
+      "received": 395958,
+      "approved": 311684,
+      "denied": 78588,
+      "pending": 1753599,
+      "avgMonths": 2.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_may_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-05",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "10b0da1b486f171174930c3ba60dabb4463358d9cb994634f8eb3f121f3c1b3f",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-06",
+      "received": 358919,
+      "approved": 275035,
+      "denied": 24585,
+      "pending": 1813690,
+      "avgMonths": 2.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_june_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-06",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "d371940c5ad27d3c3479200299a9e5994f8efe247ad0cb1273147d559ddc86a3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-07",
+      "received": 374325,
+      "approved": 294232,
+      "denied": 30710,
+      "pending": 1859361,
+      "avgMonths": 2.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "37892de3a7e74b3418b214d37a49d7ba015b74b8c0ad30d44e1b25a07f36f395",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-08",
+      "received": 222122,
+      "approved": 279876,
+      "denied": 24111,
+      "pending": 1775993,
+      "avgMonths": 3.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-08",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "1897651af7fc8ec563f049a3fafd23dd814e254fda7c0d9fb1cf501b1434996e",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-09",
+      "received": 225595,
+      "approved": 262688,
+      "denied": 22980,
+      "pending": 1698599,
+      "avgMonths": 3.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_september_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-09",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "86ab9e2b771f6eb4b25850875a546534577f096ed3809a5c3da5cd3b6feb13c7",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-10",
+      "received": 237428,
+      "approved": 233842,
+      "denied": 19939,
+      "pending": 1679166,
+      "avgMonths": 3.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-10",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "4983b99055945eb3c9ebba37dd080a3a474402b660a424a417cf63245bc7417f",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-11",
+      "received": 200950,
+      "approved": 165053,
+      "denied": 15993,
+      "pending": 1576773,
+      "avgMonths": 3.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_november_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-11",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "c0a5a8f25bef38a79f449d83b9443854e2bc5b074535c3a9c6d9327752df9683",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2025-12",
+      "received": 187268,
+      "approved": 124110,
+      "denied": 14170,
+      "pending": 1622351,
+      "avgMonths": 4.1,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_december_2025.csv",
+        "via": "mirror.visualizer",
+        "period": "2025-12",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "52a23b3d4d398cfef4640dd58001131a7528af93b8906c8064bf8eb566a0d4fe",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-01",
+      "received": 177289,
+      "approved": 133580,
+      "denied": 13025,
+      "pending": 1678637,
+      "avgMonths": 4.2,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_january_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-01",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "8d92450416ed001d9349c7de24c43a0b47154365c924fc82250498465d09ddd3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-02",
+      "received": 209279,
+      "approved": 102530,
+      "denied": 12031,
+      "pending": 1775015,
+      "avgMonths": 4.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_february_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-02",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "b1b6dda0b78e7d88bca359b2ddb1ccafad0b7a4a355abb382b15de6601c2cbe3",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-03",
+      "received": 262829,
+      "approved": 105371,
+      "denied": 15051,
+      "pending": 1918736,
+      "avgMonths": 4.5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_march_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-03",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "130ec4e3c9ff621f35c5792af6f47def0d8fee83f089efcd451314948ccd0f51",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-04",
+      "received": 240636,
+      "approved": 109104,
+      "denied": 16575,
+      "pending": 2032567,
+      "avgMonths": 4.6,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_april_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-04",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7ac005048e7b1b1fdb58b81d3fd245b6224fe45b33c17844183d6db650ee6c7b",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-05",
+      "received": 202820,
+      "approved": 96630,
+      "denied": 24454,
+      "pending": 2119836,
+      "avgMonths": 4.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_may_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-05",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "7d54e87c2b53b1bd91939f25eb38de6be90c6067b575d8cac1655f117ec898b1",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-06",
+      "received": 175621,
+      "approved": 159956,
+      "denied": 21545,
+      "pending": 2112052,
+      "avgMonths": 5,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_june_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-06",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "972e8bbce8bb54bc98cf43d7543eaaceb139d1130aa4345105f84d52a92d8610",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-07",
+      "received": 153170,
+      "approved": 135089,
+      "denied": 30068,
+      "pending": 2100336,
+      "avgMonths": 5.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-07",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "3e0e73d28c07b39d2771ffd3084d3772259368d9ba8db6a53af73d7bae295413",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2026-08",
+      "received": 130329,
+      "approved": 125318,
+      "denied": 29906,
+      "pending": 1921541,
+      "avgMonths": 6.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-08",
+        "retrievedAt": "2026-10-20T23:35:05Z",
+        "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
+        "evidence": "F"
+      }
+    }
+  ],
+  "firstModelMonth": "2024-09"
+}

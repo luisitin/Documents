@@ -1,0 +1,1810 @@
+{
+  "modelVersion": "VPH-1.1",
+  "dataThrough": "2026-08",
+  "beta": {
+    "value": 0.03739094429534233,
+    "targets": [
+      "2026-06",
+      "2026-07",
+      "2026-08"
+    ],
+    "sse": 4.851475826915284,
+    "fallbackUsed": false
+  },
+  "horizonMonths": 72,
+  "receiptsForecast": 1000,
+  "officeGroup": [
+    "HIA",
+    "KND",
+    "MIA",
+    "TAM",
+    "HOU"
+  ],
+  "officeMultipliers": [
+    {
+      "code": "MGA",
+      "completions": 4,
+      "avgPending": 2810,
+      "raw": 0.969482527273788,
+      "shrunk": 0.997739446464725,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ANC",
+      "completions": 14,
+      "avgPending": 678,
+      "raw": 14.063216306397795,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "PHO",
+      "completions": 15,
+      "avgPending": 9552.5,
+      "raw": 1.0694501053281906,
+      "shrunk": 1.0160269473834287,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "TUC",
+      "completions": 1,
+      "avgPending": 2091.5,
+      "raw": 0.3256330267319321,
+      "shrunk": 0.9867771181712144,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "FSA",
+      "completions": 1,
+      "avgPending": 610,
+      "raw": 1.1164942219833378,
+      "shrunk": 1.002284200431046,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "FRE",
+      "completions": 56,
+      "avgPending": 4427,
+      "raw": 8.615189207804567,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "IMP",
+      "completions": 2,
+      "avgPending": 308.5,
+      "raw": 4.415309402981109,
+      "shrunk": 1.131358053960812,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LOS",
+      "completions": 604,
+      "avgPending": 6513.5,
+      "raw": 63.155159460741686,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LAC",
+      "completions": 303,
+      "avgPending": 5213,
+      "raw": 39.58596337026287,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SAC",
+      "completions": 275,
+      "avgPending": 8880,
+      "raw": 21.09143082631812,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SBD",
+      "completions": 213,
+      "avgPending": 5412.5,
+      "raw": 26.802049748230036,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SND",
+      "completions": 36,
+      "avgPending": 5869.5,
+      "raw": 4.177223462774359,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SFV",
+      "completions": 143,
+      "avgPending": 3983.5,
+      "raw": 24.44879904194968,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SFR",
+      "completions": 274,
+      "avgPending": 7484,
+      "raw": 24.934639799879083,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SNJ",
+      "completions": 129,
+      "avgPending": 4303,
+      "raw": 20.417599425486603,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SAA",
+      "completions": 14,
+      "avgPending": 4509,
+      "raw": 2.114628666164938,
+      "shrunk": 1.2438250207235801,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "DEN",
+      "completions": 3,
+      "avgPending": 7398.5,
+      "raw": 0.2761619823247291,
+      "shrunk": 0.9590280367353621,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HAR",
+      "completions": 8,
+      "avgPending": 3144,
+      "raw": 1.7329808534601427,
+      "shrunk": 1.1011008073738129,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "WAS",
+      "completions": 124,
+      "avgPending": 9812.5,
+      "raw": 8.60653482301347,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HIA",
+      "completions": 3,
+      "avgPending": 37084,
+      "raw": 0.05509611763104056,
+      "shrunk": 0.9465148745828891,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "JAC",
+      "completions": 13,
+      "avgPending": 8630.5,
+      "raw": 1.0258732611468477,
+      "shrunk": 1.0053389269033177,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "KND",
+      "completions": 35,
+      "avgPending": 40752,
+      "raw": 0.5849320681032651,
+      "shrunk": 0.8290896751013445,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MIA",
+      "completions": 27,
+      "avgPending": 20531.5,
+      "raw": 0.895631582498384,
+      "shrunk": 0.963403282174758,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "OFM",
+      "completions": 29,
+      "avgPending": 18672.5,
+      "raw": 1.057747103327634,
+      "shrunk": 1.0211983037531822,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "OKL",
+      "completions": 36,
+      "avgPending": 6087,
+      "raw": 4.027963383399721,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ORL",
+      "completions": 7,
+      "avgPending": 11749,
+      "raw": 0.4057732852046006,
+      "shrunk": 0.9270247894110913,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "TAM",
+      "completions": 117,
+      "avgPending": 34104.5,
+      "raw": 2.3364715102977853,
+      "shrunk": 1.9363303395499454,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "WPB",
+      "completions": 32,
+      "avgPending": 11675.5,
+      "raw": 1.8666410186385811,
+      "shrunk": 1.338201373127251,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ATL",
+      "completions": 18,
+      "avgPending": 7500,
+      "raw": 1.6345475409836063,
+      "shrunk": 1.1679684667309547,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HHW",
+      "completions": 2,
+      "avgPending": 778,
+      "raw": 1.750800707994437,
+      "shrunk": 1.0288769503074784,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "BOI",
+      "completions": 4,
+      "avgPending": 2034,
+      "raw": 1.3393539339426472,
+      "shrunk": 1.0251373284401961,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CHI",
+      "completions": 20,
+      "avgPending": 9780.5,
+      "raw": 1.3926925523436144,
+      "shrunk": 1.1121978720981756,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "INP",
+      "completions": 50,
+      "avgPending": 6240,
+      "raw": 5.457223360655737,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "DSM",
+      "completions": 0,
+      "avgPending": 5408.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "WIC",
+      "completions": 0,
+      "avgPending": 2069,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LOU",
+      "completions": 9,
+      "avgPending": 17810,
+      "raw": 0.3441635754457341,
+      "shrunk": 0.8999571555764678,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NOL",
+      "completions": 5,
+      "avgPending": 2333,
+      "raw": 1.4596259653018346,
+      "shrunk": 1.0417841786638031,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "POM",
+      "completions": 16,
+      "avgPending": 2336.5,
+      "raw": 4.663806379866201,
+      "shrunk": 1.88819548602817,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "BAL",
+      "completions": 88,
+      "avgPending": 9799,
+      "raw": 6.116278174922499,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "BOS",
+      "completions": 10,
+      "avgPending": 4071,
+      "raw": 1.6729586720949057,
+      "shrunk": 1.1121597786824844,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LAW",
+      "completions": 27,
+      "avgPending": 3846,
+      "raw": 4.781242807089333,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "DET",
+      "completions": 9,
+      "avgPending": 9827,
+      "raw": 0.6237461360220337,
+      "shrunk": 0.9426053427830221,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SPM",
+      "completions": 11,
+      "avgPending": 8674,
+      "raw": 0.8636933628669814,
+      "shrunk": 0.9754201146153573,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "KAN",
+      "completions": 12,
+      "avgPending": 6097.5,
+      "raw": 1.3403423870304276,
+      "shrunk": 1.0658727200704052,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "STL",
+      "completions": 1,
+      "avgPending": 2100.5,
+      "raw": 0.3242377888168703,
+      "shrunk": 0.9867497605650367,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HEL",
+      "completions": 1,
+      "avgPending": 252.5,
+      "raw": 2.697273169939945,
+      "shrunk": 1.033279866077254,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "OMA",
+      "completions": 0,
+      "avgPending": 11232,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LVG",
+      "completions": 2,
+      "avgPending": 12293,
+      "raw": 0.11080476293985782,
+      "shrunk": 0.9658001831899945,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "REN",
+      "completions": 0,
+      "avgPending": 439.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MAN",
+      "completions": 2,
+      "avgPending": 1064,
+      "raw": 1.2801907432515716,
+      "shrunk": 1.0107765670481375,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MTL",
+      "completions": 14,
+      "avgPending": 2333,
+      "raw": 4.086952702845137,
+      "shrunk": 1.6752709037473736,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NEW",
+      "completions": 145,
+      "avgPending": 5069,
+      "raw": 19.481932123579842,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NJC",
+      "completions": 23,
+      "avgPending": 2171,
+      "raw": 7.215298910375969,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ABQ",
+      "completions": 7,
+      "avgPending": 1533,
+      "raw": 3.1098697507298447,
+      "shrunk": 1.2591068114931387,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ALB",
+      "completions": 46,
+      "avgPending": 1945,
+      "raw": 16.107366513548822,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "BNY",
+      "completions": 249,
+      "avgPending": 5775,
+      "raw": 29.365248030657867,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "BUF",
+      "completions": 42,
+      "avgPending": 10799.5,
+      "raw": 2.6486950291414524,
+      "shrunk": 1.7526651219993585,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "LNY",
+      "completions": 49,
+      "avgPending": 3437,
+      "raw": 9.709634068979334,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NYC",
+      "completions": 73,
+      "avgPending": 5420,
+      "raw": 9.172968211239489,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "QNS",
+      "completions": 223,
+      "avgPending": 7805,
+      "raw": 19.458899297423887,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CLT",
+      "completions": 14,
+      "avgPending": 6228.5,
+      "raw": 1.5308438076162327,
+      "shrunk": 1.116122082916051,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "RAL",
+      "completions": 2,
+      "avgPending": 3670.5,
+      "raw": 0.3711001092002921,
+      "shrunk": 0.9758115426615497,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CIN",
+      "completions": 6,
+      "avgPending": 2992,
+      "raw": 1.365764990795126,
+      "shrunk": 1.0391891061566205,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CLE",
+      "completions": 4,
+      "avgPending": 4167,
+      "raw": 0.6537667150562382,
+      "shrunk": 0.9743530900041657,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CLM",
+      "completions": 6,
+      "avgPending": 3195,
+      "raw": 1.2789886862156545,
+      "shrunk": 1.0298916449516773,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "OKC",
+      "completions": 0,
+      "avgPending": 4924,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "POO",
+      "completions": 128,
+      "avgPending": 5483,
+      "raw": 15.89930126800274,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "PHI",
+      "completions": 33,
+      "avgPending": 7403.5,
+      "raw": 3.0357302206422085,
+      "shrunk": 1.8093867142312394,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "PIT",
+      "completions": 18,
+      "avgPending": 2327.5,
+      "raw": 5.267070486520751,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "PRO",
+      "completions": 6,
+      "avgPending": 1208,
+      "raw": 3.382755672565411,
+      "shrunk": 1.2552952506320083,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CHL",
+      "completions": 0,
+      "avgPending": 1810.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "GRR",
+      "completions": 6,
+      "avgPending": 1333.5,
+      "raw": 3.0643935901454946,
+      "shrunk": 1.2211850275155887,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MEM",
+      "completions": 1,
+      "avgPending": 1652,
+      "raw": 0.41226481562338746,
+      "shrunk": 0.9884757806984978,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NTN",
+      "completions": 4,
+      "avgPending": 5037,
+      "raw": 0.5408469131704078,
+      "shrunk": 0.965988660234845,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "DAL",
+      "completions": 20,
+      "avgPending": 15434.5,
+      "raw": 0.8825183522755334,
+      "shrunk": 0.9664338149358668,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ELP",
+      "completions": 4,
+      "avgPending": 6905,
+      "raw": 0.3945323536045393,
+      "shrunk": 0.9551505447114473,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HLG",
+      "completions": 3,
+      "avgPending": 448,
+      "raw": 4.560679522833723,
+      "shrunk": 1.20154789751889,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HOU",
+      "completions": 62,
+      "avgPending": 33707,
+      "raw": 1.2527312272053235,
+      "shrunk": 1.1399047864886611,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SNA",
+      "completions": 6,
+      "avgPending": 17345.5,
+      "raw": 0.23558668544919525,
+      "shrunk": 0.9180985734409852,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SLC",
+      "completions": 0,
+      "avgPending": 3696.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "STA",
+      "completions": 11,
+      "avgPending": 1040,
+      "raw": 7.203534836065574,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NOR",
+      "completions": 20,
+      "avgPending": 2136,
+      "raw": 6.376980106833671,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SEA",
+      "completions": 45,
+      "avgPending": 7832.5,
+      "raw": 3.912897081831168,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SPO",
+      "completions": 5,
+      "avgPending": 1559.5,
+      "raw": 2.1835892125996668,
+      "shrunk": 1.1075990193272425,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "YAK",
+      "completions": 0,
+      "avgPending": 1108,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MIL",
+      "completions": 1,
+      "avgPending": 3969.5,
+      "raw": 0.17157361768732488,
+      "shrunk": 0.9837563454448495,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "AGA",
+      "completions": 1,
+      "avgPending": 259,
+      "raw": 2.629580986138363,
+      "shrunk": 1.0319525683556543,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "CHA",
+      "completions": 0,
+      "avgPending": 9.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SAJ",
+      "completions": 1,
+      "avgPending": 548.5,
+      "raw": 1.241679991631424,
+      "shrunk": 1.004738823365322,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "WSC",
+      "completions": 0,
+      "avgPending": 4.5,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "NSC",
+      "completions": 0,
+      "avgPending": 193,
+      "raw": 0,
+      "shrunk": 1,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "SSC",
+      "completions": 2,
+      "avgPending": 190.5,
+      "raw": 7.150251710339486,
+      "shrunk": 1.236548142705365,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "ESC",
+      "completions": 7,
+      "avgPending": 336,
+      "raw": 14.188780737704917,
+      "shrunk": 2,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    }
+  ],
+  "k0Office": 50,
+  "clampOffice": [
+    0.5,
+    2
+  ],
+  "grids": {
+    "beta": [
+      [
+        0.5,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        2,
+        0.25
+      ]
+    ],
+    "office": [
+      [
+        0.8,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1.25,
+        0.25
+      ]
+    ],
+    "classMix": [
+      [
+        0.5,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        2,
+        0.25
+      ]
+    ],
+    "ead": [
+      [
+        0.9,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1.2,
+        0.25
+      ]
+    ]
+  },
+  "milestone": {
+    "noBiometricsAfter4mo": 0.7,
+    "rfeAnswered": {
+      "mult": 1.5,
+      "months": 3
+    },
+    "mandamus": {
+      "mult": 1.3,
+      "months": 4
+    },
+    "postInterview": {
+      "medianMonths": 3,
+      "sigma": 0.857
+    },
+    "expediteGranted": {
+      "medianMonths": 2,
+      "sigma": 0.857
+    }
+  },
+  "observation": {
+    "model": "lognormal",
+    "sigma": 0.3,
+    "tempering": 0.5,
+    "floorLevel": 50,
+    "weightFloor": 0.02
+  },
+  "scenarioWeights": {
+    "asOf": "2026-08",
+    "weights": {
+      "S0": 0.3,
+      "S1": 0.4,
+      "S2": 0.15,
+      "S3": 0.15
+    },
+    "caseDependentRules": [
+      "DORCAS_REVERSED",
+      "FIRST_CIR_STAY_BENEFITS_HOLD"
+    ]
+  },
+  "weightLedger": [],
+  "validation": {
+    "status": "not_validated"
+  },
+  "confidenceGates": {
+    "r4MonthsOfData": 2,
+    "pitNotRejectedMonths": 0,
+    "crowdDecisionsByOfficeGroup": {}
+  }
+}

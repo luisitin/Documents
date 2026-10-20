@@ -1,0 +1,480 @@
+{
+  "alerts": [
+    {
+      "id": "2026-05-22-pm-602-0199",
+      "date": "2026-05-22",
+      "kind": "policy",
+      "severity": "medium",
+      "title": {
+        "es": "Memo PM-602-0199 sobre la discreción en el ajuste de estatus",
+        "en": "PM-602-0199 memo on discretion in adjustment of status"
+      },
+      "body": {
+        "es": "USCIS publicó un memo (fechado el 21 de mayo de 2026) que recuerda que el ajuste de estatus es discrecional. El memo no menciona la Ley de Ajuste Cubano, y el gobierno dijo a un tribunal federal en Tampa que no se aplica a estas solicitudes. La discreción general del Manual de Políticas sí se aplica a todo I-485, incluido el historial de parole como factor negativo desde agosto de 2025.",
+        "en": "USCIS published a memo (dated May 21, 2026) restating that adjustment of status is discretionary. The memo does not mention the Cuban Adjustment Act, and the government told a federal court in Tampa that it does not apply to these applications. The Policy Manual's general discretion rules do apply to every I-485, including parole history as a negative factor since August 2025."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo. La tarjeta de aprobación lo muestra como un factor que el modelo no ve.",
+        "en": "It does not change your timing estimate. The approval card lists it as a factor the model does not see."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "sources": [
+        {
+          "label": "USCIS, PM-602-0199 (May 21, 2026)",
+          "url": "https://www.uscis.gov/sites/default/files/document/memos/PM-602-0199-AdjustmentOfStatusAndDiscretion-20260521.pdf",
+          "evidence": "S"
+        },
+        {
+          "label": "Acosta Reynoso v. USCIS, M.D. Fla. 8:26-cv-01314, ECF 41",
+          "url": "https://ecf.flmd.uscourts.gov/cgi-bin/show_public_doc?2026-01314-41-8-cv=",
+          "evidence": "S-sec"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-06-05-dorcas-vacatur",
+      "date": "2026-06-05",
+      "kind": "court",
+      "severity": "high",
+      "title": {
+        "es": "Un tribunal federal anula las pausas por país (Dorcas)",
+        "en": "A federal court vacates the country holds (Dorcas)"
+      },
+      "body": {
+        "es": "El 5 de junio de 2026 un tribunal federal de Rhode Island anuló (vacatur), bajo la Ley de Procedimiento Administrativo (APA), las pausas de PM-602-0192 y PM-602-0194 y la política de re-revisión. El 12 de junio USCIS dijo que cumplirá la orden mientras apela, y los casos cubanos volvieron a decidirse. El gobierno apeló al Primer Circuito (26-1703).",
+        "en": "On June 5, 2026 a federal court in Rhode Island vacated, under the Administrative Procedure Act (APA), the PM-602-0192 and PM-602-0194 holds and the re-review policy. On June 12 USCIS said it will comply while it appeals, and Cuban cases started being decided again. The government appealed to the First Circuit (26-1703)."
+      },
+      "whatChangedForYou": {
+        "es": "El estimado cuenta como pausa solo hasta el 12 de junio de 2026. Si la apelación confirma o revoca la anulación, se recalcula el riesgo de una nueva pausa.",
+        "en": "The estimate counts the hold only through June 12, 2026. If the appeal affirms or reverses the vacatur, the risk of a new hold is recalculated."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "docket": {
+        "court": "D.R.I.; 1st Cir.",
+        "number": "1:26-cv-00132; 26-1703",
+        "courtListenerId": 73477958
+      },
+      "sources": [
+        {
+          "label": "Cyrus Mehta blog: Dorcas v. USCIS (June 2026)",
+          "url": "https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html",
+          "evidence": "S"
+        },
+        {
+          "label": "USCIS will comply with the Dorcas vacatur (June 12, 2026)",
+          "url": "https://www.immigrationissues.com/uscis-confirms-it-will-comply-with-the-dorcas-vacatur-of-the-country-hold-policies/",
+          "evidence": "S"
+        },
+        {
+          "label": "First Circuit docket 26-1703 (Justia)",
+          "url": "https://dockets.justia.com/docket/circuit-courts/ca1/26-1703",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-08-05-pa-2026-05",
+      "date": "2026-08-05",
+      "kind": "policy",
+      "severity": "high",
+      "title": {
+        "es": "USCIS puede negar sin pedir antes documentos (PA-2026-05)",
+        "en": "USCIS may deny without first asking for documents (PA-2026-05)"
+      },
+      "body": {
+        "es": "Desde el 5 de agosto de 2026 USCIS puede negar una solicitud sin enviar antes una Solicitud de Evidencia (RFE) ni una Notificación de Intención de Denegar (NOID) cuando falta evidencia inicial o el expediente no prueba la elegibilidad. El plazo para responder una RFE es de hasta 12 semanas y el de una NOID, 30 días (más 3 por correo), sin prórrogas. Se aplica a todo I-485, I-765 e I-131 pendiente, incluidos los de la Ley de Ajuste Cubano.",
+        "en": "Since August 5, 2026 USCIS may deny a request without first sending a Request for Evidence (RFE) or a Notice of Intent to Deny (NOID) when initial evidence is missing or the file does not establish eligibility. The deadline to answer an RFE is up to 12 weeks and for a NOID 30 days (plus 3 for mail), with no extensions. It applies to every pending I-485, I-765 and I-131, including Cuban Adjustment Act cases."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo. La tarjeta de aprobación muestra un rango solo si su lista de documentos básicos está completa; puede revisarla en «Mi caso».",
+        "en": "It does not change your timing estimate. The approval card shows a range only if your basic-documents checklist is complete; you can review it under “My case”."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "sources": [
+        {
+          "label": "AILA: USCIS policy alert on evidence, RFEs and NOIDs",
+          "url": "https://www.aila.org/library/uscis-issues-policy-alert-on-evidence-rfes-and-noids",
+          "evidence": "S"
+        },
+        {
+          "label": "Fakhoury Global: USCIS restores discretion to deny incomplete requests",
+          "url": "https://fakhouryglobal.com/immigration-alerts/uscis-restores-discretion-deny-incomplete-benefit-requests/",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-08-11-chirla-stay-vacated",
+      "date": "2026-08-11",
+      "kind": "enforcement",
+      "severity": "high",
+      "title": {
+        "es": "Ya no rige la protección contra la deportación acelerada para ex beneficiarios de parole",
+        "en": "The protection against expedited removal for former parolees no longer applies"
+      },
+      "body": {
+        "es": "El 11 de agosto de 2026 la Corte de Apelaciones del Circuito de D.C. anuló, por falta de legitimación (standing), la orden de 2025 que protegía de la deportación acelerada a quienes entraron con parole por un puerto de entrada (CBP One o CHNV). Si su parole terminó, tener el I-485 pendiente ayuda pero no es garantía. Lleve siempre su recibo del I-485 y consulte a un abogado o representante acreditado antes de cualquier cita con ICE o USCIS.",
+        "en": "On August 11, 2026 the D.C. Circuit vacated, for lack of standing, the 2025 order that protected people paroled at a port of entry (CBP One or CHNV) from expedited removal. If your parole ended, a pending I-485 helps but is not a guarantee. Always carry your I-485 receipt notice and consult an attorney or accredited representative before any ICE or USCIS appointment."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo.",
+        "en": "It does not change your timing estimate."
+      },
+      "affects": {
+        "channels": [
+          "CHNV",
+          "CBP_ONE"
+        ]
+      },
+      "docket": {
+        "court": "D.C. Cir.",
+        "number": "25-5289"
+      },
+      "sources": [
+        {
+          "label": "D.C. Circuit opinion, CHIRLA v. Mullin, No. 25-5289 (Aug 11, 2026)",
+          "url": "https://media.cadc.uscourts.gov/opinions/docs/2026/08/25-5289-2187613.pdf",
+          "evidence": "S"
+        },
+        {
+          "label": "Justia: CHIRLA v. Mullin",
+          "url": "https://law.justia.com/cases/federal/appellate-courts/cadc/25-5289/25-5289-2026-08-11.html",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-08-14-first-circuit-partial-stay",
+      "date": "2026-08-14",
+      "kind": "court",
+      "severity": "medium",
+      "title": {
+        "es": "Primer Circuito: solo vuelve la re-revisión de casos aprobados",
+        "en": "First Circuit: only the re-review of approved cases returns"
+      },
+      "body": {
+        "es": "El 14 de agosto de 2026 el Primer Circuito suspendió en parte la anulación de Dorcas: solo vuelve la política de re-revisión de beneficios ya aprobados. La pausa de los casos pendientes sigue anulada.",
+        "en": "On August 14, 2026 the First Circuit partly stayed the Dorcas vacatur: only the policy of re-reviewing benefits already approved returns. The hold on pending cases remains vacated."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo. Un caso ya aprobado podría ser revisado de nuevo.",
+        "en": "It does not change your timing estimate. An already-approved case could be reviewed again."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "docket": {
+        "court": "1st Cir.",
+        "number": "26-1703",
+        "courtListenerId": 73477958
+      },
+      "sources": [
+        {
+          "label": "Wolfsdorf: Dorcas on appeal (Aug 2026)",
+          "url": "https://wolfsdorf.com/dorcas-on-appeal-district-court-pauses-its-own-ruling-as-first-circuit-takes-up-the-case/",
+          "evidence": "S"
+        },
+        {
+          "label": "First Circuit order, 26-1703 (Justia)",
+          "url": "https://law.justia.com/cases/federal/appellate-courts/ca1/26-1703/26-1703-2026-08-14-0.html",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-08-24-red-eagle-pi",
+      "date": "2026-08-24",
+      "kind": "court",
+      "severity": "medium",
+      "title": {
+        "es": "Red Eagle: medida cautelar para la clase con casos pendientes",
+        "en": "Red Eagle: class injunction for pending cases"
+      },
+      "body": {
+        "es": "El 24 de agosto de 2026 un tribunal federal de California (N.D. Cal. 3:26-cv-04850) certificó una clase nacional y prohibió aplicar las pausas PM-602-0192 y PM-602-0194. Según la definición publicada por el tribunal, un caso cubano que no tenía decisión final el 24 de agosto de 2026 parece estar dentro de la clase. USCIS dijo el 28 de agosto que cumplirá la orden. No existe un canal público para que un miembro de la clase reclame.",
+        "en": "On August 24, 2026 a federal court in California (N.D. Cal. 3:26-cv-04850) certified a nationwide class and barred the PM-602-0192 and PM-602-0194 holds. Under the definition published by the court, a Cuban case with no final decision on August 24, 2026 appears to be inside the class. USCIS said on August 28 that it will comply. There is no public channel for class members to complain."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado hoy. Si se anula la medida cautelar, o si se revoca Dorcas, sube el riesgo de una nueva pausa, menos para quien parezca estar dentro de la clase.",
+        "en": "It does not change your estimate today. If the injunction is dissolved, or Dorcas is reversed, the risk of a new hold rises, less for anyone who appears to be inside the class."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "docket": {
+        "court": "N.D. Cal.",
+        "number": "3:26-cv-04850-CRB",
+        "courtListenerId": 73380879
+      },
+      "sources": [
+        {
+          "label": "AILA: district court issues preliminary injunction (Aug 2026)",
+          "url": "https://www.aila.org/library/district-court-issues-preliminary-injunction-to-lift-adjudication-hold-for-travel-ban-countries",
+          "evidence": "S"
+        },
+        {
+          "label": "Civil Rights Litigation Clearinghouse, case 48417",
+          "url": "https://clearinghouse.net/case/48417/",
+          "evidence": "S"
+        },
+        {
+          "label": "USCIS alert: Recent Court Order on Hold Policies (Aug 28, 2026)",
+          "url": "https://www.uscis.gov/newsroom/alerts/recent-court-order-on-hold-policies",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-09-18-i485-edition",
+      "date": "2026-09-18",
+      "kind": "policy",
+      "severity": "info",
+      "title": {
+        "es": "Nueva edición del I-485 (09/18/26) obligatoria",
+        "en": "New I-485 edition (09/18/26) required"
+      },
+      "body": {
+        "es": "Desde el 18 de septiembre de 2026 USCIS solo acepta la edición 09/18/26 del formulario I-485, sin período de gracia. Ese mismo día entró en vigor la nueva regla de carga pública; la Ley de Ajuste Cubano sigue exenta de esa prueba. Los casos ya presentados no tienen que volver a presentarse.",
+        "en": "Since September 18, 2026 USCIS accepts only the 09/18/26 edition of Form I-485, with no grace period. The new public-charge rule took effect the same day; the Cuban Adjustment Act remains exempt from that test. Cases already filed do not need to be filed again."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo.",
+        "en": "It does not change your timing estimate."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "sources": [
+        {
+          "label": "USCIS, Form I-485 page",
+          "url": "https://www.uscis.gov/i-485",
+          "evidence": "S"
+        },
+        {
+          "label": "Fredrikson: USCIS revises the I-485",
+          "url": "https://www.fredlaw.com/alert-uscis-revises-i-485-permanent-residence-adjustment-application",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-10-05-aaup-v-mullin",
+      "date": "2026-10-05",
+      "kind": "court",
+      "severity": "info",
+      "title": {
+        "es": "Demanda AAUP v. Mullin contra PM-602-0199 y PA-2026-05",
+        "en": "AAUP v. Mullin suit against PM-602-0199 and PA-2026-05"
+      },
+      "body": {
+        "es": "El 5 de octubre de 2026 se presentó en Massachusetts (D. Mass. 1:26-cv-14527) una demanda contra el memo de mayo (PM-602-0199) y la política de negaciones de agosto (PA-2026-05). Hasta el 20 de octubre no hay pedido de medida cautelar ni decisión, y ambas políticas siguen vigentes.",
+        "en": "On October 5, 2026 a suit was filed in Massachusetts (D. Mass. 1:26-cv-14527) against the May memo (PM-602-0199) and the August denial policy (PA-2026-05). As of October 20 there is no request for preliminary relief and no ruling, and both policies remain in effect."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado. Una decisión contra la política de negaciones (PA-2026-05) haría revisar la tarjeta de aprobación.",
+        "en": "It does not change your estimate. A ruling against the denial policy (PA-2026-05) would trigger a review of the approval card."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "docket": {
+        "court": "D. Mass.",
+        "number": "1:26-cv-14527",
+        "courtListenerId": 74919678
+      },
+      "sources": [
+        {
+          "label": "Civil Rights Litigation Clearinghouse, case 48515",
+          "url": "https://clearinghouse.net/case/48515/",
+          "evidence": "S"
+        },
+        {
+          "label": "CourtListener docket 74919678",
+          "url": "https://www.courtlistener.com/docket/74919678/american-association-of-university-professors-v-mullin/",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-10-14-ead-auto-extension-rule",
+      "date": "2026-10-14",
+      "kind": "ead",
+      "severity": "medium",
+      "title": {
+        "es": "Regla final: sin extensión automática del permiso de trabajo",
+        "en": "Final rule: no automatic extension of the work permit"
+      },
+      "body": {
+        "es": "El 14 de octubre de 2026 entró en vigor la regla final que elimina la extensión automática de ciertos permisos de trabajo (FR 2026-20955). Las renovaciones del permiso de trabajo (c)(9) presentadas desde el 30 de octubre de 2025 ya no se extendían automáticamente. Además, los permisos (c)(9) emitidos desde el 5 de diciembre de 2025 valen 18 meses, no 5 años.",
+        "en": "On October 14, 2026 the final rule removing automatic extensions of certain work permits took effect (FR 2026-20955). Renewals of the (c)(9) work permit filed on or after October 30, 2025 were already not extended automatically. Also, (c)(9) permits issued from December 5, 2025 are valid for 18 months, not 5 years."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de residencia. En «Permiso de trabajo» puede ver la fecha de vencimiento y los recordatorios para renovar a tiempo.",
+        "en": "It does not change your green-card estimate. Under “Work permit” you can see the expiry date and reminders to renew in time."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ],
+        "hasEad": true
+      },
+      "sources": [
+        {
+          "label": "Federal Register 2026-20955 (public inspection)",
+          "url": "https://public-inspection.federalregister.gov/2026-20955.pdf",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-10-16-fy2027-fees",
+      "date": "2026-10-16",
+      "kind": "fees",
+      "severity": "info",
+      "title": {
+        "es": "Tarifas del año fiscal 2027: sin cambios para el I-485 ni el permiso (c)(9)",
+        "en": "Fiscal-year 2027 fees: no change for the I-485 or the (c)(9) permit"
+      },
+      "body": {
+        "es": "Desde el 16 de octubre de 2026 suben algunas tarifas fijadas por ley (H.R.1): el permiso de trabajo inicial por parole (c)(11) pasa a 570 dólares y el parole o re-parole a 1,050. Las tarifas del I-485 (1,440 dólares) y del permiso de trabajo (c)(9) (260 dólares) no cambian. Los nuevos montos vienen de la prensa y están pendientes de confirmar con el aviso oficial de USCIS.",
+        "en": "From October 16, 2026 some statutory (H.R.1) fees rise: the initial parole-based (c)(11) work permit becomes $570 and parole or re-parole $1,050. The I-485 ($1,440) and (c)(9) work permit ($260) fees do not change. The new amounts come from the press and await confirmation against the official USCIS notice."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo.",
+        "en": "It does not change your timing estimate."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Directorio Cubano: tarifas de USCIS, octubre de 2026",
+          "url": "https://www.directoriocubano.info/actualidad/tarifas-uscis-octubre-2026-2/",
+          "evidence": "S-sec"
+        },
+        {
+          "label": "Biz Legal Services: USCIS raises immigration fees (Oct 2, 2026)",
+          "url": "https://bizlegalservices.com/2026/10/02/uscis-raises-immigration-fees/",
+          "evidence": "S-sec"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-10-20-fy26-q3-data",
+      "date": "2026-10-20",
+      "kind": "data",
+      "severity": "medium",
+      "title": {
+        "es": "Datos de USCIS de abril a junio de 2026: 139 aprobados y 447 negados",
+        "en": "USCIS data for April–June 2026: 139 approved and 447 denied"
+      },
+      "body": {
+        "es": "En el trimestre de abril a junio de 2026 USCIS decidió 586 casos de Ley de Ajuste Cubano: 139 aprobados y 447 negados (23.7 % aprobados). Hay que leerlo junto a los trimestres anteriores: 91.7 % en oct–dic 2025 (4,098 de 4,471) y 52.6 % en ene–mar 2026 (50 de 95). Las 447 negaciones son menos que las del mismo trimestre de 2025; lo que se desplomó fueron las aprobaciones, durante la pausa. No significa que tres de cada cuatro cubanos sean negados.",
+        "en": "In the April–June 2026 quarter USCIS decided 586 Cuban Adjustment Act cases: 139 approved and 447 denied (23.7% approved). It has to be read next to the earlier quarters: 91.7% in Oct–Dec 2025 (4,098 of 4,471) and 52.6% in Jan–Mar 2026 (50 of 95). The 447 denials are fewer than in the same quarter of 2025; what collapsed were the approvals, during the hold. It does not mean that three in four Cubans are denied."
+      },
+      "whatChangedForYou": {
+        "es": "No cambia su estimado de tiempo: el modelo usa los datos mensuales. La tarjeta de aprobación muestra estas cifras con sus bases.",
+        "en": "It does not change your timing estimate: the model uses the monthly data. The approval card shows these figures with their baselines."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "sources": [
+        {
+          "label": "USCIS quarterly All Forms workbook, FY2026 Q3",
+          "url": "https://www.uscis.gov/sites/default/files/document/data/quarterly_all_forms_fy2026_q3_v1.xlsx",
+          "evidence": "F"
+        },
+        {
+          "label": "CiberCuba: solo 139 cubanos obtuvieron la residencia (Oct 20, 2026)",
+          "url": "https://en.cibercuba.com/noticias/2026-10-20-u1-e135253-s27061-nid343309-solo-139-cubanos-obtuvieron-residencia-ley-ajuste",
+          "evidence": "S-sec"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    },
+    {
+      "id": "2026-10-20-i220a-parole-scam",
+      "date": "2026-10-20",
+      "kind": "scam",
+      "severity": "high",
+      "title": {
+        "es": "Cuidado: notarios que venden «parole» falso a cubanos con I-220A",
+        "en": "Warning: notarios selling fake “parole” to Cubans with an I-220A"
+      },
+      "body": {
+        "es": "Medios de Miami y la congresista María Elvira Salazar advierten sobre notarios y gestores que venden documentos falsos de parole a cubanos con I-220A. Nadie puede «convertir» un I-220A en parole ni garantizarle una aprobación; ningún tribunal ha dicho que el I-220A sea parole. Desconfíe de quien le cobre por eso. Solo un abogado o un representante acreditado puede darle asesoría legal.",
+        "en": "Miami media and Rep. María Elvira Salazar warn about notarios and preparers selling fake parole documents to Cubans with an I-220A. No one can “convert” an I-220A into parole or guarantee an approval; no court has held that an I-220A is parole. Be wary of anyone charging for that. Only an attorney or an accredited representative can give you legal advice."
+      },
+      "affects": {
+        "channels": [
+          "I220A"
+        ]
+      },
+      "sources": [
+        {
+          "label": "Univision 23 Miami: advertencia a cubanos con I-220A",
+          "url": "https://www.univision.com/local/miami-wltv/advertencia-cubanos-i-220a-usando-notarios-falsificar-parole",
+          "evidence": "S-sec"
+        },
+        {
+          "label": "Cuba en Miami: Salazar advierte sobre falsos documentos de parole",
+          "url": "https://www.cubaenmiami.com/maria-elvira-salazar-vuelve-a-advertir-sobre-los-falsos-documentos-de-parole-te-cerraste-las-puertas/",
+          "evidence": "S-sec"
+        },
+        {
+          "label": "Directorio Cubano: alerta, notarios falsifican parole",
+          "url": "https://www.directoriocubano.info/acontecer/alerta-cubanos-i-220a-notarios-falsifican-parole/",
+          "evidence": "S-sec"
+        }
+      ],
+      "reviewedBy": "pending-native-es-review",
+      "status": "published"
+    }
+  ]
+}

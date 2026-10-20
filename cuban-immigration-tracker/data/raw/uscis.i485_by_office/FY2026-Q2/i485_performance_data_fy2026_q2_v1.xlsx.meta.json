@@ -1,0 +1,17 @@
+{
+  "sourceId": "uscis.i485_by_office",
+  "period": "FY2026-Q2",
+  "file": "i485_performance_data_fy2026_q2_v1.xlsx",
+  "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+  "via": "mirror.visualizer",
+  "status": 200,
+  "sha256": "3ef5caf4879837c158114ec8e08e5fd78b396b02aa2dde5eb8393cf3c5db006b",
+  "bytes": 42700,
+  "retrievedAt": "2026-10-20T23:35:05Z",
+  "headers": {
+    "content-type": "application/octet-stream",
+    "content-length": "42700",
+    "etag": "W/\"3f417eb57be13e6c4975d2c61d4d591c6246a4011d110dbe688768401ef5120e\"",
+    "date": "Tue, 20 Oct 2026 23:35:46 GMT"
+  }
+}

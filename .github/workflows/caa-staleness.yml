@@ -1,6 +1,10 @@
-# caa-staleness — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.5).
-# Ownership: handed to WP5 by the commit "handoff: workflow skeletons → WP5 (refresh, probe,
-# staleness), WP11 (ci), WP10 (ci web block)".
+# caa-staleness — WP5 (07-implementation-plan.md WP5; 03-data-pipeline.md §6.5). Handed over from the
+# WP0 skeleton by the commit "handoff: workflow skeletons → WP5 (refresh, probe, staleness), WP11 (ci),
+# WP10 (ci web block)".
+#
+# Thresholds mirror the app guards (02 §4): the pipeline heartbeat commits at least every 7 days, so a
+# manifest.lastCheckedAt older than 8 days means the refresh job is not running; a latest official
+# month that ended more than 75 days ago is guard T20a (USCIS late, or the source blocked).
 #
 # Weekly (main only) plus dispatch. Reads cuban-immigration-tracker/data/manifest.json on main;
 # a green no-op while the manifest does not exist there (`present` guard). Stale when
