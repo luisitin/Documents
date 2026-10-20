@@ -1,6 +1,6 @@
 # 13 — Live data endpoints: exact URLs, auth, response shapes, cadence, and the CI probe plan
 
-**Research date:** 2026-10-20. **Author:** research agent (endpoint-catalog topic).
+**Research date:** 2026-10-20. **Author:** research agent (endpoint-catalog topic). **Edited 2026-10-20** after an adversarial fact-check pass (see "Verification notes" at the end).
 **Companion files:** `04-uscis-data-sources.md` (USCIS products, read from the files themselves), `05-other-government-data.md` (OHSS, CBP, Federal Register, CourtListener, Census in depth). This file does not repeat their analysis; it pins down, for every candidate *live* endpoint, the things an ingestion job needs: exact URL pattern, auth, response fields, cadence, rate limits, and a probe to run from GitHub Actions.
 
 **Tag legend (every factual claim carries one):**
@@ -10,6 +10,7 @@
 | **[S]** | Stated in a search result, a GitHub file, or a prior agent's saved copy of a GitHub file that I read today; the URL is cited inline and listed under Sources. |
 | **[T]** | From training knowledge; not confirmed today. |
 | **[I]** | Inferred by me from [S]/[T] facts; flagged so the probe can test it. |
+| **[S-fc]** | Reported by the 2026-10-20 adversarial fact-check pass with a cited URL, but not independently re-confirmed by the editor (search budget exhausted); the probe should treat it as an expectation, not a fact. |
 
 **Environment caveat.** This sandbox's egress proxy refuses `CONNECT` to every government and news host (`uscis.gov`, `egov.uscis.gov`, `developer.uscis.gov`, `api-int.uscis.gov`, `ohss.dhs.gov`, `cbp.gov`, `federalregister.gov`, `courtlistener.com`, `api.census.gov`). Only `github.com`, `raw.githubusercontent.com`, `registry.npmjs.org` and `pypi.org` are reachable. **No endpoint below was called from here.** Everything about request/response behaviour is read from (a) open-source code that calls these endpoints, fetched today from GitHub, (b) search-result summaries of official pages, and (c) files earlier agents saved into this session's scratchpad. The probe plan in §12 exists precisely so that the first GitHub Actions run produces the real samples.
 
@@ -21,12 +22,12 @@
 |---|---|---|---|---|---|---|---|
 | 1 | USCIS Processing Times JSON | `https://egov.uscis.gov/processing-times/api/…` (legacy REST) and `POST https://egov.uscis.gov/processing-times` (Next.js server actions) | none, but browser headers + Cloudflare cookies | JSON / React Flight stream | silent, often daily; `publicationDate` in payload | **Probably not** — Cloudflare blocks cloud IPs incl. GitHub's [S]; fall back to community SQLite releases | 80th-percentile months and case-inquiry date per form/subtype/office |
 | 2 | USCIS Case Status Online (web) | `https://egov.uscis.gov/casestatus/landing.do`; SPA backend `egov.uscis.gov/csol-api/…` | none; Cloudflare JS challenge | HTML / JSON | real time | No (challenge) | not used; see Torch |
-| 2b | **Torch Case Status API** | sandbox `https://api-int.uscis.gov/case-status/{receipt}`; prod `https://api.uscis.gov/case-status/{receipt}` | OAuth2 client-credentials (`/oauth/accesstoken`) | JSON | real time | **Yes** (sandbox, weekdays 7am–8pm ET) | per-case milestones for users who opt in |
+| 2b | **Torch Case Status API** | sandbox `https://api-int.uscis.gov/case-status/{receipt}`; prod `https://api.uscis.gov/case-status/{receipt}` | OAuth2 client-credentials (`/oauth/accesstoken`) | JSON | real time | **Yes** (sandbox; the weekday 7am–8pm ET window is community-observed, not official) | per-case milestones for users who opt in |
 | 3 | USCIS Immigration & Citizenship Data portal | `https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data` → files under `https://www.uscis.gov/sites/default/files/document/data/` | none | HTML index → XLSX/CSV | monthly CSV ~4–6 weeks after month end; quarterly XLSX ~10 weeks after quarter end | Yes, with a browser User-Agent (Drupal anti-bot 403s default agents) [S] | national CAA volumes (monthly), CAA median (quarterly), per-office humanitarian pending (quarterly) |
 | 4 | DHS OHSS monthly tables & Yearbook | `https://ohss.dhs.gov/topics/immigration/immigration-enforcement/monthly-tables`; `https://ohss.dhs.gov/topics/immigration/yearbook/2024` | none | HTML → XLSX | monthly (third Thursday) [S]; yearbook annual | Yes (expected) | CHNV parolee counts by month/nationality; Cuba-born LPRs by state |
 | 5 | CBP CHNV statistics | no standalone page; monthly press releases `https://www.cbp.gov/newsroom/national-media-release/cbp-releases-<month>-<year>-monthly-update` | none | HTML | series ended Jan 2025 | Yes (expected) | cohort size: 110,240 Cubans paroled through Dec 2024 [S] |
 | 6 | Federal Register API | `https://www.federalregister.gov/api/v1/documents.json` | none | JSON | continuous (daily issue ~6am ET) | Yes | alerts on DHS/USCIS notices mentioning Cuba/parole |
-| 7 | CourtListener REST v4 | `https://www.courtlistener.com/api/rest/v4/` | optional token; `Authorization: Token …` | JSON | continuous | Yes; anon 100/day [S-code] | docket entries and alerts for the freeze litigation |
+| 7 | CourtListener REST v4 | `https://www.courtlistener.com/api/rest/v4/` | **token required** for `/dockets/`, `/docket-entries/`, `/opinions/` etc. (v4.3 enforces auth; anonymous → 401) [S]; `Authorization: Token …`; only `/search/`, `/courts/`, `/audio/` answer anonymously [S] | JSON | continuous | Yes, with `COURTLISTENER_TOKEN` (5/min, 50/hr, 125/day default) [S] | docket entries and alerts for the parole / adjustment-processing litigation |
 | 8 | Census ACS API | `https://api.census.gov/data/<vintage>/acs/acs1` and `/acs5` | optional key (500 queries/IP/day without) [S] | JSON arrays | annual vintages | Yes | Cuba-born population by state (`B05006_143E`) |
 | 9 | USCIS newsroom RSS | `https://www.uscis.gov/news/rss-feed/<id>` (22984 alerts, 23269 news releases, 59144/60288 all news, 93166 fact sheets, 97790 stakeholder messages) [S] | none; browser UA | RSS 2.0 | event-driven | Yes with browser UA [S] | alerts feature |
 | 10 | (bonus) USCIS FOIA metrics JSON | `https://first.uscis.gov/api/public/foia-metrics` | none; `Referer: https://first.uscis.gov/` | JSON | daily | Unknown (same Cloudflare family) | not needed |
@@ -124,7 +125,7 @@ Third-party claim to verify, not trust: an Apify actor listing says USCIS "publi
 | Token endpoint (sandbox) | `POST https://api-int.uscis.gov/oauth/accesstoken`, `grant_type=client_credentials`, `client_id`, `client_secret`; scope `read`; response `{ access_token, expires_in }` (seconds; 1,800 s per doc 04) | [S] `torchClient.ts`, `theoriginalsam/I-140-Insights`, `zlovtnik/uscisApex`, `ppritish51/Immigration-Command-Center` |
 | Case endpoint (sandbox) | `GET https://api-int.uscis.gov/case-status/{receiptNumber}` with `Authorization: Bearer <token>`, `Accept: application/json` | [S] same repos + `api-evangelist` README |
 | Production hosts | `https://api.uscis.gov/oauth/accesstoken`, `https://api.uscis.gov/case-status/{receiptNumber}` ("the same paths under it answer 401 to an unauthenticated probe (verified live)" per adamjali; a 2024 demo-pass letter posted by Inmigra also gives `https://api.uscis.gov/case-status` with production keys available 2024-10-01) | [S] |
-| Sandbox limits | 5 TPS (one request per 200 ms), 1,000 requests/day; staging receipt numbers only (e.g. `EAC9999103402`); **open weekdays 7 AM–8 PM ET, 503 outside** | [S] USCIS sandbox page via search; `torchClient.ts` |
+| Sandbox limits | 5 TPS (one request per 200 ms), 1,000 requests/day; staging receipt numbers only (e.g. `EAC9999103402`) — official, but the sandbox page has not been updated since ~early 2025 (~600 days), so the limits may have drifted silently. The **weekday 7 AM–8 PM ET window with 503 outside** appears only in community code (`torchClient.ts`), not on any USCIS page: treat it as observed behaviour and have the probe log 503s with timestamps rather than assume the schedule | [S] USCIS sandbox page via search (TPS, daily quota); [S-code]/[T] `torchClient.ts` (operating window) |
 | Production limits | USCIS says quota "will be shared when production access is granted". `torchClient.ts`, quoting the OpenAPI spec: **10 TPS, 400,000/day, "resets everyday at -04:00 UTC (Midnight EST)"**; `aayushga/uscis-case-cohort-analyzer` (doc 04) claims 10 TPS / 150,000/day. Treat as unconfirmed until USCIS sends the production letter. | [S] conflicting |
 | Production process | five steps: sign up → create keys → use sandbox → request production by e-mail → pass a demo and receive keys. Demos first-come-first-served on **Wednesdays and Thursdays, 1:00–2:00 PM EST**, Case Status demo is **30 minutes**; prerequisite ≥5 consecutive calendar days of sandbox traffic including 200 and 4xx responses (doc 04). The Get Started page once showed production as "Currently Unavailable" (page ~600 days old, doc 04). No 2026 change found. | [S] |
 | Status note | developer.uscis.gov home page carries a sandbox monitoring item about **302 errors for the Case Status API (Sandbox)** — the probe should treat a 302 as "sandbox incident", not as a bug | [S] search summary |
@@ -184,7 +185,7 @@ Naming rules the probe must tolerate: the monthly stem is `appropriation_require
 
 ### 3.4 Cross-check numbers the probe should assert against (from doc 04, VERIFIED-FILE there)
 
-FY2026 Q3 all-forms `I-485 (Cuban)` row: received 6,279 / approved 139 / denied 447 / completions 586 / pending 342,360 / median 16.3 months; Aug 2026 monthly Cuban row: 1,213 / 386 / 434 / pending 355,520 / pending >6 mo 345,741 / avg 20.6 months. Cuban press confirmation of the Q3 figures: CiberCuba 2026-10-20 and americateve.com ("solo 139 residencias … rechazó otras 447") [S]. These are the regression fixtures for the parsers.
+FY2026 Q3 all-forms `I-485 (Cuban)` row: received 6,279 / approved 139 / denied 447 / completions 586 / pending 342,360 / median 16.3 months; Aug 2026 monthly Cuban row: 1,213 / 386 / 434 / pending 355,520 / pending >6 mo 345,741 / avg 20.6 months. Cuban press confirmation of the Q3 figures: CiberCuba 2026-10-20 and americateve.com ("solo 139 residencias … rechazó otras 447") [S]. These are the regression fixtures for the parsers. A second quarter for the parser to test, reported by Cuban press on 2026-10-20 and relayed by the fact-check pass [S-fc]: FY2026 Q2 (Jan–Mar 2026) `I-485 (Cuban)` approved 50 / denied 45 (approval rate 52.6%, vs 23.7% in Q3); monthly approvals June 2026 89 → July 2026 308. The Q2 workbook should be `quarterly_all_forms_fy2026_q2_v1.xlsx` [I, by analogy]. Caveat: the Q3 received count (6,279) and the exact 16.3-month median, and the entire Aug 2026 monthly row, rest on doc 04's file read only — press coverage confirms 139 / 447 / 586 / 342,360 and "wait over 16 months" but repeats none of the rest.
 
 ---
 
@@ -220,8 +221,8 @@ No CSV/JSON API exists; everything is xlsx behind HTML pages [S, doc 05]. The vi
 
 * **There is no standalone cbp.gov CHNV statistics page** (none surfaced in any of today's searches, including one restricted to `cbp.gov`/`dhs.gov`; doc 05 reached the same conclusion) [S, I]. CHNV figures were published inside CBP's monthly operational-update press releases through December 2024 and in OHSS's monthly tables (§4.1).
 * Press-release URL pattern: `https://www.cbp.gov/newsroom/national-media-release/cbp-releases-<month>-<year>-monthly-update` (seen: `…-august-2024-…`, `…-september-2024-…`, `…-october-2024-…`, `…-november-2024-…`, `…-december-2024-…`, `…-january-2025-…`) [S].
-* Last CHNV numbers in that series: **through end of November 2024, 531,670** CHNV nationals "arrived lawfully and were granted parole"; **through end of December 2024, about 531,690**, of which **110,240 Cubans, 211,040 Haitians, 93,070 Nicaraguans, 117,330 Venezuelans** [S, CBP Dec 2024 update]. The January 2025 update states "CBP One and CHNV paroles have ended" and that CBP "terminated all categorical parole programs and returned to a case-by-case review" [S].
-* Policy anchors for the alerts timeline: Federal Register "Termination of Parole Processes for Cubans, Haitians, Nicaraguans, and Venezuelans", document **2025-05128**, published 2025-03-25 (`https://www.federalregister.gov/documents/2025/03/25/2025-05128/…`; public-inspection PDF `https://public-inspection.federalregister.gov/2025-05128.pdf`) [S]; DHS statement on the SCOTUS stay 2025-05-30 and termination notices 2025-06-12 (`https://www.dhs.gov/news/2025/06/12/dhs-issues-notices-termination-chnv-parole-program-encourages-parolees-self-deport`) [S].
+* Last CHNV numbers in that series: **through end of November 2024, 531,670** CHNV nationals "arrived lawfully and were granted parole"; **through end of December 2024, about 531,690**, of which **110,240 Cubans, 211,040 Haitians, 93,070 Nicaraguans, 117,330 Venezuelans** [S, CBP Dec 2024 update]. The November 2024 release gives slightly different per-nationality counts (93,080 Nicaraguans, 117,320 Venezuelans; total 531,670), and the four December figures sum to 531,680, not 531,690 — CBP rounds each figure to the nearest 10 [S-fc]. The probe must therefore assert the four nationality numbers only against the December 2024 page, tolerate ±10 per figure, and check the January 2025 page only for the "paroles have ended" language. The January 2025 update states "CBP One and CHNV paroles have ended" and that CBP "terminated all categorical parole programs and returned to a case-by-case review" [S].
+* Policy anchors for the alerts timeline: Federal Register "Termination of Parole Processes for Cubans, Haitians, Nicaraguans, and Venezuelans", document **2025-05128**, published 2025-03-25 (`https://www.federalregister.gov/documents/2025/03/25/2025-05128/…`; public-inspection PDF `https://public-inspection.federalregister.gov/2025-05128.pdf`) [S]; DHS statement on the SCOTUS stay 2025-05-30 and termination notices 2025-06-12 (`https://www.dhs.gov/news/2025/06/12/dhs-issues-notices-termination-chnv-parole-program-encourages-parolees-self-deport`) [S]; and the Federal Register notice "Termination of Family Reunification Parole Processes for Colombians, Cubans, Ecuadorians, Guatemalans, Haitians, Hondurans, and Salvadorans", published 2025-12-15, which ends the Cuban Family Reunification Parole (CFRP) program and is the notice the January 2026 *Doe v. Noem* orders enjoin [S, justiceactioncenter.org FRN decoder; immpolicytracking.org]. Its document number is reported as **2025-22744** (`https://www.federalregister.gov/documents/2025/12/15/2025-22744/…`) [S-fc, number not independently confirmed today].
 * Other CBP stats pages worth one HEAD each: `https://www.cbp.gov/newsroom/stats/custody-and-transfer-statistics-fy2025` (monthly SWB dispositions incl. a "parole" row) [S, doc 05]; `https://www.cbp.gov/newsroom/stats/southwest-land-border-encounters` and `…/nationwide-encounters` (dashboard with CSV; Cuba selectable) [T].
 
 ---
@@ -252,8 +253,11 @@ https://www.federalregister.gov/api/v1/documents.json
 
 # Regression fixture: must return 2025-05128 (CHNV termination, 2025-03-25)
 …documents.json?conditions[term]="Termination of Parole Processes for Cubans, Haitians, Nicaraguans, and Venezuelans"&per_page=5
+
+# Regression fixture 2: must return the 2025-12-15 FRP-termination notice (expected document_number 2025-22744 [S-fc])
+…documents.json?conditions[term]="Termination of Family Reunification Parole Processes"&conditions[publication_date][gte]=2025-12-01&per_page=5
 ```
-Known document numbers to assert on: `2025-05128` (CHNV termination notice) [S]; `2025-20622` (H.R. 1 immigration-fee inflation adjustment, 2025-11-21) [S, doc 04]. No published rate limit; the site asks for considerate use [T]. Daily issue is posted early morning ET; a `.rss` extension on the same search likely yields a feed [T].
+Known document numbers to assert on: `2025-05128` (CHNV termination notice) [S]; `2025-22744` (Family Reunification Parole termination, 2025-12-15 — assert via the title query above and let the probe confirm the number) [S-fc]; `2025-20622` (H.R. 1 immigration-fee inflation adjustment, 2025-11-21) [S, doc 04 — not re-checked today]. No published rate limit; the site asks for considerate use [T]. Daily issue is posted early morning ET; a `.rss` extension on the same search likely yields a feed [T].
 
 ---
 
@@ -276,24 +280,28 @@ Known document numbers to assert on: `2025-05128` (CHNV termination notice) [S];
 ```
 Throttle classes `CloudFrontAnonRateThrottle` (anon, keyed on the CloudFront client IP) and `ExceptionalUserRateThrottle` (per-user overrides from MANUAL and MEMBERSHIP `APIThrottle` rows; a MANUAL rate replaces the MEMBERSHIP set) [S, `cl/api/utils.py`]. Free Law Project announced on 2026-05-07 that API access is now "included in memberships"; before that every account got 5,000 requests/hour by default [S, free.law]. Third-party guides confirm the new plain-account default of 5/min, 50/hr, 125/day [S, vaquill.ai].
 
+**The `anon` rate is moot for this app.** CourtListener's REST change log records that release **v4.3 enforced authentication on the V4 endpoints: anonymous requests now receive `401 Unauthorized`**, with `/dockets/`, `/opinion-clusters/` and `/opinions/` among the endpoints listed [S, courtlistener.com/help/api/rest/changes/]. A third-party test on 2026-10-06 saw anonymous `200` only from `/search/`, `/courts/` and `/audio/`, and `401` from `/dockets/`, `/clusters/`, `/opinions/` and citation lookup [S, vaquill.ai]. So `cl.docket` and `cl.entries` cannot run without `COURTLISTENER_TOKEN`; only `cl.search` can. Budget against the authenticated 5/min, 50/hr, 125/day defaults (in force since 2026-05-07) and read the **live** per-scope limits from the API Usage endpoint (FLP wiki "API Usage" page; its own throttle is 10/min, 120/hr, matching the `api_usage` scope above; anonymous calls to it also 401) [S, wiki.free.law] instead of hard-coding numbers — the fact-check pass reports that FLP ran temporary limit doublings (30 days from 2026-07-07; two weeks from 2026-09-17) [S-fc, not found in today's results].
+
 Header: `Authorization: Token <token>` — omitting the word `Token` makes requests count as anonymous (FLP FAQ: "if that process doesn't show much usage, you probably aren't authenticating properly and your usage is being recorded as anonymous") [S]. Versioning is URL-path (`v3`, `v4`); default page size 20; ordering param `order_by` [S, settings].
 
-### 7.2 Endpoints for the freeze cases
+### 7.2 Endpoints for the parole / adjustment-processing cases
 
 | Purpose | Request | Tag |
 |---|---|---|
-| Find the D. Mass. docket | `GET https://www.courtlistener.com/api/rest/v4/dockets/?court=mad&docket_number=1:25-cv-10495` | [S, doc 05 command] |
+| Find the D. Mass. docket | `GET https://www.courtlistener.com/api/rest/v4/dockets/?court=mad&docket_number=1:25-cv-10495` (token required). The docket already exists on CourtListener as **id 69695790** (`https://www.courtlistener.com/docket/69695790/doe-v-noem/`) and its live caption is now **"Doe v. Mullin"** (defendant substituted) — pin the id in config, assert on `docket_number`/`pacer_case_id`, and never match `Noem` in `case_name` | [S, doc 05 command]; id and caption [S-fc] |
 | Same, by PACER id | `GET …/v4/dockets/?court=mad&pacer_case_id=281389` — the RECAP storage path `https://storage.courtlistener.com/recap/gov.uscourts.mad.281389/gov.uscourts.mad.281389.128.0.pdf` (ECF 128, the June 16 2025 partial-SJ motion) shows the PACER case id is **281389** | [S] |
-| Docket entries | `GET …/v4/docket-entries/?docket=<cl_docket_id>&order_by=-date_filed` | [T, standard v4 resource] |
+| Docket entries | `GET …/v4/docket-entries/?docket=69695790&order_by=-date_filed` (token required [S]) | [T, standard v4 resource] |
 | RECAP documents | `GET …/v4/recap-documents/?docket_entry__docket=<id>` | [T] |
 | Search | `GET …/v4/search/?q="Cuban Adjustment Act"&type=r&order_by=dateFiled desc` ; `…/search/?q=CHNV parole&type=r` | [S, doc 05] |
 | Subscribe to docket alerts (auth required) | `POST https://www.courtlistener.com/api/rest/v4/docket-alerts/` with form body `docket=<cl_docket_id>` (`actuallyrizzn/courtlistener-sdk` docs show `--data 'docket=4214664'`); `freelawproject/bigcases2` `subscribe_to_docket_alert(cl_id)` POSTs to the same path; `GET …/docket-alerts/` lists subscriptions | [S] |
 | Webhooks | docket-alert webhooks fire only for dockets the account subscribed to via `/docket-alerts/` (`seanthegeek/case-calendar`) | [S] |
 | Other dockets to resolve | D.R.I. `1:26-cv-00132` (court `rid`), N.D. Cal. `3:26-cv-04850` (court `cand`) — the June 6 2026 and Aug 24 2026 orders vacating the Dec 2025 country-based pause | [S, doc 05 — numbers carried from that file, not re-verified today] |
 
-Known ECF entries in *Svitlana Doe v. Noem*, 1:25-cv-10495 (D. Mass.), for fixture assertions [S, clearinghouse.net + leagle]: ECF 1 complaint 2025-02-28; ECF 22 first amended class complaint 2025-03-17; ECF 97 memorandum & order granting stay 2025-04-14 (778 F. Supp. 3d 311); ECF 128 plaintiffs' partial-SJ motion 2025-06-16; ECF 243 TRO 2026-01-10 (2026 WL 77330); ECF 258 memorandum & order 2026-01-25 (2026 WL 184883).
+Known entries in *Svitlana Doe v. Noem* (now captioned *Doe v. Mullin*), 1:25-cv-10495 (D. Mass.), for fixture assertions: ECF 1 complaint 2025-02-28; ECF 22 first amended class complaint 2025-03-17; ECF 97 memorandum & order granting stay 2025-04-14 (778 F. Supp. 3d 311); ECF 128 plaintiffs' partial-SJ motion 2025-06-16 [S, clearinghouse.net + leagle]; **2025-05-28** order granting class-wide preliminary relief and directing the government to resume processing parolees' applications for other benefits (re-parole, asylum, TPS, adjustment) — the order most directly relevant to CAA adjustments; ECF number unknown [S-fc, consistent with T].
 
-Budget note for CI: at anon 100/day, one probe run (≈6 requests) is fine; a daily poller with a token stays under 125/day only if it polls ≤4 dockets × ~1 request each; prefer docket-alert webhooks or the free `.rss` docket feeds (`https://www.courtlistener.com/docket/<id>/feed/`) [T].
+**January 2026 orders — label these "FRP termination", not "freeze".** On 2026-01-10 Judge Talwani issued a 14-day TRO pausing DHS's termination of Family Reunification Parole grants and related work authorization under the 2025-12-15 FRN, running to 2026-01-24; on 2026-01-24 she issued a stay / preliminary injunction for a newly certified FRP-termination subclass [S, justiceactioncenter.org case page and news; clearinghouse.net/case/46186; visainamerica.com]. One tracker dates the memorandum that modified the class definition to 2026-03-11, so the certification date is unsettled [S, uscis-pause-tracker.com]. These orders do **not** address the CHNV termination or the USCIS adjustment-processing pause, so an alerts feed that filed them under "freeze" would misstate what relief Cuban parolees obtained. The ECF numbers (243, 258) and Westlaw cites (2026 WL 77330, 2026 WL 184883) previously listed here surfaced in no result today, and the "2026-01-25" date was wrong: treat them as **unverified** and have the probe read the real entry numbers off the docket before anything asserts them.
+
+Budget note for CI: there is no anonymous path to dockets (401 [S]), so `COURTLISTENER_TOKEN` is a **required** secret for `cl.docket`/`cl.entries`. One probe run (≈5 authenticated requests) fits easily inside 5/min, 50/hr, 125/day; a daily poller stays under 125/day only if it polls ≤4 dockets × ~1 request each plus one `api-usage` call to read the live limits. Prefer docket-alert webhooks or the docket `.rss` feeds (`https://www.courtlistener.com/docket/69695790/feed/`) [T], which should not count against the REST quota [T].
 
 ---
 
@@ -350,14 +358,17 @@ Legacy index: `https://www.uscis.gov/rss-landing` (2019 archive lists News Relea
 | 2025-02-23 | `jzebedee` v0.5 adds FOIA metrics (`first.uscis.gov/api/public/foia-metrics`) | [S] |
 | 2025-03-25 | FR 2025-05128 terminates CHNV parole processes | [S] |
 | 2025-04-14 | D. Mass. stay in *Doe v. Noem* (ECF 97) | [S] |
+| 2025-05-28 | D. Mass. class-wide preliminary relief in *Doe v. Noem*: government ordered to resume processing parolees' applications for other benefits (re-parole, asylum, TPS, adjustment) | [S-fc, consistent with T] |
 | 2025-05-30 | SCOTUS stays the district court; DHS statement | [S] |
 | 2025-06-12 | DHS issues CHNV termination notices | [S] |
-| 2026-01-10 / 2026-01-25 | TRO (ECF 243) and memorandum & order (ECF 258) in *Doe v. Noem* | [S] |
+| 2025-12-15 | FR notice terminating Family Reunification Parole processes (incl. CFRP for Cubans); reported document number 2025-22744 | [S date/title; S-fc number] |
+| 2026-01-10 / 2026-01-24 | *Doe v. Noem*: 14-day TRO pausing FRP terminations (to 01-24), then stay / preliminary injunction for the FRP-termination subclass — not about CHNV or the adjustment pause; ECF numbers unverified | [S] |
 | 2026-05-07 | CourtListener: API included in memberships; default free throttle becomes 5/min, 50/hr, 125/day | [S] |
 | 2026-05-14 | OHSS posts the monthly-tables data dictionary (report year 2025) | [S] |
 | 2026-06-04 | OHSS publishes FY2024 Yearbook LPR and naturalizations workbooks | [S, file names] |
 | 2026-09-08/09 | USCIS posts FY2026 Q3 quarterly files (I-765 workbook dated Sep 8; Manifest Law analysis Sep 9) | [S] |
 | 2026-09-23 / 09-28 | visualizer mirror downloads Q3 workbooks and the August 2026 monthly CSV | [S] |
+| 2026-10-06 | Third-party test: CourtListener `/dockets/`, `/clusters/`, `/opinions/` answer anonymous requests with 401 (v4.3 auth enforcement); `/search/`, `/courts/`, `/audio/` still open | [S] |
 | 2026-10-15 | Latest `jzebedee` processing-times release observed (doc 04) | [S] |
 | 2026-10-20 | CiberCuba/americateve report the Q3 CAA figures (139 approved / 447 denied); no September monthly file reported yet | [S] |
 
@@ -365,7 +376,7 @@ Legacy index: `https://www.uscis.gov/rss-landing` (2019 archive lists News Relea
 
 ## 11. Things that are *not* live endpoints (so nobody wastes a sprint)
 
-* The Torch **production** host needs USCIS approval; the sandbox returns only canned staging receipts, so no real CAA case can be tracked until a production letter arrives [S].
+* The Torch **production** host needs USCIS approval; the sandbox returns only canned test data for staging receipts, so **no real receipt — including any CAA applicant's — can be validated end-to-end until production access is granted** [S]. The sandbox page is ~600 days old and its weekday operating window is unofficial (§2.2).
 * `egov.uscis.gov` (processing times, case status, historic-pt) is Cloudflare-gated against cloud IPs; from GitHub Actions expect `403`, `Just a moment...`, or `cf-mitigated: challenge` [S]. The probe records which of the three it gets.
 * No official API exists for the data portal, OHSS, or CBP; all are HTML indexes pointing at XLSX/CSV [S].
 * The Apify `processingTimes.json` URL is unsupported by any tracker code [S/I].
@@ -424,7 +435,7 @@ data/samples/           # committed output (gitattributes: binary for xlsx/db; k
 * Timeout 30 s; **no automatic retries** in probe mode (we want the first response classified, and we must not hammer Cloudflare); 1 request at a time per host; ≥1 s gap between calls to the same host.
 * Cloudflare classifier: status 403/503 **and** (`cf-mitigated` header present, or body contains `Just a moment...`, `Attention Required! | Cloudflare`, `Sorry, you have been blocked`) → `blocked_cloudflare` [S, patterns from jzebedee]. Status 403 without those markers on `www.uscis.gov` → `blocked_drupal_antibot` (retry once with a different UA).
 * Cookie jar per host (undici `CookieAgent` or manual `set-cookie` capture) so step 0 of §1.1 can seed the API calls.
-* Secrets read from env: `USCIS_CLIENT_ID`, `USCIS_CLIENT_SECRET`, `COURTLISTENER_TOKEN`, `CENSUS_API_KEY`, `GITHUB_TOKEN`. Missing secret → `skipped_no_secret` for that probe, never a crash.
+* Secrets read from env: `USCIS_CLIENT_ID`, `USCIS_CLIENT_SECRET`, `COURTLISTENER_TOKEN` (**required** for `cl.docket`, `cl.entries`, `cl.alerts.list`, `cl.usage`; only `cl.search` works without it [S]), `CENSUS_API_KEY`, `GITHUB_TOKEN`. Missing secret → `skipped_no_secret` for that probe, never a crash.
 
 ### 12.4 Probe definitions
 
@@ -440,7 +451,7 @@ data/samples/           # committed output (gitattributes: binary for xlsx/db; k
 | `pt.apify_claim` | `HEAD https://egov.uscis.gov/processing-times/api/processingTimes.json` | browser UA | record status (expect 404) | — | meta only |
 | `pt.historic` | `GET https://egov.uscis.gov/processing-times/historic-pt` | browser UA | 200 HTML containing "Cuban Adjustment Act" | — | `uscis-pt/historic-pt.html` |
 | `pt.mirror.jzebedee` | `GET https://api.github.com/repos/jzebedee/uscis/releases/latest` (Bearer `GITHUB_TOKEN`) → download first `.db` asset → `SELECT * FROM form_types WHERE form_name IN ('I-485','I-765')`; `SELECT * FROM processing_time WHERE form_name='I-485' AND office_code IN (…)` | — | 200; tables exist | `JzebedeeFormTypes`, `JzebedeeProcessingTime` | `community/jzebedee/<tag>.db` + `i485-subtypes.json` + `i485-fl-offices.json` |
-| `torch.token` | `POST https://api-int.uscis.gov/oauth/accesstoken` form `grant_type=client_credentials&client_id&client_secret` | `Content-Type: application/x-www-form-urlencoded` | 200 `{access_token, expires_in}`; 503 outside weekdays 7am–8pm ET → `sandbox_closed` | `TorchToken` | `uscis-torch/token.redacted.json` (token replaced by sha256) |
+| `torch.token` | `POST https://api-int.uscis.gov/oauth/accesstoken` form `grant_type=client_credentials&client_id&client_secret` | `Content-Type: application/x-www-form-urlencoded` | 200 `{access_token, expires_in}`; 503 → `sandbox_closed` with the UTC timestamp logged (the weekday 7am–8pm ET window is community-observed, not official — accumulate timestamps across runs to confirm it) | `TorchToken` | `uscis-torch/token.redacted.json` (token replaced by sha256) |
 | `torch.case` | `GET https://api-int.uscis.gov/case-status/EAC9999103402` | `Authorization: Bearer`, `Accept: application/json` | 200; record which history key appears (`hist_case_status` vs `historicalCaseStatuses`); 302 → `sandbox_incident` | `TorchCaseStatus` | `uscis-torch/case-EAC9999103402.json` |
 | `torch.case.422` | `GET …/case-status/ZZZ0000000000` | same | 422 or 404 (documents the error envelope) | `TorchError` | `uscis-torch/error-422.json` |
 | `torch.prod.unauth` | `GET https://api.uscis.gov/case-status/EAC9999103402` (no token) | — | 401 proves the host exists [S] | — | meta only |
@@ -456,15 +467,16 @@ data/samples/           # committed output (gitattributes: binary for xlsx/db; k
 | `ohss.monthly.file` | newest href from above (fallback `…/2025-01/2025_0116_ohss_immigration-enforcement-and-legal-processes-tables-november-2024.xlsx`) | browser UA | 200 xlsx; list sheets; find sheets whose name/title contains `CHNV` | `OhssMonthlyWorkbook` | `ohss/<filename>` + `-sheets.json` |
 | `ohss.dictionary` | `GET https://ohss.dhs.gov/about-our-data/governance/data-dictionaries/immigration-enforcement-and-legal-processes-monthly` → first `.xlsx` href | browser UA | 200 | raw | `ohss/data-dictionary.xlsx` |
 | `ohss.yearbook` | `GET https://ohss.dhs.gov/topics/immigration/yearbook/2024` and `…/2024/LPRsupptable1` → xlsx hrefs | browser UA | 200; expect a file named like `2026_0604_ohss_yearbook_lawful_permanent_residents_fy2024.xlsx` | raw | `ohss/yearbook-2024.html`, `ohss/<lpr-workbook>` |
-| `cbp.dec24` / `cbp.jan25` | `GET https://www.cbp.gov/newsroom/national-media-release/cbp-releases-december-2024-monthly-update` and `…-january-2025-monthly-update` | browser UA | 200; regex `([\d,]+) Cubans, ([\d,]+) Haitians, ([\d,]+) Nicaraguans, and ([\d,]+) Venezuelans` → expect 110,240 / 211,040 / 93,070 / 117,330 | `CbpChnvParagraph` | `cbp/*.html`, `cbp/chnv-totals.json` |
+| `cbp.dec24` / `cbp.jan25` | `GET https://www.cbp.gov/newsroom/national-media-release/cbp-releases-december-2024-monthly-update` and `…-january-2025-monthly-update` | browser UA | 200; regex `([\d,]+) Cubans, ([\d,]+) Haitians, ([\d,]+) Nicaraguans, and ([\d,]+) Venezuelans` → on the **December 2024 page only** expect 110,240 / 211,040 / 93,070 / 117,330 with ±10 tolerance per figure (CBP rounds; Nov 2024 reported 93,080 / 117,320 [S-fc]); on the January 2025 page assert only that the body mentions CHNV paroles having ended | `CbpChnvParagraph` | `cbp/*.html`, `cbp/chnv-totals.json` |
 | `cbp.custody` | `GET https://www.cbp.gov/newsroom/stats/custody-and-transfer-statistics-fy2025` (+ `fy2026` HEAD) | browser UA | 200 | raw | `cbp/custody-fy2025.html` |
 | `fr.search` | `GET https://www.federalregister.gov/api/v1/documents.json?…` (§6 first query, `per_page=100`) | `Accept: application/json` | 200; `results[]` includes `document_number == "2025-05128"` when `publication_date gte 2025-03-01` | `FrSearch` | `federal-register/search-dhs-cuba-parole.json` |
 | `fr.doc` | `GET https://www.federalregister.gov/api/v1/documents/2025-05128.json` | same | 200; `title` contains "Termination of Parole Processes" | `FrDocument` | `federal-register/2025-05128.json` |
 | `fr.agencies` | `GET https://www.federalregister.gov/api/v1/agencies.json` | same | 200; confirm the six slugs | `FrAgencies` | `federal-register/agencies.json` |
-| `cl.docket` | `GET https://www.courtlistener.com/api/rest/v4/dockets/?court=mad&docket_number=1:25-cv-10495` | `Authorization: Token` if set | 200; `results[0].id` saved as `cl_docket_id`; `pacer_case_id == "281389"` | `ClDocketList` | `courtlistener/docket-mad-25-10495.json` |
-| `cl.entries` | `GET …/v4/docket-entries/?docket=<cl_docket_id>&order_by=-date_filed&page_size=20` | same | 200; entries include numbers 243 and 258 | `ClDocketEntries` | `courtlistener/entries-<id>.json` |
-| `cl.search` | `GET …/v4/search/?q=%22Cuban+Adjustment+Act%22&type=r&order_by=dateFiled+desc` | same | 200 | `ClSearch` | `courtlistener/search-caa.json` |
+| `cl.docket` | `GET https://www.courtlistener.com/api/rest/v4/dockets/?court=mad&docket_number=1:25-cv-10495` | `Authorization: Token` (**required**: no token → `skipped_no_secret`; 401 with a token set → `auth_error`) | 200; `results[0].id == 69695790` (pinned [S-fc]; mismatch → `schema_mismatch`, not a crash); `docket_number == "1:25-cv-10495"`; `pacer_case_id == "281389"`; record `case_name` (expected "Doe v. Mullin") but never assert on it | `ClDocketList` | `courtlistener/docket-mad-25-10495.json` |
+| `cl.entries` | `GET …/v4/docket-entries/?docket=69695790&order_by=-date_filed&page_size=50` | token (required) | 200; find entries with `date_filed` 2026-01-10 and 2026-01-24 whose `description` mentions a TRO / preliminary injunction and Family Reunification Parole, and record their real `entry_number`s (replacing the unverified 243/258); also look for a 2025-05-28 order | `ClDocketEntries` | `courtlistener/entries-69695790.json` |
+| `cl.search` | `GET …/v4/search/?q=%22Cuban+Adjustment+Act%22&type=r&order_by=dateFiled+desc` | none required (anonymous 200 reported 2026-10-06 [S]); send the token if set | 200 | `ClSearch` | `courtlistener/search-caa.json` |
 | `cl.alerts.list` | `GET …/v4/docket-alerts/` (only with token; **do not POST** in the probe) | token | 200 or 401 | raw | `courtlistener/docket-alerts.json` |
+| `cl.usage` | `GET …/v4/api-usage/` [I — path inferred from the FLP wiki "API Usage" page slug and the `api_usage` throttle scope; confirm on the wiki before coding] | token (required; anonymous → 401 [S]) | 200; record the live per-scope limits and today's counts so the poller budget is read, not hard-coded | raw | `courtlistener/api-usage.json` |
 | `census.group` | `GET https://api.census.gov/data/2024/acs/acs5/groups/B05006.json` | — | 200; find variable whose label ends with `Cuba` → expect `B05006_143E` | `CensusGroup` | `census/B05006-group-2024acs5.json` |
 | `census.state` | `GET https://api.census.gov/data/2024/acs/acs1?get=NAME,<cuba>E,<cuba>M&for=state:*[&key]` | — | 200 array-of-arrays; Florida value numeric | `CensusTable` | `census/cuba-by-state-2024acs1.json` |
 | `census.2025` | `HEAD https://api.census.gov/data/2025/acs/acs1` | — | record 200/404 (is the 2025 1-year out?) | — | meta |
@@ -524,7 +536,7 @@ export const FrDoc = z.object({ document_number: z.string(), title: z.string(), 
 export const FrSearch = z.object({ count: z.number(), total_pages: z.number().optional(),
   next_page_url: z.string().nullable().optional(), results: z.array(FrDoc) });
 
-export const ClDocket = z.object({ id: z.number(), docket_number: z.string(), case_name: z.string(),
+export const ClDocket = z.object({ id: z.number(), docket_number: z.string(), case_name: z.string(),   // case_name is display-only (caption changed Noem → Mullin); assert on id/docket_number/pacer_case_id
   court: z.string(), pacer_case_id: z.string().nullable().optional(), date_filed: z.string().nullable(),
   date_last_filing: z.string().nullable().optional(), absolute_url: z.string() });
 export const ClDocketList = z.object({ count: z.number().optional(), next: z.string().nullable(), results: z.array(ClDocket) });
@@ -545,7 +557,7 @@ Workbook/CSV probes validate structurally (magic bytes, sheet names, the presenc
 name: probe-live-endpoints
 on:
   workflow_dispatch:
-  schedule: [{ cron: "17 13 * * 1-5" }]   # weekdays 13:17 UTC = 09:17 ET, inside the Torch sandbox window (7am–8pm ET)
+  schedule: [{ cron: "17 13 * * 1-5" }]   # weekdays 13:17 UTC = 09:17 ET, inside the community-reported Torch sandbox window (7am–8pm ET, unofficial)
 permissions: { contents: write, pull-requests: write }
 concurrency: probe
 jobs:
@@ -575,7 +587,7 @@ jobs:
           body-path: data/samples/PROBE-REPORT.md
           add-paths: data/samples/**
 ```
-Notes: the Torch sandbox is closed outside weekdays 7 AM–8 PM ET (503) [S], hence the weekday-morning cron; `concurrency: probe` prevents overlapping runs from doubling request counts; the first run should be triggered manually with `workflow_dispatch`. Keep the daily request totals far below every limit (Torch sandbox 1,000/day; CourtListener 100/day anon or 125/day token; Census 500/day keyless): the full probe makes ≈60 requests.
+Notes: community clients report the Torch sandbox returning 503 outside weekdays 7 AM–8 PM ET [S-code, unofficial], hence the weekday-morning cron; `concurrency: probe` prevents overlapping runs from doubling request counts; the first run should be triggered manually with `workflow_dispatch`. Keep the daily request totals far below every limit (Torch sandbox 1,000/day [S]; CourtListener 5/min, 50/hr, 125/day with the required token [S] — there is no anonymous docket path; Census 500/day keyless): the full probe makes ≈60 requests.
 
 ### 12.7 Report format
 
@@ -603,7 +615,7 @@ Notes: the Torch sandbox is closed outside weekdays 7 AM–8 PM ET (503) [S], he
 | `portal.*` = ok (expected, per visualizer's Sept 2026 runs) | the monthly/quarterly pipeline runs in CI directly from uscis.gov with a browser UA; mirror only as a sha-checked fallback |
 | `torch.token` = ok | wire the sandbox into the app's "track my receipt" screen behind a feature flag; start the 5-day sandbox-traffic clock USCIS requires before a production request |
 | `torch.case` history key | fix the zod schema to the observed key and delete the union |
-| `cl.docket` = ok without token | daily docket polling is viable anonymously (≤100/day); add the token and `/docket-alerts/` for push |
+| `cl.docket` = ok with token (there is no anonymous path [S]) | daily docket polling stays within 125/day for ≤4 dockets; read live limits from `cl.usage`; subscribe via `/docket-alerts/` + webhooks for push so polling is the fallback, not the primary |
 | `census.group` resolves `B05006_143E` | pin the code per vintage in config, re-resolve on each new vintage |
 | any `rss.*` = ok | alerts feed = those ids; store channel titles from the sample |
 
@@ -618,9 +630,13 @@ Notes: the Torch sandbox is closed outside weekdays 7 AM–8 PM ET (503) [S], he
 5. Has the September 2026 monthly CSV been posted (and at the `_v1.0` name)?
 6. What is the I-765-by-category workbook's filename and sheet layout?
 7. What is the newest OHSS monthly-tables file (month and exact `/sites/default/files/<YYYY-MM>/…` path), and do its CHNV sheets still update now that the program is terminated?
-8. What is the CourtListener docket id for `1:25-cv-10495` and for the D.R.I./N.D. Cal. cases, and is the anon 100/day quota enough for a daily poll?
+8. Does `cl.docket` confirm the pinned id 69695790 and the "Doe v. Mullin" caption for `1:25-cv-10495`, what are the ids for the D.R.I./N.D. Cal. cases, and what live limits does `api-usage` report for the token (the anon quota is irrelevant: 401)?
 9. Is the ACS 2025 1-year vintage live, and is Cuba still `_143` in it?
 10. Which of the RSS ids are alive, and what channel titles do they carry?
+11. What are the real ECF entry numbers for the 2026-01-10 TRO and the 2026-01-24 stay/PI (FRP subclass) in 1:25-cv-10495, and is there an entry for the 2025-05-28 benefits-processing order? (The 243/258 numbers and the 2026 WL cites are unverified.)
+12. Does `fr.search` return `2025-22744` for the FRP-termination title query, and is `2025-20622` still the H.R. 1 fee notice?
+13. Over several runs, do `torch.token` 503s cluster outside weekdays 7 AM–8 PM ET, or has the sandbox window changed?
+14. Not re-checked today and still open: the exact direct file URLs for the FY2026 Q3 workbooks and the Aug 2026 CSV; the OHSS "third Thursday" cadence, the 2026-05-14 data dictionary and the `2026_0604` yearbook file names; Census `B05006_143E` in the 2024 vintages; the historic-pt CAA medians (FY2023 3.3 → FY2026 YTD 11.8); the D.R.I. `1:26-cv-00132` and N.D. Cal. `3:26-cv-04850` docket numbers (the 2026-08-24 N.D. Cal. order itself is confirmed by Spanish-language coverage [S-fc]); and the Torch production quota (400,000/day vs 150,000/day — still [S-conflicting]).
 
 ---
 
@@ -678,11 +694,13 @@ Notes: the Torch sandbox is closed outside weekdays 7 AM–8 PM ET (503) [S], he
 
 **Federal Register**
 - https://www.federalregister.gov/api/v1/documents.json ; https://www.federalregister.gov/developers/documentation/api/v1 ; https://www.federalregister.gov/api/v1/agencies.json
-- https://www.federalregister.gov/documents/2025/03/25/2025-05128/termination-of-parole-processes-for-cubans-haitians-nicaraguans-and-venezuelans ; https://public-inspection.federalregister.gov/2025-05128.pdf ; https://public-inspection.federalregister.gov/2023-09014.pdf
+- https://www.federalregister.gov/documents/2025/03/25/2025-05128/termination-of-parole-processes-for-cubans-haitians-nicaraguans-and-venezuelans ; https://public-inspection.federalregister.gov/2025-05128.pdf ; https://public-inspection.federalregister.gov/2023-09014.pdf ; https://www.federalregister.gov/documents/2025/12/15/2025-22744/… (FRP termination; number and slug via the fact-check pass, not opened here)
 - https://dev.to/ronin13/us-regulations-have-a-free-json-api-every-rule-notice-and-executive-order-without-scraping-4o34 ; https://www.vaquill.ai/blog/federal-register-api-python-search-rules-and-notices ; https://github.com/rOpenGov/federalregister/blob/master/README.Rmd ; https://ropengov.r-universe.dev/federalregister/doc/manual.html ; https://glama.ai/mcp/servers/@aml25/federal-register-mcp/blob/1cb84882e151c4b3799f22256c7d5bd18078c92f/src/federal-register-api.ts ; https://apify.com/retrainmap/federal-register-documents ; https://oanor.com/api/fedregister-api/llms.txt
 
 **CourtListener / litigation**
 - https://www.courtlistener.com/api/rest/v4/ ; https://wiki.free.law/c/courtlistener/help/api/rest/v4/overview ; https://wiki.free.law/c/courtlistener/help/api/faqs/my-api-key-appears-to-be-throttled-rate-limited-help ; https://wiki.free.law/c/courtlistener/help/api/rest/faqs ; https://free.law/2026/05/07/api-included-in-memberships/ ; https://www.vaquill.ai/blog/how-to-use-courtlistener-api-2026 ; https://www.vaquill.ai/blog/how-to-use-courtlistener-api ; https://agentman.ai/agentskills/connections/mcp-server/courtlistener ; https://policylayer.com/tools/io-github-vaquill-ai-courtlistener-mcp/get-court
+- https://www.courtlistener.com/help/api/rest/changes/ (v4.3: auth enforced on V4 endpoints, anonymous → 401) ; https://wiki.free.law/c/courtlistener/help/api/rest/v4/api-usage ; https://github.com/freelawproject/courtlistener-api-client ; https://www.courtlistener.com/docket/69695790/doe-v-noem/ (id and caption via the fact-check pass; not opened here)
+- https://justiceactioncenter.org/case/svitlana-doe-v-noem/ ; https://justiceactioncenter.org/news/frn-decoder-frptermination/ ; https://justiceactioncenter.org/news/court-orders-trump-administration-to-keep-families-together/ ; https://litigationtracker.justiceactioncenter.org/cases/svitlana-doe-v-noem-humanitarian-parole-district-court ; https://clearinghouse.net/case/46186/ ; https://uscis-pause-tracker.com/cases/786112b9-99ff-4b65-a3d7-b59cdd1edc38 ; https://visainamerica.com/doe-v-noem-frp-parole-termination-case/ ; https://immpolicytracking.org/policies/uscis-terminates-family-reunification-parole-processes-for-colombians-cubans-ecuadorians-guatemalans-haitians-hondurans-and-salvadorans/
 - https://storage.courtlistener.com/recap/gov.uscourts.mad.281389/gov.uscourts.mad.281389.128.0.pdf
 - https://clearinghouse.net/doc/159070 ; https://clearinghouse.net/doc/161357 ; https://clearinghouse.net/doc/161356 ; https://clearinghouse.net/doc/167129/ ; https://clearinghouse.net/doc/167527/ ; https://clearinghouse.net/doc/156449 ; https://clearinghouse.net/doc/161359 ; https://clearinghouse.net/doc/157481 ; https://www.leagle.com/decision/infdco20250415c06
 
@@ -705,3 +723,23 @@ Notes: the Torch sandbox is closed outside weekdays 7 AM–8 PM ET (503) [S], he
 - `/home/user/Documents/cuban-immigration-tracker/README.md`
 - `/home/user/Documents/cuban-immigration-tracker/docs/research/04-uscis-data-sources.md`
 - `/home/user/Documents/cuban-immigration-tracker/docs/research/05-other-government-data.md`
+
+---
+
+## Verification notes (editor pass, 2026-10-20)
+
+Two adversarial fact-checkers reviewed this file; the editor re-tested the two major findings with the two WebSearch calls available and accepted the rest on the checkers' citations, tagged **[S-fc]**.
+
+| Finding | Verdict | Evidence seen by the editor today | Edits |
+|---|---|---|---|
+| CourtListener dockets are not reachable anonymously (401), so the "poll anonymously ≤100/day" branch was dead | **Accepted — confirmed** | Official REST change log: v4.3 "enforced authentication in V4 API endpoints; anonymous requests now receive a 401", listing `/dockets`, `/opinion-clusters`, `/opinions` [S, courtlistener.com/help/api/rest/changes/]; the FLP "API Usage" wiki page (anonymous → 401; own throttle 10/min, 120/hr) [S]; vaquill.ai 2026-10-06 test (anonymous 200 only for `/search/`, `/courts/`, `/audio/`) [S]. The 5/min, 50/hr, 125/day authenticated defaults are confirmed by two third-party sources [S]. **Not confirmed:** the temporary 2× limit windows (Jul and Sep–Oct 2026) — kept as [S-fc]. | §0 row 7, §7.1, §7.2 budget note, §12.3, §12.4 (`cl.*` rows, new `cl.usage`), §12.6 notes, §12.8, §13 Q8, §10 (2026-10-06 row) |
+| The January 2026 *Doe v. Noem* orders concern Family Reunification Parole termination, not CHNV or the adjustment pause; the second order is dated 01-24, not 01-25 | **Accepted — confirmed** | TRO 2026-01-10, 14 days to 2026-01-24, pausing FRP parole/EAD terminations; PI/stay 2026-01-24 for a certified FRP subclass [S, justiceactioncenter.org; clearinghouse.net/case/46186; visainamerica.com]. One tracker puts the class-modification memorandum at 2026-03-11 [S, uscis-pause-tracker.com] — unresolved. ECF 243/258 and the 2026 WL cites surfaced nowhere; they are now marked unverified and the probe reads the real entry numbers. | §7.2 ECF paragraph, §10 timeline, §12.4 `cl.entries` |
+| The Torch sandbox weekday 7 AM–8 PM ET / 503 window is community-observed, not official | **Accepted** (no search needed; the only source was `torchClient.ts`) | — | §0 row 2b, §2.2, §11, §12.4 `torch.token`, §12.6 cron comment and notes, §13 Q13 |
+| Docket id 69695790; caption now "Doe v. Mullin"; assert on `docket_number`/`pacer_case_id`, not `case_name` | **Accepted as [S-fc]** (no search budget left to open the page) | checker-supplied URL `https://www.courtlistener.com/docket/69695790/doe-v-noem/` | §7.2 table, §12.4 `cl.docket`/`cl.entries`, §12.5 `ClDocket` comment, §13 Q8 |
+| Missing: FR 2025-22744 (FRP termination, 2025-12-15) | **Added** — the notice's date, title and role in the Jan 2026 orders are [S] (JAC FRN decoder; immpolicytracking.org); the document number itself is [S-fc] | — | §5 policy anchors, §6 fixture 2 and known numbers, §10 timeline |
+| Missing: 2025-05-28 class-wide preliminary relief (resume benefits processing) | **Added as [S-fc, consistent with T]** | — | §7.2, §10 |
+| Missing: FY2026 Q2 CAA fixtures (50 approved / 45 denied; 52.6% → 23.7%) | **Added as [S-fc]** | — | §3.4 |
+| Missing: CBP Nov-2024 vs Dec-2024 rounding (93,080/117,320; 531,670 vs 531,690; Dec sums to 531,680) | **Added as [S-fc]**; probe now asserts the four figures only on the Dec 2024 page with ±10 tolerance | — | §5, §12.4 `cbp.dec24`/`cbp.jan25` |
+| Missing: explicit statement that no real receipt can be validated in the Torch sandbox | **Added** | — | §11 |
+
+Dead or wrong URLs: none reported by the checkers, none changed. Items the checkers could not verify and the editor did not re-test are listed in §13 Q14 and keep their original tags.
