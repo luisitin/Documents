@@ -14,7 +14,10 @@ differently. Where doc 06 already verified something, this doc cites it instead 
 ## 0. Method, limits and tag legend (read first)
 
 **Method.** Twelve web searches (English and Spanish), each returning result titles, URLs and
-a synthesized summary of page content. No page could be opened directly: the sandbox blocks
+a synthesized summary of page content. An editorial fact-check pass on 2026-10-20 (two
+adversarial reviewers, five searches each, plus two editor searches) corrected the court-track
+wording, the MSC 2490 cohort and the I-485 edition sourcing; what changed and what is still
+unverified is recorded in §13. No page could be opened directly: the sandbox blocks
 uscis.gov, app stores, news sites and every tracker site, so all facts come from search
 excerpts. App-store ratings and prices in particular are **snapshots re-published by
 third-party app-data sites** (App Pricing Lab, AppFollow, mwm.ai, justuseapp, Soft112) and can
@@ -47,8 +50,9 @@ stores before quoting them publicly.
    Portuguese case-tracking app (iOS id 6450058436, Android `com.changayaf.inmigreat`) that
    says it tracks **more than 300,000 cases**, claims to be an **"officially partnered USCIS
    API Developer"**, and whose representative "Ángel" published a CAA approval analysis
-   (1,219 approvals detected through Aug 3 2026; the **MSC 2490 receipt block** had the most
-   approvals, with ~51,488 pending cases in that series and 209 approvals since June). [S]
+   (1,219 approvals detected through Aug 3 2026; the **MSC 2490 receipt block** — mostly Cuban
+   filings dated Oct 2023–Aug 2024 — had the most approvals, with ~51,488 pending cases in that
+   series and 209 approvals since June). [S]
    Its "Block View" (see who filed 7 days before/after you) and "place in line" features are
    the nearest thing on the market to a CAA cohort tracker, **but it still keys on form type and
    receipt block, not on the CAA category, parole pathway, field office or the 2025–2026
@@ -73,9 +77,13 @@ stores before quoting them publicly.
    official personal estimate. [I] USCIS has no official case-status mobile app that any search
    surfaced. [S-negative][T]
 5. **Nobody models the thing that actually determines a CAA applicant's wait in 2025–2026:**
-   the policy regime (Dec 2025 adjudication pause, June 2026 vacatur, Aug 2026 First Circuit
-   partial stay), the parole pathway (CHNV vs FRP vs I-220A), and milestone-conditional
-   hazards (EAD received but no interview). Every competitor's estimate is a form-level
+   the policy regime (Dec 2025 adjudication pause for nationals of travel-ban countries, Cuba
+   included; vacated June 5 2026 in *Dorcas Int'l Inst. of R.I. v. USCIS*, D.R.I.; First Circuit
+   partial stay of Aug 14 2026 that revives **only** the re-review of already-approved benefits
+   for such nationals who entered on/after Jan 20 2021 — the adjudication pause itself stays
+   vacated [S]; plus a reported but unconfirmed Aug 24 2026 N.D. Cal. order, see §11), the
+   parole pathway (CHNV vs FRP vs I-220A), and milestone-conditional hazards (EAD received but
+   no interview). Every competitor's estimate is a form-level
    historical average, which is exactly the failure mode Lawfully's own reviews document
    ("no longer gives an accurate filing date"). [S][I]
 6. **Gap this project fills:** a Spanish-first, CAA/parole-specific tracker whose estimates are
@@ -134,9 +142,15 @@ has any field, filter or content specific to Cuban Adjustment Act or parole-base
 - Law-firm coverage confirmed employment-based I-485s were excluded [S]
   <https://ogletree.com/insights-resources/blog-posts/uscis-update-myprogress-tool-expands-to-forms-i-485-and-i-821/>,
   <https://natlawreview.com/article/uscis-update-myprogress-tool-expands-forms-i-485-and-i-821>,
-  <https://www.imwong.com/2023/12/01/uscis-expands-myprogress-processing-times-tool-to-family-based-green-cards/>.
+  <https://www.imwong.com/2023/12/01/uscis-myprogress-expansion/> (slug as returned by the
+  fact-check search; the slug in the first draft,
+  `…/uscis-expands-myprogress-processing-times-tool-to-family-based-green-cards/`, is probably
+  wrong — neither could be opened, so treat the imwong link as unverified).
 - A 2026 practitioner guide still describes coverage as limited to family-sponsored and Afghan
   filings. [S] <https://www.lighthousehq.com/blog/my-progress-usci>
+  A targeted fact-check search (2026-10-20) found no USCIS announcement extending myProgress
+  beyond those groups, but the 2023 alert's "initially only" leaves room for an unannounced
+  expansion; check a live myUSCIS account before asserting the gap publicly. [S-negative]
 - January 2026: Lawfully community users reported "myProgress information is unavailable" for
   I-485 and I-131 cases filed in November 2025 (anecdotal). [S]
   <https://www.lawfully.com/community/posts/myprogress-weird-update-in-uscis-online-account-IvSJxRXcvoSdtKIoV17Skw==>
@@ -160,6 +174,8 @@ has any field, filter or content specific to Cuban Adjustment Act or parole-base
   FY2026 median 11.8 months (Oct 1 2025–Jul 31 2026) vs 7.0 (FY2025), 4.6 (FY2024), 3.3
   (FY2023). [S] <https://www.directoriocubano.info/?p=154226>,
   <https://en.cibercuba.com/noticias/2026-10-06-u1-e135253-s27061-nid342034-green-card-ley-ajuste-cubano-tarda-casi-ano-tiempo>
+  (The fact-check pass could not re-find the 11.8-month figure in a second search; it is not
+  contradicted. Verify against the USCIS historic-median table before quoting it in-app.)
 - **Open point [T]:** whether the *live* processing-times tool offers "Cuban Adjustment Act" as
   an I-485 sub-category per field office (so that Miami/Hialeah CAA times are visible) could not
   be checked today; doc 06 noted a third-party table listing "CAA 5.5 months" (stale), which
@@ -217,20 +233,31 @@ pending I-485s, doc 06 §3.6). "Immigrate" is the phonetic Spanish rendering of 
 **CAA-specific data it has published [S]** (Cuba en Miami, analysis dated Aug 3 2026):
 - 1,219 CAA residence approvals detected among >300,000 tracked cases.
 - Receipt block **MSC 2490** had the most approvals: ~51,488 pending cases associated with that
-  series and 209 approvals since June 2026.
+  series and 209 approvals since June 2026. Cuba en Miami describes the block as filings dated
+  mainly Oct 2023–Aug 2024, mostly Cuban applicants — i.e., a FY2024 cohort, not the 2025
+  cohort the reference case belongs to. [S]
+- Later Cuba en Miami pieces built on the same Immigrate/Inmigreat feed report pathway- and
+  cohort-level signals (parolees and family cases among the new approvals; 2023 and 2024 filers
+  starting to receive decisions; approvals "suben un 37% en el último mes"), i.e., the
+  competitor is edging toward the pathway/cohort analysis this document says nobody does.
+  Track monthly. [S, fact-check pass]
 - Caveats from "Ángel" himself: IOE/MSC prefixes do not determine nationality or category; the
   registry only covers cases added to the app and is not USCIS's full statistics.
 - Doc 06 also recorded its analytics page showing Cuban cases as 355,371 (22.4% of pending
-  I-485s) with a "95.2% approval rate" of unspecified window.
+  I-485s) with a "95.2% approval rate" of unspecified window. For scale: Cuba en Miami reported
+  ~354,649 Cubans among ~1.5M pending I-485s as of May 2026, and USCIS's official CAA pending
+  count was 342,360 as of June 30 2026 — same order of magnitude; the exact 355,371 figure was
+  not re-confirmed. [S]
 
 **Pricing.** Free download with in-app purchases; free tier = real-time status, complete
 timeline, EOIR tracking, form-type statistics; Pro tier price not found in any result. [S]
 
 **Weaknesses seen [S][I].**
 - User review: "keeps deleting all my cases I have saved even with a paid membership."
-- No CAA/parole fields: Block View is a proxy for cohort (early-2025 CAA filers cluster in
-  specific MSC blocks), but it cannot separate CAA from family-based cases in the same block,
-  nor record parole pathway, field office, EAD category or pause status. [I]
+- No CAA/parole fields: Block View is a proxy for cohort (CAA filers cluster by receipt block;
+  e.g., MSC 2490 is mostly Cuban filings dated Oct 2023–Aug 2024 per Cuba en Miami, so a March
+  2025 filer sits in a later, FY2025 block), but it cannot separate CAA from family-based cases
+  in the same block, nor record parole pathway, field office, EAD category or pause status. [S][I]
 - Its CAA analysis counted approvals, not time-to-decision conditional on milestones; and the
   "95.2% approval rate" on the analytics page contradicts the 23.7% official Q3 FY2026 share
   unless the window is explained (doc 06 §5.3).
@@ -378,7 +405,11 @@ Tracker."
 - **Cuban media as "calculator."** Cuba en Miami published an estimate that CAA processing
   "ronda actualmente los 24 meses" and a piece on waits "de hasta 24 meses"; the outlet itself
   notes these are media analyses, "no representan tiempos oficiales de procesamiento ni
-  predicciones individuales." [S]
+  predicciones individuales." [S] The fact-check pass found the media estimates now spread
+  widely — "supera 16 meses" (UnoTV), "hasta 24 meses" and "rozan los 28 meses de media" (Cuba en
+  Miami) — none of which is the official 11.8-month historic median; the app's calibration panel
+  should show why they differ (completed-case median vs pending backlog vs media
+  extrapolation). [S][I]
   <https://www.cubaenmiami.com/cubanos-podrian-enfrentar-esperas-de-hasta-24-meses-para-obtener-la-residencia-bajo-la-ley-de-ajuste-cubano/>,
   <https://www.cubaenmiami.com/residencias-de-cubanos-bajo-la-ley-de-ajuste-cubano-enfrentan-un-atraso-que-podria-extenderse-durante-anos/>
   Américatevé and La Nación repeat the 139/447 and 11.8-month figures. [S]
@@ -437,10 +468,20 @@ Tracker."
 
 Reference case: CHNV parolee; I-485 (CAA) + I-765 (c)(9) filed March 2025; EAD received
 September 2025 (~6 months); no interview, no RFE reported; no decision as of 2026-10-20
-(~19 months). Policy context: Dec 2 2025 adjudication pause → vacated June 5 2026 → First
-Circuit partial stay Aug 14 2026 (doc 06 §4; today's search confirmed the Aug 14 2026 partial
-revival of the re-review policy during appeal [S]
+(~19 months). Policy context: Dec 2 2025 adjudication pause (date per the CiberCuba guide; not
+seen in a primary source) → vacated June 5 2026 by the D.R.I. in *Dorcas Int'l Inst. of R.I. v.
+USCIS*, which then denied the government a stay → First Circuit (No. 26-1703) partial stay of
+Aug 14 2026, **limited to the "Comprehensive Re-Review Policy"** (re-review of already-approved
+benefits for travel-ban nationals who entered on/after Jan 20 2021); the benefits hold and the
+other policies remain vacated, so the adjudication pause is *not* back (doc 06 §4; confirmed by
+the editor's search [S]
+<https://law.justia.com/cases/federal/appellate-courts/ca1/26-1703/26-1703-2026-08-14-0.html>,
+<https://www.aila.org/library/ca1-dorcas-v-uscis-8-14-26>,
+<https://www.fragomen.com/insights/united-states-appeals-court-allows-uscis-to-re-review-certain-approved-immigration-benefits-while-litigation-continues.html>,
 <https://www.cibercuba.com/s/inmigracion-eeuu/guias/una-vez-en-eeuu/ley-ajuste-cubano>).
+A separate Aug 24 2026 N.D. Cal. order that reportedly blocked two pause-related memoranda and
+ordered regular processing to resume (CiberCuba, 2026-10-20) was **not** found by the editor's
+search; it is carried as "reported, unconfirmed" here, in §7 and §10, and queued in §11.
 
 | Tool | What it shows him | Why it is inadequate |
 |---|---|---|
@@ -450,8 +491,8 @@ revival of the re-review policy during appeal [S]
 | Lawfully Case Analysis Pro ($14.99/mo) | "Cases ahead/behind" among same form + service center + filing date; chance-of-decision range | Pool is dominated by family/EB cases; model trained on pre-freeze trends (its own caveat); one case per subscription |
 | Inmigreat (free / Pro) | Timeline, status explanations, **Block View** of neighbours in his MSC/IOE block, place in line; Pro "Smart Prediction" | Block ≠ category; no regime or milestone conditioning; cannot say "EAD-holders filed Mar 2025 in Miami are deciding at rate X" |
 | Case Tracker for USCIS / MigraConnect / Case Now | Push notifications; EAD-renewal reminders (Case Now) | No estimate at all |
-| Cuban media | "11.8 months median", "139 approved / 447 denied", "espera de 24 meses" | National aggregates; no personalisation; confusingly mixes medians, quarterly medians and guesses |
-| **This project (target)** | "Filed Mar 2025, Miami, EAD at month 6, no interview: among N similar cases, X% decided by month 19; conditional median to decision Y months (range A–B); regime: post-vacatur; next likely event: interview notice; last official data: Q3 FY2026" | — |
+| Cuban media | "11.8 months median", "139 approved / 447 denied", and wait estimates ranging from "supera 16 meses" (UnoTV) to "hasta 24 meses" and "rozan los 28 meses" (Cuba en Miami) | National aggregates; no personalisation; confusingly mixes the official completed-case median, quarterly counts and media extrapolations of the backlog |
+| **This project (target)** | "Filed Mar 2025, Miami, EAD at month 6, no interview: among N similar cases, X% decided by month 19; conditional median to decision Y months (range A–B); regime: post-vacatur (re-review policy live since Aug 14 2026); next likely event: interview notice; last official data: Q3 FY2026" | — |
 
 ---
 
@@ -483,10 +524,20 @@ revival of the re-review policy during appeal [S]
 ## 7. Concrete features competitors lack (build list, prioritised)
 
 1. **CAA/parole case model.** Entry pathway, parole date, "un año y un día" date, field office,
-   EAD category (c09/c11), pause flag, mandamus flag (schema in doc 06 §8). No competitor
+   EAD category (c09/c11), pause flag, mandamus flag (schema in doc 06 §8), plus two fields the
+   fact-check pass showed are legally meaningful: an **"I-485 postmarked/e-filed by Dec 15 2025"
+   flag** (the Dec 2025 Family Reunification Parole terminations do not apply to a parolee whose
+   I-485 was filed by that date and is still pending — CLINIC [S]
+   <https://www.cliniclegal.org/resources/humanitarian-relief/uscis-announces-policy-change-regarding-parole-status-certain-cubans>)
+   and a **"re-review / NOID on an already-approved benefit" milestone** (the one policy the
+   First Circuit let revive covers CHNV/FRP parolees who entered 2023–2024 and already hold an
+   approved EAD or other benefit [S][I]; the alert feed in item 6 must cover it). No competitor
    captures any of these.
 2. **Regime-stratified estimator.** Separate hazard curves for pre-freeze (filed ≤ Nov 2025 and
-   decided before Dec 2 2025), freeze (Dec 2 2025–Jun 5 2026), post-vacatur/appeal (Jun 5 2026→).
+   decided before Dec 2 2025), freeze (Dec 2 2025–Jun 5 2026), post-vacatur/appeal (Jun 5 2026→),
+   and a fourth marker from Aug 14 2026 (First Circuit lets the re-review policy run; the
+   adjudication pause stays vacated). If the reported Aug 24 2026 N.D. Cal. order (§11) is
+   confirmed, add it as a fifth marker and record which court track governs which cases.
    Lawfully's own caveat ("if the trend suddenly changed") is the pitch.
 3. **Milestone-conditional "what happens next."** Given EAD at month 6 and no interview at
    month 19, show P(interview notice within 90 days), P(decision within 6 months), and the
@@ -494,12 +545,31 @@ revival of the re-review policy during appeal [S]
 4. **Official-data calibration panel.** The quarterly CAA approve/deny/pending counts and the
    historic Cuban-row median, with the release date and the next expected release, so the
    app's crowd estimate is always shown next to the government number it must reconcile with.
+   Seed series (USCIS tables as re-published by 14ymedio, Directorio Cubano, CiberCuba and Cuba
+   en Miami; surfaced by the fact-check pass; verify against the USCIS quarterly file before
+   shipping) [S]: FY2024 49,965 approved / 662 denied; FY2025 10,432 / 757; Q2 FY2026 (Jan–Mar
+   2026) 50 / 45 (52.6% approval); Q3 FY2026 (Apr–Jun 2026) 139 / 447 (23.7%); pending 342,360
+   as of June 30 2026.
 5. **Cohort view keyed on receipt block AND category** (Inmigreat's Block View plus our CAA
-   fields): "Cubanos CAA con recibo MSC 2490xxx, Miami: 1,204 registrados, 37 aprobados en 30
-   días."
+   fields): "Cubanos CAA con recibo MSC 25xxxxxxx (presentado marzo 2025), Miami: 1,204
+   registrados, 37 aprobados en 30 días." (MSC 2490 is a FY2024 block — Oct 2023–Aug 2024
+   filings — so a 2025 filer is in a later block.)
 6. **Policy/court alert feed in Spanish** (Telegram channel + push): new USCIS memo, court
-   order, quarterly data release, fee or form-edition change (e.g., the 09/18/26 I-485 edition
-   [S] <https://www.directoriocubano.info/?p=149374>).
+   order, quarterly data release, fee or form-edition change (e.g., the 09/18/26 I-485 edition,
+   required for filings postmarked or e-filed on/after Sept 18 2026 with no grace period — the
+   01/20/25 edition is rejected from that date — issued to implement the DHS Public Charge
+   Ground of Inadmissibility final rule effective the same day [S]
+   <https://www.uscis.gov/newsroom/alerts/uscis-to-publish-new-edition-of-form-i-485-older-editions-will-be-rejected-starting-sept-18>,
+   <https://www.directoriocubano.info/?p=149374>). On the public-charge rule itself (final rule
+   rescinding the 2022 regulations, issued Jul 16 / published Jul 20 2026 per one source):
+   law-firm and Cuban-media summaries say CAA adjustment applicants **remain exempt** from the
+   public-charge ground (they describe the exemption as statutory and untouched by the rule), so
+   for this audience the alert is about the form edition, not the benefit test; confirm in the
+   Federal Register text and USCIS Policy Manual before stating it in-app. [S]
+   <https://www.cliniclegal.org/resources/ground-inadmissibility-and-deportability/public-charge/new-public-charge-rule-file>,
+   <https://www.cubaheadlines.com/articles/340655>,
+   <https://en.cibercuba.com/noticias/2026-08-25-u1-e199370-s27061-nid338665-cambian-reglas-obtener-green-card-estados-unidos>,
+   <https://slattonhasslaw.com/blog/public-charge-rule-changes-september-2026/>
 7. **Household/multi-case free.** Directly counters Lawfully's one-case-per-subscription.
 8. **Optional myUSCIS JSON import** for exact milestone dates (doc 06); nobody in the consumer
    app market offers it.
@@ -578,11 +648,13 @@ with Cuban media or legal-aid organisations is also plausible.
 | 2025-08-29 → 2026-10-11 | humanstack open-source tracker created/updated (JSON import, Reddit export) | doc 06 |
 | 2026-01 | Lawfully community reports "myProgress information is unavailable" for Nov 2025 I-485/I-131 filings | Lawfully community [S] |
 | 2026 | Inmigreat adds Block View (±7 days neighbours) | app listing [S] |
-| 2026-06-05 | Court vacates the Dec 2025 adjudication pause (appeal pending) | CiberCuba guide [S] |
+| 2026-06-05 | D.R.I. vacates the Dec 2025 adjudication pause and related policies (*Dorcas Int'l Inst. of R.I. v. USCIS*); the district court later denies the government a stay | CiberCuba guide; AILA; Cyrus Mehta blog [S] |
+| 2026-07 (Jul 16 issued / Jul 20 published, per one source) | DHS final rule rescinding the 2022 public-charge regulations; effective Sept 18 2026; CAA applicants reported to remain exempt | CLINIC; law-firm blogs; CubaHeadlines [S] |
 | 2026-07 | Case Now adds I-485 EAD/AP reminders and Visa Bulletin alerts | App Store [S] |
 | 2026-08-03 | Inmigreat ("Immigrate") CAA analysis: 1,219 approvals; MSC 2490 block leads | Cuba en Miami [S] |
-| 2026-08-14 | First Circuit lets the "re-review of already-approved benefits" policy revive during appeal | CiberCuba guide [S] |
-| 2026-09-18 | New I-485 edition (09/18/26) mandatory; older editions rejected | Directorio Cubano [S] |
+| 2026-08-14 | First Circuit (No. 26-1703) stays the vacatur **only** as to the Comprehensive Re-Review Policy; benefits hold and other policies stay vacated | Justia; AILA; Fragomen; CiberCuba guide [S] |
+| 2026-08-24 | *Reported, unconfirmed:* N.D. Cal. blocks two pause-related memoranda and orders regular processing to resume | CiberCuba 2026-10-20 [S]; not found by the editor's search — see §11 |
+| 2026-09-18 | New I-485 edition (09/18/26) mandatory for filings postmarked/e-filed from this date; 01/20/25 edition rejected, no grace period; public-charge final rule takes effect the same day | USCIS alert; Directorio Cubano [S] |
 | 2026-10-03/06 | Media report FY2026 CAA median 11.8 months | La Nación, CiberCuba [S] |
 | 2026-10-20 | Lawfully community CAA post (Miami, filed Feb 2025, 16+ months pending) surfaced | Lawfully [S] |
 
@@ -609,6 +681,32 @@ with Cuban media or legal-aid organisations is also plausible.
    bot that web search cannot see; ask admins.
 8. Check whether USCIS launched any official mobile app in 2025–2026 (two searches found none).
 9. Resolve the "vende servicios legales" vs "not a law firm" conflict for Inmigreat.
+10. Confirm the reported Aug 24 2026 N.D. Cal. order (case name, judge, which two memoranda,
+    whether it reaches CAA I-485s or only the "pause" memos, and how it interacts with the
+    *Dorcas* / First Circuit track). Until then the alert feed should label it "reportado por
+    CiberCuba, sin confirmar".
+11. Confirm the Dec 2 2025 date of the adjudication-pause memo in a primary source (the USCIS
+    memo itself or the *Dorcas* district-court opinion); today it rests on the CiberCuba guide.
+12. Confirm in the Federal Register text and USCIS Policy Manual Vol. 8 Part G that CAA
+    adjustment applicants stay exempt from the public-charge ground under the Sept 18 2026 rule,
+    and whether the exemption's basis is statutory or regulatory (law-firm blogs say statutory;
+    the 2022 rule listed it in 8 CFR 212.23(a) [T]). If any CAA sub-population (e.g., I-220A
+    entrants) is not exempt, the explainer library and alert feed must cover it.
+13. Check a live myUSCIS account of a CAA I-485 filer for any myProgress estimate (an unannounced
+    expansion beyond family-based/Afghan SI is possible).
+14. Re-check the 11.8-month FY2026 CAA median in the USCIS historic-median table and record the
+    window (Oct 1 2025–Jul 31 2026) and the next update date.
+15. Reconcile the official series used in §7 item 4 (FY2024 49,965/662; FY2025 10,432/757; Q2
+    FY2026 50/45; Q3 FY2026 139/447; pending 342,360 as of Jun 30 2026) against the USCIS
+    quarterly file; all of it reached us through media.
+16. Track Cuba en Miami's monthly Immigrate/Inmigreat pieces for pathway-level signals (parole vs
+    family; 2023–24 filers; "+37% en el último mes"); the competitor is moving toward cohort
+    analysis.
+17. Read the CLINIC page / USCIS notice on the FRP terminations directly before encoding the
+    "I-485 filed by Dec 15 2025" carve-out, and check whether an equivalent carve-out exists for
+    CHNV parolees.
+18. Confirm the number of countries covered by the Dec 2025 pause (the fact-checker says ~19; one
+    result title says "39-Country Pause"); the document deliberately avoids the count.
 
 ---
 
@@ -618,7 +716,7 @@ with Cuban media or legal-aid organisations is also plausible.
 - https://www.uscis.gov/newsroom/alerts/uscis-expands-myprogress-to-form-i-485-and-form-i-821
 - https://natlawreview.com/article/uscis-update-myprogress-tool-expands-forms-i-485-and-i-821
 - https://ogletree.com/insights-resources/blog-posts/uscis-update-myprogress-tool-expands-to-forms-i-485-and-i-821/
-- https://www.imwong.com/2023/12/01/uscis-expands-myprogress-processing-times-tool-to-family-based-green-cards/
+- https://www.imwong.com/2023/12/01/uscis-myprogress-expansion/ (slug per fact-check search; earlier slug `…/uscis-expands-myprogress-processing-times-tool-to-family-based-green-cards/` probably wrong; neither opened)
 - https://www.lighthousehq.com/blog/my-progress-usci
 - https://www.lawfully.com/community/posts/myprogress-weird-update-in-uscis-online-account-IvSJxRXcvoSdtKIoV17Skw==
 
@@ -739,3 +837,93 @@ with Cuban media or legal-aid organisations is also plausible.
 - https://www.visaverge.com/news/trump-policy-change-could-end-residency-for-thousands-of-cubans/
 - https://cliniclegal.org/resources/humanitarian-relief/uscis-announces-policy-change-regarding-parole-status-certain-cubans
 - https://citizenpath.com/?p=13036
+
+**Added in the 2026-10-20 fact-check / editorial pass (court track, public charge, I-485 edition)**
+- https://law.justia.com/cases/federal/appellate-courts/ca1/26-1703/26-1703-2026-08-14-0.html
+- https://www.aila.org/library/ca1-dorcas-v-uscis-8-14-26
+- https://www.aila.org/library/district-court-denies-government-motion-to-stay-decision-vacating-uscis-hold-policies-in-dorcas-v-uscis
+- https://www.fragomen.com/insights/united-states-appeals-court-allows-uscis-to-re-review-certain-approved-immigration-benefits-while-litigation-continues.html
+- https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html
+- https://afghanevac.org/dorcas
+- https://globallawexperts.com/first-circuit-refuses-stay-vacatur-uscis/
+- https://www.visasupdate.com/post/uscis-re-review-policy-travel-ban-appeal-2026
+- https://visafortheunitedstates.com/application-process/uscis-39-country-adjudication-pause-2026-applications-frozen/
+- https://nisreenmousalaw.com/motion-to-terminate-removal-proceedings-dorcas-v-uscis/ (fact-checker)
+- https://en.cibercuba.com/noticias/2026-10-20-u1-e135253-s27061-nid343309-solo-139-cubanos-obtuvieron-residencia-ley-ajuste (fact-checker; sole source of the Aug 24 2026 N.D. Cal. report)
+- https://www.uscis.gov/newsroom/alerts/uscis-to-publish-new-edition-of-form-i-485-older-editions-will-be-rejected-starting-sept-18 (fact-checker)
+- https://www.cliniclegal.org/resources/ground-inadmissibility-and-deportability/public-charge/new-public-charge-rule-file
+- https://www.cubaheadlines.com/articles/340655
+- https://en.cibercuba.com/noticias/2026-08-25-u1-e199370-s27061-nid338665-cambian-reglas-obtener-green-card-estados-unidos
+- https://voz.us/en/society/260918/39225/new-public-charge-rules-take-effect-what-they-entail-and-who-may-be-affected.html
+- https://abogadolozano.com/the-public-charge-rule-in-2026/
+- https://ariasvilla.com/new-public-charge-rules-take-effect-september-18-2026-what-green-card-applicants-should-know/
+- https://lawofficeimmigration.com/blog/public-charge-rule-rescinded-i485-2026.html
+- https://www.lehighvalleyimmigrationlawyers.com/blog/new-public-charge-rule-form-i-485-september-18-2026
+- https://slattonhasslaw.com/blog/public-charge-rule-changes-september-2026/
+
+---
+
+## 13. Verification notes (editorial fact-check pass, 2026-10-20)
+
+**Process.** Two adversarial fact-checkers reviewed the 2026-10-20 draft (the five most
+load-bearing claims each; search-only, nothing could be opened). The editor then spent two
+further WebSearch calls (extended) on the two points that change the document's substance: the
+court track behind the "policy regime" model, and the public-charge rule behind the 09/18/26
+I-485 edition. Same network limits applied, so every fact below comes from a search summary and
+keeps the §0 tags.
+
+**Corrections accepted and applied**
+1. *Court track* (§1.5, §5, §7.1–7.2, §10). The phrase "Aug 2026 First Circuit partial stay" could
+   be read as reviving the adjudication pause; §10 had it right and §1/§5 did not. Now stated
+   consistently and confirmed [S] by the Justia opinion page (*Dorcas International Institute of
+   Rhode Island v. USCIS*, No. 26-1703, 1st Cir., decided Aug 14 2026), AILA ("CA1 Allows USCIS to
+   Resume Comprehensive Re-Review Policy", 8/14/26) and Fragomen: the stay is limited to the
+   Comprehensive Re-Review Policy; the benefits hold and the other policies remain vacated; the
+   district-court decision was June 5 2026, and the district court had denied the government's
+   stay motion (AILA). The Aug 14 date, which the fact-checker could only trace to CiberCuba, is
+   now confirmed by the Justia and AILA URLs. The Dec 2 2025 date still rests on the CiberCuba
+   guide only.
+2. *MSC 2490 cohort* (§1.1, §4.1, §7.5). Accepted. The fact-checker's reading of Cuba en Miami
+   (filings dated Oct 2023–Aug 2024, mostly Cuban) is consistent with the receipt-number
+   convention (MSC + two-digit fiscal year) [T]; the "early-2025 filers" wording and the §7.5
+   example were wrong and are rewritten.
+3. *I-485 09/18/26 edition* (§7.6, §10). Accepted: USCIS alert URL added, together with the rule
+   (postmarked/e-filed on/after Sept 18 2026; 01/20/25 edition rejected; no grace period) and the
+   reason (public-charge final rule). The editor's search adds that CLINIC, CubaHeadlines,
+   CiberCuba (2026-08-25) and several firm blogs say the rule rescinding the 2022 regulations
+   was issued Jul 16 / published Jul 20 2026 and that CAA adjustment applicants remain exempt;
+   none of them is the Federal Register, so this is tagged [S] with a verify-before-use note
+   (§11 item 12).
+4. *imwong URL* (§3.2, §12). Replaced by the slug the fact-check search returned; both slugs
+   remain unopened and the link is marked unverified.
+
+**Fact-checker point carried as "reported, unconfirmed"**
+- The Aug 24 2026 N.D. Cal. order blocking two pause-related memoranda. It appears only in
+  CiberCuba's 2026-10-20 article; the editor's targeted search, which did surface the First
+  Circuit material, returned nothing on it. It is therefore flagged rather than asserted in §5,
+  §7.2 and §10, and queued as §11 item 10.
+
+**Missing points added**
+- "I-485 filed by Dec 15 2025" FRP carve-out flag and a "re-review / NOID on approved benefit"
+  milestone (§7.1); the official calibration series FY2024 → Q3 FY2026 (§7.4); the spread of
+  media wait estimates 16 / 24 / 28 months vs the 11.8-month official median (§4.9, §5); Cuba en
+  Miami's pathway-level signals from the Inmigreat feed (§4.1); the controlling case name
+  (*Dorcas*) and docket number for regime labels and the alert feed (§1, §5, §10).
+
+**Still unverified (not contradicted)**
+- 11.8-month FY2026 CAA historic median: cited by two outlets in the first draft and repeated by
+  La Nación / Américatevé; the fact-check search did not re-find it.
+- myProgress I-485 scope still family-based + Afghan SI in 2026: no expansion announcement
+  found; check a live account.
+- Inmigreat = "Immigrate Case Tracker": still the author's inference [I].
+- Inmigreat's "officially partnered USCIS API Developer" claim and the developer.uscis.gov API
+  terms: not searched; [T].
+- Lawfully pricing and every app-store rating/review count: third-party snapshots, not
+  re-searched.
+- Inmigreat analytics figure 355,371: order of magnitude matches 354,649 (Cuba en Miami, May
+  2026) and the official 342,360 pending (June 30 2026); exact figure unconfirmed.
+- Number of countries under the Dec 2025 pause (~19 vs "39-Country"): the document avoids the
+  count.
+
+**Search budget.** Editor: 2 WebSearch calls, both extended (court track; public-charge rule).
+Fact-checkers: 5 each.
