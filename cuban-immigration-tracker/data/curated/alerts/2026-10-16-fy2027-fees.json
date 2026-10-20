@@ -1,0 +1,37 @@
+{
+  "id": "2026-10-16-fy2027-fees",
+  "date": "2026-10-16",
+  "kind": "fees",
+  "severity": "info",
+  "title": {
+    "es": "Tarifas del año fiscal 2027: sin cambios para el I-485 ni el permiso (c)(9)",
+    "en": "Fiscal-year 2027 fees: no change for the I-485 or the (c)(9) permit"
+  },
+  "body": {
+    "es": "Desde el 16 de octubre de 2026 suben algunas tarifas fijadas por ley (H.R.1): el permiso de trabajo inicial por parole (c)(11) pasa a 570 dólares y el parole o re-parole a 1,050. Las tarifas del I-485 (1,440 dólares) y del permiso de trabajo (c)(9) (260 dólares) no cambian. Los nuevos montos vienen de la prensa y están pendientes de confirmar con el aviso oficial de USCIS.",
+    "en": "From October 16, 2026 some statutory (H.R.1) fees rise: the initial parole-based (c)(11) work permit becomes $570 and parole or re-parole $1,050. The I-485 ($1,440) and (c)(9) work permit ($260) fees do not change. The new amounts come from the press and await confirmation against the official USCIS notice."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo.",
+    "en": "It does not change your timing estimate."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "sources": [
+    {
+      "label": "Directorio Cubano: tarifas de USCIS, octubre de 2026",
+      "url": "https://www.directoriocubano.info/actualidad/tarifas-uscis-octubre-2026-2/",
+      "evidence": "S-sec"
+    },
+    {
+      "label": "Biz Legal Services: USCIS raises immigration fees (Oct 2, 2026)",
+      "url": "https://bizlegalservices.com/2026/10/02/uscis-raises-immigration-fees/",
+      "evidence": "S-sec"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

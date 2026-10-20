@@ -1,0 +1,37 @@
+{
+  "id": "2026-09-18-i485-edition",
+  "date": "2026-09-18",
+  "kind": "policy",
+  "severity": "info",
+  "title": {
+    "es": "Nueva edición del I-485 (09/18/26) obligatoria",
+    "en": "New I-485 edition (09/18/26) required"
+  },
+  "body": {
+    "es": "Desde el 18 de septiembre de 2026 USCIS solo acepta la edición 09/18/26 del formulario I-485, sin período de gracia. Ese mismo día entró en vigor la nueva regla de carga pública; la Ley de Ajuste Cubano sigue exenta de esa prueba. Los casos ya presentados no tienen que volver a presentarse.",
+    "en": "Since September 18, 2026 USCIS accepts only the 09/18/26 edition of Form I-485, with no grace period. The new public-charge rule took effect the same day; the Cuban Adjustment Act remains exempt from that test. Cases already filed do not need to be filed again."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo.",
+    "en": "It does not change your timing estimate."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "sources": [
+    {
+      "label": "USCIS, Form I-485 page",
+      "url": "https://www.uscis.gov/i-485",
+      "evidence": "S"
+    },
+    {
+      "label": "Fredrikson: USCIS revises the I-485",
+      "url": "https://www.fredlaw.com/alert-uscis-revises-i-485-permanent-residence-adjustment-application",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

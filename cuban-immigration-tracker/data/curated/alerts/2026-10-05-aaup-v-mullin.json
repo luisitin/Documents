@@ -1,0 +1,42 @@
+{
+  "id": "2026-10-05-aaup-v-mullin",
+  "date": "2026-10-05",
+  "kind": "court",
+  "severity": "info",
+  "title": {
+    "es": "Demanda AAUP v. Mullin contra PM-602-0199 y PA-2026-05",
+    "en": "AAUP v. Mullin suit against PM-602-0199 and PA-2026-05"
+  },
+  "body": {
+    "es": "El 5 de octubre de 2026 se presentó en Massachusetts (D. Mass. 1:26-cv-14527) una demanda contra el memo de mayo (PM-602-0199) y la política de negaciones de agosto (PA-2026-05). Hasta el 20 de octubre no hay pedido de medida cautelar ni decisión, y ambas políticas siguen vigentes.",
+    "en": "On October 5, 2026 a suit was filed in Massachusetts (D. Mass. 1:26-cv-14527) against the May memo (PM-602-0199) and the August denial policy (PA-2026-05). As of October 20 there is no request for preliminary relief and no ruling, and both policies remain in effect."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado. Una decisión contra la política de negaciones (PA-2026-05) haría revisar la tarjeta de aprobación.",
+    "en": "It does not change your estimate. A ruling against the denial policy (PA-2026-05) would trigger a review of the approval card."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "docket": {
+    "court": "D. Mass.",
+    "number": "1:26-cv-14527",
+    "courtListenerId": 74919678
+  },
+  "sources": [
+    {
+      "label": "Civil Rights Litigation Clearinghouse, case 48515",
+      "url": "https://clearinghouse.net/case/48515/",
+      "evidence": "S"
+    },
+    {
+      "label": "CourtListener docket 74919678",
+      "url": "https://www.courtlistener.com/docket/74919678/american-association-of-university-professors-v-mullin/",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-14-ead-auto-extension-rule",
+  "date": "2026-10-14",
+  "kind": "ead",
+  "severity": "medium",
+  "title": {
+    "es": "Regla final: sin extensión automática del permiso de trabajo",
+    "en": "Final rule: no automatic extension of the work permit"
+  },
+  "body": {
+    "es": "El 14 de octubre de 2026 entró en vigor la regla final que elimina la extensión automática de ciertos permisos de trabajo (FR 2026-20955). Las renovaciones del permiso de trabajo (c)(9) presentadas desde el 30 de octubre de 2025 ya no se extendían automáticamente. Además, los permisos (c)(9) emitidos desde el 5 de diciembre de 2025 valen 18 meses, no 5 años.",
+    "en": "On October 14, 2026 the final rule removing automatic extensions of certain work permits took effect (FR 2026-20955). Renewals of the (c)(9) work permit filed on or after October 30, 2025 were already not extended automatically. Also, (c)(9) permits issued from December 5, 2025 are valid for 18 months, not 5 years."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de residencia. En «Permiso de trabajo» puede ver la fecha de vencimiento y los recordatorios para renovar a tiempo.",
+    "en": "It does not change your green-card estimate. Under “Work permit” you can see the expiry date and reminders to renew in time."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ],
+    "hasEad": true
+  },
+  "sources": [
+    {
+      "label": "Federal Register 2026-20955 (public inspection)",
+      "url": "https://public-inspection.federalregister.gov/2026-20955.pdf",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

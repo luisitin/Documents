@@ -1,0 +1,38 @@
+{
+  "id": "2026-10-20-i220a-parole-scam",
+  "date": "2026-10-20",
+  "kind": "scam",
+  "severity": "high",
+  "title": {
+    "es": "Cuidado: notarios que venden «parole» falso a cubanos con I-220A",
+    "en": "Warning: notarios selling fake “parole” to Cubans with an I-220A"
+  },
+  "body": {
+    "es": "Medios de Miami y la congresista María Elvira Salazar advierten sobre notarios y gestores que venden documentos falsos de parole a cubanos con I-220A. Nadie puede «convertir» un I-220A en parole ni garantizarle una aprobación; ningún tribunal ha dicho que el I-220A sea parole. Desconfíe de quien le cobre por eso. Solo un abogado o un representante acreditado puede darle asesoría legal.",
+    "en": "Miami media and Rep. María Elvira Salazar warn about notarios and preparers selling fake parole documents to Cubans with an I-220A. No one can “convert” an I-220A into parole or guarantee an approval; no court has held that an I-220A is parole. Be wary of anyone charging for that. Only an attorney or an accredited representative can give you legal advice."
+  },
+  "affects": {
+    "channels": [
+      "I220A"
+    ]
+  },
+  "sources": [
+    {
+      "label": "Univision 23 Miami: advertencia a cubanos con I-220A",
+      "url": "https://www.univision.com/local/miami-wltv/advertencia-cubanos-i-220a-usando-notarios-falsificar-parole",
+      "evidence": "S-sec"
+    },
+    {
+      "label": "Cuba en Miami: Salazar advierte sobre falsos documentos de parole",
+      "url": "https://www.cubaenmiami.com/maria-elvira-salazar-vuelve-a-advertir-sobre-los-falsos-documentos-de-parole-te-cerraste-las-puertas/",
+      "evidence": "S-sec"
+    },
+    {
+      "label": "Directorio Cubano: alerta, notarios falsifican parole",
+      "url": "https://www.directoriocubano.info/acontecer/alerta-cubanos-i-220a-notarios-falsifican-parole/",
+      "evidence": "S-sec"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

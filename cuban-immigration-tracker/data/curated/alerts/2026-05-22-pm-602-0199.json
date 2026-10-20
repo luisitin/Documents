@@ -1,0 +1,37 @@
+{
+  "id": "2026-05-22-pm-602-0199",
+  "date": "2026-05-22",
+  "kind": "policy",
+  "severity": "medium",
+  "title": {
+    "es": "Memo PM-602-0199 sobre la discreción en el ajuste de estatus",
+    "en": "PM-602-0199 memo on discretion in adjustment of status"
+  },
+  "body": {
+    "es": "USCIS publicó un memo (fechado el 21 de mayo de 2026) que recuerda que el ajuste de estatus es discrecional. El memo no menciona la Ley de Ajuste Cubano, y el gobierno dijo a un tribunal federal en Tampa que no se aplica a estas solicitudes. La discreción general del Manual de Políticas sí se aplica a todo I-485, incluido el historial de parole como factor negativo desde agosto de 2025.",
+    "en": "USCIS published a memo (dated May 21, 2026) restating that adjustment of status is discretionary. The memo does not mention the Cuban Adjustment Act, and the government told a federal court in Tampa that it does not apply to these applications. The Policy Manual's general discretion rules do apply to every I-485, including parole history as a negative factor since August 2025."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo. La tarjeta de aprobación lo muestra como un factor que el modelo no ve.",
+    "en": "It does not change your timing estimate. The approval card lists it as a factor the model does not see."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "sources": [
+    {
+      "label": "USCIS, PM-602-0199 (May 21, 2026)",
+      "url": "https://www.uscis.gov/sites/default/files/document/memos/PM-602-0199-AdjustmentOfStatusAndDiscretion-20260521.pdf",
+      "evidence": "S"
+    },
+    {
+      "label": "Acosta Reynoso v. USCIS, M.D. Fla. 8:26-cv-01314, ECF 41",
+      "url": "https://ecf.flmd.uscourts.gov/cgi-bin/show_public_doc?2026-01314-41-8-cv=",
+      "evidence": "S-sec"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

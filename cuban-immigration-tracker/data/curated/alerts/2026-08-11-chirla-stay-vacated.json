@@ -1,0 +1,42 @@
+{
+  "id": "2026-08-11-chirla-stay-vacated",
+  "date": "2026-08-11",
+  "kind": "enforcement",
+  "severity": "high",
+  "title": {
+    "es": "Ya no rige la protección contra la deportación acelerada para ex beneficiarios de parole",
+    "en": "The protection against expedited removal for former parolees no longer applies"
+  },
+  "body": {
+    "es": "El 11 de agosto de 2026 la Corte de Apelaciones del Circuito de D.C. anuló, por falta de legitimación (standing), la orden de 2025 que protegía de la deportación acelerada a quienes entraron con parole por un puerto de entrada (CBP One o CHNV). Si su parole terminó, tener el I-485 pendiente ayuda pero no es garantía. Lleve siempre su recibo del I-485 y consulte a un abogado o representante acreditado antes de cualquier cita con ICE o USCIS.",
+    "en": "On August 11, 2026 the D.C. Circuit vacated, for lack of standing, the 2025 order that protected people paroled at a port of entry (CBP One or CHNV) from expedited removal. If your parole ended, a pending I-485 helps but is not a guarantee. Always carry your I-485 receipt notice and consult an attorney or accredited representative before any ICE or USCIS appointment."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo.",
+    "en": "It does not change your timing estimate."
+  },
+  "affects": {
+    "channels": [
+      "CHNV",
+      "CBP_ONE"
+    ]
+  },
+  "docket": {
+    "court": "D.C. Cir.",
+    "number": "25-5289"
+  },
+  "sources": [
+    {
+      "label": "D.C. Circuit opinion, CHIRLA v. Mullin, No. 25-5289 (Aug 11, 2026)",
+      "url": "https://media.cadc.uscourts.gov/opinions/docs/2026/08/25-5289-2187613.pdf",
+      "evidence": "S"
+    },
+    {
+      "label": "Justia: CHIRLA v. Mullin",
+      "url": "https://law.justia.com/cases/federal/appellate-courts/cadc/25-5289/25-5289-2026-08-11.html",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

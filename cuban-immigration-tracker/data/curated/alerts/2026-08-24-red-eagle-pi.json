@@ -1,0 +1,47 @@
+{
+  "id": "2026-08-24-red-eagle-pi",
+  "date": "2026-08-24",
+  "kind": "court",
+  "severity": "medium",
+  "title": {
+    "es": "Red Eagle: medida cautelar para la clase con casos pendientes",
+    "en": "Red Eagle: class injunction for pending cases"
+  },
+  "body": {
+    "es": "El 24 de agosto de 2026 un tribunal federal de California (N.D. Cal. 3:26-cv-04850) certificó una clase nacional y prohibió aplicar las pausas PM-602-0192 y PM-602-0194. Según la definición publicada por el tribunal, un caso cubano que no tenía decisión final el 24 de agosto de 2026 parece estar dentro de la clase. USCIS dijo el 28 de agosto que cumplirá la orden. No existe un canal público para que un miembro de la clase reclame.",
+    "en": "On August 24, 2026 a federal court in California (N.D. Cal. 3:26-cv-04850) certified a nationwide class and barred the PM-602-0192 and PM-602-0194 holds. Under the definition published by the court, a Cuban case with no final decision on August 24, 2026 appears to be inside the class. USCIS said on August 28 that it will comply. There is no public channel for class members to complain."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado hoy. Si se anula la medida cautelar, o si se revoca Dorcas, sube el riesgo de una nueva pausa, menos para quien parezca estar dentro de la clase.",
+    "en": "It does not change your estimate today. If the injunction is dissolved, or Dorcas is reversed, the risk of a new hold rises, less for anyone who appears to be inside the class."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "docket": {
+    "court": "N.D. Cal.",
+    "number": "3:26-cv-04850-CRB",
+    "courtListenerId": 73380879
+  },
+  "sources": [
+    {
+      "label": "AILA: district court issues preliminary injunction (Aug 2026)",
+      "url": "https://www.aila.org/library/district-court-issues-preliminary-injunction-to-lift-adjudication-hold-for-travel-ban-countries",
+      "evidence": "S"
+    },
+    {
+      "label": "Civil Rights Litigation Clearinghouse, case 48417",
+      "url": "https://clearinghouse.net/case/48417/",
+      "evidence": "S"
+    },
+    {
+      "label": "USCIS alert: Recent Court Order on Hold Policies (Aug 28, 2026)",
+      "url": "https://www.uscis.gov/newsroom/alerts/recent-court-order-on-hold-policies",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

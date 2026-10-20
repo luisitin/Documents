@@ -1,0 +1,37 @@
+{
+  "id": "2026-08-05-pa-2026-05",
+  "date": "2026-08-05",
+  "kind": "policy",
+  "severity": "high",
+  "title": {
+    "es": "USCIS puede negar sin pedir antes documentos (PA-2026-05)",
+    "en": "USCIS may deny without first asking for documents (PA-2026-05)"
+  },
+  "body": {
+    "es": "Desde el 5 de agosto de 2026 USCIS puede negar una solicitud sin enviar antes una Solicitud de Evidencia (RFE) ni una Notificación de Intención de Denegar (NOID) cuando falta evidencia inicial o el expediente no prueba la elegibilidad. El plazo para responder una RFE es de hasta 12 semanas y el de una NOID, 30 días (más 3 por correo), sin prórrogas. Se aplica a todo I-485, I-765 e I-131 pendiente, incluidos los de la Ley de Ajuste Cubano.",
+    "en": "Since August 5, 2026 USCIS may deny a request without first sending a Request for Evidence (RFE) or a Notice of Intent to Deny (NOID) when initial evidence is missing or the file does not establish eligibility. The deadline to answer an RFE is up to 12 weeks and for a NOID 30 days (plus 3 for mail), with no extensions. It applies to every pending I-485, I-765 and I-131, including Cuban Adjustment Act cases."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo. La tarjeta de aprobación muestra un rango solo si su lista de documentos básicos está completa; puede revisarla en «Mi caso».",
+    "en": "It does not change your timing estimate. The approval card shows a range only if your basic-documents checklist is complete; you can review it under “My case”."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "sources": [
+    {
+      "label": "AILA: USCIS policy alert on evidence, RFEs and NOIDs",
+      "url": "https://www.aila.org/library/uscis-issues-policy-alert-on-evidence-rfes-and-noids",
+      "evidence": "S"
+    },
+    {
+      "label": "Fakhoury Global: USCIS restores discretion to deny incomplete requests",
+      "url": "https://fakhouryglobal.com/immigration-alerts/uscis-restores-discretion-deny-incomplete-benefit-requests/",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

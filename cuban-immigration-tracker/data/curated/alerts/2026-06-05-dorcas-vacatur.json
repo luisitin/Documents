@@ -1,0 +1,47 @@
+{
+  "id": "2026-06-05-dorcas-vacatur",
+  "date": "2026-06-05",
+  "kind": "court",
+  "severity": "high",
+  "title": {
+    "es": "Un tribunal federal anula las pausas por país (Dorcas)",
+    "en": "A federal court vacates the country holds (Dorcas)"
+  },
+  "body": {
+    "es": "El 5 de junio de 2026 un tribunal federal de Rhode Island anuló (vacatur), bajo la Ley de Procedimiento Administrativo (APA), las pausas de PM-602-0192 y PM-602-0194 y la política de re-revisión. El 12 de junio USCIS dijo que cumplirá la orden mientras apela, y los casos cubanos volvieron a decidirse. El gobierno apeló al Primer Circuito (26-1703).",
+    "en": "On June 5, 2026 a federal court in Rhode Island vacated, under the Administrative Procedure Act (APA), the PM-602-0192 and PM-602-0194 holds and the re-review policy. On June 12 USCIS said it will comply while it appeals, and Cuban cases started being decided again. The government appealed to the First Circuit (26-1703)."
+  },
+  "whatChangedForYou": {
+    "es": "El estimado cuenta como pausa solo hasta el 12 de junio de 2026. Si la apelación confirma o revoca la anulación, se recalcula el riesgo de una nueva pausa.",
+    "en": "The estimate counts the hold only through June 12, 2026. If the appeal affirms or reverses the vacatur, the risk of a new hold is recalculated."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "docket": {
+    "court": "D.R.I.; 1st Cir.",
+    "number": "1:26-cv-00132; 26-1703",
+    "courtListenerId": 73477958
+  },
+  "sources": [
+    {
+      "label": "Cyrus Mehta blog: Dorcas v. USCIS (June 2026)",
+      "url": "https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html",
+      "evidence": "S"
+    },
+    {
+      "label": "USCIS will comply with the Dorcas vacatur (June 12, 2026)",
+      "url": "https://www.immigrationissues.com/uscis-confirms-it-will-comply-with-the-dorcas-vacatur-of-the-country-hold-policies/",
+      "evidence": "S"
+    },
+    {
+      "label": "First Circuit docket 26-1703 (Justia)",
+      "url": "https://dockets.justia.com/docket/circuit-courts/ca1/26-1703",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

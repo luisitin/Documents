@@ -1,0 +1,37 @@
+{
+  "id": "2026-10-20-fy26-q3-data",
+  "date": "2026-10-20",
+  "kind": "data",
+  "severity": "medium",
+  "title": {
+    "es": "Datos de USCIS de abril a junio de 2026: 139 aprobados y 447 negados",
+    "en": "USCIS data for April–June 2026: 139 approved and 447 denied"
+  },
+  "body": {
+    "es": "En el trimestre de abril a junio de 2026 USCIS decidió 586 casos de Ley de Ajuste Cubano: 139 aprobados y 447 negados (23.7 % aprobados). Hay que leerlo junto a los trimestres anteriores: 91.7 % en oct–dic 2025 (4,098 de 4,471) y 52.6 % en ene–mar 2026 (50 de 95). Las 447 negaciones son menos que las del mismo trimestre de 2025; lo que se desplomó fueron las aprobaciones, durante la pausa. No significa que tres de cada cuatro cubanos sean negados.",
+    "en": "In the April–June 2026 quarter USCIS decided 586 Cuban Adjustment Act cases: 139 approved and 447 denied (23.7% approved). It has to be read next to the earlier quarters: 91.7% in Oct–Dec 2025 (4,098 of 4,471) and 52.6% in Jan–Mar 2026 (50 of 95). The 447 denials are fewer than in the same quarter of 2025; what collapsed were the approvals, during the hold. It does not mean that three in four Cubans are denied."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo: el modelo usa los datos mensuales. La tarjeta de aprobación muestra estas cifras con sus bases.",
+    "en": "It does not change your timing estimate: the model uses the monthly data. The approval card shows these figures with their baselines."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "sources": [
+    {
+      "label": "USCIS quarterly All Forms workbook, FY2026 Q3",
+      "url": "https://www.uscis.gov/sites/default/files/document/data/quarterly_all_forms_fy2026_q3_v1.xlsx",
+      "evidence": "F"
+    },
+    {
+      "label": "CiberCuba: solo 139 cubanos obtuvieron la residencia (Oct 20, 2026)",
+      "url": "https://en.cibercuba.com/noticias/2026-10-20-u1-e135253-s27061-nid343309-solo-139-cubanos-obtuvieron-residencia-ley-ajuste",
+      "evidence": "S-sec"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}

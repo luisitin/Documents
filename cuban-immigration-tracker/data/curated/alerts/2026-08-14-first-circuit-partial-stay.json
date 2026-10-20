@@ -1,0 +1,42 @@
+{
+  "id": "2026-08-14-first-circuit-partial-stay",
+  "date": "2026-08-14",
+  "kind": "court",
+  "severity": "medium",
+  "title": {
+    "es": "Primer Circuito: solo vuelve la re-revisión de casos aprobados",
+    "en": "First Circuit: only the re-review of approved cases returns"
+  },
+  "body": {
+    "es": "El 14 de agosto de 2026 el Primer Circuito suspendió en parte la anulación de Dorcas: solo vuelve la política de re-revisión de beneficios ya aprobados. La pausa de los casos pendientes sigue anulada.",
+    "en": "On August 14, 2026 the First Circuit partly stayed the Dorcas vacatur: only the policy of re-reviewing benefits already approved returns. The hold on pending cases remains vacated."
+  },
+  "whatChangedForYou": {
+    "es": "No cambia su estimado de tiempo. Un caso ya aprobado podría ser revisado de nuevo.",
+    "en": "It does not change your timing estimate. An already-approved case could be reviewed again."
+  },
+  "affects": {
+    "channels": [
+      "ALL_CUBAN"
+    ]
+  },
+  "docket": {
+    "court": "1st Cir.",
+    "number": "26-1703",
+    "courtListenerId": 73477958
+  },
+  "sources": [
+    {
+      "label": "Wolfsdorf: Dorcas on appeal (Aug 2026)",
+      "url": "https://wolfsdorf.com/dorcas-on-appeal-district-court-pauses-its-own-ruling-as-first-circuit-takes-up-the-case/",
+      "evidence": "S"
+    },
+    {
+      "label": "First Circuit order, 26-1703 (Justia)",
+      "url": "https://law.justia.com/cases/federal/appellate-courts/ca1/26-1703/26-1703-2026-08-14-0.html",
+      "evidence": "S"
+    }
+  ],
+  "reviewedBy": "pending-native-es-review",
+  "status": "published"
+}
