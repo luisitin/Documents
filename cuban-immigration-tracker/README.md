@@ -10,8 +10,8 @@ and estimates when a given person's case is likely to be approved.
 A relative of the project owner came from Cuba through the CHNV parole program,
 waited the required one year and one day of physical presence, and filed for
 permanent residence under the Cuban Adjustment Act in roughly March/April 2025.
-He received his Employment Authorization Document (EAD) but, as of October 2026,
-still has no green card. Several people who filed around the same time never got
+He received his Employment Authorization Document (EAD) in September 2025, about
+six months after filing, but, as of October 2026, still has no green card. Several people who filed around the same time never got
 an EAD at all, while others did. That inconsistency lines up with the
 government-wide pause ("freeze") on benefit adjudications for CHNV parolees that
 began in early 2025 and was later struck down in federal court.
@@ -27,6 +27,16 @@ The goal is to replace guesswork and rumor with data:
   you already have Z, so your expected decision window is ...", with an honest
   confidence range.
 - **Alerts** when official data, policy, or court rulings change.
+
+## Reference case (used throughout the research, planning, and tests)
+
+| Milestone | Date | Notes |
+|---|---|---|
+| Entered the U.S. on CHNV parole | 2023–2024 | exact date not needed for the model |
+| One year and one day of physical presence reached | early 2025 | CAA eligibility threshold |
+| Form I-485 (Cuban Adjustment Act) filed | March 2025 | with I-765 (c)(9) work permit request |
+| EAD received | September 2025 | ~6 months; others who filed at the same time never got one |
+| Green card (I-485 decision) | pending as of October 2026 | ~19 months and counting |
 
 ## Project layout
 
