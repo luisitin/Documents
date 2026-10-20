@@ -1,0 +1,24 @@
+{
+  "extends": "expo/tsconfig.base.json",
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["jest"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@caa/estimator/golden": ["../packages/estimator/src/golden"],
+      "@caa/*": ["../packages/*/src"],
+      "zod": ["./node_modules/zod"],
+      "zod/*": ["./node_modules/zod/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../packages/*/src/**/*.ts",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "../packages/*/src/node.ts", "../packages/ingestion/**"]
+}

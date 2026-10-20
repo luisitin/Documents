@@ -1,0 +1,91 @@
+# caa-ci — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.3).
+# Ownership: handed to WP11 (jobs `tools`, `app`) and WP10 (the marked `web` block) by the
+# commit "handoff: workflow skeletons → WP5 (refresh, probe, staleness), WP11 (ci), WP10 (ci web block)".
+#
+# Triggers (orchestrator override 3): push to claude/cuban-immigration-tracker-b6y4b1 and
+# pull_request, both limited to the project paths. CI never commits (contents: read).
+# Steps whose script or source file does not exist yet are green no-ops, so the skeleton is
+# green before WP1–WP5 land; WP11 removes the guards once everything exists.
+name: caa-ci
+
+on:
+  push:
+    branches: ["claude/cuban-immigration-tracker-b6y4b1"]
+    paths:
+      - "cuban-immigration-tracker/**"
+      - ".github/workflows/caa-ci.yml"
+  pull_request:
+    paths:
+      - "cuban-immigration-tracker/**"
+      - ".github/workflows/caa-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "caa-ci-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: cuban-immigration-tracker
+
+jobs:
+  tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.13"
+          cache: npm
+          cache-dependency-path: cuban-immigration-tracker/package-lock.json
+      - run: npm ci
+      - run: npm run --if-present typecheck
+      - run: npm run --if-present lint
+      - run: npm run --if-present test
+      - name: Oracle cross-check (golden:check)
+        run: |
+          if [ -f tools/oracle/golden_cases.py ]; then npm run golden:check; else echo "tools/oracle not present yet (WP2)"; fi
+      - name: JSON Schema drift (schema:export --check)
+        run: |
+          if [ -f scripts/export-schema.mjs ]; then npm run schema:export -- --check; else echo "scripts/export-schema.mjs not present yet (WP1)"; fi
+      - name: Validate data (data:validate)
+        run: |
+          if [ -f packages/ingestion/src/cli.ts ]; then npm run data:validate; else echo "ingestion CLI not present yet (WP5)"; fi
+      - name: i18n check
+        run: |
+          if [ -f scripts/check-i18n.mjs ]; then npm run i18n:check; else echo "scripts/check-i18n.mjs not present yet (WP4)"; fi
+
+  app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: cuban-immigration-tracker/app
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.13"
+          cache: npm
+          cache-dependency-path: cuban-immigration-tracker/app/package-lock.json
+      # No root `npm ci` in this job: proves the app resolves zod from app/node_modules only (07 §4).
+      - run: npm ci
+      # Generates .expo/types/router.d.ts and expo-env.d.ts so typedRoutes is enforced by tsc
+      # (non-interactive in CI: verified by WP0 acceptance (h)).
+      - run: npx expo customize tsconfig.json
+      - run: npx expo install --check
+      - run: npx expo lint
+      - run: npx tsc --noEmit
+      - run: npx jest --ci
+
+  # >>> WP10 web block (owned by WP10; empty in the WP0 skeleton). 03 §6.3 "web" job:
+  # needs: app; root `npm ci` + `cd app && npm ci`; `npm run build:artifact`; `npm run prove`;
+  # assert one zod copy; upload web-artifact/ and prove-out/ as a workflow artifact.
+  # <<< WP10 web block

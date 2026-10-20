@@ -1,0 +1,43 @@
+{
+  "name": "caa-tracker-tooling",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Root tooling package for the Cuban Immigration Tracker (CAA Tracker): pure-TS packages, ingestion, oracle checks, artifact build and Prove (07-implementation-plan.md ARCH-1).",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "lint": "eslint --no-error-on-unmatched-pattern packages scripts tools",
+    "golden:check": "python3 -I tools/oracle/golden_cases.py --check packages/estimator/golden/vph1.golden.json",
+    "golden:write": "python3 -I tools/oracle/golden_cases.py --write packages/estimator/golden/vph1.golden.json",
+    "schema:export": "tsx --tsconfig tsconfig.json scripts/export-schema.mjs",
+    "data:refresh": "tsx --tsconfig packages/ingestion/tsconfig.json packages/ingestion/src/cli.ts refresh --out data",
+    "data:validate": "tsx --tsconfig packages/ingestion/tsconfig.json packages/ingestion/src/cli.ts validate data",
+    "data:fixtures": "tsx --tsconfig packages/ingestion/tsconfig.json packages/ingestion/src/cli.ts fixtures",
+    "data:sample": "node scripts/export-sample.mjs --from data --to app/src/data/sample",
+    "probe": "tsx --tsconfig packages/ingestion/tsconfig.json packages/ingestion/src/cli.ts probe --report-dir probe-out",
+    "i18n:check": "node scripts/check-i18n.mjs",
+    "build:artifact": "node scripts/build-artifact.mjs --app app --data data --out web-artifact",
+    "prove": "node scripts/prove-artifact.mjs --dir web-artifact --out prove-out --variant both",
+    "check": "npm run typecheck && npm run lint && npm test && npm run golden:check && npm run i18n:check && npm run data:validate"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "153.0.0",
+    "@types/node": "22.20.5",
+    "csv-parse": "7.0.3",
+    "eslint": "9.39.5",
+    "exceljs": "4.4.0",
+    "fast-xml-parser": "5.11.2",
+    "puppeteer-core": "25.12.0",
+    "sql.js": "1.14.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1",
+    "vitest": "5.0.3",
+    "zod": "4.6.5"
+  }
+}

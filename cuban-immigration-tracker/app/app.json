@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "CAA Tracker",
+    "slug": "caa-tracker",
+    "version": "0.1.0",
+    "scheme": "caatracker",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "web": {
+      "output": "single",
+      "bundler": "metro"
+    },
+    "plugins": [
+      ["expo-router", { "asyncRoutes": false }],
+      ["expo-localization", { "supportedLocales": ["en", "es"] }],
+      ["expo-notifications", { "defaultChannel": "default" }]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "data": {
+        "baseUrls": ["https://raw.githubusercontent.com/luisitin/Documents"],
+        "ref": "main",
+        "path": "cuban-immigration-tracker/data"
+      },
+      "minDataSchema": 1
+    }
+  }
+}

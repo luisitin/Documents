@@ -1,0 +1,87 @@
+# caa-probe — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.4;
+# doc 13 §12.6 adapted). Ownership: handed to WP5 by the commit "handoff: workflow skeletons →
+# WP5 (refresh, probe, staleness), WP11 (ci), WP10 (ci web block)".
+#
+# Triggers (orchestrator override 3): push to claude/cuban-immigration-tracker-b6y4b1 touching the
+# ingestion package or this file, workflow_dispatch, and the weekly schedule (main only).
+# This workflow NEVER commits (contents: read): it prints PROBE-REPORT.md to the job log and the
+# job summary and uploads probe-out/ as a workflow artifact. The build sandbox cannot reach any
+# government host, so this CI run produces the real probe report.
+name: caa-probe
+
+on:
+  push:
+    branches: ["claude/cuban-immigration-tracker-b6y4b1"]
+    paths:
+      - "cuban-immigration-tracker/packages/ingestion/**"
+      - ".github/workflows/caa-probe.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1"
+
+permissions: {}
+
+concurrency:
+  group: "caa-probe-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: cuban-immigration-tracker
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - id: present
+        name: Probe CLI present on this ref?
+        working-directory: .
+        run: |
+          if [ -f cuban-immigration-tracker/packages/ingestion/src/cli.ts ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ingestion CLI not on this ref yet (WP5)"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: ${{ steps.present.outputs.ok == 'true' }}
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.13"
+          cache: npm
+          cache-dependency-path: cuban-immigration-tracker/package-lock.json
+
+      - if: ${{ steps.present.outputs.ok == 'true' }}
+        run: npm ci --ignore-scripts
+
+      - if: ${{ steps.present.outputs.ok == 'true' }}
+        name: Run probes (doc 13 §12.4)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
+        run: npm run --if-present probe
+
+      - if: ${{ always() && steps.present.outputs.ok == 'true' }}
+        name: Print PROBE-REPORT.md to the log and the job summary
+        run: |
+          if [ -f probe-out/PROBE-REPORT.md ]; then
+            cat probe-out/PROBE-REPORT.md
+            cat probe-out/PROBE-REPORT.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "probe-out/PROBE-REPORT.md was not produced" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - if: ${{ always() && steps.present.outputs.ok == 'true' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: probe-report
+          path: cuban-immigration-tracker/probe-out/
+          if-no-files-found: warn
+          retention-days: 30

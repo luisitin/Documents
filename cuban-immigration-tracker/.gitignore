@@ -1,0 +1,20 @@
+# CAA Tracker (07-implementation-plan.md §2). No secrets, no personal data, no build output.
+node_modules/
+app/node_modules/
+app/dist/
+app/.expo/
+app/expo-env.d.ts
+app/ios/
+app/android/
+app/web-build/
+.expo/
+web-artifact/
+prove-out/
+probe-out/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+*.tsbuildinfo

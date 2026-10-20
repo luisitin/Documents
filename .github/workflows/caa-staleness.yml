@@ -1,0 +1,76 @@
+# caa-staleness — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.5).
+# Ownership: handed to WP5 by the commit "handoff: workflow skeletons → WP5 (refresh, probe,
+# staleness), WP11 (ci), WP10 (ci web block)".
+#
+# Weekly (main only) plus dispatch. Reads cuban-immigration-tracker/data/manifest.json on main;
+# a green no-op while the manifest does not exist there (`present` guard). Stale when
+# lastCheckedAt is more than 8 days old, or the latest official month ended more than 75 days ago.
+name: caa-staleness
+
+on:
+  schedule:
+    - cron: "41 7 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      stale: ${{ steps.check.outputs.stale }}
+      reason: ${{ steps.check.outputs.reason }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 1
+          persist-credentials: false
+
+      - id: present
+        run: |
+          if [ -f cuban-immigration-tracker/data/manifest.json ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "no data/manifest.json on main yet"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - id: check
+        if: ${{ steps.present.outputs.ok == 'true' }}
+        run: |
+          node <<'JS'
+            const fs = require("fs");
+            const m = JSON.parse(fs.readFileSync("cuban-immigration-tracker/data/manifest.json", "utf8"));
+            const now = Date.now(), day = 86400000, reasons = [];
+            const checked = Date.parse(m.lastCheckedAt);
+            if (!Number.isFinite(checked) || now - checked > 8 * day) reasons.push(`lastCheckedAt ${m.lastCheckedAt}`);
+            const [y, mo] = String(m.latestOfficialMonth || "").split("-").map(Number);
+            const monthEnd = Date.UTC(y, mo, 0);
+            if (!Number.isFinite(monthEnd) || now - monthEnd > 75 * day) reasons.push(`latestOfficialMonth ${m.latestOfficialMonth}`);
+            const out = process.env.GITHUB_OUTPUT;
+            fs.appendFileSync(out, `stale=${reasons.length > 0}\n`);
+            fs.appendFileSync(out, `reason=${reasons.join("; ").replace(/[\r\n]/g, " ")}\n`);
+            console.log(reasons.length ? `stale: ${reasons.join("; ")}` : "fresh");
+          JS
+
+  issue:
+    needs: check
+    if: ${{ needs.check.outputs.stale == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          REASON: ${{ needs.check.outputs.reason }}
+        run: |
+          title="CAA data stale"
+          body="Stale data on main: $REASON. Run: $GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
+          n=$(gh issue list -R "$REPO" --state open --search "\"$title\" in:title" --json number -q '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" -R "$REPO" --body "$body"; else gh issue create -R "$REPO" --title "$title" --body "$body"; fi

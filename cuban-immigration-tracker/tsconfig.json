@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": [
+    "packages/**/*.ts",
+    "scripts/**/*.ts",
+    "tools/**/*.ts",
+    "test/**/*.ts",
+    "vitest.config.mts"
+  ],
+  "exclude": ["**/node_modules/**", "app/**", "web-artifact/**", "data/**"]
+}

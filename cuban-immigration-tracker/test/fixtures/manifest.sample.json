@@ -1,0 +1,73 @@
+{
+  "_comment": "SAMPLE TEST FIXTURE (WP0). Not real pipeline output: shas are zeros and counts are placeholders. Shape follows 02-data-model.md §2.1; canary values are GOLDEN T15 from 01-architecture.md §9 V10 / 04 §9.",
+  "schemaVersion": 1,
+  "minAppVersion": "0.1.0",
+  "dataChangedAt": "2026-10-20T06:17:04Z",
+  "lastCheckedAt": "2026-10-20T06:17:04Z",
+  "generatedBy": {
+    "runId": "sample-fixture-wp0",
+    "ref": "claude/cuban-immigration-tracker-b6y4b1",
+    "sha": "0000000"
+  },
+  "latestOfficialMonth": "2026-08",
+  "latestOfficialQuarter": {
+    "fy": 2026,
+    "q": 3
+  },
+  "latestProcessingTimesPublication": null,
+  "files": {
+    "national": {
+      "path": "national.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "quarterly": {
+      "path": "quarterly.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "offices": {
+      "path": "offices.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "policy": {
+      "path": "policy.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "alerts": {
+      "path": "alerts.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "content": {
+      "path": "content.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    },
+    "params": {
+      "path": "params.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    }
+  },
+  "sources": [],
+  "qa": {
+    "status": "ok",
+    "lastGoodRunId": "sample-fixture-wp0",
+    "notes": [
+      {
+        "es": "Archivo de muestra para pruebas; no son datos oficiales.",
+        "en": "Sample file for tests; not official data."
+      }
+    ]
+  },
+  "canary": {
+    "caseId": "T15",
+    "pWithin12": 0.09229,
+    "q50": 54,
+    "computedWith": "VPH-1.1"
+  },
+  "origin": "bundled_sample"
+}
