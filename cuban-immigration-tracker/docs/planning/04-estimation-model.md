@@ -29,7 +29,11 @@ The package `packages/estimator` is pure TypeScript, has zero dependencies and i
 | `policy` (regimes, scenarios, alert rules, class facts, PA-2026-05) | curated | clock, scenarios, conditions |
 | `alerts` (published, with `ruleIds`, `supersedes`, `expires`) | curated | weight effects |
 | `CaseTimeline` + `DerivedFlags` | device | vintage, channel, office/state, milestones |
-| `today` | device clock (date only, local) | k₀, horizons, deadlines |
+| `today` | device clock (date only, local) | k₀ (`kOrigin`), horizons, deadlines, alert validity |
+| `clock` | `case-rules` `clockFor()` (passed in by the app's `useEstimate`) | `EstimateOk.clock`, echoed unchanged |
+| `quarterly`, `data` (`status`, `manifest`) | the app's data layer | guards T20b, `pipeline_late`, `artifact_old`, `qa_degraded`, `sample_data` |
+
+**Naming (two different k₀s in the research).** In this document **k₀ always means the time origin** (EST-5; code name `kOrigin`). The office-shrinkage prior strength in EST-11 is written **κ_o** (code name `kappaOffice`, stored as `params.k0Office = 50`). Agents must never pass one where the other is expected.
 
 **Not inputs:**
 - Anything crowdsourced (v1.1+).
@@ -41,7 +45,7 @@ The package `packages/estimator` is pure TypeScript, has zero dependencies and i
 
 | ADR | Decision | Why |
 |---|---|---|
-| **EST-1 Series start and pool init** | Model rows start at the first month with `pendingOver6` = **2024-09**. Legacy vintages: `legacy>6mo` = pendingOver6 at age 12; `legacy<6mo` = pending − pendingOver6 at age 3 | doc 08 §5.3 |
+| **EST-1 Series start and pool init** | Model rows start at **2024-09**. The reason is the **missing Aug 2024 file** (doc 04 §1.0): Jul 2024 also has `pendingOver6` (90,723 [F], doc 04 §1.1), but the series has no continuous month-to-month replay across the Aug 2024 gap, so the first row after the gap is the pool origin. Legacy vintages: `legacy>6mo` = pendingOver6 at age 12; `legacy<6mo` = pending − pendingOver6 at age 3 | doc 08 §5.3; doc 04 §1.0 |
 | **EST-2 Monthly update order** | For each later row: (1) every vintage age += 1; (2) push a receipts vintage of age 0.5 labelled `ym`; (3) **(fit only)** record the model mean age of completions *now*; (4) remove `C = approved + denied` in proportion to `n·e^{βa}`, flooring each vintage at 0; (5) rescale every vintage to the official pending total | doc 08 §11.5 |
 | **EST-3 β fit** | Targets = the last 3 rows with C ≥ 300 (today Jun/Jul/Aug 2026). SSE of (model mean age − `avgMonths`) uses the full replay. Ternary search on [0, 0.3], 60 iterations, β = midpoint. Fewer than 3 targets → 0.037 | doc 08 §11.4 step 3 |
 | **EST-4 Grid order** | Loops nest as scenario (S0, S1, S2, S3) → β multiplier (½, 1, 2; weights ¼, ½, ¼) → office multiplier (0.8, 1, 1.25; ¼, ½, ¼) → structural extra (only in band runs). Path prior = product of weights. Order matters only for float summation; tests use tolerance 5e-4 | removes the "grid order" ambiguity (data-rigor K1) |
@@ -49,11 +53,11 @@ The package `packages/estimator` is pure TypeScript, has zero dependencies and i
 | **EST-6 Conditioning and mixing** | Posterior path weight ∝ prior × S_path(k₀). Mixture `S_c(t) = Σ post_i · S_i(k₀+t)/S_i(k₀)`, t = 0..72 | doc 08 §4.6, §11.5 |
 | **EST-7 Hazard and cap** | `h_k = min(0.95, C_k · e^{β·a_u} / Σ_v n_v e^{β a_v} · m_total(k))`. The cap is applied **after** all multipliers: office × grid × structural × milestone(t). Milestone multipliers act only for t = k − k₀ ≥ 1 | data-rigor K1 |
 | **EST-8 Quantiles** | q_x = the smallest whole month t ∈ [1, 72] with `1 − S_c(t) ≥ x − 1e-12`, else `null` ("más de 6 años") | data-rigor; removes the 53/54 ambiguity |
-| **EST-9 Calendar dates** | P(by end of month M) = 1 − S_c(months from `ym(today)` to M). For 31 Dec 2026 on 2026-10-20 that is t = 2 | consistent with EST-5 |
+| **EST-9 Calendar dates** | P(by end of month M) = 1 − S_c(months from `ym(today)` to M). For 31 Dec 2026 on 2026-10-20 that is t = 2. **Known bias (design note, not changed in v1):** conditioning on S(k₀) assumes the case survives the whole month of `today` (including the 11 days after 2026-10-20), so P(by 31 Dec 2026) covers only Nov–Dec. S3 is re-anchored to `dataThrough`, so its 6 freeze months nominally include Sep–Oct 2026, which already passed without a hold memo. Anchoring the freeze at `ym(today)` would be more honest; that change regenerates the golden file and needs owner approval (EST-13) | consistent with EST-5 |
 | **EST-10 Day ↔ month conversion** | `monthsCeil(days) = ceil(days / 30.4375)` for "hazard zero until a future date"; `monthsSince(days) = floor(days / 30.4375)` for "boost lasts N months since an event"; continuous `days/30.4375` for the lognormal post-interview and post-expedite clocks | removes rounding ambiguity |
-| **EST-11 Office multiplier** | `r_o = (y_o/E_o)/r_G`; `m̂_o = clamp((k₀ + y_o·r_o)/(k₀ + y_o), 0.5, 2)`, with k₀ = 50, y = approvals in the last two quarters (MVP basis; switching to approvals + denials regenerates the golden file), E = mean of the two quarters' humanitarian pending, group G = cubanFocus offices with data in both quarters | doc 08 §11.5 form (matches T6) |
+| **EST-11 Office multiplier** | `r_o = (y_o/E_o)/r_G`; `m̂_o = clamp((κ_o + y_o·r_o)/(κ_o + y_o), 0.5, 2)`, with κ_o = 50 (`params.k0Office`; not the time origin k₀), y = approvals in the last two quarters (MVP basis; switching to approvals + denials regenerates the golden file), E = mean of the two quarters' humanitarian pending, group G = cubanFocus offices with data in both quarters. **The key-facts §3 values (HIA 0.947 … TAM 1.936) are already the shrunk m̂_o** (T6: raw r for HIA = 0.055), despite the "raw; shrink before use" label there. Never shrink them a second time | doc 08 §11.5 form (matches T6) |
 | **EST-12 Adjudicable days** | `calendar(receipt, today) − Σ overlap([max(receipt, start), min(end, today)))`, end-exclusive, over hold regimes whose `appliesTo` contains ALL_CUBAN or the channel. Defaults R1 2025-02-14→2025-06-09 and R3 2025-12-02→2026-06-12; altOps ends 2025-06-25 / 2026-07-16 | key facts §3; T11/T19/T21/T22 |
-| **EST-13 Golden supremacy** | The committed `packages/estimator/golden/vph1.golden.json` is the acceptance target. It is generated by `tools/oracle/vph1.py` (Appendix A) and must match the TS implementation within 5e-4 on probabilities and **exactly** on quantiles. Doc 08's prose numbers (9.4 %, q50 53, Tampa 16.9 %) are **superseded** (independent reproductions by data-rigor and by this plan both give 9.23 %, 54, 16.6 %) | must-fix #1 |
+| **EST-13 Golden supremacy** | The committed `packages/estimator/golden/vph1.golden.json` is the acceptance target. It is generated by the oracle (`tools/oracle/golden_cases.py`, which imports the Appendix A core `vph1.py`) and must match the TS implementation within 5e-4 on probabilities and **exactly** on quantiles. Doc 08's prose numbers (9.4 %, q50 53, Tampa 16.9 %) are **superseded** (independent reproductions by data-rigor and by this plan both give 9.23 %, 54, 16.6 %). **Precedence:** if the WP2 oracle (core + harness) disagrees with any number written in §9, the agent **stops and escalates to the owner**; it must not silently regenerate the golden file to match its own code. Only an owner-approved edit of §9 followed by `golden:write` changes the golden file | must-fix #1 |
 
 ## 3. Core algorithm
 
@@ -117,7 +121,7 @@ The grid produces 36 paths (4 scenarios × 3 β × 3 office) with priors `w_s·w
 | **NOID pending** | Same, with `d = n + 33 days` (30 + 3 mail) | doc 14 §4 |
 | RFE/NOID answered at x | 1.5 for t ≤ 3 − monthsSince(today − x) | doc 08 §7.5 |
 | Mandamus filed at f | 1.3 for t ≤ 4 − monthsSince(today − f) | doc 15 §9.3 (not ×3) |
-| No biometrics, receipt > 4 months old, and no EAD | 0.7 (all t) | doc 08 §7.5; user-first refinement |
+| No biometrics, receipt > 4 months old, and no EAD | 0.7 (all t). A `biometrics` milestone with `date: null` ("happened, date unknown") counts as biometrics done | doc 08 §7.5; user-first refinement |
 | EAD received | 1.0 in the point estimate; {0.9, 1.0, 1.2} in the structural band | doc 08 §7.5 |
 | e-Request, congressional inquiry, Ombudsman | 1.0 | doc 15 §9.3 |
 
@@ -137,6 +141,8 @@ The grid produces 36 paths (4 scenarios × 3 β × 3 office) with priors `w_s·w
 4. Posterior office weight: `π_o ∝ w_o · U_o`. The result is **`S(t) = Σ_o π_o S_o(t)`**. Averaging multipliers is **wrong** and is not done.
 5. `office.basis = 'state_mixture'`, with copy "Aproximado: no sabemos su oficina; mezcla de las oficinas de {estado}".
 6. Neither office nor state known → national (m = 1 in the grid).
+7. **Known limitation (v1).** The posterior office weight uses only `U_o` = survival from `dataThrough` to today (k₀ = 2 months), because the pool is not tracked per office. It barely moves the prior (HIA 0.2796 → 0.2799) even though a case pending 19 months is strong evidence against fast offices such as TAM. v1.1 may condition on survival since filing (golden regeneration). The Method screen states this limitation.
+8. "Miami-Dade + No sé" uses the all-Florida mixture in v1 (not one restricted to HIA/KND/MIA).
 
 **Golden fixture FL-4** (offices HIA/KND/MIA/TAM, multipliers 0.947/0.829/0.963/1.936, FY26 Q3 pending 37,486/41,248/20,662/34,695):
 - π = 0.2799 / 0.3082 / 0.1543 / 0.2576.
@@ -151,8 +157,10 @@ The grid produces 36 paths (4 scenarios × 3 β × 3 office) with priors `w_s·w
 |---|---|---|---|---|
 | S0 | Estancamiento / Status quo | 800 flat | 0.30 | yes |
 | S1 | Recuperación parcial / Partial recovery | 800 + 3,800·min(k,12)/12 | 0.40 | yes |
-| S2 | Ritmo de 2025 / FY2025 pace | 800 + 8,400·min(k,6)/6 | 0.15 | yes |
+| S2 | Ritmo de fines de 2024 (oct–dic 2024, ~9,200/mes) / Late-2024 pace (Oct–Dec 2024, ~9,200/mo) | 800 + 8,400·min(k,6)/6 | 0.15 | yes |
 | S3 | Nueva pausa / Re-freeze | **re-anchored**: 0 for the first 6 projected months after `dataThrough`, then S1(offset + j − 6) | 0.15 | **no** (alerts only) |
+
+**Research conflict (S2 label), resolved 2026-10-20.** Docs 07 §3.2 and 08 §5.1/§8.2 attribute 27,602 completions to Apr–Jun 2025 (FY25 Q3) and call S2 "FY2025 pace". The app's own [F] monthly series contradicts this: Apr–Jun 2025 completions = 5,944 + 3,602 + 1,924 = **11,470**, while Oct–Dec 2024 (FY25 Q1) = **27,673**. Immiva, the secondary source behind 27,602, compares "FY2025 Q1" with FY2026 Q3 [S: https://immiva.com/blog/uscis-processing-times-by-form]. So 27,602 is the FY25 Q1 figure. The S2 **numbers are unchanged** (golden file unchanged); only the label changes. The true FY2025 (Oct 2024–Sep 2025) average is 78,291 / 12 = **6,524/month** [F-derived], which Method shows as an extra Little's-law line (355,520 / 6,524 ≈ 54 months). Doc 14's "about 1,900 FY25 Q3 denials" should read **785** (282 + 226 + 277 from the monthly CSV); its conclusion still holds because 447 < 785.
 
 S3 represents a *future* freeze risk. If it were likelihood-updated, one normal month would "refute" a freeze that has not happened, so it is re-anchored every month and is not updated by data.
 
@@ -162,7 +170,9 @@ S3 represents a *future* freeze risk. If it were likelihood-updated, one normal 
 - **σ:** the sample SD of month-to-month log changes of completions between consecutive **non-hold** months. Today that is 9 differences, SD 0.298 → **σ = 0.30** [V]. The floor is 0.25. σ is refitted when a month arrives.
 - **Tempering:** λ = 0.5. A single month is treated as half an observation, because the model is mis-specified (mixed pool). The effective σ is 0.424.
 
-### 6.3 `scenarioWeights(policy, alerts, observedRows, flags, σ)`
+### 6.3 `scenarioWeights(policy, alerts, observedRows, flags, observation, today)`
+
+Signature (frozen in contract v1, `07` §6.0): `scenarioWeights(policy: PolicyFile, alerts: AlertsFile, observed: MonthlyRow[], flags: DerivedFlags | null, observation: EstimatorParams['observation'], today: ISODate)`. σ, λ (`tempering`), the level floor (`floorLevel`) and the weight floor (`weightFloor`) all come from `observation`; alert validity uses `today`. The function never reads a clock.
 
 Pure and deterministic. Steps:
 
@@ -175,7 +185,7 @@ Pure and deterministic. Steps:
    - `redEagleNotProtecting` = the negation of `redEagleProtects`
    - `dorcasPending` = `policy.litigationState.dorcas == 'vacatur_in_force_appeal_pending'`
 
-3. **Likelihood.** For each observed monthly row m after `anchorMonth`, in order: `L_s = exp(−½·λ·z_s²)` for s ∈ {S0, S1, S2}. Multiply, then renormalize S0–S2 **within** the mass 1 − w[S3]. Floor each at 0.02 of the total, then renormalize again.
+3. **Likelihood.** For each observed monthly row m after `anchorMonth`, in order: `L_s = exp(−½·λ·z_s²)` for s ∈ {S0, S1, S2}, with `z_s = (ln C_obs − ln max(μ_s, floorLevel)) / σ`. Then, exactly in this order: (i) multiply `w[s] · L_s` for s ∈ {S0, S1, S2}; (ii) **normalize S0–S2 to sum 1**; (iii) **floor each at `weightFloor` = 0.02** (a fraction of the S0–S2 sub-mass, not of the total); (iv) renormalize S0–S2 to sum 1; (v) **multiply by (1 − w[S3])**. S3 is untouched. (Verified 2026-10-20: this reproduces every row of the table below; flooring at 0.02 of the full mass does not.)
 4. Every multiplication appends `{reason, ruleId, alertId, observedMonth, before, after}` to the trace.
    - The pipeline writes the case-independent trace (flags = null, i.e. using only `always` and `dorcasPending` conditions) into `params.weightLedger`.
    - The device recomputes the case-dependent part, the class conditions, and shows it under "ver historial".
@@ -197,7 +207,7 @@ Pure and deterministic. Steps:
 - There is no observed month after the anchor.
 - So the weights = priors 0.30 / 0.40 / 0.15 / 0.15. After survival-conditioning the posterior is 0.3006 / 0.3998 / 0.1487 / 0.1509, matching doc 08 T5 exactly [V].
 
-**Golden: weights after the September 2026 CSV arrives (σ_eff 0.424, S3 fixed 0.15), by observed C_Sep:**
+**Golden (T31): weights after the September 2026 CSV arrives (σ_eff 0.424, S3 fixed 0.15, floor = 0.02 of the S0–S2 sub-mass, so the floored value shows as 0.02 × 0.85 ≈ 0.017), by observed C_Sep:**
 
 | C_Sep | S0 | S1 | S2 | S3 |
 |---|---|---|---|---|
@@ -262,16 +272,16 @@ The band is displayed next to the policy band on the result card ("Según qué c
 | T1 | β = 0, flat 800, receipts 0, vintage 2025-03, m = 1 | h₁ = 800/355,520 = 0.0022502; S(12) = 0.9730 |
 | T2 | S3 path, any β | h₁…h₆ = 0 exactly; S(6) = 1 |
 | T3 | β = 1.0, S1 | S_2025-03(24) = 0.99966; S_legacy>6mo(12) = 0.39291 (ordering legacy ≪ 2025-03). This **replaces** doc 08's "S(12) = 0", which the pinned floor-at-0 removal does not reproduce |
-| T4 | S1, β̂, k₀ = 2 | S_c(12) = S(14)/S(2) = **0.92072** (matches doc 08) |
+| T4 | S1 only, β̂, m = 1, k₀ = 2 | S_c(12) = S(14)/S(2) = **0.89755**; cross-check S_c(10) = S(12)/S(2) = **0.92072** (this is doc 08's "S_c(12)", which used S(12)/S(2) with a different index) |
 | T5 | posterior after conditioning (no alerts, no observations) | (0.3006, 0.3998, 0.1487, 0.1509) ± 1e-4; sums to 1 ± 1e-12 |
 | T6 | Office shrink HIA 3/37,084, group 244/166,179 | r = 0.055, m̂ = 0.947; TAM 117/34,105 → 1.936; clamp 5 → 2, 0.1 → 0.5 |
 | T7–T9 | KM, conditional KM, discrete CRPS (v1.1 crowd utils) | as doc 08 §11.9 (Ŝ(3) .8333, Ŝ(5) .6667, Ŝ(8) .4444, Ŝ(12) 0; Ŝ(8\|5) .6667; CRPS 0.375) |
 | T10 | Lognormal median 3, σ 0.857 | F(1) 0.0999, F(3) 0.5000, F(6) 0.7907, F(9) 0.9001; P(≤3 \| 3 since) 0.5814 |
 | T11 | Clock CHNV, receipt 2025-03-15 | calendar 584; R1 86; R3 192; adjudicable **306**; altOps **256** |
-| T12 | Little's law | 355,520/820 = 433.56; /4,600 = 77.29; /9,200 = 38.64; /16,876 = 21.07 |
+| T12 | Little's law | 355,520/820 = 433.56; /4,600 = 77.29; /6,524.25 (FY2025 average) = 54.49; /9,200 (late-2024 pace) = 38.64; /16,876 = 21.07 |
 | T13 | Pool invariants | Σn = 355,520 ± 1; 25 vintages; min ≥ 0 (1,210.8); scales ∈ [0.99, 1.01]; Mar-2025 n = 23,096.5; older = 175,220.8 |
 | T14 | β fit | 0.037391 ± 1e-5; SSE(β̂) < SSE(0) and < SSE(0.08) |
-| **T15** | **Reference case** (CHNV, 2025-03-15, EAD 2025-09, office and state unknown) | P3 **0.01484**, P6 **0.03665**, P12 **0.09229**, P18 0.15517, P24 **0.22050**, P36 **0.35453**, P60 0.55396; q10 **13**, q25 **27**, q50 **54**, q75 **null**, q90 null; byDate 2026-12-31 0.00906, 2027-03-31 0.02884, 2027-06-30 0.05366, 2027-12-31 0.11271, 2028-12-31 0.24265 |
+| **T15** | **Reference case** — the exact fixture: CHNV, receipt 2025-03-15 (day), **biometrics 2025-07 (month granularity, i.e. 2025-07-15)**, EAD (c)(9) 2025-09 (month), `concurrentI765 = true`, **`state` and `officeCode` undefined** (national path), no other milestones. The biometrics milestone is pinned because March 2025 CHNV filers' biometrics clustered Jun–Aug 2025 (research README §2.4) and an EAD implies biometrics were taken [I]; it does not change T15 (the 0.7 rule is off when an EAD exists) but keeps T23 identical | P3 **0.01484**, P6 **0.03665**, P12 **0.09229**, P18 0.15517, P24 **0.22050**, P36 **0.35453**, P60 0.55396; q10 **13**, q25 **27**, q50 **54**, q75 **null**, q90 null; byDate 2026-12-31 0.00906, 2027-03-31 0.02884, 2027-06-30 0.05366, 2027-12-31 0.11271, 2028-12-31 0.24265 |
 | T15b | Per scenario | S0 P12 0.02325 (q50 null); S1 0.10054 (46); S2 0.25970 (22); S3 0.04289 (51); policyBand12 [0.02325, 0.25970] |
 | T15c | Drivers | scenario 0.94135, office 0.02796, β 0.00920 |
 | T15d | Structural band (EAD received) | [0.04352, 0.19801]; without EAD [0.04815, 0.17021] |
@@ -285,15 +295,16 @@ The band is displayed next to the policy band on the result card ("Según qué c
 | T20 | Guards | (a) today − end of latest month > 75 days → LOW + banner (with Aug 2026 data the trip date is 2026-11-15); (b) monthly Oct 2026 vs quarterly through Jun 2026 → "sin contraste trimestral"; Aug vs Jun passes |
 | T21 | CBP One, 2025-03-15 | 392; `r1: 'not_applied_low_confidence'` |
 | T22 | CBP One, parole 2024-02-01, receipt 2025-02-05 | calendar 622; adjudicable 430; oneYearWarning false |
-| T23 | Peer without EAD (same as T15 minus `ead_c9`) | identical P/q to T15; remedy rung `a_c9` = available (2025-03-15 < NBC 147-C9 2025-06-13); peer reasons ⊇ {`ead_swept_r3`, `c9_erequest_available`} |
-| T24 | CBP One peer | identical P/q to T15; clock 392; peer reasons ⊇ {`cbp_one_no_r1`} |
+| T23 | Peer without EAD (same as T15 minus `ead_c9`; **keeps the biometrics milestone**) | identical P/q to T15; remedy rung `a_c9` = available (2025-03-15 < NBC 147-C9 2025-06-13); peer reasons ⊇ {`ead_swept_r3`, `c9_erequest_available`} |
+| T23b | Peer without EAD **and** without biometrics (T15 minus `ead_c9` minus `biometrics`; the 0.7 rule applies) | P3 0.01042, P6 0.02590, P12 **0.06619**, P24 0.16437, P36 0.28154; q10 17, q25 34, q50 **64** [V oracle 2026-10-20] |
+| T24 | CBP One peer (T15 fixture, channel CBP_ONE) | identical P/q to T15; clock 392; peer reasons ⊇ {`cbp_one_no_r1`} |
 | T25 | Filed 2026-09-01 | `redEagleAppearsInClass = false`; with an active `DORCAS_REVERSED` alert the S3 weight gets × 3 (vs × 1.5 for T15) |
 | T26 | I-220A | `no_estimate` 'i220a'; no numbers rendered anywhere (UI test) |
 | T27 | Interview scheduled 2026-12-15 (t_D = 2) | P3 0.10809, P6 0.63479, P12 0.92070; q50 5 ("confianza baja") |
 | T28 | Interview done 2026-09-20 (s = 0.98563) | P(≤3) 0.59010, P(≤6) 0.82060, P(≤12) 0.95165 |
 | T29 | Expedite granted 2026-10-10 (s = 0.32854; median 2) | P(≤3) 0.71895, P(≤6) 0.90895, P(≤12) 0.98279 |
 | T30 | State mixture FL-4 | §5.3 values; π sums to 1 |
-| T31 | Likelihood update | §6.3 table (± 1e-4) |
+| T31 | Likelihood update | §6.3 table (± 1e-4), with the sub-mass floor of §6.3 step 3 |
 | T32 | Alert composition | `DORCAS_REVERSED` + `RED_EAGLE_DISSOLVED` with `dorcasPending = false`, class member → S3 factor × 3 (not × 6); retracted or superseded alert → no effect; expired alert → no effect; ledger entries in (date, id) order |
 | U1 | Language invariance | `estimate()` output is byte-identical for es and en; only rendered strings differ; locale key parity |
 | U2 | Peer reasons exact sets (all cases with `concurrentI765 = true`, office unknown) | T15 → {`chnv_r1`, `ead_before_r3`, `non_fifo`}; CBP One twin → {`cbp_one_no_r1`, `ead_before_r3`, `non_fifo`}; no-EAD twin → {`chnv_r1`, `ead_swept_r3`, `c9_erequest_available`, `non_fifo`}; + `office_diff` iff office known |
@@ -383,7 +394,7 @@ Individual decision times are **not** observable from official data. What can be
 
 ## Appendix A — Reference oracle (`tools/oracle/vph1.py`, stdlib only, run with `python3 -I`)
 
-This is the exact core that produced §9 [V]. WP-EST copies it verbatim. It then adds the case harness (milestone `mfun`, state mixture, structural extras, likelihood update, alert composition), as specified in §4–§7, so that the oracle writes every row of the golden file.
+This is the exact core that produced §9 [V]. WP-EST copies it verbatim into `tools/oracle/vph1.py`. The case harness lives in `tools/oracle/golden_cases.py`, **which is the entry point** for `golden:check` / `golden:write`. Because `python3 -I` implies `-P` (the script's directory is not on `sys.path`; verified on Python 3.13), its first lines must be `import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))` and only then `import vph1`. The harness adds (milestone `mfun`, state mixture, structural extras, likelihood update, alert composition), as specified in §4–§7, so that the oracle writes every row of the golden file.
 
 ```python
 import math, json, sys

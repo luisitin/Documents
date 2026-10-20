@@ -38,7 +38,7 @@ Every source below is one the research verified, with the file and section cited
 | P1 | `uscis.monthly_csv` (**Must**) | `https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_<month>_<year>_v1.0.csv` (lowercase English month; latest `august_2026`; next `september_2026`) — doc 04 §1.1, doc 13 §3.2. Discovery: (a) portal index `https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data`, regex `appropriation_requirement` case-insensitive incl. space-encoded `…%20<year>.csv`; (b) HEAD constructed names for latest+1 and latest+2. Backfill-only legacy forms: `…/document/reports/Appropriation_Requirement_<Month>%20<YYYY>.csv`, `…/document/resource-information-center-queries/Appropriation_Requirement_<Month>_<YYYY>.csv` | `monthlyCsv.ts` — see §3.1 | Monthly, 4–8 weeks lag; Sep 2026 not out on 2026-10-20 [S/F] | `national.json.rows` (append/replace by `ym`), `.i765National` | Fallback `https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_<month>_<year>.csv` (doc 04 §1.0; August 2026 copy fetched today by data-rigor: 3,629 B, sha256 `74aa7bce…6d8c`, BOM, CRLF [F]). Fixture gate Q2 |
 | P2 | `uscis.quarterly_all_forms` (**Must**) | `https://www.uscis.gov/sites/default/files/document/data/quarterly_all_forms_fy<YYYY>_q<N>_v1.xlsx` (latest `fy2026_q3`, 785,620 B; Q4 ≈ early Dec 2026) — doc 04 §1.2, doc 13 §3.2–3.3; HEAD next quarter each run | `quarterlyAllForms.ts` (exceljs) — §3.2 | Quarterly, ~10 weeks lag | `quarterly.json.rows`, `.approvalBaselines` | Mirror `…/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy<YYYY>_q<N>_v1.xlsx`; Q8 sha equality when both fetched |
 | P3 | `uscis.i485_by_office` (**Must**) | **href from the portal index only** (stem changed 4× in two years: `i485_performancedata_fy2025_q3.xlsx` → `i485_performance_fy2025_q4.xlsx` → `i485_performance_fy2026_q1.xlsx` → `i485_performance_data_fy2026_q2_v1.xlsx`; latest `…/document/data/i485_performance_data_fy2026_q3_v1.xlsx`) — doc 04 §1.3, doc 13 §3.2; constructed name only as a guess | `i485ByOffice.ts` — §3.3 | Quarterly | `offices.json.quarterly`, `.offices`, `.stateOffices`; `params.officeMultipliers` | Mirror (same file names in `USCIS_I485/`); fixture Hialeah FY26 Q3 humanitarian pending 37,486 |
-| P4 | `mirror.jzebedee` processing times (**Must**) | `GET https://api.github.com/repos/jzebedee/uscis/releases/latest` (Bearer `GITHUB_TOKEN`) → take `assets[].browser_download_url` ending `.db` (name expected `<YYYY-MM-DD>.db`, **[I]**, never constructed) — doc 13 §1.6, doc 04 §2.3 | `processingTimes.ts` (sql.js) — §3.4 | Daily; builds `30 4 * * *` UTC | `offices.json.processingTimes`, `.inquiryDateHistory`; office codes | Release not dated today → keep previous; the 18:17 run retries. Licence: derived fields + attribution only; week-0 issue asks permission. If no dates at all: UI says "fecha de consulta no disponible (fuente, fecha)" and makes **no gate decision** |
+| P4 | `mirror.jzebedee` processing times (**Must**) | `GET https://api.github.com/repos/jzebedee/uscis/releases/latest` (Bearer `GITHUB_TOKEN`) → take `assets[].browser_download_url` ending `.db` (name expected `<YYYY-MM-DD>.db`, **[I]**, never constructed) — doc 13 §1.6, doc 04 §2.3 | `processingTimes.ts` (sql.js) — §3.4 | Builds scheduled `30 4 * * *` UTC, but the only releases the research cites are 2026-09-25 and 2026-10-15, so **real cadence is unknown [I]**; never alarm on a daily cadence — staleness for this source is judged against USCIS's own publication date, not the release date | `offices.json.processingTimes`, `.inquiryDateHistory`; office codes | Release not dated today → keep previous; the 18:17 run retries. Licence: derived fields + attribution only; week-0 issue asks permission. If no dates at all: UI says "fecha de consulta no disponible (fuente, fecha)" and makes **no gate decision** |
 | P5 | `uscis.pt_tool` direct | `https://egov.uscis.gov/processing-times/api/processingtime/I-485/<OFFICE>/131A-FAM` and `POST https://egov.uscis.gov/processing-times` (`Next-Action`) — doc 13 §1.1–1.2 | probe only | — | — | Expected `blocked_cloudflare` from cloud IPs (doc 13 §1.2). **Never on the critical path** |
 | P6 | `uscis.historic_pt` | `https://egov.uscis.gov/processing-times/historic-pt` — doc 13 §1.5 | curated `data/curated/historic_medians.json` | annual + in-year | `quarterly.json.historicMedians` | Cloudflare-gated; values [S-sec] via press (3.3 / 4.6 / 7.0 / 11.8 @2026-07-31, 12.3 @2026-08-30) |
 | P7 | `fr.api` (Should) | `https://www.federalregister.gov/api/v1/documents.json?conditions[term]=(Cuban OR Cubans OR "Cuban Adjustment Act" OR parole OR parolees OR CHNV)&conditions[agencies][]=homeland-security-department&conditions[agencies][]=u-s-citizenship-and-immigration-services&conditions[agencies][]=u-s-customs-and-border-protection&conditions[publication_date][gte]=<last run date>&order=newest&per_page=100` — doc 13 §6 | `federalRegister.ts` | daily ~6am ET | `candidates/alert-candidates.json` | keyless; fixture query must find `2025-05128`; failure → skip with status |
@@ -158,7 +158,7 @@ on:
     inputs:
       only:    { description: "comma list of source keys (blank = all)", required: false, default: "" }
       dry_run: { description: "parse + QA, do not commit", type: boolean, default: false }
-  push:                                       # fallback for claude/** before the file reaches main; bot commits touch data/** (not matched)
+  push:                                       # fallback for claude/** before the file reaches main; ALWAYS a dry run (never commits; avoids races with agents pushing to the same branch)
     branches: ["claude/**"]
     paths:
       - "cuban-immigration-tracker/packages/ingestion/**"
@@ -181,32 +181,35 @@ jobs:
       qa_status:   ${{ steps.ingest.outputs.qa_status }}
       alerts_changed: ${{ steps.ingest.outputs.alerts_changed }}
     steps:
-      - uses: actions/checkout@<SHA of v7.0.1>             # pin by SHA (doc 09 §5.3)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1   # v7.0.1, pinned by SHA (doc 09 §5.3; resolved with git ls-remote 2026-10-20 [V])
         with: { ref: "${{ github.ref_name }}", fetch-depth: 1 }
       - id: present                                        # workflow-only PR on main: code not there yet → no-op
         working-directory: .
         run: |
           if [ -f cuban-immigration-tracker/package.json ]; then echo "ok=true" >> "$GITHUB_OUTPUT"; else echo "code not on this ref yet"; echo "ok=false" >> "$GITHUB_OUTPUT"; fi
       # every following step carries:  if: ${{ steps.present.outputs.ok == 'true' }}  (omitted below for brevity)
-      - uses: actions/setup-node@<SHA of v7.1.0>
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 [V git ls-remote 2026-10-20]
         with: { node-version: "22.13", cache: npm, cache-dependency-path: cuban-immigration-tracker/package-lock.json }
       - run: npm ci --ignore-scripts                       # root tooling package (no install scripts needed for ingestion)
       - id: ingest
         env:
           GITHUB_TOKEN: ${{ github.token }}                # api.github.com release lookup (read-only use)
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}   # optional → skipped_no_secret
+          ONLY: ${{ inputs.only }}                         # via env, never interpolated into the script (injection-safe)
         run: >
           npx tsx --tsconfig packages/ingestion/tsconfig.json packages/ingestion/src/cli.ts refresh
-          --out data --only "${{ inputs.only }}" --github-output "$GITHUB_OUTPUT"
+          --out data --only "$ONLY" --github-output "$GITHUB_OUTPUT"
       - name: Commit (content changed or 7-day heartbeat), data/** only
-        if: ${{ !inputs.dry_run && steps.ingest.outputs.should_commit == 'true' }}
+        if: ${{ github.event_name != 'push' && !inputs.dry_run && steps.ingest.outputs.should_commit == 'true' }}   # commit only on schedule / dispatch
+        env:
+          SUMMARY: ${{ steps.ingest.outputs.summary }}     # via env (injection-safe)
         run: |
           git config user.name "caa-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git reset -q -- data/curated                     # bot never commits curated inputs
           git diff --cached --quiet && { echo "nothing staged"; exit 0; }
-          git commit -m "data: ${{ steps.ingest.outputs.summary }} [skip ci]"
+          git commit -m "data: ${SUMMARY} [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin "${{ github.ref_name }}" && git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i*10))
@@ -248,11 +251,11 @@ Notes:
 
 ### 6.2 Feature-branch vs default-branch sequence (must-fix; exact order)
 
-1. **WP0, on `claude/cuban-immigration-tracker-b6y4b1`:** add `caa-data-refresh.yml` and the ingestion skeleton. The push trigger on `claude/**` runs it on the branch and commits snapshots to the branch.
-2. **WP0, owner action:** merge a **workflow-only PR** to `main` that contains `caa-data-refresh.yml`, `caa-ci.yml` and `caa-probe.yml`, so that `schedule` and `workflow_dispatch` exist (`main` is the default branch [V]).
+1. **WP0, on `claude/cuban-immigration-tracker-b6y4b1`:** add the four workflow **skeletons** (`07` WP0 step 6; temporary WP0 ownership, handed to WP5/WP11 by the commit `handoff: workflow skeletons`). Every `npm run` in a skeleton uses `npm run --if-present`, so a step whose script does not exist yet is a green no-op. The push trigger on `claude/**` runs the refresh **as a dry run only** (no commit). The first committed data on the branch comes from WP5 running `npm run data:refresh` locally (`07` WP5).
+2. **WP0, owner action:** merge a **workflow-only PR** to `main` that contains `caa-data-refresh.yml`, `caa-ci.yml`, `caa-probe.yml` and `caa-staleness.yml`, so that `schedule` and `workflow_dispatch` exist (`main` is the default branch [V]).
    - Until the full code reaches `main`, a schedule run on `main` finds no `cuban-immigration-tracker/package.json` there.
    - The `present` step in §6.1 guards this case: when the code is missing, the run is a green no-op.
-3. **After step 2:** manual runs on the feature branch use `gh workflow run caa-data-refresh.yml --ref claude/cuban-immigration-tracker-b6y4b1`. This needs a token with `repo` and `workflow` scopes, from the owner's gh login [S-sec].
+3. **After step 2:** manual runs on the feature branch use `gh workflow run caa-data-refresh.yml --ref claude/cuban-immigration-tracker-b6y4b1`. This needs a token that can dispatch workflows: a classic token with `repo` scope, or a fine-grained token with `actions: write` on the repository (the `workflow` scope is only needed to *edit* workflow files) [S-sec]. Dispatch runs on the branch **do** commit (the push-trigger dry-run rule does not apply).
 4. **When the app merges to `main`:** scheduled runs commit to `main`, which becomes the **data branch of record**.
    - Store builds read `extra.data.ref = "main"`.
    - Preview builds read the feature branch.
@@ -266,22 +269,24 @@ The workflow has three jobs.
 - `npm ci`
 - `npx tsc -p tsconfig.json`
 - `npx vitest run` (packages/*)
-- `python3 -I tools/oracle/vph1.py --check packages/estimator/golden/vph1.golden.json`, which is the oracle cross-check (`04` §9)
+- `npm run golden:check` = `python3 -I tools/oracle/golden_cases.py --check packages/estimator/golden/vph1.golden.json`, which is the oracle cross-check (`04` §9; `golden_cases.py` inserts its own directory into `sys.path` before importing `vph1`)
 - `npm run schema:export -- --check`, which fails on JSON Schema drift
 - `npm run data:validate`, which validates `data/` and `data/curated/` with strict zod
 - `node scripts/check-i18n.mjs`
 
 **`app`:**
-- `cd app && npm ci`
+- `cd app && npm ci` (no root `npm ci` in this job: proves the app resolves `zod` from `app/node_modules` only; `07` §4)
+- `npx expo customize tsconfig.json` (non-interactive; generates `.expo/types/router.d.ts` and `expo-env.d.ts` so `experiments.typedRoutes` is enforced by `tsc`)
 - `npx expo install --check`
 - `npx expo lint`
 - `npx tsc --noEmit`
 - `npx jest --ci`
 
 **`web`** (needs `app`):
-- `cd app && npx expo export --platform web --output-dir dist`
-- `node ../scripts/build-artifact.mjs --dist dist --data ../data --out ../web-artifact`
-- `node ../scripts/prove-artifact.mjs --dir ../web-artifact`, using `@sparticuz/chromium` + `puppeteer-core` from npm (`07` §9).
+- `npm ci` (root, for puppeteer-core / @sparticuz/chromium) and `cd app && npm ci`
+- `npm run build:artifact` = `node scripts/build-artifact.mjs --app app --data data --out web-artifact`; the script itself generates the route list, runs `npx expo export --platform web --output-dir app/dist` (passing `EXPO_OFFLINE` through) and inlines (`07` WP10)
+- `npm run prove` (both variants, `07` §9), using `@sparticuz/chromium` + `puppeteer-core` from npm.
+- Assert the bundle contains exactly one copy of zod (`07` §4).
 - Upload `web-artifact/` and the screenshots as a workflow artifact.
 
 ### 6.4 `/.github/workflows/caa-probe.yml` (doc 13 §12.6 adapted)
@@ -293,12 +298,12 @@ The workflow has three jobs.
 - **`commit-samples` job** (only when dispatched with `commit: true`; `contents: write`):
   - Downloads the artifact.
   - Commits `data/samples/PROBE-REPORT.md` and the small samples. The total is capped at 25 MB, and binaries go in `.gitattributes`.
-- The **first manual run is WP0's acceptance**: it turns every "plan only" row into a classification.
+- The **first manual run (or the local `npm run probe`) is WP5's acceptance**: it turns every "plan only" row into a classification and commits `data/samples/PROBE-REPORT.md`.
 
 ### 6.5 `/.github/workflows/caa-staleness.yml`
 
 - **Trigger:** `schedule: "41 7 * * 1"` plus dispatch.
-- Checks out `main` (`contents: read`) and reads `cuban-immigration-tracker/data/manifest.json`.
+- Checks out `main` (`contents: read`). The same `present` guard as the refresh job: if `cuban-immigration-tracker/data/manifest.json` does not exist on `main` yet, the run is a green no-op. Otherwise it reads the manifest.
 - If `lastCheckedAt` is more than 8 days old, or the latest official month is more than 75 days past its month end, a second job with `issues: write` upserts the issue "CAA data stale".
 
 ## 7. Versioning and publishing
@@ -307,7 +312,7 @@ The workflow has three jobs.
 - **Data history:** git history of `cuban-immigration-tracker/data/` is the version log. Each commit message summarizes which sources changed. When a new official month lands, the job also creates a lightweight tag `caa-data-<YYYY-MM>`, covered by `contents: write`.
 - **Immutability:** published files are overwritten in place, and history lives in git. `forecasts/<YYYY-MM>.json` (v1.1) is **append-only**. CI fails if an existing forecast file is modified.
 - **Native read URL:** `${baseUrl}/${ref}/cuban-immigration-tracker/data/<file>`, with `baseUrl = https://raw.githubusercontent.com/luisitin/Documents` and `ref = main` (store) or the branch (preview).
-- **Artifact:** `build-artifact.mjs` copies the manifest plus the 7 data files into `web-artifact/data/`, adds `artifactBuiltAt`, and recomputes the sha256 values.
+- **Artifact:** `build-artifact.mjs` copies the manifest plus the 7 data files into `web-artifact/data/`, adds `artifactBuiltAt`, and recomputes the sha256 values. If `data/manifest.json` is missing (before WP5 commits data), it prints a warning and emits a sample-only fragment with no `data/` folder.
 
 ## 8. Local developer commands (root `package.json` scripts)
 
@@ -318,7 +323,7 @@ The workflow has three jobs.
 | `npm run data:sample` | Freeze `data/*.json` into `app/src/data/sample/` |
 | `npm run data:validate` | Validate `data/` and `curated/` with strict zod |
 | `npm run probe` | Run the doc 13 §12 probes locally |
-| `npm run build:artifact` | Run the app web export, then `scripts/build-artifact.mjs` |
+| `npm run build:artifact` | `node scripts/build-artifact.mjs` — the script generates the route list, runs `npx expo export --platform web` itself (honours `EXPO_OFFLINE=1`; `--skip-export` reuses an existing `app/dist`), then inlines |
 | `npm run prove` | Run `scripts/prove-artifact.mjs` |
 
 ## 9. Artifact republish runbook (who / when / how — must-fix)
@@ -330,7 +335,7 @@ The workflow has three jobs.
 **How:**
 1. `git pull` on the data branch (`main`).
 2. `npm ci && (cd app && npm ci)`.
-3. `npm run build:artifact && npm run prove`. Both must pass.
+3. `npm run build:artifact && npm run prove`. Both must pass. Prove's live variant derives its expectations from the shipped `data/manifest.json` (`07` §9), so a new month does not break it.
 4. Publish `web-artifact/index.html` as the page, with `files` mapping `data/manifest.json` and `data/*.json`, to the **same artifact URL**. The URL is recorded in `cuban-immigration-tracker/README.md`. Using the same URL keeps the link people shared working.
 5. Close the issue with a comment containing the `artifactBuiltAt` and data month.
 

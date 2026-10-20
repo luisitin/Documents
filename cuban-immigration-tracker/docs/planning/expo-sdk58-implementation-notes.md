@@ -1,5 +1,7 @@
 # Expo SDK 58 implementation notes (CAA Tracker mobile app)
 
+> **SUPERSEDED IN PART — read `07-implementation-plan.md` §1 first.** The version facts and SDK gotchas below are still valid, but several recommendations are **forbidden** by the ADRs: `expo-sqlite` / `expo-sqlite/kv-store` (use the KV adapter, ARCH-2), `expo-symbols` / `SymbolView` and `@expo/vector-icons` (in-repo SVG icons, ARCH-3), `react-native-gifted-charts` (react-native-svg charts, ARCH-3), TanStack Query (ARCH-2), `date-fns` (case-rules `dates`, ARCH-3) and `Intl` formatting (deterministic `createFmt`, I18N-2). `expo-font` stays installed because `expo` depends on it; only direct imports are banned. When this file and `07` disagree, `07` wins.
+
 Written 2026-10-20. Every claim below comes from either (a) the SDK 58 docs source
 (`expo/expo` repo, `sdk-58` branch, `docs/pages/**`, the same content served at
 docs.expo.dev/versions/v58.0.0 — docs.expo.dev itself was unreachable from this

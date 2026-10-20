@@ -21,7 +21,7 @@ export type StatisticKind =
   | 'mean_months_completed'      // monthly CSV "Avg. Processing Time" (doc 04 §1.1)
   | 'median_months_completed'    // quarterly workbook / historic-pt (doc 04 §1.2, §2.6)
   | 'p80_months_completed_6mo'   // Processing Times tool headline (doc 04 §2.1)
-  | 'inquiry_date_p93'           // tool "receipt date for a case inquiry" (~93rd pct [S] data-rigor search)
+  | 'inquiry_date_p93'           // tool "receipt date for a case inquiry" (~93rd pct [T]/secondary: docs 04, 15; UI chip "≈93 %, según fuentes secundarias")
   | 'share'                      // approvals / completions
   | 'model_probability';         // our estimate (never official)
 
@@ -64,7 +64,7 @@ export interface SourceRef {          // attached to every row / record
 | `schema/*.schema.json` | JSON Schema exported from zod | CI | — |
 | `curated/**` | human-edited inputs | PR (CODEOWNERS) | — |
 
-The app bundles a **frozen copy** of `manifest/national/quarterly/offices/policy/alerts/content/params` in `app/src/data/sample/`. `npm run data:sample` copies them, and `sample/manifest.json` gets `"origin": "bundled_sample"`.
+The app bundles a **frozen copy** of `manifest/national/quarterly/offices/policy/alerts/content/params` in `app/src/data/sample/` (owned by WP5). `npm run data:sample` copies them, and `sample/manifest.json` gets `"origin": "bundled_sample"`. **For v1 the bundled sample is the golden snapshot** (`dataThrough = 2026-08`, the 24 rows of `04` §9.1). It is not refreshed on routine data updates, because the sample-variant Prove and Jest tests assert golden literals against it (`07` §9). Refreshing it is a deliberate, owner-approved `sample: refresh` commit that also updates those literals.
 
 ### 2.1 Manifest
 
@@ -78,14 +78,15 @@ export interface Manifest {
   latestOfficialMonth: YearMonth;                // "2026-08"
   latestOfficialQuarter: FiscalQuarter;          // {fy:2026,q:3}
   latestProcessingTimesPublication: ISODate | null;
-  files: Record<DataFileName, { path: string; sha256: string; bytes: number }>;
+  files: Record<DataFileName, { path: string; sha256: string; bytes: number }>;   // all 7 v1 files required
   sources: SourceStatus[];
   qa: { status: 'ok' | 'degraded' | 'quarantined'; lastGoodRunId: string; notes: Localized[] };
   canary: { caseId: 'T15'; pWithin12: number; q50: number | null; computedWith: 'VPH-1.1' };
   artifactBuiltAt?: ISODateTime;                 // ONLY in web-artifact/data/manifest.json (set by build-artifact)
   origin?: 'pipeline' | 'bundled_sample';
 }
-export type DataFileName = 'national' | 'quarterly' | 'offices' | 'policy' | 'alerts' | 'content' | 'params' | 'community';
+export type DataFileName = 'national' | 'quarterly' | 'offices' | 'policy' | 'alerts' | 'content' | 'params';   // v1. 'community' is NOT a v1 name (v1.1 adds it as an optional manifest key, additive)
+export interface DataFileMap { national: NationalFile; quarterly: QuarterlyFile; offices: OfficesFile; policy: PolicyFile; alerts: AlertsFile; content: ContentFile; params: EstimatorParams }
 export interface SourceStatus {
   id: SourceId; url: string;
   status: 'ok' | 'not_modified' | 'not_yet' | 'blocked_cloudflare' | 'blocked_drupal_antibot'
@@ -101,7 +102,7 @@ export interface MonthlyRow {           // "I-485 ... (Cuban)" row; doc 04 §1.1
   ym: YearMonth;
   received: number; approved: number; denied: number;          // count_flow
   pending: number;                                             // count_stock — HEADLINE pending
-  pendingOver6: number | null;                                 // count_stock_over_6mo (null before it exists)
+  pendingOver6: number | null;                                 // count_stock_over_6mo (null when the source row lacks it; present from Jul 2024)
   avgMonths: number | null;                                    // mean_months_completed
   revision?: { previous: Omit<MonthlyRow, 'revision' | 'source'>; detectedAt: ISODateTime };  // Q3 gate
   source: SourceRef;
@@ -114,7 +115,7 @@ export interface I765NationalRow {      // one national line, ALL categories (no
 export interface NationalFile { rows: MonthlyRow[]; i765National: I765NationalRow[]; firstModelMonth: YearMonth /* "2024-09" */ }
 ```
 
-Seed rows run Jul 2024 and Sep 2024 → Aug 2026. **Aug 2024 is absent from the mirror** (doc 04 §1.0). The model uses Sep 2024 onward, the first month with `pendingOver6` usable for the legacy split (doc 08 §5.3).
+Seed rows run Jul 2024 and Sep 2024 → Aug 2026. **Aug 2024 is absent from the mirror** (doc 04 §1.0). The model uses Sep 2024 onward because of that gap: Jul 2024 also has `pendingOver6` (90,723), but there is no continuous replay across the missing month, so Sep 2024 is the pool origin (`04` EST-1).
 
 ### 2.3 Quarterly (`quarterly.json`)
 
@@ -296,7 +297,7 @@ export interface EstimatorParams {
            classMix: [[0.5, 0.25], [1, 0.5], [2, 0.25]]; ead: [[0.9, 0.25], [1, 0.5], [1.2, 0.25]] };
   milestone: { noBiometricsAfter4mo: 0.7; rfeAnswered: { mult: 1.5; months: 3 }; mandamus: { mult: 1.3; months: 4 };
                postInterview: { medianMonths: 3; sigma: 0.857 }; expediteGranted: { medianMonths: 2; sigma: 0.857 } };
-  observation: { model: 'lognormal'; sigma: number /* fitted, ≥0.25; 0.30 today */; tempering: 0.5; floorLevel: 50; weightFloor: 0.02 };
+  observation: { model: 'lognormal'; sigma: number /* fitted, ≥0.25; 0.30 today */; tempering: 0.5; floorLevel: 50; weightFloor: 0.02 /* fraction of the S0–S2 sub-mass (04 §6.3 step 3) */ };
   scenarioWeights: { asOf: YearMonth; weights: Record<'S0' | 'S1' | 'S2' | 'S3', number>;   // case-independent part
                      caseDependentRules: string[] };                                     // rules whose factor depends on class membership
   weightLedger: WeightLedgerEntry[];                         // append-only
@@ -409,8 +410,11 @@ export interface DerivedFlags {               // packages/case-rules deriveFlags
 ```ts
 export interface EstimateInput {
   case: CaseTimeline; flags: DerivedFlags;
-  national: NationalFile; offices: OfficesFile; policy: PolicyFile; params: EstimatorParams; alerts: AlertsFile;
-  today: ISODate;
+  clock: EstimateOk['clock'];                 // from case-rules clockFor(case, policy, today); passed in by useEstimate, echoed unchanged
+  national: NationalFile; quarterly: QuarterlyFile; offices: OfficesFile; policy: PolicyFile; params: EstimatorParams; alerts: AlertsFile;
+  data: { status: 'live' | 'cached' | 'published' | 'sample'; manifest: Manifest };   // for the guards below
+  today: ISODate;                             // the estimator never calls Date.now
+  opts?: { bands?: boolean };                 // default true: structural band + state mixture
 }
 export type EstimateResult =
   | { kind: 'no_estimate'; reason: DerivedFlags['noEstimateReason']; flags: DerivedFlags }
@@ -441,7 +445,12 @@ export interface EstimateOk {
   weightTrace: { ruleId?: string; reason: string; before: Record<string, number>; after: Record<string, number> }[];  // case-specific
 }
 export function estimate(input: EstimateInput): EstimateResult;               // pure, deterministic, < 150 ms on device
-export function scenarioWeights(policy: PolicyFile, alerts: AlertsFile, observed: MonthlyRow[], flags: DerivedFlags | null, sigma: number): { weights: Record<string, number>; trace: EstimateOk['weightTrace'] };
+export function scenarioWeights(policy: PolicyFile, alerts: AlertsFile, observed: MonthlyRow[], flags: DerivedFlags | null,
+  observation: EstimatorParams['observation'], today: ISODate): { weights: Record<'S0' | 'S1' | 'S2' | 'S3', number>; trace: EstimateOk['weightTrace'] };
+// Guards are computed inside estimate() from input.data, input.quarterly and input.today:
+//   T20a: today − end(latestOfficialMonth) > 75 d · T20b: national dataThrough vs quarterly latest quarter mismatch
+//   pipeline_late: today − manifest.lastCheckedAt > 10 d · artifact_old: manifest.artifactBuiltAt older than 35 d
+//   qa_degraded: manifest.qa.status != 'ok' · sample_data: data.status == 'sample'
 ```
 
 The approval card is **not** part of `EstimateOk`. It comes from `case-rules` `approvalCard(case, quarterly, national, policy)`, so that it can never be multiplied into the timing.
@@ -559,14 +568,17 @@ grant execute on function public.delete_my_account() to authenticated;
 ## 8. Validation rules shared by app and pipeline
 
 - **Counts:** counts are ≥ 0, and `pendingOver6 ≤ pending`. `ym` is strictly increasing and has no gaps from `firstModelMonth`, except the known Aug 2024 gap before the model window.
-- **Dates:** no dates in the future, except `interview_notice.meta.scheduledFor` and `dueDate`.
-- **Timeline ordering:** the receipt comes before any other milestone. The EAD comes after the receipt. A decision comes after the interview, when there is one.
+- **Dates:** no dates in the future, except `interview_notice.meta.scheduledFor`, `meta.dueDate` (rfe / noid) and **`ead_c9.meta.cardExpiry`** (always in the future while the card is valid; the S2 form, the S5 planner and the EAD reminders use it). `paroleEndDateOriginal` may also be in the future.
+- **Timeline ordering:** the receipt comes before every other milestone **except** `parole_termination_notice`, which may predate the I-485 (e.g. CBP One e-mail terminations 2025-04-07..11, CHNV notices 2025-06-12, for later filers); `paroleDate` and `paroleEndDateOriginal` are also exempt. The EAD comes after the receipt. A decision comes after the interview, when there is one.
+- **Fixtures (WP1 tests):** one valid case with a future `cardExpiry` (EAD issued 2025-09-15, expiry 2030-09-14) and one valid case with a `parole_termination_notice` of 2025-06-12 and a receipt of 2025-08-01.
 - **Localized:** every `Localized` field has two non-empty strings, and `es ≠ en` unless the value is a proper name.
 - **Unknown fields:** rejected in curated files (strict), ignored in pipeline files (passthrough with a warning). This makes additive schema changes backward-compatible.
 
 ## 9. Deterministic formatting (`packages/i18n-core/src/fmt.ts`)
 
 Output never depends on the engine's `Intl`. Hermes and V8 may differ [T], and the spike showed that Chromium's es-US output differs from the "9 %" assumed in two proposals [V].
+
+**Signature (contract v1):** `createFmt(lang: Lang): Fmt`, where `Fmt = { int(n: number): string; dec(n: number, dp: number): string; pct(p: number): string; date(d: ISODate): string; month(ym: YearMonth): string; monthLong(ym: YearMonth): string; relative(hours: number): string }`. There is no language-less `fmt`; the app gets the current one from `useLang().fmt`. The table writes `fmt.x` for `createFmt(lang).x`.
 
 | Function | es | en |
 |---|---|---|

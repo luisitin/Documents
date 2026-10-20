@@ -68,7 +68,7 @@ USCIS publishes the monthly CSV 4–8 weeks after month end and the quarterly wo
    - A native Cuban-Spanish reviewer signs off on `es.json` before each release (gate).
    - Register: **usted** (ADR-I18N-1, `07-implementation-plan.md` §8). Seed copy in docs 08/15 is already in usted. Doc 16 §8.4's tú copy is converted.
 2. **Never a single promised date.** The UI shows probabilities by horizon and calendar date. It shows the median only when it falls inside 72 months; otherwise it says "más de 6 años". A unit test fails if a headline contains a calendar date (doc 08 §11.7).
-3. **No bare numbers.** Every number carries a `StatisticKind`, a period/cut date and a source chip. The kinds are: count flow, count stock, mean months of completions, median months of completions, 80 % processing time, inquiry date ≈93rd percentile, and share (graft from data-rigor). This resolves the "11.8 vs 12.3 vs 16.3 vs 20.6" confusion (README §2.8 #2).
+3. **No bare numbers.** Every number carries a `StatisticKind`, a period/cut date and a source chip. The kinds are: count flow, count stock, mean months of completions, median months of completions, 80 % processing time, inquiry date (chip: "≈93 %, según fuentes secundarias" — the 93 % figure is [T]/secondary, docs 04 and 15), and share (graft from data-rigor). This resolves the "11.8 vs 12.3 vs 16.3 vs 20.6" confusion (README §2.8 #2).
 4. **Headline pending comes from the monthly CSV only.** Workbook pending is labelled "informe trimestral" (doc 04 §1.1).
 5. **The pool is one national mixed group.** The UI never says "casos como el suyo" / "cases like yours". It says **"el promedio del grupo nacional de I-485 cubanos" / "the national average for Cuban I-485s"** (must-fix, doc 08 §5.6). A test asserts that the I-485 probabilities are identical for CHNV, CBP One, and with or without an EAD. The explanation is shown.
 6. **Approval is never in a headline or share text.** The approval card sits apart from the timing card. It gives the Jul 2026 49 % (308/626) and Aug 2026 47 % (386/820) population shares, and the Q1 91.7 % / Q2 52.6 % / Q3 23.7 % / FYTD 83 % baselines, all with equal prominence (doc 14 §8.1). The 70–90 % range is shown **only** when the "documentos básicos" checklist is complete, with the list of factors the model does not see (must-fix).
@@ -106,7 +106,7 @@ Rule (from ship-fast): **Must** = needed to answer the four questions honestly, 
 | F19 | Glossary EN/ES | **Should** | key facts §10 |
 | F20 | Discreet mode (hide case details behind a tap) | **Should** | user-first; doc 16 §6 |
 | F21 | Privacy-safe "código de caso" share text at month level. Native uses the share sheet; web uses selectable text plus a guarded clipboard. Paste-to-compare happens locally only | **Should** | user-first §8.6 |
-| F22 | Methodology and data screen: Little's-law line at last-month pace **and** FY2025 pace, labelled "ritmo de un solo mes, no un pronóstico"; provenance sheet; scorecard (v1.1) | **Must** (screen) / v1.1 (scorecard) | doc 08 §5.1; must-fix |
+| F22 | Methodology and data screen: Little's-law lines at last-month pace, the FY2025 average (~6,524/month) **and** the late-2024 pace (~9,200/month), labelled "ritmo de un solo mes, no un pronóstico"; provenance sheet; scorecard (v1.1) | **Must** (screen) / v1.1 (scorecard) | doc 08 §5.1; must-fix |
 | F23 | Alert candidates (Federal Register API, USCIS RSS, CourtListener with token) written for human review | **Should** | doc 13 §6, §7, §9 |
 | F24 | Forecast ledger and scorecard on observable targets | **v1.1** | data-rigor §7.6 graft |
 | F25 | Optional host MCP refresh inside claude.ai | **Could (lowest)** | owner requirement 2 |
@@ -233,9 +233,9 @@ Also on this screen:
 
 ### S3 — Su estimado / Your estimate (`/case`)
 
-Top to bottom, reference case (CHNV, receipt 2025-03-15, EAD Sep 2025, office unknown, state FL unknown, today 2026-10-20). Golden values come from `04` §9. Numbers in copy are illustrations; the app renders them from the estimator.
+Top to bottom, reference case = **exactly the T15 fixture** (`04` §9.2: CHNV, receipt 2025-03-15, biometrics 2025-07, EAD Sep 2025, `state` and `officeCode` **undefined**, i.e. the national path; today 2026-10-20). "Ver un ejemplo" loads this fixture. With a state set (e.g. FL) the state mixture applies and the numbers differ (FL-4: P12 ≈ 10.5 %). Golden values come from `04` §9. Numbers in copy are illustrations; the app renders them from the estimator.
 
-1. **Clock card.** "Su caso lleva 19 meses presentado; ≈10 de ellos estuvo bajo pausas (14 feb–9 jun 2025 y 2 dic 2025–12 jun 2026). Tiempo adjudicable: 306 días (256 con las fechas operativas más tardías)." EN equivalent.
+1. **Clock card.** "Su caso lleva 19 meses presentado; ≈9 de ellos (278 días) estuvo bajo pausas (14 feb–9 jun 2025 y 2 dic 2025–12 jun 2026). Tiempo adjudicable: 306 días, ≈10 meses (256 con las fechas operativas más tardías)." EN equivalent. Every figure is rendered through `fmt` from `clock` (`calendarDays − adjudicableDays` = 584 − 306 = 278 hold days); none is hard-coded.
 2. **Headline.**
    - ES: "**Probabilidad de que USCIS decida su I-485 en los próximos 12 meses: 9 %** — poco probable." EN: "**Chance USCIS decides your I-485 in the next 12 months: 9%** — unlikely."
    - Bands below it, never in a footnote:
@@ -251,13 +251,13 @@ Top to bottom, reference case (CHNV, receipt 2025-03-15, EAD Sep 2025, office un
 | 24 meses | 22 % | posible |
 | 36 meses | 35 % | posible |
 
-4. **Calendar row.** "Antes del 31 dic 2026: ~1 % · antes del 31 dic 2027: ~11 % · antes del 31 dic 2028: ~24 %."
-5. **Median line.** "Para el promedio del grupo nacional de I-485 cubanos, la mitad de las decisiones tardaría **más de 4 años** con la mezcla de escenarios; con el ritmo de 2025 serían unos 22 meses." The phrase "casos como el suyo" is never used.
+4. **Calendar row.** "Antes del 31 dic 2026: <1 % · antes del 31 dic 2027: ~11 % · antes del 31 dic 2028: ~24 %." (0.906 % renders as `<1 %` per `fmt.pct`, `02` §9.)
+5. **Median line.** "Para el promedio del grupo nacional de I-485 cubanos, la mitad de las decisiones tardaría **más de 4 años** con la mezcla de escenarios; si volviera el ritmo de fines de 2024 serían unos 22 meses." The phrase "casos como el suyo" is never used.
 6. **Fan chart** (survival from today, 72 months) with a "ver como tabla" twin.
 7. **Scenario cards:**
    - Estancamiento 30 % (P12 2 %)
    - Recuperación parcial 40 % (10 %)
-   - Ritmo de 2025 15 % (26 %)
+   - Ritmo de fines de 2024 (oct–dic 2024) 15 % (26 %)
    - Nueva pausa 15 % (4 %)
    - The weights show "pesos actualizados por datos y alertas: ver historial" (weight ledger).
 8. **Driver bar.** "Política 94 % · Oficina 3 % · Orden de la cola 1 %" (computed, `04` §8).
@@ -308,7 +308,7 @@ The copy ends with: "Una aprobación de un vecino o una captura de pantalla no p
 - **If the EAD is pending:**
   - The 147-C9 NBC inquiry date (2025-06-13 as of 2026-10-15 [F]) and the 80 % time, with "e-Request: disponible / aún no".
   - The national I-765 "Adjustment Of Status" row: pending 671,362, median 6.4 months, FY26 Q3, labelled **"todas las nacionalidades"**.
-  - The reported conflict "373,007 vs 461,884 pendientes (dos informes de prensa)" [S-sec, doc 07 §5.2].
+  - Earlier figure for context only, labelled with its period: "oct–dic 2025 (informe trimestral): 461,884 pendientes" [F, doc 04 §1.2]; superseded by the FY26 Q3 figure above. The press figure 373,007 is not shown.
   - Reported waits "12–12.5 meses (prensa, oct 2026)" [S-sec].
   - Each figure carries its kind chip. **No EAD estimate model** (must-fix).
 - **(c)(11) note:** parole EADs were revoked in Jun 2025 (CHNV) and Apr 2026 (CBP One).
@@ -335,7 +335,7 @@ Ladder from doc 15 §9.1, computed by `remedyLadder()`. Each rung has a state �
 - **b. Expedite.** Five criteria. "Necesitar el permiso de trabajo por sí solo no es motivo de expedito."
 - **d. Congressional office.** FL-26/27/28 when the state is FL. "Puede negarse si su caso está dentro del tiempo normal."
 - **c. Ombudsman (DHS-7001).** "puede que nunca reciba una respuesta de fondo".
-- **e. Mandamus.** ≥ 24 months soft, ≥ 36 strong. "La demanda de 143 cubanos en Tampa no logró que el tribunal ordenara acelerar casos (jul 2026). Costo: $405 de presentación más abogado." Ends with "consulte a un abogado o representante acreditado".
+- **e. Mandamus.** ≥ 24 months soft, ≥ 36 strong. "La demanda de 143 cubanos en Tampa no logró que el tribunal ordenara acelerar casos (jul 2026). Costo: {fee} de presentación más abogado." `{fee}` comes from `policy.fees.mandamusFiling` (amount 405 = $350 filing + $55 administrative fee, with an `asOf` date; some district courts list miscellaneous fee changes effective 2026-12-01, so the curator re-checks then) [S: https://www.nyed.uscourts.gov/sites/default/files/uploads/district%20court%20fees%2005282026.pdf ; https://www.moed.uscourts.gov/node/285, per critic search 2026-10-20]. Ends with "consulte a un abogado o representante acreditado".
 - **f. Appointments.** Only for concrete needs. Contact Center 1-800-375-5283 (español: oprima 2).
 
 Also:
@@ -406,9 +406,10 @@ Also:
 
 - Plain-language VPH-1.1 summary.
 - Bias catalogue (doc 08 §2.2).
-- Current parameters: β, scenario weights and **weight ledger**, k₀ = 50.
+- Current parameters: β, scenario weights and **weight ledger**, office prior strength κ_o = 50.
+- Known limitations, including the state-mixture limitation (`04` §5.3 item 7).
 - Validation status, and the scorecard in v1.1.
-- **Little's law**, shown only here and always as a pair: "Al ritmo de agosto 2026 (820 decisiones), vaciar la fila tomaría ~434 meses; al ritmo del año fiscal 2025 (~9,200/mes), ~39 meses. Es un promedio del grupo, no un pronóstico para su caso" (must-fix).
+- **Little's law**, shown only here and always as a pair: "Al ritmo de agosto 2026 (820 decisiones), vaciar la fila tomaría ~434 meses; al promedio del año fiscal 2025 (~6,524/mes), ~54 meses; al ritmo de fines de 2024 (oct–dic 2024, ~9,200/mes), ~39 meses. Es un promedio del grupo, no un pronóstico para su caso" (must-fix). Values come from T12 via `fmt`.
 - Source list with URL pattern, period, retrieval date, sha256, mirror used, QA status.
 - Historic medians with cut dates (11.8 at 2026-07-31; 12.3 at 2026-08-30 [S-sec]).
 

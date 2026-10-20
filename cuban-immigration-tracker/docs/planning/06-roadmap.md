@@ -7,8 +7,8 @@ Written 2026-10-20. Effort is counted in focused **person-days (pd)**. "Wall-clo
 | Item | pd | Exit |
 |---|---|---|
 | WP0: repo skeleton; root tooling package; Expo SDK 58 app scaffold with `asyncRoutes: false` and `web.output: "single"`; Metro `watchFolders` for `../packages`; re-run spikes V1–V8 in the real repo (`01` §9) | 2 | `npm run build:artifact && npm run prove` green on a hello-world with one package import, under the host CSP, from a deep path |
-| WP0: workflows `caa-data-refresh.yml` (skeleton), `caa-ci.yml`, `caa-probe.yml` on the feature branch; **owner merges a workflow-only PR to `main`** | 0.5 | `workflow_dispatch` visible; the guard step gives a green no-op on `main` |
-| WP0: first manual `caa-probe` run → `PROBE-REPORT.md` classifies every doc 13 §12.4 source | 0.5 | every "plan only" row now has a classification |
+| WP0: skeletons of `caa-data-refresh.yml`, `caa-ci.yml`, `caa-probe.yml`, `caa-staleness.yml` on the feature branch, then the `handoff: workflow skeletons` commit to WP5/WP11; **owner merges a workflow-only PR to `main`** | 0.5 | `workflow_dispatch` visible; the guard step gives a green no-op on `main` |
+| WP5 (moved from WP0): first `caa-probe` run or local `npm run probe` → `PROBE-REPORT.md` classifies every doc 13 §12.4 source | 0.5 | every "plan only" row now has a classification |
 | Owner decisions (no agent work) | — | listed below |
 
 **Owner decisions in W0:**
@@ -36,7 +36,7 @@ Written 2026-10-20. Effort is counted in focused **person-days (pd)**. "Wall-clo
 | WP8b | Screens S2 form, S3 estimate, S4 peers, S5 EAD, S7 remedies, S9 ineligible, S12 share (Should) | 4 |
 | WP9 | Curated content: `policy.json`, seed alerts, `content.json` (myths, peer copy), full ES/EN copy; **native Cuban-Spanish review** | 4 |
 | WP10 | `scripts/build-artifact.mjs` + `scripts/prove-artifact.mjs` (full assertion list) | 2 |
-| WP11 | Integration: real data commit on the branch, sample freeze, end-to-end tests, device runs (iOS + Android), accessibility pass (font scale 200 %, screen-reader labels) | 3 |
+| WP11 | Integration: real data commit on the branch, confirm the G1 frozen sample (WP5, `07` §5), end-to-end tests, device runs (iOS + Android), accessibility pass (font scale 200 %, screen-reader labels) | 3 |
 | **Total** | | **≈ 40 pd solo (≈ 8 weeks)**; **≈ 3–4 weeks wall-clock with parallel agents** |
 
 **MVP gates (all required):**
