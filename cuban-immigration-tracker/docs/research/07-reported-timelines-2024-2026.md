@@ -32,6 +32,9 @@ web-search budget was exhausted after 15 searches. Consequences:
    timelines" section relies on Spanish-language news stories quoting attorneys and applicants.
 3. All numbers are reproduced exactly as the search engine returned them from the cited pages.
    Where two sources disagree, both figures are shown.
+4. A verification pass on 2026-10-20 (fact-checker: 7 searches; editor: 2 searches) corrected
+   several claims and is documented in §15; labels in the body were downgraded where the pass could
+   not re-confirm a figure.
 
 Section 13 lists the exact probes a follow-up agent (with working network access) should run.
 
@@ -47,7 +50,7 @@ Section 13 lists the exact probes a follow-up agent (with working network access
   quarterly completions collapsed from **27,602 to 586**. **[V, secondary analysis of USCIS
   quarterly data]** (see §3.2.)
 - **Approvals nearly stopped during the Dec 2025 – Jun 2026 "country hold":** January 2026 saw
-  7,086 CAA receipts but only **15 approvals**; April–June 2026 (FY2026 Q3) produced **139
+  only **15 approvals** (against a reported 7,086 receipts, single source); April–June 2026 (FY2026 Q3) produced **139
   approvals and 447 denials** (23.7% approval rate) against roughly **342,000–355,000 pending**
   cases. **[V/P]** (Factchequeado; CiberCuba 20 Oct 2026; Newsweek; USCIS FY2026 Q3 I-485 report.)
 - **Approval rates among decisions:** ~98.7% (Apr–Jun 2024), 97.2% (Jan–Mar 2025), 93.2%
@@ -56,14 +59,18 @@ Section 13 lists the exact probes a follow-up agent (with working network access
   issued), not evidence that typical CHNV-parolee cases are being refused (see §8).
 - **Processing resumed slowly after the courts intervened:** the Rhode Island vacatur (5 Jun 2026,
   *Dorcas v. USCIS*), USCIS's compliance notice (12 Jun 2026), and the N.D. Cal. class-wide
-  preliminary injunction (24 Aug 2026, *Red Eagle Law v. Edlow*). July 2026 saw **308** CAA
-  approvals, and attorneys reported Cuban parolees receiving fresh decisions in Sept–Oct 2026.
-  **[V]**
+  preliminary injunction (24 Aug 2026, *Red Eagle Law v. Edlow*). June 2026 saw **89** CAA
+  approvals and July 2026 **308**, and attorneys reported Cuban parolees receiving fresh decisions
+  in Sept–Oct 2026. **[V]** *Dorcas* vacated the policies but **denied a permanent injunction**; the
+  government's stay motion was denied on 15 Jul 2026, and on 14 Aug 2026 the First Circuit
+  (No. 26-1703) stayed the vacatur **only** as to the re-review policy, leaving the benefits hold
+  vacated while the merits appeal is pending. **[V]** (See §2 and §15.)
 - **EAD (c)(9):** work permits for CAA applicants were caught by *both* freezes (the Feb–Jun 2025
   parolee pause and the Dec 2025–Jun 2026 country hold). Attorneys reported waits of **up to 13
   months** as of June 2026. Rule changes in late 2025 (end of the automatic 540-day extension for
-  renewals filed on/after 30 Oct 2025; maximum 18-month validity for certain EADs from Dec 2025)
-  make renewals a live problem for 2025 filers. **[V]**
+  renewals filed on/after 30 Oct 2025, codified by a final rule published 14 Oct 2026, FR Doc.
+  2026-20955 **[V]**; maximum 18-month validity for certain EADs from Dec 2025 **[L — not confirmed
+  from a primary source in this run]**) make renewals a live problem for 2025 filers.
 - **Estimate for a CAA I-485 filed March/April 2025 (see §11):** the case is now ~18–19 months
   old, has outlived both freezes, and sits near the front of the FIFO queue. If USCIS sustains
   even half of its FY2025 pace, a decision is most likely between **Q1 and Q3 2027** (Florida
@@ -89,24 +96,30 @@ most common error in community discussions.
 | 4 Jun 2025 | Presidential Proclamation 10949 (travel ban; Cuba on the list). | Seeds the later country hold. | [V] | Clark Hill; Asian Law Caucus |
 | 9 Jun 2025 | USCIS memo (the "Alfonso-Royals memo") authorizes officers to resume adjudicating parolee requests, with additional vetting; court demanded compliance confirmation by 13 Jun 2025 and a further report by 28 Jul 2025. | **Freeze #1 operationally ends.** EADs and I-485s start moving again, but with vetting. | [V] | Littler; Saluja Law; uscis-pause-tracker |
 | Jul–Nov 2025 | Processing of the 2025 cohort resumes; FY2025 Q4 CAA median ≈ 9.1 months; FY2025 median 7.0 months. | Many March/April 2025 filers receive (c)(9) EADs in this window. | [V/L] | immiva tracker; CiberCuba |
-| 30 Oct 2025 | End of the automatic 540-day extension for EAD renewals filed on/after this date. | Renewal timing becomes critical for 2025 filers. | [V] | CiberCuba 18 Oct 2026 |
+| 30 Oct 2025 | End of the automatic 540-day extension for EAD renewals filed on/after this date (interim final rule; codified without change by a final rule published 14 Oct 2026, FR Doc. 2026-20955). | Renewal timing becomes critical for 2025 filers. | [V] | Federal Register 2026-20955; CiberCuba 18 Oct 2026 |
 | 3 Nov 2025 | Proposed rule expanding biometrics requirements. | Proposal only. | [V] | govinfo.gov FR 2025-19747 |
 | 2 Dec 2025 | **USCIS PM-602-0192 "Hold and Review"**: pending benefit requests (incl. I-485) of nationals of 19 travel-ban countries — **Cuba included** — placed on hold; approved benefits of those who entered on/after 20 Jan 2021 to be re-reviewed (possible interview/re-interview). Later expanded to I-129, I-539, I-140 and **I-765**. | **Freeze #2.** Virtually all Cuban I-485s and (c)(9) EADs stop. | [V] | NPR 3 Dec 2025; Dorsey; Ogletree; Asian Law Caucus |
-| Dec 2025 | Certain EADs limited to 18 months' validity (previously up to 5 years). | Shorter cards, more renewals. | [V] | CiberCuba 18 Oct 2026; Cuba Bajo Lupa |
+| Dec 2025 | Certain EADs reportedly limited to 18 months' validity (previously up to 5 years). | Shorter cards, more renewals. | [L — secondary sources only; no primary USCIS text seen in this run] | CiberCuba 18 Oct 2026; Cuba Bajo Lupa |
 | 12 Dec 2025 | USCIS biometrics/photo update: photos only at an ASC; no reuse of previously collected biometrics for certain applications. | Extra biometrics appointments, including on renewals. | [V] | iss.washington.edu |
 | 16 Dec 2025 | Proclamation 10998 expands the travel-ban list. | — | [V] | Asian Law Caucus |
 | 1 Jan 2026 | **PM-602-0194** expands the hold to **39 countries** + Palestinian Authority; review of refugees admitted 2021–2025. | Freeze #2 widens. | [V] | Shautsova; Ogletree |
-| Jan 2026 | CAA I-485: 7,086 receipts, **15 approvals**. | Freeze #2 visible in the data. | [V] | Factchequeado 29 Apr 2026 |
+| Jan 2026 | CAA I-485: 7,086 receipts (single source), **15 approvals** (confirmed by 14ymedio). | Freeze #2 visible in the data. | [V for 15; P/L for 7,086] | Factchequeado 29 Apr 2026; 14ymedio |
 | 10/24 Jan 2026 | TRO / preliminary order in *Doe v. Noem* on Family Reunification Parole terminations. | Not CHNV-specific. | [V] | Justice Action Center; USCIS FRP alert |
 | 30 Mar 2026 | USCIS lifts hold for screened asylum seekers from "non-high-risk" countries. | Does not help Cubans (Cuba is "high-risk"). | [V] | Asian Law Caucus |
 | 30 Apr 2026 | Judge Kobick (D. Mass.) rules the hold unlawful for the plaintiffs before her. | Plaintiff-specific. | [V] | Phillips Lytle |
-| 21 May 2026 | **PM-602-0199**: adjustment of status framed as discretionary/extraordinary; preference for consular processing in some situations. One outlet says CAA is expressly excluded; not confirmed. | May drive more interviews; CAA carve-out unverified. | [V/U] | directoriocubano; cubafull; CiberCuba guide |
-| 5 Jun 2026 | ***Dorcas International Institute of RI v. USCIS*, 26-cv-00132-JJM-PAS (D.R.I., Judge McConnell): vacates PM-602-0192, PM-602-0194 and PA-2025-26 nationwide** (also the re-review and country-specific-factors policies). Final judgment 11 Jun 2026. | **Freeze #2 legally ends.** | [V] | USCIS alert "Court Order on Hold Policies"; Cyrus Mehta; AILA |
+| 21 May 2026 | **PM-602-0199**: adjustment of status framed as discretionary/extraordinary; preference for consular processing in some situations. Practitioner summaries (CLINIC field alert 22 May 2026; ILRC FAQ; VisaPlace) state the memo does **not** cover CAA adjustment, which is separately authorized and has no consular-processing alternative; in *Acosta Reynoso v. USCIS* (M.D. Fla., Tampa Div.; see the Jul 2026 row) the court reportedly accepted the government's position that the memo does not reach CAA applications. | Interview pressure on CAA filers comes from general adjudication practice, not from this memo; the carve-out is now well supported, but neither the memo text nor the order was read here. | [V/L] | CLINIC; ILRC; VisaPlace; directoriocubano; cubafull; CiberCuba guide |
+| 5 Jun 2026 | ***Dorcas International Institute of RI v. USCIS*, 26-cv-00132-JJM-PAS (D.R.I., Chief Judge McConnell): vacates PM-602-0192, PM-602-0194 and PA-2025-26 nationwide** (also the re-review and country-specific-factors policies). The court declared four policies unlawful under the APA and vacated them in their entirety, but **denied plaintiffs' request for a permanent injunction**. Final judgment 11 Jun 2026. | **Freeze #2 legally ends** — by vacatur, not injunction, so resumption rests on USCIS compliance and on the appeal. | [V] | USCIS alert "Court Order on Hold Policies"; Cyrus Mehta; AILA; AfghanEvac |
 | 12 Jun 2026 | USCIS announces compliance ("policies should be treated as if not in effect") and files notice of appeal to the First Circuit the same day. | Agency-wide resumption; appeal risk persists. | [V] | USCIS alert; immigrationissues.com; Gunster |
-| Apr–Jun 2026 (FY26 Q3) | CAA I-485: 139 approvals, 447 denials, 586 completions, 23.7% approval; 342,360 pending at 30 Jun 2026. | Lowest quarter on record. | [V/P] | CiberCuba 20 Oct 2026; directoriocubano; Newsweek; USCIS FY2026 Q3 XLSX |
-| Jul 2026 | 308 CAA approvals; >355,000 pending. | Slow restart. | [V] | Periódico Cubano |
-| 24 Aug 2026 | ***Red Eagle Law, L.C. v. Edlow*, 3:26-cv-04850-CRB (N.D. Cal., Judge Breyer): class certified (nationals of the 39 countries with applications subject to the hold) and preliminary injunction ordering USCIS to adjudicate "in the normal course".** USCIS announces compliance. 28 Aug: remainder of the case stayed pending the *Dorcas* appeal. | Second, independent nationwide order; protects class members even if *Dorcas* is reversed. | [V] | AILA (two items); Clinch Law; Agarwal; uscis-pause-tracker |
+| Apr–Jun 2026 (FY26 Q3) | CAA I-485: 139 approvals, 447 denials, 586 completions, 23.7% approval; 342,360 pending at 30 Jun 2026 (Immiva separately lists 327,255 pending, quarter unstated). | Lowest quarter on record. | [V/P] | CiberCuba 20 Oct 2026; directoriocubano; Newsweek; AmericaTeVe; Immiva; USCIS FY2026 Q3 XLSX |
+| Jun 2026 | CAA I-485: **89** approvals (monthly figure). | Most of the quarter's 139 approvals came in June, after the vacatur. | [V] | Periódico Cubano (July article) |
+| Jul 2026 | 308 CAA approvals; >355,000 pending. | Restart (≈3.5× June). | [V] | Periódico Cubano |
+| 15 Jul 2026 | Government's motion for a stay of the *Dorcas* vacatur pending appeal **denied**. Sources disagree on whether the district court or the First Circuit issued the denial (Democracy Forward hosts a "Dorcas-stay-denial.pdf" dated July 2026). | Resumption continues. | [V; court attribution U] | AfghanEvac Dorcas page; Global Law Experts; uscis-pause-tracker Dorcas page |
+| ~30 Jul 2026 | ***Acosta Reynoso v. USCIS* (M.D. Fla., Tampa Div.; reportedly Judge Kathryn Kimball Mizelle; docket apparently 8:26-cv-01314):** 143 Cuban nationals sued under the APA and the Mandamus Act over delays in their CAA I-485s and I-765s. The court **denied their preliminary-injunction motion** and, in doing so, reportedly accepted that PM-602-0199 does not apply to CAA applications. Directorio Cubano dates the ruling 30 Jul 2026; another source refers to an August 2026 ruling. | No court-ordered acceleration for CAA cases; confirms CAA is outside PM-602-0199. | [V/L; date and judge U] | directoriocubano ("cada vez menos residencias"); CiberCuba 8 Oct 2026; CubaHeadlines 342267; MundoNow; M.D. Fla. ECF doc. 2026-01314-41 |
+| 14 Aug 2026 | **First Circuit (No. 26-1703) grants a stay pending appeal only as to the Comprehensive Re-Review Policy**; the Benefits Hold, Global Asylum Hold and Country-Specific-Factors policies remain vacated. Merits appeal pending as of the latest source found (Aug 2026). | Re-review / re-interview of **approved** benefits is legally live again; the hold on **pending** cases is not. | [V] | Global Law Experts; visafortheunitedstates.com; govtschemes.org |
+| 24 Aug 2026 | ***Red Eagle Law, L.C. v. Edlow*, 3:26-cv-04850-CRB (N.D. Cal., Judge Breyer): class certified (nationals of the 39 countries with applications subject to the hold) and preliminary injunction ordering USCIS to adjudicate "in the normal course".** USCIS announces compliance. A later order (reported as 28 Aug; date not confirmed) stayed further proceedings and deferred the motion to dismiss pending the *Dorcas* appeal. | Second, independent nationwide order and the only *injunction* in force (*Dorcas* is a vacatur); protects class members even if *Dorcas* is reversed, subject to its own appeal risk. | [V; 28 Aug date U] | AILA (two items); Clinch Law; Agarwal; uscis-pause-tracker |
 | Sep–Oct 2026 | Attorneys report Cuban parolees receiving new USCIS decisions after months of waiting; USCIS FY2026-to-date CAA median 11.8 months; waits reported as >16 months. | Post-freeze restart under way but throughput still far below 2024–25. | [V] | asere.com; CiberCuba 6 Oct 2026; UnoTV |
+| 5 Oct 2026 | New lawsuit filed in D. Mass. challenging PM-602-0199 and an August 2026 adjustment directive (separate from *Acosta Reynoso*). | Further policy instability; not CAA-specific. | [V] | CiberCuba 8 Oct 2026; CubaHeadlines 342267; MundoNow |
+| 14 Oct 2026 | Final rule "Removal of Automatic Extensions for Certain Employment Authorization Documents" (FR Doc. 2026-20955) codifies the 30 Oct 2025 interim rule without change. | The loss of the 540-day auto-extension is now settled regulation. | [V] | federalregister.gov 2026-20955 |
 
 **Takeaway for March/April 2025 filers [U]:** their case was filed *inside* Freeze #1, started moving
 in summer 2025, and reached the age at which FY2025-era cases were normally decided (7–9 months) in
@@ -147,10 +160,10 @@ The official file for the latest quarter is listed on USCIS's data page as
 |---|---|---|---|---|---|---|---|---|---|
 | Apr–Jun 2024 (FY24 Q3) | — | — | — | 50,627 (outlet calc.) | 98.7% | — | — | [V] | CiberCuba 20 Oct 2026; directoriocubano; 14ymedio |
 | Jan–Mar 2025 (FY25 Q2) | — | — | — | — | 97.2% | — | — | [V] | American Immigration Council |
-| Apr–Jun 2025 (FY25 Q3) | — | — | — | **27,602** | 93.2% | **7.5** | — | [V] | secondary analysis of USCIS quarterly data (immiva / UnoTV); directoriocubano |
-| Jul–Sep 2025 (FY25 Q4) | — | — | — | — | — | 9.1 | — | [V] | immiva tracker |
+| Apr–Jun 2025 (FY25 Q3) | — | — | — | **27,602** | 93.2% | **7.5** | — | [V for 27,602 / 93.2%; L for 7.5 — not re-confirmed in the verification pass] | secondary analysis of USCIS quarterly data (immiva / UnoTV); directoriocubano |
+| Jul–Sep 2025 (FY25 Q4) | — | — | — | — | — | 9.1 | — | [L — single tracker; not re-confirmed] | immiva tracker |
 | Jan–Mar 2026 (FY26 Q2) | — | — | — | — | **52.6%** | — | — | [V] | AIC; Newsweek (Q3 fell 28.9 pts vs Q2) |
-| Apr–Jun 2026 (FY26 Q3) | — | **139** | **447** | **586** | **23.7%** | **16.3** | **342,360** | [V/P] | CiberCuba 20 Oct 2026; directoriocubano; Newsweek; 14ymedio |
+| Apr–Jun 2026 (FY26 Q3) | — | **139** | **447** | **586** | **23.7%** | **16.3** | **342,360** ("al cierre de junio de 2026"; Immiva separately lists 327,255 pending Cuban I-485s, quarter unstated) | [V/P] | CiberCuba 20 Oct 2026; directoriocubano; Newsweek; 14ymedio; AmericaTeVe; Immiva |
 
 Derived: completions fell **98%** (27,602 → 586) and approvals fell **≈99.7%** (vs. Apr–Jun 2024)
 in two years. **[V]** (14ymedio headline; CiberCuba.)
@@ -160,19 +173,25 @@ in two years. **[V]** (14ymedio headline; CiberCuba.)
 | Month | Receipts | Approvals | Denials | Pending | Avg. months (tracker) | Label | Source |
 |---|---|---|---|---|---|---|---|
 | Jan 2025 | — | (baseline; approvals fell 99.9% to Jan 2026) | — | — | — | [V] | Factchequeado 29 Apr 2026 |
-| Jan 2026 | **7,086** | **15** | — | — | — | [V] | Factchequeado |
+| Jan 2026 | **7,086** (not re-confirmed by a second source) | **15** (confirmed by 14ymedio) | — | — | — | [V for 15; P/L for 7,086] | Factchequeado; 14ymedio |
 | May 2026 | **1,846** | **27** | **129** | **354,649** | 23.2 | [V] | inmigreat.com I-485 analytics |
-| Jun 2026 | — | — | — | 355,371 (tracker) vs 342,360 (quarterly report) | — | [V] | visa.ooo / inmigreat vs. USCIS Q3 report |
+| Jun 2026 | — | **89** | — | 355,371 (tracker) vs 342,360 (quarterly report, end of June) | — | [V] | Periódico Cubano (89); visa.ooo / inmigreat vs. USCIS Q3 report / AmericaTeVe |
 | Jul 2026 | — | **308** | — | >355,000 | — | [V] | Periódico Cubano |
 | Aug 2026 | — | — | — | ≈354,649 (as reported in August) | — | [V] | cubitanow; periodicocubano |
 
 Observations **[U]**:
 - Receipts are falling fast (7,086 in Jan 2026 → 1,846 in May 2026) because the last CHNV arrivals
   (Jan 2025) crossed the one-year mark in Jan 2026. The problem is now almost purely a **stock** of
-  ~340–355k pending cases, not a continuing flood of new ones.
-- The two "pending" figures (342,360 vs ~355,000) likely differ in definition or cut-off date
-  (quarterly report vs. a tracker's monthly file). Record both and ask USCIS data owners which is
-  authoritative.
+  ~330–355k pending cases, not a continuing flood of new ones. (Caveat: the 7,086 figure rests on a
+  single outlet and was not re-confirmed; the direction of the trend is robust, the ratio is not.)
+- June's **89** approvals are 64% of the quarter's 139; with May = 27 (inmigreat), April would be
+  ≈ 23 if the two sources count the same thing. The restart is therefore visible from June, right
+  after the 5 Jun vacatur and 12 Jun compliance notice, and July's 308 is a ≈3.5× step up from
+  June rather than a comparison against a whole frozen quarter.
+- Three "pending" figures now exist: **327,255** (Immiva, quarter unstated), **342,360** (quarterly
+  report, end of June 2026) and **~354,649–355,371** (inmigreat / visa.ooo monthly trackers, data
+  through May–June). They likely differ in definition or cut-off date (quarterly report vs. a
+  tracker's monthly file). Record all three and ask USCIS data owners which is authoritative.
 - Pending ≈ 342k is roughly **3× the entire Cuban CHNV cohort**, so the queue also contains Cubans
   paroled at the border in 2021–2023, re-filers, and family members.
 
@@ -198,8 +217,8 @@ Observations **[U]**:
 
 **What the USCIS tool publishes.** The case-processing-times tool reports the time within which
 80% of cases were completed, by form, sub-category and (for I-485) office. For CAA the search found
-only **national** CAA figures (e.g., a law-firm page quoting "5.5 months" for CAA I-485 across all
-USCIS offices, undated). Whether the tool exposes a per-office CAA breakdown must be confirmed by
+only **national** CAA figures (e.g., the wantavisa.com tracker, which reproduces the USCIS tool,
+shows 5.5 months for CAA I-485 across all offices, with no clear as-of date). Whether the tool exposes a per-office CAA breakdown must be confirmed by
 hitting the API. **[U]**
 
 **Proxy signals for Florida offices (family-based I-485 figures from trackers that scrape the USCIS
@@ -210,6 +229,9 @@ tool):**
 | Miami, FL | 26 months | ≈ Aug 2025 (page ~423 days old on 2026-10-20) | [V] | immigrationdirect.com I-485 processing-time page |
 | Miami, FL | 21.5 months | Oct 2026 | [V] | wantavisa.com processing-times (Oct 2026 tracker) |
 | Hialeah, Kendall, Oakland Park, Tampa, Orlando, Jacksonville, Houston, Louisville, Las Vegas, Dallas, Newark, Charlotte, Atlanta | not retrieved | — | — | needs API probe (§13) |
+
+The Miami figures and the Florida-vs-elsewhere hypothesis were **not** re-checked in the
+verification pass (no search budget); treat each as a single-tracker reading.
 
 How to use this **[U]**: CAA cases that require an interview compete for the same field-office
 interview slots as family-based cases. Miami's 21–26-month family-based figure is a sign of severe
@@ -253,11 +275,18 @@ field office for I-220A and humanitarian-parole applicants after PM-602-0199 (Ma
 ### 5.3 Rule changes that matter for 2025 filers
 
 - Renewals filed **on/after 30 Oct 2025** no longer receive the automatic 540-day extension; a
-  renewal receipt notice filed under the new rules does **not** extend the card. Renewals filed
-  before that date keep the 540-day extension if timely and category-matched. **[V]** (CiberCuba
-  18 Oct 2026; CubaHeadlines 343165.)
-- Since **Dec 2025**, certain EADs are valid for a maximum of **18 months** instead of up to five
-  years. **[V]** (CiberCuba; Cuba Bajo Lupa.)
+  renewal receipt notice filed under the new rules does **not** extend the card. The change was made
+  by an interim final rule and **codified without change by a final rule published 14 Oct 2026**
+  ("Removal of Automatic Extensions for Certain Employment Authorization Documents", FR Doc.
+  2026-20955); adjustment-of-status (c)(9) EADs are among the affected categories. EADs that were
+  auto-extended before 30 Oct 2025, and extensions provided by statute or by a separate Federal
+  Register notice, are unaffected. Work authorization therefore ends at card expiry until the
+  renewal is approved unless there is a separate basis. **[V]** (Federal Register 2026-20955;
+  CiberCuba 18 Oct 2026; CubaHeadlines 343165.)
+- Since **Dec 2025**, certain EADs are reportedly valid for a maximum of **18 months** instead of up
+  to five years. **[L]** (CiberCuba; Cuba Bajo Lupa — secondary only; the USCIS announcement was not
+  located in this run. Verify the category list, in particular whether (c)(9) is included, before
+  hard-coding an 18-month expiry in the app.)
 - **12 Dec 2025** biometrics change: no reuse of previously collected biometrics for certain
   applications; photos must be taken at an ASC. **[V]** (iss.washington.edu.)
 
@@ -291,7 +320,7 @@ known:
 | 2022–2024 | Most CAA cases decided **without** an interview; USCIS may schedule one at its discretion. | [V] | CiberCuba CAA guide |
 | 2026 | Community press: USCIS "tightening" adjustment interviews; new CAA interview notices reported (Jacksonville); guidance now advises applicants to *expect* an interview even though the 19-country pause was annulled on 5 Jun 2026. | [V] | cubafull; directoriocubano (Jacksonville; "demoras tras la entrevista"); CiberCuba guide |
 | Dec 2025 – Jun 2026 | PM-602-0192 required a "thorough re-review", including potential interview and re-interview, of approved benefits for nationals of listed countries who entered on/after 20 Jan 2021. Vacated 5 Jun 2026; USCIS appealed. | [V] | Dorsey; Asian Law Caucus; USCIS alert |
-| May 2026 → | PM-602-0199 treats adjustment as discretionary/extraordinary; reportedly drives more interviews. CAA carve-out claimed by one outlet, unconfirmed. | [V/U] | directoriocubano; cubafull |
+| May 2026 → | PM-602-0199 treats adjustment as discretionary/extraordinary; reportedly drives more interviews generally. CAA cases are **outside** the memo according to practitioner summaries (CLINIC, ILRC, VisaPlace) and, reportedly, the *Acosta Reynoso* court (M.D. Fla., Jul/Aug 2026); the order itself was not read. Interview pressure on CAA filers therefore comes from field-office practice and from the re-review policy (reinstated pending appeal on 14 Aug 2026), not from PM-602-0199. | [V/L] | CLINIC; ILRC; VisaPlace; directoriocubano; cubafull |
 
 No source gave an **interview rate** (share of CAA cases interviewed). Attorneys report that even
 interviewed cases wait months for a decision afterward. **[V]** (directoriocubano; cubaenmiami.)
@@ -353,8 +382,8 @@ state, entry type (CHNV parole / other parole / I-220A), concurrent I-765 (y/n),
 
 ## 10. Are March/April 2025 filings being approved now?
 
-**Evidence [V]:** (a) approvals restarted after 12 Jun 2026 — 308 in July 2026 vs 139 in the whole
-Apr–Jun quarter; (b) attorneys reported Cuban parolees receiving fresh decisions in Sept–Oct 2026;
+**Evidence [V]:** (a) approvals restarted after 12 Jun 2026 — 89 in June 2026 (most of the quarter's
+139) and 308 in July 2026, a ≈3.5× month-on-month step up; (b) attorneys reported Cuban parolees receiving fresh decisions in Sept–Oct 2026;
 (c) the FY2026-to-date median rose to 11.8 months and the Q3 median to 16.3 months, which is only
 possible if cases filed in early-to-mid 2025 are among those being completed.
 
@@ -393,8 +422,10 @@ Mar/Apr 2025 cohort at or near the **front** of that queue. Estimate *P* ≈ 10�
 
 Scenario A is the observed starting point in July 2026; the *Red Eagle* injunction (24 Aug 2026) and
 the reports of new decisions in Sept–Oct 2026 suggest the agency has moved toward B. A return to C or
-D is unlikely in the near term because of interview-heavy adjudication (PM-602-0199), new biometrics
-requirements, staffing shifted to enforcement, and pending appeals that keep policy unstable.
+D is unlikely in the near term because of interview-heavy field-office practice (PM-602-0199 itself
+reportedly does not reach CAA cases, see §7, so it is not the driver), the Comprehensive Re-Review
+Policy reinstated by the First Circuit's partial stay of 14 Aug 2026, new biometrics requirements,
+staffing shifted to enforcement, and pending appeals that keep policy unstable.
 
 ### 11.2 Point estimates (measured from 20 Oct 2026)
 
@@ -420,10 +451,14 @@ and complete file, historically 93–99%; the 2026 headline approval rates (23�
 applied to this profile for the selection reasons in §8. Use ≈ 85–90% until post-freeze decision mix
 data (FY2026 Q4, FY2027 Q1) are available.
 
-**Key downside risks:** (1) the First Circuit reverses *Dorcas* and USCIS narrows compliance to
-*Red Eagle* class members only; (2) new policy memos re-impose holds in a different form (the
-Forbes 17 Aug 2026 piece reports restrictions across all legal-immigration categories); (3) re-review
-of approved cases creates re-interviews even after approval.
+**Key downside risks:** (1) the First Circuit (No. 26-1703) reverses *Dorcas* on the merits and USCIS
+narrows compliance to *Red Eagle* class members only — note that *Dorcas* is a vacatur without a
+permanent injunction, so *Red Eagle* is the only injunction in force; (2) new policy memos re-impose
+holds in a different form (the Forbes 17 Aug 2026 piece reports restrictions across all
+legal-immigration categories; an August 2026 adjustment directive is already being challenged in a
+suit filed 5 Oct 2026 in D. Mass.); (3) re-review of approved cases creates re-interviews even after
+approval — this risk is live again because the First Circuit's 14 Aug 2026 order stayed the vacatur
+of the Comprehensive Re-Review Policy pending appeal.
 
 ---
 
@@ -437,8 +472,17 @@ of approved cases creates re-interviews even after approval.
    verify: `/processing-times/api/forms`, `/processing-times/api/formtypes/I-485`,
    `/processing-times/api/formoffices/I-485/{subtype}`,
    `/processing-times/api/processingtime/I-485/{office}/{subtype}`), snapshot daily, and store the
-   history ourselves — third-party trackers (immiva, immigrationdirect, wantavisa, inmigreat, visa.ooo)
-   show that nobody keeps a reliable public archive.
+   history ourselves. Commercial trackers (immiva, immigrationdirect, wantavisa, inmigreat, visa.ooo)
+   do not keep a reliable public archive, but open-source projects do: **jzebedee/uscis** on GitHub
+   publishes daily USCIS processing-time datasets (with `download_form_types.sh` /
+   `download_processing_times.sh` scripts and a form_types table), and
+   **coatless-r-n-d/uscis-processing** (R package) documents working requests that walk forms →
+   form types → offices → processing times against `egov.uscis.gov/processing-times/api/`. Evaluate
+   both as a backfill source and as the reference for the exact endpoint paths (the paths listed
+   above are unconfirmed). **Operational blocker:** the Pathways project reports that
+   `egov.uscis.gov` sits behind a Cloudflare bot check that blocks requests from cloud servers,
+   including GitHub Actions; run the fetcher from a residential/local machine or rely on the
+   jzebedee archive.
 3. **Model regimes, not a single processing time.** The estimator needs explicit freeze windows
    (14 Feb–9 Jun 2025; 2 Dec 2025–12 Jun 2026 / 24 Aug 2026) and a "policy-risk" state driven by
    court/agency events, because a filing date's expected timeline depends on which regimes the case
@@ -452,11 +496,16 @@ of approved cases creates re-interviews even after approval.
    it and start with a modest Florida penalty (+2–3 months) that the data can overturn.
 7. **Entry-type gating:** CHNV parole (I-94 class "DT"/parole) vs. other parole vs. I-220A changes
    eligibility far more than timing; the app must ask and warn.
-8. **EAD-renewal alerts:** compute expiry from issue date (18-month validity post-Dec 2025) and warn
-   at 180 days, noting the loss of the 540-day automatic extension for renewals filed on/after
-   30 Oct 2025.
+8. **EAD-renewal alerts:** read the expiry date printed on the card rather than assuming a validity
+   period (the reported 18-month maximum post-Dec 2025 is [L], unverified from a primary source) and
+   warn at 180 days, noting the loss of the 540-day automatic extension for renewals filed on/after
+   30 Oct 2025 (final rule of 14 Oct 2026, FR Doc. 2026-20955).
 9. **Event feed:** subscribe to USCIS newsroom alerts, AILA litigation updates and the
-   uscis-pause-tracker.com case list; a Dorcas reversal would be the single most important alert.
+   uscis-pause-tracker.com case list; a *Dorcas* merits reversal in the First Circuit (No. 26-1703)
+   would be the single most important alert. Current state to encode: vacatur in force for the
+   benefits hold; stay denied 15 Jul 2026; partial stay 14 Aug 2026 reinstating only the re-review
+   policy; merits appeal pending. Keep "pending-case hold" (vacated) and "approved-case re-review"
+   (reinstated pending appeal) as separate policy-risk flags.
 10. **Spanish-first UX and sources:** the richest data is in Cuban-diaspora media (CiberCuba,
     14ymedio, Periódico Cubano, directoriocubano, cubaenmiami, asere, cubitanow); build a scraper
     for their USCIS-data stories as a leading indicator between quarterly reports.
@@ -476,18 +525,37 @@ of approved cases creates re-interviews even after approval.
    to rebuild a monthly history of the CAA national figure.
 4. Download the FY2024 Q1 – FY2026 Q3 "Form I-485 Quarterly Report" XLSX files from
    `https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data` and tabulate
-   the CAA row; reconcile the 342,360 vs 354,649/355,371 pending discrepancy.
+   the CAA row; reconcile the 327,255 (Immiva) vs 342,360 vs 354,649/355,371 pending discrepancy.
 5. Find the inmigreat/visa.ooo monthly source (likely a USCIS monthly I-485 file) and ingest it.
 6. Reddit: `https://www.reddit.com/r/USCIS/search.json?q=cuban%20adjustment&restrict_sr=1&sort=new`
    and r/cuba, r/immigration; Trackitt I-485 tracker filtered to "Cuban Adjustment Act"; Facebook
    groups "Ley de Ajuste Cubano 2025/2026" (manual).
-7. Verify PA-2026-05 (denial without RFE/NOID) and whether PM-602-0199 excludes the CAA, on uscis.gov.
+7. Verify PA-2026-05 (denial without RFE/NOID) on uscis.gov; confirm the PM-602-0199 CAA carve-out
+   from the memo text itself (practitioner summaries and, reportedly, the *Acosta Reynoso* court say
+   CAA is excluded).
 8. Pull the *Red Eagle Law v. Edlow* (3:26-cv-04850-CRB) and *Dorcas* (26-cv-00132-JJM-PAS)
    orders from CourtListener/RECAP and the First Circuit docket status.
 9. Search CiberCuba/14ymedio for August and September 2026 monthly approval counts and for any
    USCIS statement on CAA interview policy.
 10. Obtain OHSS/USCIS counts of Cubans paroled under CHNV by month (to size filing cohorts) and any
     FOIA'd I-485 CAA data by field office.
+11. Pull the *Acosta Reynoso v. USCIS* order (M.D. Fla., Tampa Div.; the ECF link pattern
+    `ecf.flmd.uscourts.gov/cgi-bin/show_public_doc?2026-01314-41-8-cv=` suggests case 8:26-cv-01314,
+    doc. 41) from CourtListener/RECAP: confirm the judge, the date (30 Jul vs Aug 2026) and the exact
+    holding on PM-602-0199 and the CAA.
+12. First Circuit docket No. 26-1703 (*Dorcas*): confirm which court denied the stay on 15 Jul 2026,
+    read the 14 Aug 2026 partial-stay order, and record the briefing schedule / argument date.
+13. Federal Register 2026-20955 (14 Oct 2026): confirm the effective date and the list of affected
+    EAD categories, in particular (c)(9).
+14. Locate the USCIS announcement (Dec 2025) reducing maximum EAD validity to 18 months and its
+    category list; until found, keep the 18-month figure at [L].
+15. Evaluate `github.com/jzebedee/uscis` (daily processing-time datasets) and
+    `coatless-r-n-d/uscis-processing` as backfill sources; test whether `egov.uscis.gov` answers from
+    a cloud IP (Cloudflare bot check reported by the Pathways project).
+16. Open the Immiva denial-rate / I-485 processing-time pages (CAA row: 16.3 months; 27,602 → 586
+    completions; 327,255 pending) as a structured secondary feed between quarterly reports, and read
+    Periódico Cubano's "USCIS rechaza tres de cada cuatro peticiones ... solo estos casos fueron
+    aprobados" for which case types were approved during the hold (relevant to §8).
 
 ---
 
@@ -503,6 +571,8 @@ Official / primary
 - USCIS processing times tool / historical medians (not reachable from this environment): https://egov.uscis.gov/processing-times/ and https://egov.uscis.gov/processing-times/historic-pt
 - DHS Federal Register notice terminating CHNV parole (public inspection): https://public-inspection.federalregister.gov/2025-05128.pdf
 - Federal Register, proposed biometrics rule, 3 Nov 2025: https://www.govinfo.gov/content/pkg/FR-2025-11-03/html/2025-19747.htm
+- Federal Register, final rule 14 Oct 2026, Removal of Automatic Extensions for Certain Employment Authorization Documents (FR Doc. 2026-20955): https://www.federalregister.gov/documents/2026/10/14/2026-20955/removal-of-automatic-extensions-for-certain-employment-authorization-documents
+- M.D. Fla. (Tampa Division) public ECF document in *Acosta Reynoso v. USCIS* (case 2026-01314, doc. 41): https://ecf.flmd.uscourts.gov/cgi-bin/show_public_doc?2026-01314-41-8-cv=
 - Doe v. Noem docket (D. Mass. 1:25-cv-10495), order on stay of parole truncation: https://docs.justia.com/cases/federal/district-courts/massachusetts/madce/1:2025cv10495/281389/97
 - Doe v. Noem RECAP filing: https://storage.courtlistener.com/recap/gov.uscourts.mad.281389/gov.uscourts.mad.281389.199.3.pdf
 - Civil Rights Litigation Clearinghouse, Doe v. Noem: https://clearinghouse.net/case/46186/
@@ -532,6 +602,16 @@ Litigation trackers and legal analyses
 - NPR, 28 Apr 2026, immigrants from travel-ban countries in limbo: https://www.npr.org/2026/04/28/nx-s1-5775869/trump-travel-ban-pause-limbo-professionals
 - Phillips Lytle, judge rules pause unlawful (Kobick): https://phillipslytle.com/federal-judge-rules-the-pause-in-adjudication-of-immigration-benefits-for-citizens-of-travel-ban-countries-is-unlawful/
 - Cyrus Mehta, Dorcas v. USCIS: https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html
+- AfghanEvac, Dorcas case page (appeal No. 26-1703; stay denial 15 Jul 2026): https://afghanevac.org/dorcas
+- Global Law Experts, First Circuit refuses stay of vacatur (14 Aug 2026 partial stay): https://globallawexperts.com/first-circuit-refuses-stay-vacatur-uscis/
+- PressUnpause tracker, Dorcas case page: https://uscis-pause-tracker.com/cases/dfdb50fe-3ed9-40f1-ac88-ff1e8371d88a
+- visafortheunitedstates.com, 39-country pause August court update: https://visafortheunitedstates.com/application-process/uscis-39-country-adjudication-pause-2026-applications-frozen/
+- govtschemes.org, hold-and-review policy status: https://govtschemes.org/hold-and-review-policy-travel-ban-pending-applications/
+- Nisreen Mousa Law, terminating removal proceedings after Dorcas: https://nisreenmousalaw.com/motion-to-terminate-removal-proceedings-dorcas-v-uscis/
+- WR Immigration, "DORCAS on Appeal: District Court Pauses Its Own Ruling as First Circuit Takes Up the Case" (title seen by the fact-checker; URL not captured)
+- CLINIC field alert, USCIS policy memorandum on adjustment of status (22 May 2026): https://www.cliniclegal.org/resources/clinic-field-alert-informational-uscis-policy-memorandum-adjustment-status-052226
+- ILRC, FAQ on the USCIS adjustment-of-status memo: https://www.ilrc.org/community-resources/faq-uscis-memo-adjustment-status
+- VisaPlace, USCIS adjustment-of-status policy memo May 2026: https://www.visaplace.com/blog-immigration-law/blog-immigration-law-uscis-adjustment-of-status-policy-memo-may-2026/
 - immigrationissues.com, USCIS confirms compliance with Dorcas: https://www.immigrationissues.com/uscis-confirms-it-will-comply-with-the-dorcas-vacatur-of-the-country-hold-policies/
 - Gunster, USCIS compliance with Dorcas: https://www.gunster.com/newsroom/publications/uscis-announces-compliance-with-the-u-s-district-courts-decision-vacating-benefits-hold-policies-and-the-country-specific-factors-policy-for-firty-nine-39-trvel-ban-countries
 - Manifest Law, policies vacated: https://manifestlaw.com/news/district-court-vacates-uscis-policies-06-08-2026
@@ -555,6 +635,10 @@ Processing-time trackers and law-firm pages
 - Boundless, USCIS processing times: https://www.boundless.com/immigration-resources/uscis-processing-times
 - inmigreat, I-485 analytics: https://www.inmigreat.com/en/analytics/i-485/
 - visa.ooo, I-485: https://visa.ooo/forms/i-485/
+- immiva, USCIS denial rates by form (CAA row): https://immiva.com/blog/uscis-denial-rates-by-form
+- GitHub, jzebedee/uscis (daily USCIS processing-time datasets): https://github.com/jzebedee/uscis
+- GitHub, coatless-r-n-d/uscis-processing (R package against the processing-times API): https://github.com/coatless-r-n-d/uscis-processing (URL inferred from the repository name)
+- VisaVerge, Cuban green card approvals fall to 23.7%: https://www.visaverge.com/greencard/cuban-green-card-approvals-drop-to-237-as-trump-administration-tightens-uscis-rules/
 - Lluis Law, Cuban Adjustment Act: https://lluislaw.com/cuban-adjustment-act/
 - Casais Law, Is the CAA still valid (2026): https://casaislaw.com/is-the-cuban-adjustment-act-still-valid-updated-guide-for-2026-applicants/ ; adjustment process: https://casaislaw.com/cuban-immigration-to-the-u-s-how-the-adjustment-process-works/ ; proposed changes: https://casaislaw.com/will-the-cuban-adjustment-act-survive-proposed-immigration-changes/
 - Williams Law, CAA: https://bwea.com/cuban-adjustment-act-caa/
@@ -569,6 +653,10 @@ Spanish-language and Cuban-diaspora media
 - CiberCuba (EN), 18 Oct 2026, renewing work permit after end of automatic extension: https://en.cibercuba.com/noticias/2026-10-18-u1-e129488-s27061-nid343165-renovar-permiso-trabajo-quedarte-empleo-guia-cubanos ; CubaHeadlines mirror: https://www.cubaheadlines.com/articles/343165
 - CiberCuba (EN), 17 Oct 2026, expired parole options: https://en.cibercuba.com/noticias/2026-10-17-u1-e129488-s27061-nid343101-te-vencio-parole-pasa-ahora-opciones-tienen-cubanos ; mirror: https://www.cubaheadlines.com/articles/343101
 - CiberCuba guide, Ley de Ajuste Cubano paso a paso: https://www.cibercuba.com/s/inmigracion-eeuu/guias/una-vez-en-eeuu/ley-ajuste-cubano
+- CiberCuba (EN), 8 Oct 2026, lawsuit against USCIS over new green-card restrictions (Acosta Reynoso; 5 Oct 2026 D. Mass. suit): https://en.cibercuba.com/noticias/2026-10-08-u1-e13-s27061-nid342267-demandan-uscis-nuevas-restricciones-obtener-green-card ; mirror: https://www.cubaheadlines.com/articles/342267
+- MundoNow, lawsuit against USCIS puts new green-card hurdles in spotlight: https://www.mundonow.com/en/lawsuit-against-uscis-puts-new-hurdles-for-green-card-in-spotlight-what-you-need/
+- AmericaTeVe, "solo 139 residencias ... rechazó otras 447" (342,360 pending at end of June 2026; seen by the fact-checker, URL not captured)
+- Periódico Cubano, "USCIS rechaza tres de cada cuatro peticiones ... solo estos casos fueron aprobados" (seen by the fact-checker, URL not captured)
 - 14ymedio, aprobaciones caen 99,7%: https://www.14ymedio.com/cuba/migracion/aprobaciones-residencia-ley-ajuste-cubano_1_1132080.html
 - Factchequeado, 29 Apr 2026, green cards y arrestos de ICE: https://factchequeado.com/teexplicamos/20260429/cubanos-green-cards-arrestos-ice/
 - UnoTV, aprobaciones caen 99% y la espera supera 16 meses: https://www.unotv.com/us/inmigracion-us/ley-de-ajuste-cubano-las-residencias-aprobadas-caen-mas-de-99/ ; por qué un año no basta: https://www.unotv.com/us/actualidad-us/green-card-para-cubanos-por-que-un-ano-en-ee-uu-no-basta-ante-la-caida-de-aprobaciones/
@@ -589,3 +677,127 @@ Background
 - Wikipedia, Cuban Adjustment Act: https://en.wikipedia.org/wiki/Cuban_Adjustment_Act
 - Yale OISS notice on CHNV termination: https://oiss.yale.edu/node?page=33
 - University of Washington ISS, USCIS photo and biometrics update: https://iss.washington.edu/uscis-update-photo-and-biometrics-requirements
+
+---
+
+## 15. Verification notes (2026-10-20)
+
+A fact-checking pass (7 web searches) and an editing pass (2 web searches) were run on 2026-10-20
+after the document was first written. Tags in this section: **[S]** = stated in a search result seen
+on 2026-10-20 by the editor (URL given); **[S-fc]** = stated in a search result seen on 2026-10-20 by
+the fact-checker (URL as supplied in its findings); **[T]** = training knowledge, not confirmed
+today; **[I]** = inferred by the editor. The body of the document keeps its original
+[V]/[P]/[L]/[U] scheme. Network access in this pass was again search-only (no page could be opened).
+
+### 15.1 What was corrected
+
+1. **PM-602-0199 and the CAA (§2, §7, §11.1, §13 item 7).** The carve-out is no longer treated as
+   an open question. Practitioner summaries state the memo does not cover CAA adjustment, which is
+   separately authorized and has no consular-processing alternative [S:
+   https://www.cliniclegal.org/resources/clinic-field-alert-informational-uscis-policy-memorandum-adjustment-status-052226 ;
+   https://www.ilrc.org/community-resources/faq-uscis-memo-adjustment-status ;
+   https://www.visaplace.com/blog-immigration-law/blog-immigration-law-uscis-adjustment-of-status-policy-memo-may-2026/].
+   In *Acosta Reynoso v. USCIS* (M.D. Fla., Tampa Div.) 143 Cuban plaintiffs sued under the APA and
+   the Mandamus Act over delayed CAA I-485s and I-765s; the court denied their preliminary-injunction
+   motion in July 2026 and reportedly accepted the government's view that the memo does not reach
+   CAA applications [S:
+   https://en.cibercuba.com/noticias/2026-10-08-u1-e13-s27061-nid342267-demandan-uscis-nuevas-restricciones-obtener-green-card ;
+   https://www.cubaheadlines.com/articles/342267 ;
+   https://www.mundonow.com/en/lawsuit-against-uscis-puts-new-hurdles-for-green-card-in-spotlight-what-you-need/ ;
+   S-fc: https://www.directoriocubano.info/cuba/cada-vez-menos-residencias-ley-ajuste-cubano-fin-sin-derogarla/].
+   §11.1 no longer cites the memo as a reason the FY2025 pace will not return. The judge's name
+   (Mizelle) appears only in Directorio Cubano [S-fc]; the ruling date is 30 Jul 2026 per that outlet
+   and "August 2026" per another result [S]; the docket number 8:26-cv-01314 is inferred from the
+   ECF URL `show_public_doc?2026-01314-41-8-cv=` [I].
+2. **June 2026 approvals = 89 (§1, §2, §3.3, §10).** Added from Periódico Cubano's July article
+   [S-fc: https://www.periodicocubano.com/cuantas-green-cards-aprobo-uscis-bajo-la-ley-de-ajuste-cubano-en-julio-miles-siguen-a-la-espera/].
+   The restart narrative now compares July (308) with June (89) rather than with the whole quarter
+   (139); the implied April ≈ 23 (139 − 89 − 27) is an inference that assumes the quarterly and
+   monthly sources count the same thing [I].
+3. **Public processing-time archives exist (§12 item 2, §13 item 15).** jzebedee/uscis publishes
+   daily USCIS processing-time datasets and coatless-r-n-d/uscis-processing documents the
+   forms → form types → offices → processing times walk against `egov.uscis.gov/processing-times/api/`
+   [S-fc: https://github.com/jzebedee/uscis]. The "nobody keeps a reliable public archive" claim was
+   narrowed to commercial trackers. Added the Cloudflare bot-check blocker for cloud-hosted fetchers
+   reported by the Pathways project [S-fc; URL not supplied].
+4. **540-day EAD auto-extension (§1, §2, §5.3, §12 item 8).** Now attributed to the interim final
+   rule and to the final rule published 14 Oct 2026, FR Doc. 2026-20955, which codified it without
+   change; EADs auto-extended before 30 Oct 2025 and extensions provided by statute or a separate
+   Federal Register notice are unaffected [S-fc:
+   https://www.federalregister.gov/documents/2026/10/14/2026-20955/removal-of-automatic-extensions-for-certain-employment-authorization-documents].
+5. **"5.5 months" CAA figure (§4).** Re-attributed to the wantavisa.com tracker, period unclear
+   [S-fc: https://www.wantavisa.com/processing-times.php], not a law-firm page.
+6. **Dorcas appeal status (§1, §2, §11.2, §12 item 9) — previously missing.** Added: the district
+   court declared four policies unlawful under the APA and vacated them in their entirety but
+   **denied a permanent injunction** [S:
+   https://blog.cyrusmehta.com/2026/06/dorcas-v-uscis-federal-court-reaffirms-that-uscis-must-adjudicate-not-stonewall-immigration-benefits.html ;
+   https://afghanevac.org/dorcas]; the government appealed on 12 Jun 2026 (First Circuit No. 26-1703)
+   [S: https://afghanevac.org/dorcas]; the stay motion was **denied on 15 Jul 2026** — sources
+   disagree on whether the district court or the First Circuit denied it [S:
+   https://afghanevac.org/dorcas ; https://globallawexperts.com/first-circuit-refuses-stay-vacatur-uscis/ ;
+   https://uscis-pause-tracker.com/cases/dfdb50fe-3ed9-40f1-ac88-ff1e8371d88a]; on **14 Aug 2026 the
+   First Circuit granted a stay only as to the Comprehensive Re-Review Policy**, leaving the Benefits
+   Hold, Global Asylum Hold and Country-Specific-Factors policies vacated [S:
+   https://globallawexperts.com/first-circuit-refuses-stay-vacatur-uscis/ ;
+   https://visafortheunitedstates.com/application-process/uscis-39-country-adjudication-pause-2026-applications-frozen/ ;
+   https://govtschemes.org/hold-and-review-policy-travel-ban-pending-applications/]. No result dated
+   after August 2026 was found; the merits appeal is presumed still pending [I].
+7. **New D. Mass. lawsuit filed 5 Oct 2026 against PM-602-0199 and an August 2026 adjustment
+   directive (§2, §11.2)** [S: CiberCuba 8 Oct 2026; https://www.cubaheadlines.com/articles/342267 ;
+   MundoNow, URLs above].
+8. **Third pending-inventory figure (§2, §3.2, §3.3, §13 items 4 and 16).** Immiva's 327,255 pending
+   Cuban I-485s (quarter unstated) added alongside 342,360 (quarterly report, "al cierre de junio de
+   2026" per AmericaTeVe) and ~354,649–355,371 (trackers) [S-fc].
+9. **Label downgrades.** 18-month EAD validity [V] → [L]; 7,086 Jan 2026 receipts [V] → [P/L];
+   quarterly medians 7.5 and 9.1 months [V] → [L]; 28 Aug 2026 *Red Eagle* stay date → [U];
+   *Acosta Reynoso* judge and date → [U].
+
+### 15.2 Load-bearing claims that remain unverified
+
+- **18-month maximum EAD validity from Dec 2025.** [T] Consistent with my recollection of a USCIS
+  announcement in early December 2025 reducing maximum EAD validity to 18 months for several
+  categories including (c)(9) adjustment applicants, but no primary text was seen today by either
+  pass. §12 item 8 now tells the app to read the expiry date printed on the card instead of
+  assuming 18 months.
+- **7,086 CAA receipts in Jan 2026** (Factchequeado only); the §3.3 receipts-trend inference
+  depends on it. The 15-approvals figure is confirmed by 14ymedio [S-fc].
+- **Pending inventory:** 327,255 vs 342,360 vs ~355,000; the official FY2026 Q3 XLSX was not opened.
+- **USCIS processing-times API paths** (`/formtypes/I-485`, `/formoffices/I-485/{subtype}`,
+  `/processingtime/I-485/{office}/{subtype}`) and the existence of a per-office CAA subtype: only an
+  undocumented JSON API at `egov.uscis.gov/processing-times/api/` walked as forms → form types →
+  offices → processing times is confirmed [S-fc]; the exact paths are [T]/[I].
+- **28 Aug 2026 *Red Eagle* stay date:** a tracker confirms a later stay of proceedings and deferral
+  of the motion to dismiss, not the date [S-fc].
+- **Quarterly medians 7.5 (Apr–Jun 2025), 9.1 (Jul–Sep 2025) and the inmigreat 23.2-month
+  age-of-pending figure:** not independently re-confirmed (16.3 months for Apr–Jun 2026 was, by
+  Immiva and CiberCuba [S-fc]).
+- **All office-level figures (Miami 26 / 21.5 months family-based) and the Florida penalty:**
+  unverified; no search budget was available for them.
+- ***Acosta Reynoso* details:** judge (Mizelle), ruling date (30 Jul vs Aug 2026), docket number
+  (8:26-cv-01314, [I]) and the precise wording of the CAA holding; the order was not read.
+- **Which court denied the *Dorcas* stay on 15 Jul 2026:** district court (AfghanEvac; Democracy
+  Forward "Dorcas-stay-denial.pdf") vs First Circuit (Global Law Experts) [U].
+- **Status of the *Dorcas* merits appeal after August 2026:** no source found [U].
+
+### 15.3 Missing points: added, or still to add
+
+- Added in this pass: *Dorcas* permanent-injunction denial; 15 Jul 2026 stay denial; 14 Aug 2026
+  First Circuit partial stay; *Acosta Reynoso*; June 2026 = 89 approvals; final rule 2026-20955;
+  Cloudflare blocker; jzebedee / coatless archives; Immiva 327,255; 5 Oct 2026 D. Mass. suit.
+- Still to add when pages can be opened: AmericaTeVe's Q3 piece ("solo 139 residencias ... rechazó
+  otras 447"; 342,360 at end of June 2026) and Periódico Cubano's "USCIS rechaza tres de cada cuatro
+  peticiones ... solo estos casos fueron aprobados", which may say **which case types were approved
+  during the hold** — directly relevant to the §8 selection-effect argument [S-fc, URLs not
+  supplied]; Immiva's denial-rate and I-485 processing-time pages (CAA row: 16.3 months;
+  27,602 → 586 completions) as a structured secondary feed between quarterly reports [S-fc]; WR
+  Immigration's "DORCAS on Appeal: District Court Pauses Its Own Ruling as First Circuit Takes Up
+  the Case" [S-fc, title only] — the title suggests a pause that may be the 14 Aug partial stay or a
+  separate district-court order; it must be read before the app's policy-risk state is coded.
+- [I] Consequence of the 14 Aug 2026 partial stay for the app: USCIS may lawfully resume re-reviewing
+  (and re-interviewing) benefits approved to nationals of the listed countries who entered on/after
+  20 Jan 2021 while the appeal is pending, even though it may not hold *pending* cases. The
+  "policy-risk" state should therefore carry two flags — pending-case hold (vacated) and
+  approved-case re-review (reinstated pending appeal) — rather than one.
+- [T] Background not re-checked today: the Supreme Court's 30 May 2025 stay in *Noem v. Doe* and the
+  CHNV termination remain the reason parole-based (c)(11) EADs are gone; nothing found today changes
+  the §5.1 reasoning.

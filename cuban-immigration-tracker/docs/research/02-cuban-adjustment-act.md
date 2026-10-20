@@ -22,6 +22,12 @@ web-search budget ran out before a second round of searches could be made. Conse
   "probably right, confirm before relying on it."
 - **[INFERRED]** = a conclusion the author draws from verified facts; it is reasoning, not a source.
 
+A verification pass on 2026-10-20 (fact-checker, 7 searches; editor, 2 searches) is recorded in
+the "Verification notes (2026-10-20)" section at the end. Text added by that pass uses the tags
+**[S]** (stated in a search result seen that day, URL cited), **[T]** (training knowledge, not
+confirmed that day), **[I]** (inferred) and **[U]** (unresolved conflict between the document and
+the checker, both views kept).
+
 Where sources conflict, both figures are shown and the conflict is flagged. Spanish-language
 Cuban-community outlets (CiberCuba, Cuba en Miami, Cubafull, Directorio Cubano, Periódico Cubano,
 Aroma de Cuba, D-Cuba, CubaHeadlines which is CiberCuba's English mirror) were used heavily because
@@ -47,12 +53,19 @@ day of release.
    (*Labrada-Hechavarria v. U.S. Att'y Gen.*), but did **not** declare I-220A to be parole. A South
    Florida class action and a BIA remand decision (expected late 2026 or early 2027) are pending.
    [VERIFIED via AIC, CLINIC, Prada firm page, CiberCuba]
-4. **The filing package today** is Form I-485 (edition 09/18/26, mandatory with no grace period per
-   secondary sources; fee $1,440 incl. biometrics, $950 for a child under 14 filing with a parent),
-   Form I-693 filed *with* the I-485 and valid only for that one application, optional Form I-765
-   category (c)(9) at $260 (the H.R.1 "parole/asylum/TPS" surcharge does **not** apply to (c)(9)),
-   and optional Form I-131. [VERIFIED for fees and I-693 policy; edition date VERIFIED only via
-   secondary sources]
+4. **The filing package today** is Form I-485 (edition 09/18/26, mandatory with no grace period —
+   confirmed on 2026-10-20 in the uscis.gov/i-485 search excerpt, which ties the new edition to the
+   Public Charge Ground of Inadmissibility final rule effective 2026-09-18; see §3.1 for the
+   interim 09/04/26 edition and the *Casa Inc. v. Trump* injunction; fee $1,440 incl. biometrics,
+   $950 for a child under 14 filing with a parent — fee figures were not re-confirmed on
+   2026-10-20), Form I-693 filed *with* the I-485 and valid only for that one application, optional
+   Form I-765 category (c)(9) at $260 (the H.R.1 "parole/asylum/TPS" surcharge does **not** apply
+   to (c)(9)), and optional Form I-131. Since Policy Alert **PA-2026-05 (2026-08-05)** USCIS may
+   deny an application with missing or insufficient initial evidence **without an RFE or NOID**,
+   so the packet must be complete at filing. [VERIFIED for I-693 policy; edition date and
+   no-grace-period rule VERIFIED via the uscis.gov/i-485 excerpt on 2026-10-20; fees VERIFIED via
+   2026 fee guides in the original session only — re-read G-1055; PA-2026-05 VERIFIED 2026-10-20
+   via law-firm summaries and CiberCuba]
 5. **Rollback rule:** the green-card date is recorded as the *later* of (a) 30 months before the
    I-485 filing date or (b) the applicant's last arrival in the U.S.; non-Cuban spouses/children get
    the same rollback. This also starts the 5-year naturalization clock earlier. [VERIFIED via AFM
@@ -60,7 +73,10 @@ day of release.
 6. **Official USCIS national median processing time for CAA I-485s** (completed cases): 3.3 months
    (FY2023) → 4.6 (FY2024) → 7.0 (FY2025) → **11.8 months** (FY2026 through 2026-07-31). [VERIFIED
    via CiberCuba/CubaHeadlines reporting of the USCIS historical-median page; the page itself could
-   not be fetched]
+   not be fetched. The 2026-10-20 fact-check confirmed the companion FY2026 figures from the same
+   dataset (family-based 6.0, employment-based 5.9 months) but no result showed a CAA row on the
+   page itself, so the CAA series stays [U] until the app reads
+   egov.uscis.gov/processing-times/historic-pt directly and confirms the row exists]
 7. **Volumes collapsed in 2026:** April–June 2026 (Q3 FY2026) USCIS decided only 586 CAA I-485s,
    approving 139 and denying 447 (23.7 % approval), versus 49,965 approvals in April–June 2024 and
    10,432 in April–June 2025; roughly 342,000–355,000 Cuban-category I-485s were pending in
@@ -71,9 +87,13 @@ day of release.
    (ii) the 2025-12-02 PM-602-0192 "hold and review" of all benefit requests from nationals of 19
    high-risk countries **including Cuba**, expanded by PM-602-0194 to 39 countries, vacated on
    2026-06-05 (*Dorcas Int'l Inst. of R.I. v. USCIS*) and enjoined class-wide on 2026-08-24 (*Red
-   Eagle Law v. Edlow*, N.D. Cal.); and (iii) the 2026-05-22 PM-602-0199 memo recasting adjustment
-   of status as "extraordinary" discretionary relief (challenged in a lawsuit filed 2026-10-05).
-   [VERIFIED]
+   Eagle Law v. Edlow*, N.D. Cal.); and (iii) PM-602-0199, issued 2026-05-21 and publicized
+   2026-05-22, recasting adjustment of status as "extraordinary" discretionary relief, now paired
+   with Policy Alert **PA-2026-05 (2026-08-05)**, which lets officers deny benefit requests
+   without an RFE or NOID when initial evidence is missing or insufficient; both are challenged in
+   *AAUP v. Mullin*, No. 1:26-cv-14527 (D. Mass., filed 2026-10-05). [VERIFIED; the lawsuit's
+   caption, docket number and filing date were confirmed on 2026-10-20 via the American
+   Immigration Council litigation page; Dorcas date and appeal rest on secondary sources]
 9. **Vetting changes that matter for Cubans:** social-media-handle collection on I-485/I-131/N-400
    (OMB-approved through 2027-02-28 per a policy tracker); the 2025-08-19 Policy Manual update making
    "anti-American" ideology, antisemitic activity, social-media content **and parole history**
@@ -110,7 +130,7 @@ day of release.
 | 1 | **Native or citizen of Cuba** | Born in Cuba, or a Cuban citizen born elsewhere. Evidence: expired or unexpired Cuban passport showing birthplace Cuba; Cuban birth certificate issued by the civil registry in Cuba; for those born abroad, a Cuban nationality certificate or citizenship letter. A 2019 USCIS Policy Alert ended acceptance of Cuban *consular certificates* as proof of citizenship. A 2022 practitioner advisory says a birth certificate or consular certificate alone is not sufficient; the USCIS page lists the civil-registry birth certificate as acceptable — the safe practice is passport **plus** birth certificate. | VERIFIED: USCIS "Green Card for a Cuban Native or Citizen"; USCIS Policy Alert 20190813-CAA.pdf; visapro.com (2017) on consular certificates; Immigration Justice practice advisory (2022) |
 | 2 | **Inspected and admitted *or* paroled** into the U.S. after January 1, 1959 | *Any* inspection-and-admission (e.g., B-2 visa) or *any* parole under INA 212(d)(5), "regardless of the classification of admission or purpose of parole," satisfies this. CHNV parole, CBP One port-of-entry parole, humanitarian parole and Family Reunification Parole all qualify. Entry without inspection (EWI) and release on Form I-220A do **not** (see §2). | VERIFIED: USCIS page; Policy Manual excerpt quoted by citizenpath.com; Cabrera-Fernández commentary |
 | 3 | **Physically present in the U.S. for at least one year** | The statute says "at least one year." The year does **not** have to follow the parole or admission: "if DHS paroles a person who has already been physically present for at least one year, they may apply right after parole." Short trips abroad are generally counted against the year only if they break presence; practitioners advise documenting continuous presence (leases, pay stubs, school and medical records, tax returns). The community's **"one year and one day"** rule is a filing convention, not a statutory term: filing on the day *after* the first anniversary avoids any argument about whether the anniversary day itself counts. | VERIFIED (USCIS page) for the rule; "one year and one day" convention is BACKGROUND |
-| 4 | **Admissible to the U.S.** (eligible to receive an immigrant visa) | Criminal, security, fraud, health and other grounds under INA 212(a) apply; waivers (I-601) may be available for some. Two grounds matter especially for Cubans: (a) INA 212(a)(3)(D) membership in or affiliation with the Communist Party or another totalitarian party (see §4.5), and (b) health/drug grounds (a 2026 BIA decision reportedly allows denial on the applicant's own admission of drug use at interview, see §4.5). Public charge: CAA applicants are generally treated as exempt from the public-charge ground and do not file Form I-864. | 212(a)(3)(D): VERIFIED (USCIS Policy Manual Vol. 8, Part F, Ch. 3; law-firm summaries). Public-charge exemption: BACKGROUND (8 CFR 212.23(a)) — confirm |
+| 4 | **Admissible to the U.S.** (eligible to receive an immigrant visa) | Criminal, security, fraud, health and other grounds under INA 212(a) apply; waivers (I-601) may be available for some. Two grounds matter especially for Cubans: (a) INA 212(a)(3)(D) membership in or affiliation with the Communist Party or another totalitarian party (see §4.5), and (b) health/drug grounds (a 2026 BIA decision reportedly allows denial on the applicant's own admission of drug use at interview, see §4.5). Public charge: CAA applicants have historically been exempt from the public-charge ground (8 CFR 212.23(a)) and do not file Form I-864. DHS published a new "Public Charge Ground of Inadmissibility" final rule on 2026-07-20, effective 2026-09-18 (the same day as the new I-485 edition), letting officers weigh prior use of means-tested public benefits; whether the CAA exemption survives in the new rule's text has not been checked — [U]. | 212(a)(3)(D): VERIFIED (USCIS Policy Manual Vol. 8, Part F, Ch. 3; law-firm summaries). Public-charge exemption: BACKGROUND (8 CFR 212.23(a)); 2026 final rule VERIFIED 2026-10-20 (uscis.gov/i-485 excerpt; Legal 500); exemption status under the 2026 rule UNRESOLVED |
 | 5 | **Application filed** (Form I-485) with the applicant physically in the U.S. | No underlying petition, no visa number, no priority date, no sponsor. | BACKGROUND |
 
 ### 1.3 Spouse and child derivatives of any nationality
@@ -155,7 +175,7 @@ the BIA?"; CiberCuba 2026-10-20 "Why is the I-220A form not a parole?"]
 | 2025-05-15 | **Matter of Q. Li (BIA 2025):** anyone detained upon arrival falls under § 235(b) and the *only* way to release such a person is § 212(d)(5) parole. Practitioners argue this implies many I-220A releases were legally parole. | CLINIC; CiberCuba 2025-11-12 |
 | 2025-06-20 | **Matter of Roque-Izada, 29 I&N Dec. 106 (BIA 2025):** an immigration judge may not terminate removal proceedings so a Cuban can ask USCIS for parole and then adjust; the BIA did not reconcile this with Q. Li. | CLINIC; marcusdefense.com; NIPNLG BIA tracker |
 | Late 2025 | Oral argument before the Eleventh Circuit (attorney Mark Prada). A civil-rights organization joins the parallel South Florida lawsuit. | CiberCuba 2025-12-12 and 2025-11-12 |
-| 2026-02-23 | **Labrada-Hechavarria v. U.S. Att'y Gen., Nos. 23-13664 & 24-10645, 2026 WL 496486 (11th Cir.):** court holds it has jurisdiction, **vacates and remands** the BIA decisions that relied on Cabrera-Fernández. It does *not* hold that I-220A is parole and does not grant anyone residency. | Prada & Domínguez firm page (citation); CiberCuba 2026-02-24; Aroma de Cuba 2026-03-05 |
+| 2026-02-23 | **Labrada-Hechavarria v. U.S. Att'y Gen., Nos. 23-13664 & 24-10645, 2026 WL 496486 (11th Cir.) (unpublished, "NOT FOR PUBLICATION"):** court holds it has jurisdiction, **vacates and remands** the BIA decisions that relied on Cabrera-Fernández. It does *not* hold that I-220A is parole and does not grant anyone residency. Per a practitioner summary, the vacatur followed the **government changing its position** before the ruling (agreeing the petitioners had been detained under INA 236), so the remand rests on that concession rather than on a merits holding; federal courts are described as divided on the underlying detention question. Primary copies: govinfo USCOURTS-ca11-24-10645; cafefuerte.com mirror. | Prada & Domínguez firm page (citation); CiberCuba 2026-02-24; Aroma de Cuba 2026-03-05; govinfo and cafefuerte PDFs (added by the 2026-10-20 fact-check) |
 | Mid-2026 | Reports that immigration judges in several cities have granted CAA relief to I-220A Cubans and that the government is appealing those grants; a Miami federal hearing in the class action was postponed. | coronapa.com (Aug 2026); CubaHeadlines 338609 |
 | 2026-07-20 | Attorney Willy Allen predicts the BIA remand decision in October–November 2026; another attorney expects January–February 2027. | CiberCuba 2026-07-20 |
 | 2026-10-20 | CiberCuba explainer reiterates that, under current government interpretation, I-220A holders without formal parole cannot use the CAA. | CiberCuba 2026-10-20 |
@@ -220,10 +240,10 @@ pending has no status, only a pending application; see §7).
 
 | Form | Purpose for a CAA applicant | Current edition | Fee (paper) | Notes / confidence |
 |------|-----------------------------|-----------------|-------------|--------------------|
-| **I-485**, Application to Register Permanent Residence or Adjust Status | The application itself; check the Cuban Adjustment Act box in Part 2 | **09/18/26** — reported as mandatory with **no grace period** (older editions rejected on or after 2026-09-18) | **$1,440** (age 14+; the former $85 biometrics fee is folded in); **$950** for a child under 14 filing with a parent's I-485. Unchanged since the 2024-04-01 fee rule (89 FR 6194). The $1,390 "online" price exists in the schedule, but the I-485 is not generally available for online filing. | Fee VERIFIED (multiple 2026 fee guides); edition date VERIFIED only via secondary sources (Lehigh Valley Immigration Law blog updated 2026-09-30; Cubafull; CiberCuba 2026-08-25 "rules changing September 18"). One blog ties the new edition to a new public-charge rule effective 2026-09-18 — UNVERIFIED. |
+| **I-485**, Application to Register Permanent Residence or Adjust Status | The application itself; check the Cuban Adjustment Act box in Part 2 | **09/18/26** — mandatory with **no grace period**: USCIS states that the 01/20/25 and the interim 09/04/26 editions are rejected if postmarked or submitted electronically on/after 2026-09-18 | **$1,440** (age 14+; the former $85 biometrics fee is folded in); **$950** for a child under 14 filing with a parent's I-485. Unchanged since the 2024-04-01 fee rule (89 FR 6194). The $1,390 "online" price exists in the schedule, but the I-485 is not generally available for online filing. | Edition and no-grace rule VERIFIED 2026-10-20 via the uscis.gov/i-485 search excerpt (plus RJ Immigration Law, Legal 500, Manifest Law, Arias Villa, David Walters Law, Boundless summaries): USCIS says the revision "aligns the form with the Public Charge Ground of Inadmissibility Final Rule" (published 2026-07-20, effective 2026-09-18), which is why there is no grace period. The interim 09/04/26 edition accompanied a separate interim final rule on children born to foreign-government employees, and the uscis.gov page references the injunction in *Casa Inc. v. Trump*, No. 8:25-cv-00201 — that injunction appears to concern the 09/04/26 edition and its companion rule, not the public-charge rule [INFERRED — confirm on the live page]. One law-firm summary reports a 2026-09-16 USCIS clarification that certain older editions of I-485/I-765/I-539 would still be honored; this could not be confirmed in official text and conflicts with the USCIS rejection statement — [U]. The app must read the live "Edition Date" block on uscis.gov/i-485 rather than hard-code "older editions rejected." Fees: VERIFIED via 2026 fee guides in the original session (lighthousehq, immiva, Lehigh Valley); the 2026-10-20 fact-check did not re-confirm them — re-read G-1055 (uscis.gov/g-1055), especially after the 2026-09-18 public-charge rule and the 2026-10-16 H.R.1 adjustment. |
 | **I-693**, Report of Medical Examination and Vaccination Record | Required; must be **submitted with** the I-485 (requirement published 2024-12-02) | 01/20/25 (per a civil-surgeon blog, only edition accepted for exams signed on/after 2025-07-03) | No USCIS fee (civil-surgeon charge varies) | Since the 2025-06-11 Policy Manual (Vol. 8) update, an I-693 signed on/after 2023-11-01 is valid **only while the application it was filed with is pending**; if that I-485 is withdrawn or denied, a *new* I-693 is needed for any later filing. Pre-2023-11-01 forms: 2 years. The old 60-day signature rule is gone. VERIFIED: USCIS alerts (as quoted), Boundless, Murthy, Bailey Immigration. |
 | **I-765**, Application for Employment Authorization, category **(c)(9)** (pending adjustment) | Optional work permit while the I-485 is pending | current edition on uscis.gov (not verified) | **$260** regular fee (no longer free when filed with an I-485 filed on/after 2024-04-01). **No H.R.1 surcharge** — the H.R.1 fee applies only to categories (a)(4), (a)(12), (c)(8), (c)(11), (c)(19), (c)(34). | VERIFIED: USCIS "USCIS Updates Fees Based on H.R. 1" (category list as quoted); lighthousehq.com 2026 guide ($260 for (c)(9)) |
-| **I-765, category (c)(11)** (parolee EAD) | Relevant only *before* filing the I-485 (a CHNV parolee's first EAD); shown for comparison | — | $520 regular fee [BACKGROUND] **plus** the H.R.1 statutory fee: **$550** (FY2025) → **$560** (from 2026-01-01) → **$570** (from 2026-10-16, FY2027); renewal surcharge $275 → $280; **not waivable** even with a fee waiver. | VERIFIED: USCIS H.R.1 alert; USCIS FY2026 and FY2027 inflation alerts; Federal Register 2025-13738 (2025-07-22) and 2025-20622 (2025-11-21); ILRC HR1 fee chart |
+| **I-765, category (c)(11)** (parolee EAD) | Relevant only *before* filing the I-485 (a CHNV parolee's first EAD); shown for comparison | — | $520 regular fee [BACKGROUND] **plus** the H.R.1 statutory fee: **$550** (FY2025) → **$560** (from 2026-01-01) → **$570** (from 2026-10-16, FY2027); renewal surcharge $275 (FY2025) → $280 (from 2026-01-01) and **unchanged at $280 for FY2027** (the asylum-applicant renewal fee stays $275 and is not inflation-adjusted); **not waivable** even with a fee waiver. The same FY2027 notice raises the I-131 immigration-parole fee $1,020 → $1,050 and I-821 TPS $510 → $520. | VERIFIED: USCIS H.R.1 alert; USCIS FY2026 and FY2027 inflation alerts; Federal Register 2025-13738 (2025-07-22), 2025-20622 (2025-11-21) and, for FY2027, 2026-20187 (USCIS) and 2026-20185 (DHS/CBP), both published 2026-10-01; ILRC HR1 fee chart; AILA FY27 summary (FY2027 details confirmed by the 2026-10-20 fact-check) |
 | **I-131**, Application for Travel Document (advance parole) | Optional; lets the applicant travel without abandoning the I-485 | — | $630 [BACKGROUND, 2024 fee rule] | Leaving the U.S. without advance parole while the I-485 is pending = application deemed abandoned. VERIFIED (visaverge 2026 Cuban guide). Practitioners in 2025–2026 strongly discourage travel for former CHNV parolees even with advance parole, because CBP can deny parole at re-entry — BACKGROUND, not verified this session. |
 | **Biometrics** | Fingerprints/photo at an Application Support Center (ASC) | — | Included in the I-485 fee | VERIFIED (fee guides). Appointment is typically scheduled by the National Benefits Center a few weeks after receipt [BACKGROUND]. |
 | **G-1055**, Fee Schedule | Reference only | editions 05/29/26 and 09/09/26 cited by secondary sources | — | VERIFIED existence of these editions only via secondary sources. |
@@ -244,12 +264,13 @@ results); lockbox identity BACKGROUND — confirm before publishing in-app guida
 
 - H.R.1 created new statutory fees on asylum, parole and TPS-related benefit requests, implemented
   by USCIS on 2025-07-22 (Federal Register doc. 2025-13738) and inflation-adjusted every fiscal
-  year (FY2026: Federal Register doc. 2025-20622, 2025-11-21; FY2027: USCIS alert, effective
-  2026-10-16).
+  year (FY2026: Federal Register doc. 2025-20622, 2025-11-21; FY2027: Federal Register docs.
+  2026-20187 (USCIS) and 2026-20185 (DHS/CBP), published 2026-10-01, effective 2026-10-16).
 - The EAD surcharges above are the piece that directly affects a CHNV parolee *before* adjustment;
   none of the H.R.1 fees attach to the I-485 itself or to a (c)(9) EAD.
-- H.R.1 also created a fee for the grant of parole and for I-131-type requests in some contexts
-  [BACKGROUND — not relevant to the CAA I-485 and not verified here].
+- H.R.1 also created a fee for the grant of parole (I-131 immigration-parole fee $1,020 in FY2026 →
+  $1,050 from 2026-10-16 per the FY2027 notice) — not relevant to the CAA I-485 itself. [FY2027
+  figure VERIFIED 2026-10-20 via the Federal Register/AILA summaries; FY2026 figure BACKGROUND]
 
 ### 3.3 The rollback ("record of admission") rule
 
@@ -284,7 +305,7 @@ results); lockbox identity BACKGROUND — confirm before publishing in-app guida
 | 3. **EAD (c)(9) approval** and card | NBC | Card production notice; "USCIS Account" status | BACKGROUND. A (c)(9) EAD is adjudicated on its own track and is *not* evidence that the I-485 is close to decision — many 2025 filers got the EAD during the June–November 2025 window and then saw their I-485 frozen again in December 2025 [INFERRED] |
 | 4. **Pre-processing at NBC** (file review, background checks: FBI name check, fingerprint check, TECS/other security checks) | NBC | Invisible to the applicant | BACKGROUND. The 2013 USCIS NBC/Florida Bar Q&A confirms CAA cases were centrally processed at NBC with a 6–8-month wait at the time [VERIFIED] |
 | 5a. **Interview at a field office** (Miami, Hialeah, Kendall, Oakland Park, Tampa, Orlando, Houston, Las Vegas, Louisville, etc.) or 5b. **Interview waived**, adjudicated by NBC | Field office / NBC | Interview notice ~4–8 weeks before the date | Regulation: 8 CFR 245.6 lets USCIS waive the interview when "unnecessary." Policy Manual Vol. 7, Part A, Ch. 5 lists waiver categories. 2026 law-firm blogs report near-universal interviews and marriage-case waiver rates of ~6–9 %; other practitioners say the written waiver criteria were unchanged as of mid-2026. VERIFIED (conflicting secondary sources). Historically most CAA cases were approved by NBC *without* interview [BACKGROUND] |
-| 6. **Request for Evidence (RFE)** / Notice of Intent to Deny (NOID) | Either | Letter with deadline (RFE typically 87 days; NOID 33 days) | BACKGROUND for deadlines; typical CAA RFE triggers VERIFIED in §4.3 |
+| 6. **Request for Evidence (RFE)** / Notice of Intent to Deny (NOID) — **or none**: since Policy Alert PA-2026-05 (2026-08-05) officers may deny outright, without an RFE or NOID, when required initial evidence is missing or insufficient; applies to requests pending on 2026-08-05 and filed afterwards | Either | Letter with deadline (RFE typically 87 days; NOID 33 days) | BACKGROUND for deadlines; typical CAA RFE triggers VERIFIED in §4.3; PA-2026-05 VERIFIED 2026-10-20 (DiRaimondo & Schroeder 2026-08-10; Goldstein; Thomas M. Lee; Grape Law; VisaVerge; CiberCuba 2026-10-14) |
 | 7. **Decision**: approval (I-797 approval notice, then the card) or denial (with the NTA consequence in §7) | Either | Welcome notice; card 1–4 weeks later | BACKGROUND |
 
 ### 4.2 What the interview asks (CAA cases)
@@ -322,6 +343,7 @@ No official question list exists. Sources describe the following areas: [VERIFIE
 | Inconsistencies in names, dates, addresses or travel history across forms | Flagged by officers; "may trigger RFEs or even denials" | VERIFIED (vasquezlawnc.com guide) |
 | Social-media identifiers / "anti-American" activity | New since 2025 | VERIFIED (Fragomen expects "detailed requests for evidence about social media use") |
 | Communist Party / mass-organization membership | Part 9 answers, military service records | VERIFIED (Policy Manual Vol. 8 Part F Ch. 3) |
+| **Straight denial with no RFE/NOID** (PA-2026-05, 2026-08-05) | Any of the above gaps in *initial* evidence can now produce a denial instead of an RFE; CiberCuba (2026-10-14) ran an explainer for Cubans denied "without the chance to defend themselves." The complete packet in §3.1 is therefore the only safety net. | VERIFIED 2026-10-20 (law-firm summaries; CiberCuba); effect on CAA denial counts INFERRED and cannot show before Q4 FY2026 data |
 
 ### 4.4 NBC versus field office: how CAA cases are routed
 
@@ -351,6 +373,7 @@ No official question list exists. Sources describe the following areas: [VERIFIE
 | **INA 212(a)(3)(D)** Communist/totalitarian party | Inadmissible unless membership was involuntary (coercion, fraud, duress, incapacity, or necessary for food/employment), or ended ≥5 years before the application (2 years where the party does not control the government) — Cuba's does, so 5 years. Lying about it = misrepresentation. | long-standing | VERIFIED (Policy Manual Vol. 8 Part F Ch. 3; lawandborder.com; jqklaw.com) |
 | **Matter of Mendez Maldonado (BIA 2026)** | An applicant's own admission of controlled-substance use at interview can support denial | 2026 | VERIFIED only via CubaHeadlines 341832 — confirm the decision |
 | **Cato Institute study** | Found "concerted targeting" of Cubans in arrests and green-card rejections; a Maryland federal judge ordered USCIS to resume processing green cards for a group of plaintiffs | reported 2026-04-28 | VERIFIED via WLRN only; case name not found |
+| **Policy Alert PA-2026-05** ("eligibility at time of filing"; denial without RFE or NOID) | Restores adjudicator discretion to deny a benefit request outright when initial evidence is missing or insufficient and tightens evidentiary standards; applies to requests pending on 2026-08-05 and filed on/after; challenged together with PM-602-0199 in *AAUP v. Mullin* (D. Mass. 1:26-cv-14527) | 2026-08-05 | VERIFIED 2026-10-20 (AIC litigation page; DiRaimondo & Schroeder; Goldstein; Grape Law; VisaVerge; CiberCuba 2026-10-14); primary text not read |
 | **Neighborhood investigations (PA-2026-10)** | Resumes INA 335(a) neighborhood/employer checks for **N-400** applicants pending or filed on/after 2026-08-25, case-by-case; builds on an August 2025 memo | 2026-08-25 | VERIFIED (Fragomen, Envoy, AILA, Manifest Law). **Not** extended to I-485 per any source found |
 | **ICE detention of CAA applicants** | A pending I-485 does not protect against ICE detention; a detained applicant's case may move to immigration court, where the CAA can still be sought before an immigration judge | 2025–2026 reports | VERIFIED (Cuba en Miami); IJ jurisdiction BACKGROUND |
 
@@ -378,7 +401,8 @@ the following instead. Treat the exact Policy Manual location as an **open quest
 | **Policy Manual Vol. 1 update of 2025-08-19** | Anti-American/antisemitic/parole-history/social-media discretionary factors | https://www.uscis.gov/policy-manual (Vol. 1) | VERIFIED via summaries |
 | **Policy Manual Vol. 8 update of 2025-06-11 on I-693 validity** | I-693 valid only for the application it accompanies | https://www.uscis.gov/newsroom/alerts/uscis-changes-validity-period-for-any-form-i-693-signed-on-or-after-nov-1-2023 | VERIFIED |
 | **PM-602-0192 (2025-12-02)** | Hold and review, 19 high-risk countries incl. Cuba | https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0192-PendingApplicationsHighRiskCountries-20251202.pdf | VERIFIED |
-| **PM-602-0199 (2026-05-22)** "Adjustment of Status is a Matter of Discretion and Administrative Grace, and an Extraordinary Relief" | Consular processing as default for those admitted/paroled, absent extraordinary circumstances; factors (status maintenance, unauthorized work, overstays, preconceived intent). Applies to INA 245 adjustment; CAA adjustment is under its own statute, and attorneys say Cubans are not affected — USCIS has issued no implementing guidance. | https://www.uscis.gov/laws-and-policy/policy-memoranda | VERIFIED (CLINIC field alert 05/22/26; AILA; Clark Hill; Morgan Lewis; WR Immigration; Cubafull) |
+| **PM-602-0199 (issued 2026-05-21; publicized 2026-05-22)** "Adjustment of Status is a Matter of Discretion and Administrative Grace, and an Extraordinary Relief" | Consular processing as default for those admitted/paroled, absent extraordinary circumstances; factors (status maintenance, unauthorized work, overstays, preconceived intent). The *AAUP v. Mullin* complaint describes it as calling adjustment an "extraordinary departure" and treating failure to consular-process as a negative factor needing "unusual or even outstanding" offsetting equities. Applies to INA 245 adjustment; CAA adjustment is under its own statute, and attorneys say Cubans are not affected — USCIS has issued no implementing guidance, and no source found on 2026-10-20 mentions the CAA at all, so the exemption remains attorney opinion [U]. | https://www.uscis.gov/laws-and-policy/policy-memoranda | VERIFIED (CLINIC field alert 05/22/26; AILA; Clark Hill; Morgan Lewis; WR Immigration; MMHPC, which dates it 2026-05-21; Cubafull; AIC litigation page 2026-10-20) |
+| **PA-2026-05 (2026-08-05)** denial without RFE/NOID; tightened evidentiary standards | USCIS may deny when initial evidence is missing or insufficient instead of issuing an RFE or NOID; applies to pending and new requests | Primary text not read; summaries: https://www.diraimondoschroeder.com/updates/2026/8/10/uscis-expands-authority-to-deny-cases-without-requests-for-evidence-and-tightens-evidentiary-standards ; https://jgoldlaw.com/uscis-denial-without-rfe-august-2026 | VERIFIED 2026-10-20 via law-firm summaries and the AIC litigation page |
 | **PA-2026-10 (2026-08-25)** neighborhood investigations | N-400 only | https://www.aila.org/library/uscis-policy-alert-on-investigations-and-examinations-for-naturalization-eligibility | VERIFIED |
 | **USCIS alert "Recent Court Order on Hold Policies"** | USCIS "strongly disagrees" with Red Eagle but will comply | https://www.uscis.gov/newsroom/alerts/recent-court-order-on-hold-policies | VERIFIED |
 | **8 CFR 245.6** | Interview may be waived when "unnecessary" | https://www.ecfr.gov/current/title-8/chapter-I/subchapter-B/part-245 | VERIFIED (quoted by secondary sources) |
@@ -421,15 +445,20 @@ many clients wait longer than the official figure and some are considering indiv
 
 | Period | Approved | Denied | Decided | Approval rate | Pending at period end | Source |
 |--------|----------|--------|---------|---------------|-----------------------|--------|
-| Apr–Jun 2024 (Q3 FY2024) | **49,965** | (not reported) | — | — | — | CiberCuba 2026-10-20; CubaHeadlines 343309 |
-| Apr–Jun 2025 (Q3 FY2025) | **10,432** | (denials said to exceed Q3 FY2026's in absolute terms) | — | — | — | same |
+| Apr–Jun 2024 (Q3 FY2024) | **49,965** | **662** | ~50,627 (derived) | ~98.7 % (derived) | — | CiberCuba 2026-10-20; CubaHeadlines 343309; denials per Cuba en Miami / 14ymedio / Directorio Cubano (fact-check 2026-10-20) |
+| Apr–Jun 2025 (Q3 FY2025) | **10,432** | **757** | ~11,189 (derived) | ~93.2 % (derived) | — | same; denials per Cuba en Miami / 14ymedio (fact-check 2026-10-20) |
+| Oct 2025–Mar 2026 (H1 FY2026, Q1+Q2 combined) | — | **418** (six-month total) | — | — | — | Cuba en Miami ("USCIS negó más casos de ajuste cubano en tres meses que durante los seis meses anteriores"); Directorio Cubano; Periódico Cubano (fact-check 2026-10-20) |
 | Prior quarter to Q3 FY2026 (Jan–Mar 2026) | — | — | — | "52.6 %" cited (ambiguous whether approval or denial rate) | — | VisaVerge |
 | May 2026 (monthly snapshot) | 27 | 129 | 156 | 17 % | **354,649** (329,417 pending > 6 months); 1,846 received that month | Inmigreat I-485 analytics (third-party, from USCIS data) |
-| Apr–Jun 2026 (Q3 FY2026) | **139** | **447** | **586** | **23.7 %** | **> 342,000** | CiberCuba 2026-10-20; CubaHeadlines 343309; VisaVerge |
+| Apr–Jun 2026 (Q3 FY2026) | **139** | **447** (more in one quarter than the 418 of the prior six months) | **586** | **23.7 %** | **> 342,000** | CiberCuba 2026-10-20; CubaHeadlines 343309; VisaVerge; Cuba en Miami; 14ymedio (computes a 99.7 % drop in approvals vs Q3 FY2024); Periódico Cubano ("three of every four rejected") |
 
 Reading [INFERRED]: approvals fell ~80 % from 2024 to 2025 (the February–June 2025 parolee hold)
 and ~99 % from 2025 to 2026 (the December 2025 high-risk-country hold followed by the May 2026
-discretion memo). The pending inventory of roughly 350,000 Cuban-category cases dwarfs the
+discretion memo; 14ymedio puts the two-year drop at 99.7 %). Denials did not fall with them: 447
+in Apr–Jun 2026 alone versus 418 in the preceding six months, so the few cases USCIS finished in
+Q3 were overwhelmingly denials. Chronology matters here: PA-2026-05 (denial without RFE) took
+effect 2026-08-05, *after* Q3 FY2026 ended, so it cannot explain the Q3 denial count; its effect
+can first appear in Q4 FY2026 (Jul–Sep 2026) data. The pending inventory of roughly 350,000 Cuban-category cases dwarfs the
 2024 approval pace (~50,000/quarter → ~7 quarters to clear) and makes the 2026 pace meaningless as
 a clearing rate. Any estimator must therefore be **regime-conditional**: the expected time depends
 on which policy regime is in force, not on the historical median.
@@ -450,7 +479,8 @@ no decision by October 2026, i.e. 18–19 months pending), the sequence of regim
 wait: filed into the Davidson hold (Feb 14–May 28/June 9, 2025); EAD issued once the hold lifted;
 I-485 then subject to PM-602-0192 from 2025-12-02 until the Dorcas vacatur (2026-06-05) and the Red
 Eagle injunction (2026-08-24); now in a queue where approvals are a few hundred per quarter under
-PM-602-0199. People who filed at the same time and never got an EAD likely had their I-765 sit in
+PM-602-0199 and, since 2026-08-05, PA-2026-05 (denial without RFE). People who filed at the same
+time and never got an EAD likely had their I-765 sit in
 the same hold or had it adjudicated after their parole was terminated (2025-04-24) with the
 (c)(9) basis unaffected but the (c)(11) basis gone. [INFERRED]
 
@@ -464,9 +494,9 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
 | Applicant never filed before parole ended | Still eligible to file later if admitted or paroled and one year present; "the one-year period need not follow the parole." | VERIFIED (USCIS page) + practitioner guides |
 | Travel abroad without advance parole | I-485 deemed abandoned. With advance parole, re-entry is at CBP's discretion and 2025–26 practitioners advise against travel. | VERIFIED (abandonment); travel-risk BACKGROUND |
 | ICE detention while pending | Pending I-485 does not prevent detention; USCIS may lose jurisdiction if the person is placed in removal proceedings, and the CAA application would then be renewed before the immigration judge (an "arriving alien" exception keeps USCIS jurisdiction for parolees in some postures). | VERIFIED (Cuba en Miami) for detention; jurisdiction rules BACKGROUND |
-| **I-485 denied** | No administrative appeal (motion to reopen/reconsider via I-290B within 30 days). Under USCIS's 2025-02-28 NTA policy (PM-602-0187), USCIS issues a **Notice to Appear** when the applicant is not lawfully present after denial, i.e. a denied former parolee goes to immigration court, where the CAA can be re-raised. The I-693 from the denied case becomes invalid for any new filing. | NTA policy and PM number BACKGROUND; I-693 rule VERIFIED |
+| **I-485 denied** | No administrative appeal (motion to reopen/reconsider via I-290B within 30 days). Since PA-2026-05 (2026-08-05) the denial may be the first notice the applicant receives — no RFE or NOID is required when initial evidence is missing or insufficient. Under USCIS's 2025-02-28 NTA policy (PM-602-0187), USCIS issues a **Notice to Appear** when the applicant is not lawfully present after denial, i.e. a denied former parolee goes to immigration court, where the CAA can be re-raised. The I-693 from the denied case becomes invalid for any new filing. | NTA policy and PM number BACKGROUND; I-693 rule VERIFIED; PA-2026-05 VERIFIED 2026-10-20 (secondary sources) |
 | Denial solely for "no parole" (I-220A) and later parole obtained | The 2022 USCIS reopening process applies. | VERIFIED |
-| Discretionary denial under PM-602-0199 / "parole history" / anti-American factors | Possible in principle; denial rates of ~76 % in Q3 FY2026 show discretionary and vetting-based denials are now common, though the sources do not break down denial reasons. | VERIFIED rate; reasons UNKNOWN |
+| Discretionary denial under PM-602-0199 / "parole history" / anti-American factors, and evidentiary denial under PA-2026-05 | Possible in principle; denial rates of ~76 % in Q3 FY2026 show discretionary and vetting-based denials are now common, though the sources do not break down denial reasons (PA-2026-05 postdates Q3 and will first show in Q4 FY2026 data). | VERIFIED rate; reasons UNKNOWN |
 
 ---
 
@@ -502,16 +532,19 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
 | 2026-02-23 | *Labrada-Hechavarria* (11th Cir.) vacates/remands I-220A BIA decisions | I-220A | Prada firm; CiberCuba |
 | 2026-04-28 | WLRN reports Cato study on targeting of Cubans; Maryland court orders USCIS to resume processing for plaintiffs | — | WLRN |
 | 2026-05-18 | Rule reportedly requiring attorneys to appear in person at field-office interviews | — | single secondary source |
-| 2026-05-22 | **PM-602-0199**: adjustment of status as "extraordinary" discretionary relief; consular processing as default | Interview questions change; approvals collapse; attorneys say CAA applicants exempt in principle | CLINIC; AILA; Clark Hill; Morgan Lewis; Cubafull |
+| 2026-05-21 (publicized 05-22) | **PM-602-0199**: adjustment of status as "extraordinary" discretionary relief; consular processing as default | Interview questions change; approvals collapse; attorneys say CAA applicants exempt in principle (no source mentions the CAA — [U]) | CLINIC; AILA; Clark Hill; Morgan Lewis; MMHPC (05-21 date); Cubafull |
 | 2026-06-05 | ***Dorcas Int'l Inst. of R.I. v. USCIS***: vacates the four USCIS hold policies; government appeals | Cuban cases should move | AIC; Ogletree; Legal 500 |
 | 2026-06-10 | Reports that some field offices stopped asking PM-602-0199 questions | — | tracker (single source) |
-| 2026-08-24 | ***Red Eagle Law v. Edlow***, No. 26-cv-04850-CRB (N.D. Cal.): class certified; preliminary injunction against PM-602-0192 and 0194; USCIS must adjudicate "in the normal course" | Cuban cases must be adjudicated (approve, deny or RFE) | AIC; USCIS alert "Recent Court Order on Hold Policies"; Clinch Law |
+| 2026-07-20 | DHS "Public Charge Ground of Inadmissibility" final rule published; effective 2026-09-18; officers may consider prior use of means-tested public benefits | Drives the new I-485 edition; CAA public-charge exemption under the new rule unverified [U] | uscis.gov/i-485 excerpt; Legal 500 (fact-check 2026-10-20) |
+| 2026-08-05 | **PA-2026-05**: denial without RFE/NOID when initial evidence is missing or insufficient; tightened evidentiary standards; applies to pending and new requests | Incomplete CAA packets can be denied outright; no RFE safety net | DiRaimondo & Schroeder 2026-08-10; Goldstein; Grape Law; Thomas M. Lee; VisaVerge; CiberCuba 2026-10-14 |
+| 2026-08-24 | ***Red Eagle Law, L.C. v. Edlow***, No. 3:26-cv-04850-CRB (N.D. Cal., Judge Breyer): class certified (nationals of the 39 countries **and the Palestinian Authority** with covered applications lacking a final decision at certification); preliminary injunction against PM-602-0192 and 0194; USCIS must adjudicate "in the normal course." One tracker reports the court has since stayed further proceedings and deferred the government's motion to dismiss, with status reports (single source) | Cuban cases must be adjudicated (approve, deny or RFE) | AIC; USCIS alert "Recent Court Order on Hold Policies"; Clinch Law; CourtListener docket 73380879; Sharma Law; uscis-pause-tracker.com (fact-check 2026-10-20) |
 | 2026-08-25 | PA-2026-10 neighborhood investigations (N-400) | Future naturalization step | Fragomen; AILA |
 | 2026-08-28 | *Medani v. Trump* vacates PM-602-0193 (diversity-visa hold) | Not CAA | AIC |
-| 2026-09-18 | New I-485 edition mandatory; secondary sources tie it to a new public-charge rule | Old editions rejected | Lehigh Valley blog; Cubafull; CiberCuba 2026-08-25 |
-| 2026-10-05 | Lawsuit filed challenging PM-602-0199 | Policy still in effect mid-October | VisaVerge |
+| 2026-09-18 | New I-485 edition (09/18/26) mandatory, aligned with the public-charge final rule effective the same day; 01/20/25 and interim 09/04/26 editions rejected if postmarked/submitted on/after this date; uscis.gov/i-485 references the *Casa Inc. v. Trump* injunction (apparently about the 09/04/26 edition); a reported 2026-09-16 clarification honoring "certain editions" is unconfirmed [U] | Use the 09/18/26 edition; the app must read the live uscis.gov/i-485 edition block | uscis.gov/i-485 excerpt; RJ Immigration Law; Legal 500; Manifest Law; Arias Villa; David Walters Law; Lehigh Valley blog; Cubafull; CiberCuba 2026-08-25 |
+| 2026-10-01 | Federal Register publishes the FY2027 H.R.1 inflation adjustments (docs. 2026-20187 USCIS; 2026-20185 DHS/CBP) | Fees effective 2026-10-16 | federalregister.gov; AILA |
+| 2026-10-05 | ***AAUP v. Mullin***, No. 1:26-cv-14527 (D. Mass.) filed, challenging PM-602-0199 and PA-2026-05 (reported by a law firm on 2026-10-13) | Both policies still in effect mid-October | AIC litigation page (caption, docket, filing date); DiRaimondo & Schroeder 2026-10-13; VisaVerge |
 | 2026-10-06 | USCIS historical median for CAA reaches 11.8 months | — | CiberCuba; CubaHeadlines |
-| 2026-10-16 | FY2027 H.R.1 fee inflation ($570 initial parole/asylum/TPS EAD) | — | USCIS alert |
+| 2026-10-16 | FY2027 H.R.1 fee inflation takes effect: initial parole/asylum/TPS EAD $560 → $570; parole/TPS renewal EAD unchanged at $280 (asylum renewal $275); I-131 parole fee $1,020 → $1,050; I-821 $510 → $520; (c)(9) I-765 $260 unaffected [BACKGROUND] | Only pre-adjustment (c)(11) filers affected | USCIS alert; FR 2026-20187 and 2026-20185 (2026-10-01); AILA; G-1055 |
 | 2026-10-20 | Q3 FY2026 data: 139 approvals / 447 denials | — | CiberCuba; CubaHeadlines; VisaVerge |
 
 ---
@@ -530,10 +563,15 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
    "All USCIS Application and Petition Form Types" file). Needed for ingestion (doc 03).
 4. **PM-602-0199 and the CAA:** has USCIS said anything in writing about whether the memo applies to
    CAA adjustment (which is not INA 245 adjustment)? Attorney statements say no; the memo text has
-   not been read.
-5. **The I-485 09/18/26 edition and the alleged 2026-09-18 public-charge rule:** verify on
-   uscis.gov/i-485 and the Federal Register; check whether CAA applicants remain public-charge
-   exempt under the new rule.
+   not been read, and no source found on 2026-10-20 mentions the CAA at all. Read the memo and the
+   *AAUP v. Mullin* complaint (D. Mass. 1:26-cv-14527, filed 2026-10-05).
+5. **The I-485 09/18/26 edition and the 2026-09-18 public-charge rule:** both are now confirmed
+   (uscis.gov/i-485 excerpt; DHS final rule published 2026-07-20). Still open: (a) whether CAA
+   applicants remain public-charge exempt under the new rule's text (old 8 CFR 212.23(a)); (b) what
+   the *Casa Inc. v. Trump* (D. Md. 8:25-cv-00201) injunction referenced on the I-485 page covers —
+   apparently the 09/04/26 interim edition and its companion interim final rule, not the
+   public-charge rule; (c) whether the reported 2026-09-16 USCIS clarification that "certain
+   editions" of I-485/I-765/I-539 are still honored exists in official text.
 6. **Red Eagle compliance in practice:** are Cuban CAA cases actually being adjudicated since
    2026-08-24, and is the government's appeal of Dorcas (First Circuit) or of Red Eagle (Ninth
    Circuit) likely to restore the holds? Q4 FY2026 (Jul–Sep 2026) data, due around January 2027,
@@ -551,6 +589,12 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
     parolee backlog.
 12. **Matter of Mendez Maldonado (BIA 2026)** and the Maryland "resume processing" order: find the
     primary decisions.
+13. **PA-2026-05 (2026-08-05, denial without RFE/NOID):** read the policy alert; find out whether
+    CAA I-485s are being denied for missing initial evidence (I-693 not enclosed, I-94 missing,
+    nationality proof) and whether Q4 FY2026 denials rise further.
+14. **The CAA row on the USCIS historical-median page:** confirm at
+    egov.uscis.gov/processing-times/historic-pt that an I-485 "Cuban Adjustment Act" row exists and
+    carries the 3.3 / 4.6 / 7.0 / 11.8 series before the app displays it.
 
 ---
 
@@ -563,13 +607,14 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
 2. **Regime-aware survival model.** Encode the policy regimes as time-varying covariates:
    (a) 2023–Jan 2025 "fast lane" (median 3–5 months, mostly no interview); (b) 2025-02-14 →
    2025-06-09 parolee hold; (c) 2025-06-09 → 2025-12-02 post-Talwani catch-up; (d) 2025-12-02 →
-   2026-06-05/08-24 high-risk-country hold; (e) 2026-05-22 → present discretion memo with
+   2026-06-05/08-24 high-risk-country hold; (e) 2026-05-21 → present discretion memo (plus
+   PA-2026-05 denial-without-RFE from 2026-08-05) with
    near-universal interviews and ~24 % approval. A case's expected remaining time is the sum of
    remaining time in the current regime plus transition probabilities to future regimes (court
    rulings). Historical medians alone will badly under-predict.
 3. **Show approval probability, not just time.** With a 23.7 % approval rate in Q3 FY2026, "when"
    is less informative than "whether." Display both, with the caveat that denial reasons are not
-   published.
+   published and that, since PA-2026-05 (2026-08-05), a denial can arrive without a prior RFE.
 4. **Milestone states to collect from users** (self-reported, with dates and field office):
    receipt, biometrics, EAD (c)(9) receipt/approval, "case transferred" notice, interview notice,
    interview held, RFE/NOID issued and responded, approval/card, denial/NTA. Field office and
@@ -578,16 +623,25 @@ the same hold or had it adjudicated after their parole was terminated (2025-04-2
    denials, pending); USCIS monthly all-forms file (if it carries a CAA line); USCIS historical
    national median page (annual CAA line); the processing-times tool if a CAA category exists. All
    are published with a lag of roughly one quarter, so the app should label data vintage clearly.
-6. **Litigation/policy alert feed.** Watch: *Red Eagle Law v. Edlow* (N.D. Cal. 26-cv-04850),
-   *Dorcas* appeal (1st Cir.), *Doe v. Noem* (D. Mass. 25-cv-10495), the PM-602-0199 lawsuit filed
-   2026-10-05, *Labrada-Hechavarria* remand at the BIA, and the USCIS Policy Memoranda and Policy
-   Manual update pages. These events move the regime variable in (2).
+6. **Litigation/policy alert feed.** Watch: *Red Eagle Law, L.C. v. Edlow* (N.D. Cal.
+   3:26-cv-04850-CRB; CourtListener docket 73380879; proceedings reportedly stayed with status
+   reports), *Dorcas* appeal (1st Cir.), *Doe v. Noem* (D. Mass. 25-cv-10495), *AAUP v. Mullin*
+   (D. Mass. 1:26-cv-14527, filed 2026-10-05, challenging PM-602-0199 and PA-2026-05),
+   *Labrada-Hechavarria* remand at the BIA, *Casa Inc. v. Trump* (D. Md. 8:25-cv-00201) only insofar
+   as it touches the I-485 edition, and the USCIS Policy Memoranda, Policy Alerts and Policy Manual
+   update pages. These events move the regime variable in (2).
 7. **Built-in calculators:** (a) earliest filing date = arrival + 1 year (+1 day convention);
    (b) rollback LPR date = max(filing − 30 months, last arrival); (c) naturalization eligibility
    = rollback + 5 years (early filing at − 90 days); (d) fee calculator: I-485 $1,440/$950, I-765
-   (c)(9) $260, I-131 ($630, verify), I-693 exam cost, and the H.R.1 surcharge only for (c)(11).
-8. **Checklist content** must warn about: I-693 filed with the I-485 and single-use; new I-485
-   edition (09/18/26) with no grace period; social-media handles for the last five years; no
+   (c)(9) $260, I-131 ($630, verify), I-693 exam cost, and the H.R.1 surcharge only for (c)(11)
+   ($570 initial / $280 renewal from 2026-10-16). Source every figure to the live G-1055 and, for
+   H.R.1 amounts, to Federal Register 2026-20187 / 2026-20185; the I-485 and (c)(9) figures were
+   not re-confirmed on 2026-10-20.
+8. **Checklist content** must warn about: I-693 filed with the I-485 and single-use; the I-485
+   edition — read the live uscis.gov/i-485 "Edition Date" block at build time (09/18/26 as of
+   2026-10-20; 01/20/25 and 09/04/26 rejected; no grace period) rather than hard-coding it;
+   complete *initial* evidence in the packet, because PA-2026-05 lets USCIS deny without an RFE;
+   social-media handles for the last five years; no
    travel without advance parole and the practical risk even with it; Communist Party / CDR /
    military questions and the misrepresentation trap; bringing I-94 and parole evidence, not the
    I-220A, to prove "paroled."
@@ -724,3 +778,118 @@ Spanish-language and Cuban-community sources
 - Periódico Cubano, USCIS actualiza tiempos de procesamiento — https://www.periodicocubano.com/uscis-actualiza-tiempos-de-procesamiento-para-estos-formularios/ ; preguntas de la entrevista de ciudadanía — https://www.periodicocubano.com/las-preguntas-que-mas-importan-en-la-entrevista-para-obtener-la-ciudadania-de-eeuu/
 - Aroma de Cuba, CAA 2026 who still qualifies — https://aromadecuba.com/en/blog/2026-02-22-ley-ajuste-cubano-2026-quien-califica-proteccion/ ; 11th Circuit revives hope — https://aromadecuba.com/en/blog/2026-03-05-fallo-historico-i220a-11-circuito-esperanza-cubanos/
 - John R. De La Vega, P.A. (X post, Roque-Izada alert) — https://x.com/johndelavegalaw/status/1936128843393245558
+
+Added by the 2026-10-20 verification pass (fact-checker and editor searches)
+- American Immigration Council, Lawsuit Challenges USCIS Policies Restricting Adjustment of Status (AAUP v. Mullin, D. Mass. 1:26-cv-14527, filed 2026-10-05) — https://www.americanimmigrationcouncil.org/litigation/challenge-uscis-adjustment-policy/
+- DiRaimondo & Schroeder, Lawsuit challenges recent USCIS policies affecting adjustment applicants (2026-10-13) — https://www.diraimondoschroeder.com/updates/2026/10/13/lawsuit-challenges-recent-uscis-policies-affecting-adjustment-of-status-applicants ; USCIS expands authority to deny without RFE (2026-08-10) — https://www.diraimondoschroeder.com/updates/2026/8/10/uscis-expands-authority-to-deny-cases-without-requests-for-evidence-and-tightens-evidentiary-standards
+- JD Supra, Is Adjustment of Status Dead or Alive? — https://www.jdsupra.com/legalnews/is-adjustment-of-status-dead-or-alive-9628236/
+- PA-2026-05 coverage: Goldstein Immigration Lawyers — https://jgoldlaw.com/uscis-denial-without-rfe-august-2026 ; Jackson & Hertogs — https://www.jackson-hertogs.com/post/recent-uscis-updates-on-e-filing-form-i-485-and-requests-for-evidence-notices-of-intent-to-deny ; Thomas M. Lee — https://www.thomasmlee.com/blog/uscis-can-now-deny-your-application-without-any-warning-rfe-or-noid-what-the-new-eligibility-at-time-of-filing-policy-means-for-you/ ; Grape Law — https://www.grapelaw.com/blog/us-immigration/uscis-denials-without-rfe-policy ; VisaVerge — https://www.visaverge.com/documentation/i-485-filers-must-now-submit-key-docs-as-uscis-skips-warnings/ ; CiberCuba (EN), Denied a green card without the chance to defend yourself? (2026-10-14) — https://en.cibercuba.com/noticias/2026-10-14-u1-e192519-s27061-nid342874-te-negaron-green-card-poder-defenderte-debes-saber
+- USCIS, Form I-485 page (edition 09/18/26; public-charge rule; Casa Inc. v. Trump reference) — https://www.uscis.gov/i-485
+- I-485 edition coverage: RJ Immigration Law — https://rjimmigrationlaw.com/resources/uscis-updates-form-i-485-new-edition-required-starting-september-18-2026/ ; Legal 500 — https://www.legal500.com/intelligence/united-states/immigration/revised-form-i-485-takes-effect-sept-18 ; Manifest Law — https://manifestlaw.com/news/uscis-new-i485-edition-08-19-2026 ; Arias Villa — https://ariasvilla.com/form-i-485-changes-september-18-2026-what-adjustment-of-status-applicants-need-to-know/ ; Boundless — https://www.boundless.com/blog/uscis-preview-new-form-i-485-september-2026 ; Jackson & Hertogs — https://www.jackson-hertogs.com/post/uscis-revises-i-485-permanent-residence-adjustment-application ; Brooks Law — https://brookslawfirm.com/blog/uscis-changes-i-485-what-that-means-for-green-card-applicants/ ; David Walters Law — https://www.davidwalterslaw.com/uscis-to-publish-new-edition-of-form-i-485-older-editions-will-be-rejected-starting-sept-18 ; Immiva part-by-part guide — https://immiva.com/blog/how-to-fill-out-i-485-part-by-part
+- Labrada-Hechavarria opinion (primary): govinfo — https://www.govinfo.gov/content/pkg/USCOURTS-ca11-24-10645/pdf/USCOURTS-ca11-24-10645-0.pdf ; Café Fuerte mirror — https://cafefuerte.com/wp-content/uploads/2026/02/Fallo-1-220A-Onceno-Circuito.pdf
+- Federal Register, FY2027 inflation adjustment to H.R.1 immigration fees (USCIS, 2026-20187, 2026-10-01) — https://www.federalregister.gov/documents/2026/10/01/2026-20187/fiscal-year-2027-inflation-adjustment-to-hr-1-immigration-fees ; DHS/CBP (2026-20185) — https://www.federalregister.gov/documents/2026/10/01/2026-20185/certain-dhs-immigration-related-fees-required-by-hr-1-fiscal-year-2027-adjustments-for-inflation ; USCIS G-1055 (I-765) — https://www.uscis.gov/g-1055?form=i-765 ; AILA FY27 summary — https://www.aila.org/library/uscis-announces-fy27-inflationary-increase-for-certain-immigration-related-fees-under-hr-1
+- Red Eagle Law, L.C. v. Edlow: CourtListener docket — https://www.courtlistener.com/docket/73380879/red-eagle-law-lc-v-edlow/ ; PressUnpause case page — https://uscis-pause-tracker.com/cases/f9143399-ca53-41e2-8a65-c44e9174f6a3 ; Clinch Law — https://news.clinchlaw.com/tr/article/federal-court-enjoins-uscis-hold-policies-certifies-class-of-applicants-from-39--mtdmav0a
+- Q3 FY2026 denial counts: Cuba en Miami — https://www.cubaenmiami.com/uscis-nego-mas-casos-de-ajuste-cubano-en-tres-meses-que-durante-los-seis-meses-anteriores/ ; 14ymedio — https://www.14ymedio.com/cuba/migracion/aprobaciones-residencia-ley-ajuste-cubano_1_1132080.html ; Directorio Cubano — https://www.directoriocubano.info/tramites-usa/ley-ajuste-cubano-aprobaciones-negativas-2026/ ; Periódico Cubano — https://www.periodicocubano.com/uscis-rechaza-tres-de-cada-cuatro-peticiones-bajo-la-ley-de-ajuste-cubano-solo-estos-casos-fueron-aprobados/
+
+---
+
+## Verification notes (2026-10-20)
+
+Editor pass after the fact-checker's review of this document (checker: 7 WebSearch calls; editor:
+2 WebSearch calls, both in extended mode). Tags: **[S]** stated in a search result seen on
+2026-10-20 (URL in the Sources block "Added by the 2026-10-20 verification pass"); **[T]**
+training knowledge, not confirmed today; **[I]** inferred; **[U]** unresolved — both views kept.
+
+### A. Corrections applied
+
+1. **PM-602-0199 date.** Changed from 2026-05-22 to "issued 2026-05-21, publicized 2026-05-22"
+   in §0, §5, §8 and §10 (MMHPC and the checker's sources date the memo 05-21; USCIS and CLINIC
+   amplified it 05-22). [S]
+2. **The PM-602-0199 lawsuit.** The checker could not confirm the 2026-10-05 filing date; the
+   editor's search found the American Immigration Council litigation page naming the case
+   *American Association of University Professors et al. v. Mullin et al.*, No. 1:26-cv-14527
+   (D. Mass.), filed 2026-10-05. [S] The document's date therefore stands and the caption, docket
+   and the second challenged policy (PA-2026-05, below) were added in §0, §4.5, §5, §8 and §10.6.
+   The complaint describes PM-602-0199 as calling adjustment an "extraordinary departure" and
+   treating failure to consular-process as a negative factor. [S] Nothing found mentions the CAA
+   — the "Cubans are not affected" line stays attorney opinion, tagged [U].
+3. **Form I-485 edition 09/18/26.** Upgraded from "secondary sources" to confirmed: the
+   uscis.gov/i-485 search excerpt states the edition was published 2026-09-18, aligns the form
+   with the Public Charge Ground of Inadmissibility final rule, has **no grace period** for that
+   reason, and that the 01/20/25 and interim **09/04/26** editions are rejected if postmarked or
+   e-filed on/after 2026-09-18. [S] The public-charge tie, previously UNVERIFIED, is now [S]
+   (rule published 2026-07-20, effective 2026-09-18). The checker's concern that "older editions
+   rejected" might be outdated is answered in part by the USCIS text itself; the two loose ends
+   are kept as [U]: (a) the *Casa Inc. v. Trump* (No. 8:25-cv-00201) injunction referenced on the
+   page appears to concern the 09/04/26 edition and its companion interim final rule on children
+   born to foreign-government employees [S for the reference; I for the scope]; (b) one law-firm
+   summary's report of a 2026-09-16 USCIS clarification honoring "certain editions" of
+   I-485/I-765/I-539 could not be found in official text. §3.1, §8, §9.5 and §10.8 now tell the
+   app to read the live uscis.gov/i-485 "Edition Date" block instead of hard-coding the rule.
+4. **Labrada-Hechavarria.** Added: unpublished opinion; the vacatur followed the government's
+   changed position on detention authority (INA 236) rather than a merits ruling on parole;
+   primary PDFs on govinfo and cafefuerte.com. [S via the checker's sources] Core facts (date,
+   dockets, WL cite, vacate-and-remand) were confirmed.
+5. **FY2027 H.R.1 fees.** Added Federal Register docs. 2026-20187 (USCIS) and 2026-20185
+   (DHS/CBP), published 2026-10-01; I-131 parole fee $1,020 → $1,050; I-821 $510 → $520. The
+   "$275 → $280" renewal line was clarified: that step happened on 2026-01-01 (FY2026) and the
+   parole/TPS renewal EAD is **unchanged at $280 for FY2027** (asylum renewal $275, not
+   adjustable). [S]
+6. **Red Eagle Law, L.C. v. Edlow.** Added the full docket (N.D. Cal. 3:26-cv-04850-CRB, Judge
+   Breyer), the class definition (39 countries **and the Palestinian Authority**, covered
+   applications lacking a final decision at certification) and the single-source report that
+   proceedings have since been stayed with status reporting. [S]
+7. **Public charge in §1.2.** Added the 2026-07-20 final rule and flagged the CAA exemption
+   (8 CFR 212.23(a) [T]) as unresolved under the new rule's text [U].
+8. **§6.3 volumes.** Filled in Q3 FY2024 denials (662), Q3 FY2025 denials (757), the H1 FY2026
+   six-month denial total (418) and 14ymedio's 99.7 % two-year approval drop. [S via the checker's
+   Cuban-press sources] Decided/approval-rate cells for 2024 and 2025 are derived from those
+   numbers and marked as such.
+
+### B. Missing points added
+
+- **Policy Alert PA-2026-05 (2026-08-05)** — the "August 2026 Evidence and Denial Policy" the
+  checker flagged: USCIS may deny a benefit request without an RFE or NOID when required initial
+  evidence is missing or insufficient; applies to requests pending on 2026-08-05 and filed
+  afterwards; challenged with PM-602-0199 in *AAUP v. Mullin*. [S: DiRaimondo & Schroeder
+  2026-08-10; Goldstein; Thomas M. Lee; Grape Law; VisaVerge; CiberCuba 2026-10-14 explainer for
+  Cubans.] Added to §0, §4.1, §4.3, §4.5, §5, §7, §8, §9.13 and §10. **Chronology caveat:** the
+  checker suggested PA-2026-05 might explain the Q3 FY2026 denial jump (447 in Apr–Jun 2026);
+  it cannot, because it took effect 2026-08-05, after that quarter ended. Its effect can first
+  appear in Q4 FY2026 (Jul–Sep 2026) data, due around January 2027. [I]
+- **DHS Public Charge Ground of Inadmissibility final rule** (published 2026-07-20, effective
+  2026-09-18) and the *Casa Inc. v. Trump* reference — §1.2, §3.1, §8, §9.5. [S]
+- **Interim 09/04/26 I-485 edition** and the unconfirmed 2026-09-16 "certain editions honored"
+  clarification — §3.1, §8 [U].
+- **Q3 FY2026 denial context** (447 > 418 of the prior six months; 662 and 757 in the two prior
+  Q3s; 99.7 % approval drop) — §6.3. [S]
+- **Primary URL for Labrada-Hechavarria** and the government-concession framing — §2.2. [S]
+- **Red Eagle class definition and stay** — §8, §10.6. [S]
+- **Federal Register citations for FY2027 fees** — §3.1, §3.2, §8, §10.7. [S]
+
+### C. Load-bearing claims that remain unverified
+
+- The USCIS historical national median series for CAA I-485s (3.3 / 4.6 / 7.0 / 11.8 months): the
+  companion family- and employment-based FY2026 figures from the same dataset were confirmed, but
+  no result showed the CAA row itself. [U — open question 14; the app must confirm the row at
+  egov.uscis.gov/processing-times/historic-pt before displaying the series]
+- I-485 fee $1,440 / $950 and I-765 (c)(9) $260: consistent with the April 2024 fee rule [T]; not
+  shown in any 2026-10-20 result; read the live G-1055.
+- *Dorcas International Institute of R.I. v. USCIS* vacatur of 2026-06-05 and the government's
+  appeal: rests on the secondary sources already cited (AIC, Ogletree, Legal 500); only indirectly
+  referenced by one tracker on 2026-10-20.
+- Whether PM-602-0199 reaches CAA adjustment: no source mentions the CAA; attorney opinion only
+  [U]. The memo text and the *AAUP v. Mullin* complaint should be read.
+- Whether CAA applicants remain public-charge exempt under the 2026 rule [U]; whether the *Casa
+  Inc. v. Trump* injunction touches the 09/18/26 edition or the public-charge rule [I: apparently
+  not].
+- *Matter of Mendez Maldonado* (BIA 2026), the Maryland "resume processing" order, the 2026-05-18
+  in-person attorney rule and the February 2026 OMB approval of social-media identifier
+  collection (through 2027-02-28): not checked (search budget).
+- *Doe v. Noem* dates (2025-04-24 termination; 2025-05-28 Talwani benefits order; 2025-05-30
+  Supreme Court stay; 2025-09-12 First Circuit): consistent with training knowledge [T]; not
+  searched today.
+- Inmigreat May-2026 snapshot (354,649 pending; 27 approved / 129 denied): third-party derivation,
+  not checked.
+- The primary text of PA-2026-05 has not been read; all statements about it come from law-firm
+  summaries and CiberCuba [S].
