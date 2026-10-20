@@ -1,0 +1,10 @@
+{
+  "description": "case.month-not-15",
+  "base": "valid/case.t15.json",
+  "set": {
+    "milestones.0.date": "2025-07-01"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "day 15"
+}

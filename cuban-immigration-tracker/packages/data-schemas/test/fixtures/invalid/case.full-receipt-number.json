@@ -1,0 +1,10 @@
+{
+  "description": "case.full-receipt-number",
+  "base": "valid/case.t15.json",
+  "set": {
+    "receiptPrefix": "IOE0000000000"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "receiptPrefix"
+}

@@ -1,0 +1,970 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/policy.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "alertRules": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "approvalCardFlag": {
+            "const": "reestimate",
+            "type": "string"
+          },
+          "effects": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "condition": {
+                  "enum": [
+                    "always",
+                    "redEagleProtects",
+                    "redEagleNotProtecting",
+                    "dorcasPending"
+                  ],
+                  "type": "string"
+                },
+                "factor": {
+                  "exclusiveMinimum": 0,
+                  "type": "number"
+                },
+                "scenario": {
+                  "enum": [
+                    "S0",
+                    "S1",
+                    "S2",
+                    "S3"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "scenario",
+                "factor"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "ruleId": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ruleId",
+          "effects"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "approval": {
+      "additionalProperties": false,
+      "properties": {
+        "cleanPrior": {
+          "additionalProperties": false,
+          "properties": {
+            "high": {
+              "const": 0.9,
+              "type": "number"
+            },
+            "low": {
+              "const": 0.7,
+              "type": "number"
+            }
+          },
+          "required": [
+            "low",
+            "high"
+          ],
+          "type": "object"
+        },
+        "requiresBasicDocs": {
+          "const": true,
+          "type": "boolean"
+        },
+        "unmodelledFactors": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "cleanPrior",
+        "requiresBasicDocs",
+        "unmodelledFactors"
+      ],
+      "type": "object"
+    },
+    "classes": {
+      "additionalProperties": false,
+      "properties": {
+        "doeDhs": {
+          "additionalProperties": false,
+          "properties": {
+            "channel": {
+              "const": "CBP_ONE",
+              "type": "string"
+            },
+            "docket": {
+              "const": "1:25-cv-12245",
+              "type": "string"
+            },
+            "paroleFrom": {
+              "const": "2023-05-15",
+              "type": "string"
+            },
+            "paroleTo": {
+              "const": "2025-01-19",
+              "type": "string"
+            },
+            "windowStartUncertain": {
+              "const": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "channel",
+            "paroleFrom",
+            "paroleTo",
+            "windowStartUncertain",
+            "docket"
+          ],
+          "type": "object"
+        },
+        "frpCarveout": {
+          "additionalProperties": false,
+          "properties": {
+            "fr": {
+              "const": "2025-22744",
+              "type": "string"
+            },
+            "i485PendingBy": {
+              "const": "2025-12-15",
+              "type": "string"
+            }
+          },
+          "required": [
+            "i485PendingBy",
+            "fr"
+          ],
+          "type": "object"
+        },
+        "redEagle": {
+          "additionalProperties": false,
+          "properties": {
+            "docket": {
+              "const": "3:26-cv-04850-CRB",
+              "type": "string"
+            },
+            "notFinallyAdjudicatedOn": {
+              "const": "2026-08-24",
+              "type": "string"
+            }
+          },
+          "required": [
+            "notFinallyAdjudicatedOn",
+            "docket"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "redEagle",
+        "doeDhs",
+        "frpCarveout"
+      ],
+      "type": "object"
+    },
+    "cohort": {
+      "additionalProperties": false,
+      "properties": {
+        "cbpOneCubans": {
+          "additionalProperties": false,
+          "properties": {
+            "central": {
+              "const": 100000,
+              "type": "number"
+            },
+            "confidence": {
+              "const": "low",
+              "type": "string"
+            },
+            "high": {
+              "const": 130000,
+              "type": "number"
+            },
+            "low": {
+              "const": 70000,
+              "type": "number"
+            }
+          },
+          "required": [
+            "central",
+            "low",
+            "high",
+            "confidence"
+          ],
+          "type": "object"
+        },
+        "chnvCubans": {
+          "const": 110240,
+          "type": "number"
+        }
+      },
+      "required": [
+        "chnvCubans",
+        "cbpOneCubans"
+      ],
+      "type": "object"
+    },
+    "congressionalOffices": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "district": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "name": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "state": {
+            "pattern": "^[A-Z]{2}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "district",
+          "name"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "ead": {
+      "additionalProperties": false,
+      "properties": {
+        "eighteenMonthsFrom": {
+          "const": "2025-12-05",
+          "type": "string"
+        },
+        "finalRule": {
+          "const": "2026-10-14",
+          "type": "string"
+        },
+        "fiveYearIfIssuedBefore": {
+          "const": "2025-12-05",
+          "type": "string"
+        },
+        "noAutoExtensionIfRenewalFiledOnOrAfter": {
+          "const": "2025-10-30",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fiveYearIfIssuedBefore",
+        "eighteenMonthsFrom",
+        "noAutoExtensionIfRenewalFiledOnOrAfter",
+        "finalRule"
+      ],
+      "type": "object"
+    },
+    "fees": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "asOf": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "form": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^[a-zA-Z][a-zA-Z0-9]*$",
+            "type": "string"
+          },
+          "note": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "since": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "usd": {
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "form",
+          "usd",
+          "since",
+          "note",
+          "source"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "litigation": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "caption": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "clearinghouseId": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          },
+          "court": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "courtListenerId": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          },
+          "docket": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "id": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "ruleIds": {
+            "items": {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "status": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "statusAsOf": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "whatWouldChange": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "caption",
+          "court",
+          "docket",
+          "status",
+          "statusAsOf",
+          "whatWouldChange",
+          "ruleIds"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "litigationState": {
+      "additionalProperties": false,
+      "properties": {
+        "asOf": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+        },
+        "dorcas": {
+          "enum": [
+            "vacatur_in_force_appeal_pending",
+            "affirmed",
+            "reversed"
+          ],
+          "type": "string"
+        },
+        "redEagle": {
+          "additionalProperties": false,
+          "properties": {
+            "piInForce": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "piInForce"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "dorcas",
+        "redEagle",
+        "asOf"
+      ],
+      "type": "object"
+    },
+    "pa202605": {
+      "additionalProperties": false,
+      "properties": {
+        "effective": {
+          "const": "2026-08-05",
+          "type": "string"
+        },
+        "noidDays": {
+          "const": 30,
+          "type": "number"
+        },
+        "noidMailDays": {
+          "const": 3,
+          "type": "number"
+        },
+        "rfeMaxDays": {
+          "const": 84,
+          "type": "number"
+        }
+      },
+      "required": [
+        "effective",
+        "rfeMaxDays",
+        "noidDays",
+        "noidMailDays"
+      ],
+      "type": "object"
+    },
+    "regimes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "altEnds": {
+            "additionalProperties": false,
+            "properties": {
+              "judgment": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "legal": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "ops": {
+                "items": {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "appliesTo": {
+            "items": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "CHNV",
+                    "CBP_ONE",
+                    "FRP_CFRP",
+                    "U4U",
+                    "OTHER_PAROLE",
+                    "VISA",
+                    "I220A",
+                    "EWI",
+                    "CONDITIONAL_PAROLE_236",
+                    "UNKNOWN"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "const": "ALL_CUBAN",
+                  "type": "string"
+                }
+              ]
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "end": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hold": {
+            "type": "boolean"
+          },
+          "id": {
+            "enum": [
+              "R0",
+              "R1",
+              "R2",
+              "R3",
+              "R4"
+            ],
+            "type": "string"
+          },
+          "instruments": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "appliesToCaa": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "confidence": {
+                  "enum": [
+                    "high",
+                    "likely",
+                    "low"
+                  ],
+                  "type": "string"
+                },
+                "date": {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                },
+                "id": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "sourceUrl": {
+                  "pattern": "^https?:\\/\\/\\S+$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "date",
+                "appliesToCaa",
+                "confidence",
+                "sourceUrl"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "label": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "lowConfidenceExempt": {
+            "items": {
+              "enum": [
+                "CHNV",
+                "CBP_ONE",
+                "FRP_CFRP",
+                "U4U",
+                "OTHER_PAROLE",
+                "VISA",
+                "I220A",
+                "EWI",
+                "CONDITIONAL_PAROLE_236",
+                "UNKNOWN"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "start": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "suspendedBy": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "court": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "date": {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                },
+                "docket": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "id": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "date",
+                "court",
+                "docket"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "start",
+          "end",
+          "hold",
+          "appliesTo",
+          "instruments"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "reviewedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "scenarios": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchorMonth": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          },
+          "id": {
+            "enum": [
+              "S0",
+              "S1",
+              "S2",
+              "S3"
+            ],
+            "type": "string"
+          },
+          "label": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "likelihoodUpdated": {
+            "type": "boolean"
+          },
+          "path": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "const": "flat",
+                    "type": "string"
+                  },
+                  "level": {
+                    "minimum": 0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "level"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "from": {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  "kind": {
+                    "const": "ramp",
+                    "type": "string"
+                  },
+                  "months": {
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991,
+                    "type": "integer"
+                  },
+                  "to": {
+                    "minimum": 0,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "from",
+                  "to",
+                  "months"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "freezeMonths": {
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991,
+                    "type": "integer"
+                  },
+                  "kind": {
+                    "const": "freezeThen",
+                    "type": "string"
+                  },
+                  "then": {
+                    "const": "S1",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "freezeMonths",
+                  "then"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "prior": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "prior",
+          "path",
+          "anchorMonth",
+          "likelihoodUpdated"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "subBreakpoints": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "date": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "effect": {
+            "enum": [
+              "copy",
+              "approval_card",
+              "scenario",
+              "eligibility"
+            ],
+            "type": "string"
+          },
+          "event": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "kind": {
+            "enum": [
+              "policy",
+              "court",
+              "ead",
+              "fees",
+              "enforcement",
+              "forms"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "event",
+          "kind",
+          "effect"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "version": {
+      "minLength": 1,
+      "pattern": "\\S",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "reviewedAt",
+    "regimes",
+    "subBreakpoints",
+    "scenarios",
+    "alertRules",
+    "litigation",
+    "litigationState",
+    "classes",
+    "cohort",
+    "approval",
+    "ead",
+    "pa202605",
+    "fees",
+    "congressionalOffices"
+  ],
+  "title": "policy",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

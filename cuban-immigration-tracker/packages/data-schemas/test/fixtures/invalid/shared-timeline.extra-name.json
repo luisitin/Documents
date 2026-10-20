@@ -1,0 +1,10 @@
+{
+  "description": "shared-timeline.extra-name",
+  "base": "valid/shared-timeline.json",
+  "set": {
+    "name": "Juan"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "name|Unrecognized|unrecognized"
+}

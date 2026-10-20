@@ -1,0 +1,32 @@
+{
+  "_comment": "SYNTHETIC TEST FIXTURE: invented numbers for shape testing; not crowd data.",
+  "generatedAt": "2026-10-20T00:00:00Z",
+  "consentVersions": [
+    1
+  ],
+  "aggregates": [
+    {
+      "cell": {
+        "filingQuarter": "2025Q1",
+        "officeGroup": "MIAMI_DADE",
+        "channel": "CHNV"
+      },
+      "transition": "receipt→ead_c9",
+      "method": "delayed_entry_km",
+      "n": 12,
+      "nEvents": 9,
+      "quantilesDays": {
+        "p25": 150,
+        "p50": 180,
+        "p75": null
+      },
+      "weighting": "none",
+      "benchmark": {
+        "crowdMonthlyHazard": 0.1,
+        "officialMonthlyHazard": 0.08,
+        "ratio": 1.25,
+        "representative": true
+      }
+    }
+  ]
+}

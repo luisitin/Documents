@@ -1,0 +1,10 @@
+{
+  "description": "national.over6-gt-pending",
+  "base": "valid/national.json",
+  "set": {
+    "rows.1.pendingOver6": 999999999
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "pendingOver6"
+}

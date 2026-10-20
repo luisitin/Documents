@@ -1,0 +1,24 @@
+{
+  "description": "case.decision-before-interview",
+  "base": "valid/case.t15.json",
+  "set": {
+    "milestones.2": {
+      "key": "interview",
+      "date": "2026-09-20",
+      "dateGranularity": "day",
+      "dateSource": "notice"
+    },
+    "milestones.3": {
+      "key": "decision",
+      "date": "2026-09-01",
+      "dateGranularity": "day",
+      "dateSource": "notice",
+      "meta": {
+        "outcome": "approved"
+      }
+    }
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "before the interview"
+}

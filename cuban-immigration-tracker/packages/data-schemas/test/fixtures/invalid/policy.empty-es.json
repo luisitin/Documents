@@ -1,0 +1,10 @@
+{
+  "description": "policy.empty-es",
+  "base": "valid/policy.json",
+  "set": {
+    "regimes.1.label.es": ""
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "regimes\\.1\\.label\\.es"
+}

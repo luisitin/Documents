@@ -1,0 +1,17 @@
+{
+  "consent_version": 1,
+  "schema_version": 1,
+  "entry_channel": "CHNV",
+  "receipt_prefix": "IOE",
+  "state": "FL",
+  "office_code": null,
+  "filed_month": "2025-03-01",
+  "offsets_days": {
+    "biometrics": 122,
+    "ead_c9": 184
+  },
+  "decision": null,
+  "with_attorney": null,
+  "evidence_level": "memory",
+  "plausibility_flags": []
+}

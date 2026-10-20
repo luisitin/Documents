@@ -1,0 +1,259 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/alerts.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "alerts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "affects": {
+            "additionalProperties": false,
+            "properties": {
+              "channels": {
+                "items": {
+                  "anyOf": [
+                    {
+                      "enum": [
+                        "CHNV",
+                        "CBP_ONE",
+                        "FRP_CFRP",
+                        "U4U",
+                        "OTHER_PAROLE",
+                        "VISA",
+                        "I220A",
+                        "EWI",
+                        "CONDITIONAL_PAROLE_236",
+                        "UNKNOWN"
+                      ],
+                      "type": "string"
+                    },
+                    {
+                      "const": "ALL_CUBAN",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              "filedAfter": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "filedBefore": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "hasEad": {
+                "type": "boolean"
+              }
+            },
+            "type": "object"
+          },
+          "body": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "date": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "docket": {
+            "additionalProperties": false,
+            "properties": {
+              "court": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "courtListenerId": {
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991,
+                "type": "integer"
+              },
+              "number": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "court",
+              "number"
+            ],
+            "type": "object"
+          },
+          "expires": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}-[a-z0-9]+(-[a-z0-9]+)*$",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "policy",
+              "court",
+              "data",
+              "fees",
+              "enforcement",
+              "ead",
+              "scam",
+              "i220a"
+            ],
+            "type": "string"
+          },
+          "reviewedBy": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "ruleIds": {
+            "items": {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "severity": {
+            "enum": [
+              "high",
+              "medium",
+              "info"
+            ],
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "enum": [
+                    "F",
+                    "S",
+                    "S-sec",
+                    "T",
+                    "I",
+                    "U",
+                    "V"
+                  ],
+                  "type": "string"
+                },
+                "label": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "url": {
+                  "pattern": "^https?:\\/\\/\\S+$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "url",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "published",
+              "retracted"
+            ],
+            "type": "string"
+          },
+          "supersedes": {
+            "items": {
+              "minLength": 1,
+              "pattern": "\\S",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "whatChangedForYou": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "date",
+          "kind",
+          "severity",
+          "title",
+          "body",
+          "affects",
+          "sources",
+          "reviewedBy",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "alerts"
+  ],
+  "title": "alerts",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

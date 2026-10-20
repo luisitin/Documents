@@ -1,0 +1,814 @@
+{
+  "version": "g0-handbuilt-2026-10-20",
+  "reviewedAt": "2026-10-20",
+  "regimes": [
+    {
+      "id": "R0",
+      "label": {
+        "es": "Tramitación normal (antes de las pausas)",
+        "en": "Normal processing (before the holds)"
+      },
+      "start": null,
+      "end": "2025-02-13",
+      "hold": false,
+      "appliesTo": [
+        "ALL_CUBAN"
+      ],
+      "instruments": []
+    },
+    {
+      "id": "R1",
+      "label": {
+        "es": "Pausa para beneficiarios de parole (memo Davidson)",
+        "en": "Parolee benefit hold (Davidson memo)"
+      },
+      "start": "2025-02-14",
+      "end": "2025-06-09",
+      "hold": true,
+      "appliesTo": [
+        "CHNV",
+        "FRP_CFRP",
+        "U4U"
+      ],
+      "lowConfidenceExempt": [
+        "CBP_ONE"
+      ],
+      "altEnds": {
+        "legal": "2025-05-28",
+        "ops": [
+          "2025-06-19",
+          "2025-06-25"
+        ]
+      },
+      "instruments": [
+        {
+          "id": "USCIS-memo-2025-02-14-administrative-hold",
+          "date": "2025-02-14",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/sites/default/files/document/foia/AdministrativeHoldonAllUSCISBenefitRequestsFiledbyParoleesUnderU4U_CHNVorFRP.pdf"
+        }
+      ],
+      "suspendedBy": [
+        {
+          "id": "DOE_V_NOEM_BENEFITS_ORDER",
+          "date": "2025-05-28",
+          "court": "D. Mass.",
+          "docket": "1:25-cv-10495"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "label": {
+        "es": "Reanudación con verificación adicional",
+        "en": "Catch-up with additional vetting"
+      },
+      "start": "2025-06-09",
+      "end": "2025-12-01",
+      "hold": false,
+      "appliesTo": [
+        "ALL_CUBAN"
+      ],
+      "instruments": [
+        {
+          "id": "USCIS-memo-2025-06-09",
+          "date": "2025-06-09",
+          "appliesToCaa": true,
+          "confidence": "likely",
+          "sourceUrl": "https://www.courtlistener.com/docket/69695790/doe-v-noem/"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "label": {
+        "es": "Pausa y revisión por país",
+        "en": "Country hold-and-review"
+      },
+      "start": "2025-12-02",
+      "end": "2026-06-12",
+      "hold": true,
+      "appliesTo": [
+        "ALL_CUBAN"
+      ],
+      "altEnds": {
+        "legal": "2026-06-05",
+        "judgment": "2026-06-11",
+        "ops": [
+          "2026-07-16"
+        ]
+      },
+      "instruments": [
+        {
+          "id": "PM-602-0192",
+          "date": "2025-12-02",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/sites/default/files/document/policy-alerts/PM-602-0192-PendingApplicationsHighRiskCountries-20251202.pdf"
+        },
+        {
+          "id": "PM-602-0194",
+          "date": "2026-01-01",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/laws-and-policy/policy-memoranda"
+        },
+        {
+          "id": "PA-2025-26",
+          "date": "2026-01-01",
+          "appliesToCaa": true,
+          "confidence": "likely",
+          "sourceUrl": "https://www.uscis.gov/policy-manual/updates"
+        }
+      ],
+      "suspendedBy": [
+        {
+          "id": "DORCAS_VACATUR",
+          "date": "2026-06-05",
+          "court": "D.R.I.",
+          "docket": "1:26-cv-00132"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "label": {
+        "es": "Discreción general y negaciones por falta de evidencia",
+        "en": "General discretion and evidentiary-denial regime"
+      },
+      "start": "2026-06-12",
+      "end": null,
+      "hold": false,
+      "appliesTo": [
+        "ALL_CUBAN"
+      ],
+      "instruments": [
+        {
+          "id": "PolicyManual-Vol7-PtA-Ch10",
+          "date": "2025-11-27",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20251127-Discretion.pdf"
+        },
+        {
+          "id": "NegativeFactors-ParoleHistory",
+          "date": "2025-08-19",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/sites/default/files/document/policy-manual-updates/20250819-DiscretionaryFactors.pdf"
+        },
+        {
+          "id": "PM-602-0199",
+          "date": "2026-05-21",
+          "appliesToCaa": false,
+          "confidence": "likely",
+          "sourceUrl": "https://www.uscis.gov/sites/default/files/document/memos/PM-602-0199-AdjustmentOfStatusAndDiscretion-20260521.pdf"
+        },
+        {
+          "id": "PA-2026-05",
+          "date": "2026-08-05",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/policy-manual/updates"
+        },
+        {
+          "id": "RedEagle-PI",
+          "date": "2026-08-24",
+          "appliesToCaa": null,
+          "confidence": "high",
+          "sourceUrl": "https://www.courtlistener.com/docket/73380879/red-eagle-law-lc-v-edlow/"
+        },
+        {
+          "id": "1stCir-partial-stay-rereview",
+          "date": "2026-08-14",
+          "appliesToCaa": null,
+          "confidence": "high",
+          "sourceUrl": "https://law.justia.com/cases/federal/appellate-courts/ca1/26-1703/26-1703-2026-08-14-0.html"
+        },
+        {
+          "id": "I-485-edition-09/18/26",
+          "date": "2026-09-18",
+          "appliesToCaa": true,
+          "confidence": "high",
+          "sourceUrl": "https://www.uscis.gov/i-485"
+        }
+      ]
+    }
+  ],
+  "subBreakpoints": [
+    {
+      "date": "2025-01-23",
+      "event": {
+        "es": "DHS/ICE: la deportación acelerada puede usarse contra personas que llegaron con parole.",
+        "en": "DHS/ICE: expedited removal usable against paroled arriving aliens."
+      },
+      "kind": "enforcement",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-04-07",
+      "event": {
+        "es": "Primera ronda de correos de terminación de parole de CBP One (hasta el 11 de abril).",
+        "en": "CBP One round-1 e-mail parole terminations (through April 11)."
+      },
+      "kind": "enforcement",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-05-30",
+      "event": {
+        "es": "La Corte Suprema suspende la orden (24A1079): procede la terminación del parole CHNV.",
+        "en": "Supreme Court stay 24A1079: CHNV parole termination proceeds."
+      },
+      "kind": "court",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-06-12",
+      "event": {
+        "es": "Avisos de terminación del parole CHNV; se revocan los permisos de trabajo (c)(11).",
+        "en": "CHNV termination notices; (c)(11) EADs revoked."
+      },
+      "kind": "ead",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-08-01",
+      "event": {
+        "es": "Orden CHIRLA suspende la deportación acelerada para parolees de puerto de entrada (anulada después).",
+        "en": "CHIRLA order stays expedited removal for port-of-entry parolees (later vacated)."
+      },
+      "kind": "court",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-08-19",
+      "event": {
+        "es": "El historial de parole pasa a ser un factor discrecional negativo.",
+        "en": "Parole history listed as a negative discretionary factor."
+      },
+      "kind": "policy",
+      "effect": "approval_card"
+    },
+    {
+      "date": "2025-10-30",
+      "event": {
+        "es": "Las renovaciones del permiso de trabajo presentadas desde esta fecha no se extienden automáticamente.",
+        "en": "EAD renewals filed on or after this date get no automatic extension."
+      },
+      "kind": "ead",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-12-05",
+      "event": {
+        "es": "Validez máxima del permiso de trabajo: 18 meses.",
+        "en": "Maximum EAD validity: 18 months."
+      },
+      "kind": "ead",
+      "effect": "copy"
+    },
+    {
+      "date": "2025-12-15",
+      "event": {
+        "es": "Termina la reunificación familiar (FRP); se protege a quien ya tenía un I-485 presentado.",
+        "en": "Family Reunification Parole ends; carve-out for those with an I-485 on file."
+      },
+      "kind": "policy",
+      "effect": "eligibility"
+    },
+    {
+      "date": "2026-01-01",
+      "event": {
+        "es": "PM-602-0194 amplía la pausa a 39 países; PA-2025-26 ordena re-revisiones.",
+        "en": "PM-602-0194 extends the hold to 39 countries; PA-2025-26 re-review."
+      },
+      "kind": "policy",
+      "effect": "scenario"
+    },
+    {
+      "date": "2026-03-31",
+      "event": {
+        "es": "Doe v. DHS: se anulan para la clase las terminaciones de CBP One de abril de 2025.",
+        "en": "Doe v. DHS: April-2025 CBP One terminations vacated for the class."
+      },
+      "kind": "court",
+      "effect": "copy"
+    },
+    {
+      "date": "2026-04-24",
+      "event": {
+        "es": "Nuevos avisos individuales de terminación para CBP One; se reescriben las fechas del I-94.",
+        "en": "Individualized CBP One re-termination notices; I-94 end dates rewritten."
+      },
+      "kind": "enforcement",
+      "effect": "copy"
+    },
+    {
+      "date": "2026-05-18",
+      "event": {
+        "es": "Los abogados deben asistir en persona a las entrevistas en las oficinas locales.",
+        "en": "Attorneys must attend field-office interviews in person."
+      },
+      "kind": "policy",
+      "effect": "copy"
+    },
+    {
+      "date": "2026-05-22",
+      "event": {
+        "es": "Se publica PM-602-0199; probablemente no se aplica a la Ley de Ajuste Cubano.",
+        "en": "PM-602-0199 made public; likely does not apply to the Cuban Adjustment Act."
+      },
+      "kind": "policy",
+      "effect": "approval_card"
+    },
+    {
+      "date": "2026-06-05",
+      "event": {
+        "es": "Dorcas: un tribunal anula las pausas bajo la Ley de Procedimiento Administrativo (APA).",
+        "en": "Dorcas: a court vacates the holds under the Administrative Procedure Act (APA)."
+      },
+      "kind": "court",
+      "effect": "scenario"
+    },
+    {
+      "date": "2026-08-05",
+      "event": {
+        "es": "PA-2026-05: USCIS puede negar sin pedir antes evidencia (RFE) ni enviar una NOID; se aplica a la Ley de Ajuste Cubano.",
+        "en": "PA-2026-05: USCIS may deny without a prior RFE or NOID; applies to the Cuban Adjustment Act."
+      },
+      "kind": "policy",
+      "effect": "approval_card"
+    },
+    {
+      "date": "2026-08-11",
+      "event": {
+        "es": "Se anula la suspensión CHIRLA: vuelve el riesgo de deportación acelerada para antiguos parolees.",
+        "en": "CHIRLA stay vacated: expedited-removal exposure returns for former parolees."
+      },
+      "kind": "court",
+      "effect": "copy"
+    },
+    {
+      "date": "2026-08-14",
+      "event": {
+        "es": "El 1.er Circuito suspende en parte la anulación: vuelve la política de re-revisión.",
+        "en": "First Circuit partial stay: the re-review policy is back."
+      },
+      "kind": "court",
+      "effect": "approval_card"
+    },
+    {
+      "date": "2026-08-24",
+      "event": {
+        "es": "Red Eagle: medida cautelar para la clase de cubanos con I-485 pendiente.",
+        "en": "Red Eagle: class preliminary injunction for Cubans with a pending I-485."
+      },
+      "kind": "court",
+      "effect": "scenario"
+    },
+    {
+      "date": "2026-09-18",
+      "event": {
+        "es": "Edición 09/18/26 del I-485 obligatoria; entra en vigor la regla de carga pública (la Ley de Ajuste Cubano está exenta).",
+        "en": "I-485 edition 09/18/26 mandatory; public-charge rule in effect (the Cuban Adjustment Act is exempt)."
+      },
+      "kind": "forms",
+      "effect": "copy"
+    },
+    {
+      "date": "2026-10-05",
+      "event": {
+        "es": "Se presenta AAUP v. Mullin contra PM-602-0199 y PA-2026-05.",
+        "en": "AAUP v. Mullin filed against PM-602-0199 and PA-2026-05."
+      },
+      "kind": "court",
+      "effect": "approval_card"
+    },
+    {
+      "date": "2026-10-14",
+      "event": {
+        "es": "Regla final que elimina la extensión automática de ciertos permisos de trabajo.",
+        "en": "Final rule removing automatic extensions of certain EADs."
+      },
+      "kind": "ead",
+      "effect": "copy"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S0",
+      "label": {
+        "es": "Estancamiento",
+        "en": "Status quo"
+      },
+      "prior": 0.3,
+      "path": {
+        "kind": "flat",
+        "level": 800
+      },
+      "anchorMonth": "2026-08",
+      "likelihoodUpdated": true
+    },
+    {
+      "id": "S1",
+      "label": {
+        "es": "Recuperación parcial",
+        "en": "Partial recovery"
+      },
+      "prior": 0.4,
+      "path": {
+        "kind": "ramp",
+        "from": 800,
+        "to": 4600,
+        "months": 12
+      },
+      "anchorMonth": "2026-08",
+      "likelihoodUpdated": true
+    },
+    {
+      "id": "S2",
+      "label": {
+        "es": "Ritmo de fines de 2024 (oct–dic 2024)",
+        "en": "Late-2024 pace (Oct–Dec 2024)"
+      },
+      "prior": 0.15,
+      "path": {
+        "kind": "ramp",
+        "from": 800,
+        "to": 9200,
+        "months": 6
+      },
+      "anchorMonth": "2026-08",
+      "likelihoodUpdated": true
+    },
+    {
+      "id": "S3",
+      "label": {
+        "es": "Nueva pausa",
+        "en": "Re-freeze"
+      },
+      "prior": 0.15,
+      "path": {
+        "kind": "freezeThen",
+        "freezeMonths": 6,
+        "then": "S1"
+      },
+      "anchorMonth": "2026-08",
+      "likelihoodUpdated": false
+    }
+  ],
+  "alertRules": [
+    {
+      "ruleId": "DORCAS_AFFIRMED",
+      "effects": [
+        {
+          "scenario": "S3",
+          "factor": 0.3333333333333333,
+          "condition": "always"
+        }
+      ]
+    },
+    {
+      "ruleId": "DORCAS_REVERSED",
+      "effects": [
+        {
+          "scenario": "S3",
+          "factor": 3,
+          "condition": "redEagleNotProtecting"
+        },
+        {
+          "scenario": "S3",
+          "factor": 1.5,
+          "condition": "redEagleProtects"
+        }
+      ]
+    },
+    {
+      "ruleId": "FIRST_CIR_STAY_BENEFITS_HOLD",
+      "effects": [
+        {
+          "scenario": "S3",
+          "factor": 3,
+          "condition": "redEagleNotProtecting"
+        },
+        {
+          "scenario": "S3",
+          "factor": 1.5,
+          "condition": "redEagleProtects"
+        }
+      ]
+    },
+    {
+      "ruleId": "RED_EAGLE_DISSOLVED",
+      "effects": [
+        {
+          "scenario": "S3",
+          "factor": 2,
+          "condition": "dorcasPending"
+        }
+      ]
+    },
+    {
+      "ruleId": "NEW_HOLD_MEMO_CUBA",
+      "effects": [
+        {
+          "scenario": "S3",
+          "factor": 3,
+          "condition": "always"
+        }
+      ]
+    },
+    {
+      "ruleId": "AAUP_RELIEF_DENIAL_POLICY",
+      "effects": [],
+      "approvalCardFlag": "reestimate"
+    }
+  ],
+  "litigation": [
+    {
+      "id": "dorcas",
+      "caption": "Dorcas International Institute of Rhode Island v. USCIS",
+      "court": "D.R.I.; 1st Cir.",
+      "docket": "1:26-cv-00132; 26-1703",
+      "courtListenerId": 73477958,
+      "status": {
+        "es": "Sigue vigente la anulación judicial (vacatur) de las pausas, dictada bajo la Ley de Procedimiento Administrativo (APA). El 1.er Circuito suspendió solo la política de re-revisión; la apelación está pendiente.",
+        "en": "The court vacatur of the holds under the Administrative Procedure Act (APA) remains in force. The First Circuit stayed only the re-review policy; the appeal is pending."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "Si se confirma, baja el riesgo de una nueva pausa; si se revoca, sube (menos para quien parezca estar protegido por la orden de Red Eagle).",
+        "en": "If affirmed, the risk of a new hold falls; if reversed, it rises (less for anyone who appears protected by the Red Eagle order)."
+      },
+      "ruleIds": [
+        "DORCAS_AFFIRMED",
+        "DORCAS_REVERSED",
+        "FIRST_CIR_STAY_BENEFITS_HOLD"
+      ]
+    },
+    {
+      "id": "red-eagle",
+      "caption": "Red Eagle Law, L.C. v. Edlow",
+      "court": "N.D. Cal.",
+      "docket": "3:26-cv-04850-CRB",
+      "courtListenerId": 73380879,
+      "clearinghouseId": 48417,
+      "status": {
+        "es": "Está vigente la medida cautelar para la clase de cubanos cuyo I-485 no estaba decidido de forma definitiva en la fecha de corte; USCIS dijo que la cumplirá.",
+        "en": "The class preliminary injunction for Cubans whose I-485 was not finally decided on the cut-off date is in force; USCIS said it will comply."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "Si la medida cautelar se anula, sube el riesgo de una nueva pausa.",
+        "en": "If the injunction is dissolved, the risk of a new hold rises."
+      },
+      "ruleIds": [
+        "RED_EAGLE_DISSOLVED"
+      ]
+    },
+    {
+      "id": "aaup-v-mullin",
+      "caption": "AAUP v. Mullin",
+      "court": "D. Mass.",
+      "docket": "1:26-cv-14527",
+      "courtListenerId": 74919678,
+      "clearinghouseId": 48515,
+      "status": {
+        "es": "Demanda presentada contra PM-602-0199 y PA-2026-05; todavía no hay pedido de medida cautelar ni decisión.",
+        "en": "Suit filed against PM-602-0199 and PA-2026-05; no injunction motion or ruling yet."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "Un alivio contra la política de negaciones (PA-2026-05) haría revisar la tarjeta de aprobación; no cambia los tiempos.",
+        "en": "Relief against the denial policy (PA-2026-05) would trigger a review of the approval card; it does not change timing."
+      },
+      "ruleIds": [
+        "AAUP_RELIEF_DENIAL_POLICY"
+      ]
+    },
+    {
+      "id": "doe-v-noem",
+      "caption": "Doe v. Noem (now Mullin)",
+      "court": "D. Mass.; 1st Cir.",
+      "docket": "1:25-cv-10495-IT; 25-1384",
+      "courtListenerId": 69695790,
+      "status": {
+        "es": "Sigue vigente la orden de mayo de 2025 que levantó la pausa para beneficiarios de parole; su firmeza no está confirmada.",
+        "en": "The May 2025 order that lifted the parolee hold remains in force; its finality is unconfirmed."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "No cambia la estimación; explica por qué terminó la pausa de 2025.",
+        "en": "No change to the estimate; it explains why the 2025 hold ended."
+      },
+      "ruleIds": []
+    },
+    {
+      "id": "doe-v-dhs",
+      "caption": "Doe v. DHS (CBP One class)",
+      "court": "D. Mass.",
+      "docket": "1:25-cv-12245",
+      "courtListenerId": 71085922,
+      "clearinghouseId": 46889,
+      "status": {
+        "es": "Se anularon para la clase las terminaciones de parole de CBP One de abril de 2025; después DHS envió nuevas terminaciones individuales.",
+        "en": "The April 2025 CBP One parole terminations were vacated for the class; DHS later sent new individualized terminations."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "Solo cambia los avisos sobre el riesgo migratorio; no cambia la estimación.",
+        "en": "Only the enforcement-risk notices change; the estimate does not."
+      },
+      "ruleIds": []
+    },
+    {
+      "id": "bello-rubio",
+      "caption": "Bello-Rubio v. Noem",
+      "court": "S.D. Fla.",
+      "docket": "1:25-cv-23665",
+      "status": {
+        "es": "Demanda sobre el I-220A: se negó la moción para desestimarla, pero ninguna decisión trata todavía el I-220A como parole.",
+        "en": "I-220A suit: the motion to dismiss was denied, but no ruling yet treats an I-220A as parole."
+      },
+      "statusAsOf": "2026-10-20",
+      "whatWouldChange": {
+        "es": "Una decisión favorable podría cambiar la elegibilidad de quienes tienen I-220A; hoy la app no da estimado para ese grupo.",
+        "en": "A favorable ruling could change eligibility for I-220A holders; today the app gives no estimate for that group."
+      },
+      "ruleIds": []
+    }
+  ],
+  "litigationState": {
+    "dorcas": "vacatur_in_force_appeal_pending",
+    "redEagle": {
+      "piInForce": true
+    },
+    "asOf": "2026-10-20"
+  },
+  "classes": {
+    "redEagle": {
+      "notFinallyAdjudicatedOn": "2026-08-24",
+      "docket": "3:26-cv-04850-CRB"
+    },
+    "doeDhs": {
+      "channel": "CBP_ONE",
+      "paroleFrom": "2023-05-15",
+      "paroleTo": "2025-01-19",
+      "windowStartUncertain": true,
+      "docket": "1:25-cv-12245"
+    },
+    "frpCarveout": {
+      "i485PendingBy": "2025-12-15",
+      "fr": "2025-22744"
+    }
+  },
+  "cohort": {
+    "chnvCubans": 110240,
+    "cbpOneCubans": {
+      "central": 100000,
+      "low": 70000,
+      "high": 130000,
+      "confidence": "low"
+    }
+  },
+  "approval": {
+    "cleanPrior": {
+      "low": 0.7,
+      "high": 0.9
+    },
+    "requiresBasicDocs": true,
+    "unmodelledFactors": [
+      {
+        "es": "Antecedentes penales u otras causas de inadmisibilidad",
+        "en": "Criminal history or other inadmissibility grounds"
+      },
+      {
+        "es": "Órdenes previas de deportación",
+        "en": "Prior removal orders"
+      },
+      {
+        "es": "Una entrada registrada por error como I-220A",
+        "en": "An entry recorded in error as an I-220A"
+      },
+      {
+        "es": "El historial de parole como factor discrecional negativo",
+        "en": "Parole history as a negative discretionary factor"
+      },
+      {
+        "es": "Un examen médico I-693 vencido",
+        "en": "An expired I-693 medical exam"
+      }
+    ]
+  },
+  "ead": {
+    "fiveYearIfIssuedBefore": "2025-12-05",
+    "eighteenMonthsFrom": "2025-12-05",
+    "noAutoExtensionIfRenewalFiledOnOrAfter": "2025-10-30",
+    "finalRule": "2026-10-14"
+  },
+  "pa202605": {
+    "effective": "2026-08-05",
+    "rfeMaxDays": 84,
+    "noidDays": 30,
+    "noidMailDays": 3
+  },
+  "fees": [
+    {
+      "id": "i485",
+      "form": "I-485 (age 14+)",
+      "usd": 1440,
+      "since": "2024-04-01",
+      "note": {
+        "es": "Incluye los biométricos.",
+        "en": "Biometrics included."
+      },
+      "source": "89 FR 6194 (key facts §4)"
+    },
+    {
+      "id": "i485Under14",
+      "form": "I-485 (under 14, with a parent)",
+      "usd": 950,
+      "since": "2024-04-01",
+      "note": {
+        "es": "Menor de 14 años que presenta junto con uno de sus padres.",
+        "en": "Child under 14 filing with a parent."
+      },
+      "source": "89 FR 6194 (key facts §4)"
+    },
+    {
+      "id": "i765C9",
+      "form": "I-765 (c)(9)",
+      "usd": 260,
+      "since": "2024-04-01",
+      "note": {
+        "es": "Ya no es gratis cuando se presenta con el I-485.",
+        "en": "No longer free when filed with the I-485."
+      },
+      "source": "89 FR 6194 (key facts §4)"
+    },
+    {
+      "id": "i131AdvanceParole",
+      "form": "I-131 advance parole (with I-485)",
+      "usd": 630,
+      "since": "2024-04-01",
+      "note": {
+        "es": "Permiso de viaje presentado junto con el I-485.",
+        "en": "Travel document filed with the I-485."
+      },
+      "source": "89 FR 6194 (key facts §4)"
+    },
+    {
+      "id": "i912",
+      "form": "I-912 fee waiver",
+      "usd": 0,
+      "since": null,
+      "note": {
+        "es": "La tarifa del I-485 por la Ley de Ajuste Cubano puede exonerarse (dato no confirmado hoy).",
+        "en": "The Cuban Adjustment Act I-485 fee can be waived (not confirmed today)."
+      },
+      "source": "doc 02 [T] (key facts §4)"
+    },
+    {
+      "id": "freeRemedies",
+      "form": "e-Request, expedite request, DHS-7001, congressional inquiry",
+      "usd": 0,
+      "since": null,
+      "note": {
+        "es": "Gratis.",
+        "en": "Free."
+      },
+      "source": "doc 15 (key facts §4)"
+    },
+    {
+      "id": "mandamusFiling",
+      "form": "Mandamus / APA suit (federal filing fee)",
+      "usd": 405,
+      "since": null,
+      "asOf": "2026-10-20",
+      "note": {
+        "es": "Tarifa de la corte federal (presentación más cargo administrativo); los honorarios de abogado son aparte. Verifique los cambios de tarifas judiciales de diciembre de 2026.",
+        "en": "Federal court fee (filing plus administrative fee); attorney fees are separate. Re-check after the December 2026 court fee changes."
+      },
+      "source": "doc 15 §6.3 [T]; key facts §4"
+    }
+  ],
+  "congressionalOffices": [
+    {
+      "state": "FL",
+      "district": "FL-26",
+      "name": "Mario Díaz-Balart"
+    },
+    {
+      "state": "FL",
+      "district": "FL-27",
+      "name": "María Elvira Salazar"
+    },
+    {
+      "state": "FL",
+      "district": "FL-28",
+      "name": "Carlos Giménez"
+    }
+  ]
+}

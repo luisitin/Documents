@@ -1,0 +1,10 @@
+{
+  "description": "manifest.canary-case",
+  "base": "valid/manifest.json",
+  "set": {
+    "canary.caseId": "T16"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "canary\\.caseId"
+}

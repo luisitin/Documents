@@ -1,0 +1,10 @@
+{
+  "description": "content.bad-verdict",
+  "base": "valid/content.json",
+  "set": {
+    "myths.0.verdict": "maybe"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "myths\\.0\\.verdict"
+}

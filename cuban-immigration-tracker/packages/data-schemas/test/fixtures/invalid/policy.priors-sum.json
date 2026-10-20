@@ -1,0 +1,10 @@
+{
+  "description": "policy.priors-sum",
+  "base": "valid/policy.json",
+  "set": {
+    "scenarios.0.prior": 0.5
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "priors sum"
+}

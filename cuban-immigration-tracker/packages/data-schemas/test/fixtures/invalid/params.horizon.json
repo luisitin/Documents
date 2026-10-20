@@ -1,0 +1,10 @@
+{
+  "description": "params.horizon",
+  "base": "valid/params.json",
+  "set": {
+    "horizonMonths": 60
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "horizonMonths"
+}

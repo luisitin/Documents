@@ -1,0 +1,207 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/community.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "aggregates": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "benchmark": {
+            "additionalProperties": {},
+            "properties": {
+              "crowdMonthlyHazard": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "officialMonthlyHazard": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "ratio": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "representative": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "crowdMonthlyHazard",
+              "officialMonthlyHazard",
+              "ratio",
+              "representative"
+            ],
+            "type": "object"
+          },
+          "cell": {
+            "additionalProperties": {},
+            "properties": {
+              "channel": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "CHNV",
+                      "CBP_ONE",
+                      "FRP_CFRP",
+                      "U4U",
+                      "OTHER_PAROLE",
+                      "VISA",
+                      "I220A",
+                      "EWI",
+                      "CONDITIONAL_PAROLE_236",
+                      "UNKNOWN"
+                    ],
+                    "type": "string"
+                  },
+                  {
+                    "const": "all",
+                    "type": "string"
+                  }
+                ]
+              },
+              "filingQuarter": {
+                "anyOf": [
+                  {
+                    "pattern": "^\\d{4}Q[1-4]$",
+                    "type": "string"
+                  },
+                  {
+                    "const": "all",
+                    "type": "string"
+                  }
+                ]
+              },
+              "officeGroup": {
+                "enum": [
+                  "MIAMI_DADE",
+                  "REST_FL",
+                  "TX",
+                  "OTHER",
+                  "all"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "filingQuarter",
+              "officeGroup",
+              "channel"
+            ],
+            "type": "object"
+          },
+          "method": {
+            "enum": [
+              "delayed_entry_km",
+              "aalen_johansen"
+            ],
+            "type": "string"
+          },
+          "n": {
+            "maximum": 9007199254740991,
+            "minimum": 5,
+            "type": "integer"
+          },
+          "nEvents": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "quantilesDays": {
+            "additionalProperties": {},
+            "properties": {
+              "p25": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "p50": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "p75": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "p25",
+              "p50",
+              "p75"
+            ],
+            "type": "object"
+          },
+          "transition": {
+            "enum": [
+              "receipt→biometrics",
+              "receipt→ead_c9",
+              "receipt→interview",
+              "interview→decision",
+              "receipt→decision"
+            ],
+            "type": "string"
+          },
+          "weighting": {
+            "enum": [
+              "none",
+              "poststrat_official_frame"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "cell",
+          "transition",
+          "method",
+          "n",
+          "nEvents",
+          "quantilesDays",
+          "weighting",
+          "benchmark"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "consentVersions": {
+      "items": {
+        "maximum": 9007199254740991,
+        "minimum": 1,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "generatedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "generatedAt",
+    "consentVersions",
+    "aggregates"
+  ],
+  "title": "community",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

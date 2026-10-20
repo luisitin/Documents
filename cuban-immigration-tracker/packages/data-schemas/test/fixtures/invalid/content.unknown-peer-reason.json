@@ -1,0 +1,10 @@
+{
+  "description": "content.unknown-peer-reason",
+  "base": "valid/content.json",
+  "set": {
+    "peerReasons.0.id": "cases_like_yours"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "peerReasons\\.0\\.id"
+}

@@ -1,0 +1,10 @@
+{
+  "description": "national.gap-in-window",
+  "base": "valid/national.json",
+  "set": {
+    "rows.2.ym": "2024-11"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "gap"
+}

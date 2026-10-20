@@ -1,0 +1,10 @@
+{
+  "description": "community.small-n",
+  "base": "valid/community.json",
+  "set": {
+    "aggregates.0.n": 3
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "aggregates\\.0\\.n"
+}

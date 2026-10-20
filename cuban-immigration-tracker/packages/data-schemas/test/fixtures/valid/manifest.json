@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "minAppVersion": "0.1.0",
+  "dataChangedAt": "2026-10-20T00:00:00Z",
+  "lastCheckedAt": "2026-10-20T00:00:00Z",
+  "generatedBy": {
+    "runId": "g0-handbuilt",
+    "ref": "claude/cuban-immigration-tracker-b6y4b1",
+    "sha": "handbuilt"
+  },
+  "latestOfficialMonth": "2026-08",
+  "latestOfficialQuarter": {
+    "fy": 2026,
+    "q": 3
+  },
+  "latestProcessingTimesPublication": "2026-10-15",
+  "files": {
+    "national": {
+      "path": "national.json",
+      "sha256": "c57bf218372ef429863b52d75e494975272738a44e50c0f8ab70c2b4b6a77fb6",
+      "bytes": 12302
+    },
+    "quarterly": {
+      "path": "quarterly.json",
+      "sha256": "a4623e8addcae1b6303d1aae0523629f096245e3f3b65a02f1843bc6fcf4b081",
+      "bytes": 6581
+    },
+    "offices": {
+      "path": "offices.json",
+      "sha256": "5def584adb93a8cc7c1cb73f5775a1792fb6141c619ecb1321a448d1c26a0f3c",
+      "bytes": 11045
+    },
+    "policy": {
+      "path": "policy.json",
+      "sha256": "9ea8ad9782ea601601afe0285e4f8ea98558ead4472ee1d593959877de1251d2",
+      "bytes": 24773
+    },
+    "alerts": {
+      "path": "alerts.json",
+      "sha256": "3fb3b3f8289dac3c8f69ceb8e88ee1402dd25e98d531a4ba5f5a2bf0121f77d5",
+      "bytes": 19
+    },
+    "content": {
+      "path": "content.json",
+      "sha256": "a1e9414ed9a9d45c89a45648fb0e85843ad10600497f3a7a128420cd75646a4b",
+      "bytes": 62
+    },
+    "params": {
+      "path": "params.json",
+      "sha256": "d0404d67d20ff7fdcc8a398ea260fc93330e1c4d6182914c32fa81b22fb029cb",
+      "bytes": 3627
+    },
+    "community": {
+      "path": "community.json",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "bytes": 0
+    }
+  },
+  "sources": [
+    {
+      "id": "uscis.monthly_csv",
+      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
+      "status": "fallback_used",
+      "publishedPeriod": "2026-08",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Rows: 04 Appendix A = doc 04 §1.1 [F]."
+    },
+    {
+      "id": "uscis.quarterly_all_forms",
+      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+      "status": "fallback_used",
+      "publishedPeriod": "FY2026 Q3",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Rows: doc 04 §1.2 [F]."
+    },
+    {
+      "id": "uscis.i485_by_office",
+      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+      "status": "fallback_used",
+      "publishedPeriod": "FY2026 Q3",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Humanitarian column: doc 04 §1.3 [F]."
+    },
+    {
+      "id": "mirror.jzebedee",
+      "url": "https://github.com/jzebedee/uscis/releases",
+      "status": "fallback_used",
+      "publishedPeriod": "2026-10-15",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Inquiry dates: key facts §5-§6, doc 15 §2.2 [F]."
+    },
+    {
+      "id": "uscis.historic_pt",
+      "url": "https://egov.uscis.gov/processing-times/historic-pt",
+      "status": "fallback_used",
+      "publishedPeriod": "FY2026",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Medians via press [S-sec], key facts §7."
+    },
+    {
+      "id": "curated",
+      "url": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/docs/research/00-key-facts-for-the-app.md",
+      "status": "fallback_used",
+      "note": "G0 hand-built SAMPLE (WP1): values transcribed from docs/research and docs/planning, not fetched by the pipeline. Policy: key facts §1-§4, §9; 04 §6.1, §6.3."
+    }
+  ],
+  "qa": {
+    "status": "ok",
+    "lastGoodRunId": "g0-handbuilt",
+    "notes": [
+      {
+        "es": "Datos de muestra preparados a mano a partir de la investigación del proyecto; no son una descarga en vivo de USCIS.",
+        "en": "Hand-built sample data from the project research; not a live USCIS download."
+      }
+    ]
+  },
+  "canary": {
+    "caseId": "T15",
+    "pWithin12": 0.09229,
+    "q50": 54,
+    "computedWith": "VPH-1.1"
+  },
+  "origin": "bundled_sample",
+  "_comment": "TEST FIXTURE: the G0 manifest plus a v1.1 `community` file entry (zero sha) to show the key is accepted."
+}

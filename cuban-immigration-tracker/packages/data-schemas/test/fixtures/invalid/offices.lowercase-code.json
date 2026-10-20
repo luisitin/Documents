@@ -1,0 +1,10 @@
+{
+  "description": "offices.lowercase-code",
+  "base": "valid/offices.json",
+  "set": {
+    "offices.0.code": "hia"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "offices\\.0\\.code"
+}

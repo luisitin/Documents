@@ -1,0 +1,710 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/params.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "beta": {
+      "additionalProperties": {},
+      "properties": {
+        "fallbackUsed": {
+          "type": "boolean"
+        },
+        "sse": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "targets": {
+          "items": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "value": {
+          "maximum": 0.3,
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "targets",
+        "sse",
+        "fallbackUsed"
+      ],
+      "type": "object"
+    },
+    "clampOffice": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "const": 0.5,
+          "type": "number"
+        },
+        {
+          "const": 2,
+          "type": "number"
+        }
+      ],
+      "type": "array"
+    },
+    "confidenceGates": {
+      "additionalProperties": {},
+      "properties": {
+        "crowdDecisionsByOfficeGroup": {
+          "additionalProperties": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "propertyNames": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "pitNotRejectedMonths": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "r4MonthsOfData": {
+          "maximum": 9007199254740991,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "r4MonthsOfData",
+        "pitNotRejectedMonths",
+        "crowdDecisionsByOfficeGroup"
+      ],
+      "type": "object"
+    },
+    "dataThrough": {
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+      "type": "string"
+    },
+    "grids": {
+      "additionalProperties": {},
+      "properties": {
+        "beta": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 0.5,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1,
+                  "type": "number"
+                },
+                {
+                  "const": 0.5,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 2,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "type": "array"
+        },
+        "classMix": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 0.5,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1,
+                  "type": "number"
+                },
+                {
+                  "const": 0.5,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 2,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "type": "array"
+        },
+        "ead": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 0.9,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1,
+                  "type": "number"
+                },
+                {
+                  "const": 0.5,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1.2,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "type": "array"
+        },
+        "office": {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 0.8,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1,
+                  "type": "number"
+                },
+                {
+                  "const": 0.5,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "items": false,
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "const": 1.25,
+                  "type": "number"
+                },
+                {
+                  "const": 0.25,
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            }
+          ],
+          "type": "array"
+        }
+      },
+      "required": [
+        "beta",
+        "office",
+        "classMix",
+        "ead"
+      ],
+      "type": "object"
+    },
+    "horizonMonths": {
+      "const": 72,
+      "type": "number"
+    },
+    "k0Office": {
+      "const": 50,
+      "type": "number"
+    },
+    "milestone": {
+      "additionalProperties": {},
+      "properties": {
+        "expediteGranted": {
+          "additionalProperties": {},
+          "properties": {
+            "medianMonths": {
+              "const": 2,
+              "type": "number"
+            },
+            "sigma": {
+              "const": 0.857,
+              "type": "number"
+            }
+          },
+          "required": [
+            "medianMonths",
+            "sigma"
+          ],
+          "type": "object"
+        },
+        "mandamus": {
+          "additionalProperties": {},
+          "properties": {
+            "months": {
+              "const": 4,
+              "type": "number"
+            },
+            "mult": {
+              "const": 1.3,
+              "type": "number"
+            }
+          },
+          "required": [
+            "mult",
+            "months"
+          ],
+          "type": "object"
+        },
+        "noBiometricsAfter4mo": {
+          "const": 0.7,
+          "type": "number"
+        },
+        "postInterview": {
+          "additionalProperties": {},
+          "properties": {
+            "medianMonths": {
+              "const": 3,
+              "type": "number"
+            },
+            "sigma": {
+              "const": 0.857,
+              "type": "number"
+            }
+          },
+          "required": [
+            "medianMonths",
+            "sigma"
+          ],
+          "type": "object"
+        },
+        "rfeAnswered": {
+          "additionalProperties": {},
+          "properties": {
+            "months": {
+              "const": 3,
+              "type": "number"
+            },
+            "mult": {
+              "const": 1.5,
+              "type": "number"
+            }
+          },
+          "required": [
+            "mult",
+            "months"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "noBiometricsAfter4mo",
+        "rfeAnswered",
+        "mandamus",
+        "postInterview",
+        "expediteGranted"
+      ],
+      "type": "object"
+    },
+    "modelVersion": {
+      "const": "VPH-1.1",
+      "type": "string"
+    },
+    "observation": {
+      "additionalProperties": {},
+      "properties": {
+        "floorLevel": {
+          "const": 50,
+          "type": "number"
+        },
+        "model": {
+          "const": "lognormal",
+          "type": "string"
+        },
+        "sigma": {
+          "minimum": 0.25,
+          "type": "number"
+        },
+        "tempering": {
+          "const": 0.5,
+          "type": "number"
+        },
+        "weightFloor": {
+          "const": 0.02,
+          "type": "number"
+        }
+      },
+      "required": [
+        "model",
+        "sigma",
+        "tempering",
+        "floorLevel",
+        "weightFloor"
+      ],
+      "type": "object"
+    },
+    "officeGroup": {
+      "items": {
+        "pattern": "^[A-Z]{3}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "officeMultipliers": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "avgPending": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "basis": {
+            "enum": [
+              "approvals",
+              "approvals_and_denials"
+            ],
+            "type": "string"
+          },
+          "code": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "completions": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "quarters": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "fy": {
+                  "maximum": 2100,
+                  "minimum": 2000,
+                  "type": "integer"
+                },
+                "q": {
+                  "anyOf": [
+                    {
+                      "const": 1,
+                      "type": "number"
+                    },
+                    {
+                      "const": 2,
+                      "type": "number"
+                    },
+                    {
+                      "const": 3,
+                      "type": "number"
+                    },
+                    {
+                      "const": 4,
+                      "type": "number"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "fy",
+                "q"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "raw": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "shrunk": {
+            "maximum": 2,
+            "minimum": 0.5,
+            "type": "number"
+          }
+        },
+        "required": [
+          "code",
+          "completions",
+          "avgPending",
+          "raw",
+          "shrunk",
+          "quarters",
+          "basis"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "receiptsForecast": {
+      "const": 1000,
+      "type": "number"
+    },
+    "scenarioWeights": {
+      "additionalProperties": {},
+      "properties": {
+        "asOf": {
+          "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+          "type": "string"
+        },
+        "caseDependentRules": {
+          "items": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "weights": {
+          "additionalProperties": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "propertyNames": {
+            "enum": [
+              "S0",
+              "S1",
+              "S2",
+              "S3"
+            ],
+            "type": "string"
+          },
+          "required": [
+            "S0",
+            "S1",
+            "S2",
+            "S3"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "asOf",
+        "weights",
+        "caseDependentRules"
+      ],
+      "type": "object"
+    },
+    "validation": {
+      "additionalProperties": {},
+      "properties": {
+        "backtestRunId": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "not_validated",
+            "validated_r0r2",
+            "validated_current"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ],
+      "type": "object"
+    },
+    "weightLedger": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "after": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "alertId": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "at": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+            "type": "string"
+          },
+          "before": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "propertyNames": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "observedCompletions": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "observedMonth": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "alert_rule",
+              "likelihood",
+              "prior_reset",
+              "supersede"
+            ],
+            "type": "string"
+          },
+          "ruleId": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          }
+        },
+        "required": [
+          "at",
+          "reason",
+          "before",
+          "after"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "modelVersion",
+    "dataThrough",
+    "beta",
+    "horizonMonths",
+    "receiptsForecast",
+    "officeGroup",
+    "officeMultipliers",
+    "k0Office",
+    "clampOffice",
+    "grids",
+    "milestone",
+    "observation",
+    "scenarioWeights",
+    "weightLedger",
+    "validation",
+    "confidenceGates"
+  ],
+  "title": "params",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

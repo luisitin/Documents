@@ -1,0 +1,485 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "artifactBuiltAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    },
+    "canary": {
+      "additionalProperties": {},
+      "properties": {
+        "caseId": {
+          "const": "T15",
+          "type": "string"
+        },
+        "computedWith": {
+          "const": "VPH-1.1",
+          "type": "string"
+        },
+        "pWithin12": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "q50": {
+          "anyOf": [
+            {
+              "maximum": 72,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "caseId",
+        "pWithin12",
+        "q50",
+        "computedWith"
+      ],
+      "type": "object"
+    },
+    "dataChangedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    },
+    "files": {
+      "additionalProperties": {},
+      "properties": {
+        "alerts": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "community": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "content": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "national": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "offices": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "params": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "policy": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        },
+        "quarterly": {
+          "additionalProperties": {},
+          "properties": {
+            "bytes": {
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "path": {
+              "pattern": "^[a-z0-9][a-z0-9_/.-]*\\.json$",
+              "type": "string"
+            },
+            "sha256": {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "sha256",
+            "bytes"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "national",
+        "quarterly",
+        "offices",
+        "policy",
+        "alerts",
+        "content",
+        "params"
+      ],
+      "type": "object"
+    },
+    "generatedBy": {
+      "additionalProperties": {},
+      "properties": {
+        "ref": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "type": "string"
+        },
+        "runId": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "type": "string"
+        },
+        "sha": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "type": "string"
+        }
+      },
+      "required": [
+        "runId",
+        "ref",
+        "sha"
+      ],
+      "type": "object"
+    },
+    "lastCheckedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    },
+    "latestOfficialMonth": {
+      "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+      "type": "string"
+    },
+    "latestOfficialQuarter": {
+      "additionalProperties": false,
+      "properties": {
+        "fy": {
+          "maximum": 2100,
+          "minimum": 2000,
+          "type": "integer"
+        },
+        "q": {
+          "anyOf": [
+            {
+              "const": 1,
+              "type": "number"
+            },
+            {
+              "const": 2,
+              "type": "number"
+            },
+            {
+              "const": 3,
+              "type": "number"
+            },
+            {
+              "const": 4,
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "fy",
+        "q"
+      ],
+      "type": "object"
+    },
+    "latestProcessingTimesPublication": {
+      "anyOf": [
+        {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "minAppVersion": {
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "type": "string"
+    },
+    "origin": {
+      "enum": [
+        "pipeline",
+        "bundled_sample"
+      ],
+      "type": "string"
+    },
+    "qa": {
+      "additionalProperties": {},
+      "properties": {
+        "lastGoodRunId": {
+          "minLength": 1,
+          "pattern": "\\S",
+          "type": "string"
+        },
+        "notes": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "degraded",
+            "quarantined"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "lastGoodRunId",
+        "notes"
+      ],
+      "type": "object"
+    },
+    "schemaVersion": {
+      "const": 1,
+      "type": "number"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "id": {
+            "enum": [
+              "uscis.monthly_csv",
+              "uscis.quarterly_all_forms",
+              "uscis.i485_by_office",
+              "uscis.portal_index",
+              "mirror.visualizer",
+              "mirror.jzebedee",
+              "uscis.historic_pt",
+              "fr.api",
+              "courtlistener.v4",
+              "uscis.rss",
+              "curated",
+              "bundled_sample"
+            ],
+            "type": "string"
+          },
+          "lastSuccessAt": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "publishedPeriod": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "sha256": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "not_modified",
+              "not_yet",
+              "blocked_cloudflare",
+              "blocked_drupal_antibot",
+              "http_error",
+              "network_error",
+              "schema_mismatch",
+              "skipped_no_secret",
+              "fallback_used",
+              "quarantined"
+            ],
+            "type": "string"
+          },
+          "url": {
+            "pattern": "^https?:\\/\\/\\S+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "minAppVersion",
+    "dataChangedAt",
+    "lastCheckedAt",
+    "generatedBy",
+    "latestOfficialMonth",
+    "latestOfficialQuarter",
+    "latestProcessingTimesPublication",
+    "files",
+    "sources",
+    "qa",
+    "canary"
+  ],
+  "title": "manifest",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

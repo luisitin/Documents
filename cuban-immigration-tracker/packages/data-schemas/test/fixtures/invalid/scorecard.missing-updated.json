@@ -1,0 +1,10 @@
+{
+  "description": "scorecard.missing-updated",
+  "base": "valid/scorecard.json",
+  "set": {},
+  "delete": [
+    "updatedAt"
+  ],
+  "today": "2026-10-20",
+  "expect": "updatedAt"
+}

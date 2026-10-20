@@ -1,0 +1,143 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/shared-timeline.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "consent_version": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "decision": {
+      "anyOf": [
+        {
+          "enum": [
+            "approved",
+            "denied",
+            "withdrawn",
+            "admin_closed"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "entry_channel": {
+      "enum": [
+        "CHNV",
+        "CBP_ONE",
+        "FRP_CFRP",
+        "U4U",
+        "OTHER_PAROLE",
+        "VISA",
+        "I220A"
+      ],
+      "type": "string"
+    },
+    "evidence_level": {
+      "enum": [
+        "notice",
+        "online_status",
+        "memory"
+      ],
+      "type": "string"
+    },
+    "filed_month": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "office_code": {
+      "anyOf": [
+        {
+          "pattern": "^[A-Z]{3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "offsets_days": {
+      "additionalProperties": {
+        "maximum": 3650,
+        "minimum": 0,
+        "type": "integer"
+      },
+      "propertyNames": {
+        "enum": [
+          "biometrics",
+          "ead_c9",
+          "interview_notice",
+          "interview",
+          "rfe",
+          "rfe_response",
+          "decision",
+          "card"
+        ],
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "plausibility_flags": {
+      "items": {
+        "minLength": 1,
+        "pattern": "\\S",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "receipt_prefix": {
+      "anyOf": [
+        {
+          "enum": [
+            "IOE",
+            "MSC",
+            "NBC",
+            "EAC",
+            "WAC",
+            "LIN",
+            "SRC",
+            "YSC"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "schema_version": {
+      "const": 1,
+      "type": "number"
+    },
+    "state": {
+      "pattern": "^[A-Z]{2}$",
+      "type": "string"
+    },
+    "with_attorney": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "consent_version",
+    "schema_version",
+    "entry_channel",
+    "receipt_prefix",
+    "state",
+    "office_code",
+    "filed_month",
+    "offsets_days",
+    "decision",
+    "with_attorney",
+    "evidence_level",
+    "plausibility_flags"
+  ],
+  "title": "shared-timeline",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

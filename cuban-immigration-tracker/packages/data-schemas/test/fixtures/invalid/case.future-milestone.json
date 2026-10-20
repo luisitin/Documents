@@ -1,0 +1,10 @@
+{
+  "description": "case.future-milestone",
+  "base": "valid/case.t15.json",
+  "set": {
+    "milestones.1.date": "2026-11-15"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "in the future"
+}

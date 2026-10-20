@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "form": "I-485 (Cuban)",
+      "received": 6279,
+      "approved": 139,
+      "denied": 447,
+      "completions": 586,
+      "pendingWorkbook": 342360,
+      "medianMonths": 16.3,
+      "fytd": {
+        "received": 46500,
+        "approved": 4287,
+        "denied": 865
+      },
+      "source": {
+        "sourceId": "uscis.quarterly_all_forms",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    }
+  ],
+  "historicMedians": [
+    {
+      "fy": 2026,
+      "months": 11.8,
+      "cutDate": "2026-07-31",
+      "fyToDate": true,
+      "sourceUrl": "https://egov.uscis.gov/processing-times/historic-pt",
+      "evidence": "S-sec"
+    }
+  ],
+  "approvalBaselines": [
+    {
+      "label": {
+        "es": "Año fiscal 2026, trimestre 3 (abr–jun 2026)",
+        "en": "FY2026 Q3 (Apr–Jun 2026)"
+      },
+      "numerator": 139,
+      "denominator": 586,
+      "share": 0.23720136518771331,
+      "period": "FY2026 Q3",
+      "kind": "share"
+    }
+  ]
+}

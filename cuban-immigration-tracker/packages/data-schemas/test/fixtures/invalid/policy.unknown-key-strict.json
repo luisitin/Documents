@@ -1,0 +1,10 @@
+{
+  "description": "policy.unknown-key-strict",
+  "base": "valid/policy.json",
+  "set": {
+    "regimes.0.notes": "x"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "regimes\\.0"
+}

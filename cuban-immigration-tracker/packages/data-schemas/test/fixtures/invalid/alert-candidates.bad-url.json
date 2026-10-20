@@ -1,0 +1,10 @@
+{
+  "description": "alert-candidates.bad-url",
+  "base": "valid/alert-candidates.json",
+  "set": {
+    "0.url": "ftp://x"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "0\\.url"
+}

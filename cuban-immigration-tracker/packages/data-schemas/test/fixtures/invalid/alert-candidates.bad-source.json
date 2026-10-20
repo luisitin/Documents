@@ -1,0 +1,10 @@
+{
+  "description": "alert-candidates.bad-source",
+  "base": "valid/alert-candidates.json",
+  "set": {
+    "0.source": "twitter"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "0\\.source"
+}

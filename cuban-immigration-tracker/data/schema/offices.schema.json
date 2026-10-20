@@ -1,0 +1,518 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/offices.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "inquiryDateHistory": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "officeCode": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "points": {
+            "items": {
+              "additionalProperties": {},
+              "properties": {
+                "inquiryDate": {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                },
+                "publicationDate": {
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "publicationDate",
+                "inquiryDate"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "subtype": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          }
+        },
+        "required": [
+          "officeCode",
+          "subtype",
+          "points"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "offices": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "code": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "cubanFocus": {
+            "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "field_office",
+              "service_center"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "state": {
+            "pattern": "^[A-Z]{2}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "name",
+          "state",
+          "cubanFocus",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "processingTimes": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "form": {
+            "enum": [
+              "I-485",
+              "I-765"
+            ],
+            "type": "string"
+          },
+          "inquiryDate": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "isProxyForCaa": {
+            "type": "boolean"
+          },
+          "months80": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "monthsLowerLegacy": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "officeCode": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "publicationDate": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "source": {
+            "additionalProperties": {},
+            "properties": {
+              "evidence": {
+                "enum": [
+                  "F",
+                  "S",
+                  "S-sec",
+                  "T",
+                  "I",
+                  "U",
+                  "V"
+                ],
+                "type": "string"
+              },
+              "period": {
+                "anyOf": [
+                  {
+                    "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+                    "type": "string"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "fy": {
+                        "maximum": 2100,
+                        "minimum": 2000,
+                        "type": "integer"
+                      },
+                      "q": {
+                        "anyOf": [
+                          {
+                            "const": 1,
+                            "type": "number"
+                          },
+                          {
+                            "const": 2,
+                            "type": "number"
+                          },
+                          {
+                            "const": 3,
+                            "type": "number"
+                          },
+                          {
+                            "const": 4,
+                            "type": "number"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "fy",
+                      "q"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  }
+                ]
+              },
+              "retrievedAt": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "sourceId": {
+                "enum": [
+                  "uscis.monthly_csv",
+                  "uscis.quarterly_all_forms",
+                  "uscis.i485_by_office",
+                  "uscis.portal_index",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "uscis.historic_pt",
+                  "fr.api",
+                  "courtlistener.v4",
+                  "uscis.rss",
+                  "curated",
+                  "bundled_sample"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "pattern": "^https?:\\/\\/\\S+$",
+                "type": "string"
+              },
+              "via": {
+                "enum": [
+                  "direct",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "curated"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "sourceId",
+              "url",
+              "via",
+              "retrievedAt",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          "subtype": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          }
+        },
+        "required": [
+          "form",
+          "subtype",
+          "officeCode",
+          "months80",
+          "inquiryDate",
+          "publicationDate",
+          "isProxyForCaa",
+          "source"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "quarterly": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "approved": {
+            "anyOf": [
+              {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "denied": {
+            "anyOf": [
+              {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "officeCode": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "pending": {
+            "anyOf": [
+              {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "quarter": {
+            "additionalProperties": false,
+            "properties": {
+              "fy": {
+                "maximum": 2100,
+                "minimum": 2000,
+                "type": "integer"
+              },
+              "q": {
+                "anyOf": [
+                  {
+                    "const": 1,
+                    "type": "number"
+                  },
+                  {
+                    "const": 2,
+                    "type": "number"
+                  },
+                  {
+                    "const": 3,
+                    "type": "number"
+                  },
+                  {
+                    "const": 4,
+                    "type": "number"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "fy",
+              "q"
+            ],
+            "type": "object"
+          },
+          "received": {
+            "anyOf": [
+              {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source": {
+            "additionalProperties": {},
+            "properties": {
+              "evidence": {
+                "enum": [
+                  "F",
+                  "S",
+                  "S-sec",
+                  "T",
+                  "I",
+                  "U",
+                  "V"
+                ],
+                "type": "string"
+              },
+              "period": {
+                "anyOf": [
+                  {
+                    "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+                    "type": "string"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "fy": {
+                        "maximum": 2100,
+                        "minimum": 2000,
+                        "type": "integer"
+                      },
+                      "q": {
+                        "anyOf": [
+                          {
+                            "const": 1,
+                            "type": "number"
+                          },
+                          {
+                            "const": 2,
+                            "type": "number"
+                          },
+                          {
+                            "const": 3,
+                            "type": "number"
+                          },
+                          {
+                            "const": 4,
+                            "type": "number"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "fy",
+                      "q"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  }
+                ]
+              },
+              "retrievedAt": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "sourceId": {
+                "enum": [
+                  "uscis.monthly_csv",
+                  "uscis.quarterly_all_forms",
+                  "uscis.i485_by_office",
+                  "uscis.portal_index",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "uscis.historic_pt",
+                  "fr.api",
+                  "courtlistener.v4",
+                  "uscis.rss",
+                  "curated",
+                  "bundled_sample"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "pattern": "^https?:\\/\\/\\S+$",
+                "type": "string"
+              },
+              "via": {
+                "enum": [
+                  "direct",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "curated"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "sourceId",
+              "url",
+              "via",
+              "retrievedAt",
+              "evidence"
+            ],
+            "type": "object"
+          },
+          "suppressed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "officeCode",
+          "quarter",
+          "received",
+          "approved",
+          "denied",
+          "pending",
+          "suppressed",
+          "source"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "stateOffices": {
+      "additionalProperties": {
+        "items": {
+          "pattern": "^[A-Z]{3}$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "pattern": "^[A-Z]{2}$",
+        "type": "string"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "offices",
+    "stateOffices",
+    "processingTimes",
+    "quarterly",
+    "inquiryDateHistory"
+  ],
+  "title": "offices",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

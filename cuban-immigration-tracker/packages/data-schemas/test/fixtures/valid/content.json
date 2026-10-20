@@ -1,0 +1,46 @@
+{
+  "myths": [
+    {
+      "id": "sample-myth",
+      "claim": {
+        "es": "Afirmación de prueba (muestra)",
+        "en": "Test claim (sample)"
+      },
+      "verdict": "unknown",
+      "explanation": {
+        "es": "Explicación de prueba para validar el formato.",
+        "en": "Test explanation used to validate the format."
+      },
+      "sources": [
+        {
+          "label": "Fixture source (sample)",
+          "url": "https://www.uscis.gov/policy-manual/updates",
+          "evidence": "S"
+        }
+      ]
+    }
+  ],
+  "peerReasons": [
+    {
+      "id": "c9_erequest_available",
+      "text": {
+        "es": "Ya puede presentar una consulta por demora de su permiso (c)(9).",
+        "en": "You can now file a delay inquiry for your (c)(9) work permit."
+      },
+      "confidence": "high",
+      "source": "doc 15 §2.2 (00 S4; 00 §7 notification copy)"
+    }
+  ],
+  "glossaryExtra": [
+    {
+      "term": {
+        "es": "Días adjudicables",
+        "en": "Adjudicable days"
+      },
+      "definition": {
+        "es": "Días que no estuvieron dentro de una pausa.",
+        "en": "Days not inside a hold."
+      }
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/content.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "glossaryExtra": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "definition": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "term": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "term",
+          "definition"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "myths": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "explanation": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "id": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "since": {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          "sources": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "enum": [
+                    "F",
+                    "S",
+                    "S-sec",
+                    "T",
+                    "I",
+                    "U",
+                    "V"
+                  ],
+                  "type": "string"
+                },
+                "label": {
+                  "minLength": 1,
+                  "pattern": "\\S",
+                  "type": "string"
+                },
+                "url": {
+                  "pattern": "^https?:\\/\\/\\S+$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "url",
+                "evidence"
+              ],
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "verdict": {
+            "enum": [
+              "false",
+              "misleading",
+              "true",
+              "unknown"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "claim",
+          "verdict",
+          "explanation",
+          "sources"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "peerReasons": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "medium_high",
+              "high"
+            ],
+            "type": "string"
+          },
+          "id": {
+            "enum": [
+              "chnv_r1",
+              "cbp_one_no_r1",
+              "ead_before_r3",
+              "ead_swept_r3",
+              "c9_erequest_available",
+              "renewal_no_autoext",
+              "non_fifo",
+              "office_diff"
+            ],
+            "type": "string"
+          },
+          "source": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "text": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "confidence",
+          "source"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "myths",
+    "peerReasons",
+    "glossaryExtra"
+  ],
+  "title": "content",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

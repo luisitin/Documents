@@ -1,0 +1,309 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/case-timeline.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "basicDocs": {
+      "additionalProperties": false,
+      "properties": {
+        "feeOrWaiver": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "i693": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "nationalityProof": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "paroleRecord": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "photos": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "paroleRecord",
+        "nationalityProof",
+        "i693",
+        "photos",
+        "feeOrWaiver"
+      ],
+      "type": "object"
+    },
+    "concurrentI131": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "concurrentI765": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "createdAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    },
+    "derivativeOf": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "type": "string"
+    },
+    "entryChannel": {
+      "enum": [
+        "CHNV",
+        "CBP_ONE",
+        "FRP_CFRP",
+        "U4U",
+        "OTHER_PAROLE",
+        "VISA",
+        "I220A",
+        "EWI",
+        "CONDITIONAL_PAROLE_236",
+        "UNKNOWN"
+      ],
+      "type": "string"
+    },
+    "hardship": {
+      "items": {
+        "enum": [
+          "job_loss_documented",
+          "benefits_loss",
+          "medical_emergency",
+          "death_in_family",
+          "uscis_error"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "i485ReceiptDate": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "i485ReceiptDateGranularity": {
+      "enum": [
+        "day",
+        "month"
+      ],
+      "type": "string"
+    },
+    "localId": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "type": "string"
+    },
+    "milestones": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "date": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dateGranularity": {
+            "enum": [
+              "day",
+              "month"
+            ],
+            "type": "string"
+          },
+          "dateSource": {
+            "enum": [
+              "notice",
+              "online_status",
+              "memory"
+            ],
+            "type": "string"
+          },
+          "key": {
+            "enum": [
+              "receipt",
+              "biometrics",
+              "ead_c9",
+              "ead_renewal_filed",
+              "ap_i131",
+              "transfer",
+              "interview_notice",
+              "interview",
+              "rfe",
+              "rfe_response",
+              "noid",
+              "noid_response",
+              "erequest",
+              "erequest_response",
+              "expedite_request",
+              "expedite_outcome",
+              "congressional_inquiry",
+              "ombudsman",
+              "mandamus",
+              "parole_termination_notice",
+              "decision",
+              "card"
+            ],
+            "type": "string"
+          },
+          "meta": {
+            "additionalProperties": false,
+            "properties": {
+              "basis": {
+                "enum": [
+                  "financial",
+                  "humanitarian",
+                  "govt",
+                  "nonprofit",
+                  "uscis_error"
+                ],
+                "type": "string"
+              },
+              "cardExpiry": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "dueDate": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "erequestType": {
+                "enum": [
+                  "outside_processing",
+                  "no_notice",
+                  "no_card",
+                  "typo",
+                  "other"
+                ],
+                "type": "string"
+              },
+              "outcome": {
+                "enum": [
+                  "approved",
+                  "denied",
+                  "withdrawn",
+                  "admin_closed",
+                  "granted",
+                  "no_response",
+                  "pending",
+                  "pi_denied",
+                  "dismissed"
+                ],
+                "type": "string"
+              },
+              "scheduledFor": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              "terminationNotice": {
+                "enum": [
+                  "EMAIL_APR_2025",
+                  "CHNV_JUN_2025",
+                  "INDIVIDUAL_APR_2026",
+                  "FRP_JAN_2026",
+                  "OTHER"
+                ],
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "key",
+          "date",
+          "dateGranularity",
+          "dateSource"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "nickname": {
+      "maxLength": 40,
+      "minLength": 1,
+      "pattern": "\\S",
+      "type": "string"
+    },
+    "officeCode": {
+      "pattern": "^[A-Z]{3}$",
+      "type": "string"
+    },
+    "paroleDate": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "paroleEndDateOriginal": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "receiptPrefix": {
+      "pattern": "^[A-Z]{3}$",
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "principal",
+        "derivative"
+      ],
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1,
+      "type": "number"
+    },
+    "state": {
+      "pattern": "^[A-Z]{2}$",
+      "type": "string"
+    },
+    "updatedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    },
+    "withAttorney": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "localId",
+    "nickname",
+    "role",
+    "entryChannel",
+    "i485ReceiptDate",
+    "i485ReceiptDateGranularity",
+    "concurrentI765",
+    "concurrentI131",
+    "withAttorney",
+    "basicDocs",
+    "milestones",
+    "createdAt",
+    "updatedAt"
+  ],
+  "title": "case-timeline",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

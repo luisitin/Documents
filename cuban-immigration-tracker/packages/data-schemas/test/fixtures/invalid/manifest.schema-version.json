@@ -1,0 +1,10 @@
+{
+  "description": "manifest.schema-version",
+  "base": "valid/manifest.json",
+  "set": {
+    "schemaVersion": 2
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "schemaVersion"
+}

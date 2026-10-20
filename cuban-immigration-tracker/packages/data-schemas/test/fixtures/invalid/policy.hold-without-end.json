@@ -1,0 +1,10 @@
+{
+  "description": "policy.hold-without-end",
+  "base": "valid/policy.json",
+  "set": {
+    "regimes.1.end": null
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "hold regime"
+}

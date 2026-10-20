@@ -1,0 +1,99 @@
+{
+  "offices": [
+    {
+      "code": "HIA",
+      "name": "Hialeah",
+      "state": "FL",
+      "cubanFocus": true,
+      "kind": "field_office"
+    }
+  ],
+  "stateOffices": {
+    "FL": [
+      "HIA"
+    ]
+  },
+  "processingTimes": [
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HIA",
+      "months80": null,
+      "inquiryDate": "2024-07-05",
+      "publicationDate": "2026-10-15",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-15",
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    }
+  ],
+  "quarterly": [
+    {
+      "officeCode": "HIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 2
+      },
+      "received": 1480,
+      "approved": 2,
+      "denied": null,
+      "pending": 36682,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q2_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 2
+        },
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "officeCode": "HIA",
+      "quarter": {
+        "fy": 2026,
+        "q": 3
+      },
+      "received": 661,
+      "approved": 1,
+      "denied": null,
+      "pending": 37486,
+      "suppressed": false,
+      "source": {
+        "sourceId": "uscis.i485_by_office",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
+        "via": "mirror.visualizer",
+        "period": {
+          "fy": 2026,
+          "q": 3
+        },
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    }
+  ],
+  "inquiryDateHistory": [
+    {
+      "officeCode": "HIA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2024-10-18",
+          "inquiryDate": "2023-02-03"
+        },
+        {
+          "publicationDate": "2026-10-15",
+          "inquiryDate": "2024-07-05"
+        }
+      ]
+    }
+  ]
+}

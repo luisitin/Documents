@@ -1,0 +1,10 @@
+{
+  "description": "scorecard.pit-range",
+  "base": "valid/scorecard.json",
+  "set": {
+    "completions.0.pit": 1.5
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "completions\\.0\\.pit"
+}

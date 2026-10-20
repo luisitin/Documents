@@ -1,0 +1,10 @@
+{
+  "description": "alerts.empty-en-title",
+  "base": "valid/alerts.json",
+  "set": {
+    "alerts.0.title.en": "   "
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "alerts\\.0\\.title\\.en"
+}

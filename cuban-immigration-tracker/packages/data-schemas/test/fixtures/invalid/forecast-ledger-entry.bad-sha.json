@@ -1,0 +1,10 @@
+{
+  "description": "forecast-ledger-entry.bad-sha",
+  "base": "valid/forecast-ledger-entry.json",
+  "set": {
+    "paramsSha256": "abc"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "paramsSha256"
+}

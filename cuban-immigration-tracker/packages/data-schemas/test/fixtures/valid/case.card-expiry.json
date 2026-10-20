@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "localId": "00000000-0000-4000-8000-0000000000c1",
+  "nickname": "Ejemplo",
+  "role": "principal",
+  "entryChannel": "CHNV",
+  "i485ReceiptDate": "2025-03-15",
+  "i485ReceiptDateGranularity": "day",
+  "concurrentI765": true,
+  "concurrentI131": null,
+  "withAttorney": null,
+  "basicDocs": {
+    "paroleRecord": null,
+    "nationalityProof": null,
+    "i693": null,
+    "photos": null,
+    "feeOrWaiver": null
+  },
+  "milestones": [
+    {
+      "key": "biometrics",
+      "date": "2025-07-15",
+      "dateGranularity": "month",
+      "dateSource": "memory"
+    },
+    {
+      "key": "ead_c9",
+      "date": "2025-09-15",
+      "dateGranularity": "day",
+      "dateSource": "notice",
+      "meta": {
+        "cardExpiry": "2030-09-14"
+      }
+    }
+  ],
+  "createdAt": "2026-10-20T12:00:00Z",
+  "updatedAt": "2026-10-20T12:00:00Z"
+}

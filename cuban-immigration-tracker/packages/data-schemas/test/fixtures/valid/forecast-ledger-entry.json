@@ -1,0 +1,49 @@
+{
+  "_comment": "SYNTHETIC TEST FIXTURE: invented numbers for shape testing; not a forecast.",
+  "issuedAt": "2026-10-20T00:00:00Z",
+  "dataThrough": "2026-08",
+  "modelVersion": "VPH-1.1",
+  "paramsSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "weights": {
+    "S0": 0.3,
+    "S1": 0.4,
+    "S2": 0.15,
+    "S3": 0.15
+  },
+  "nationalCompletions": [
+    {
+      "ym": "2026-09",
+      "median": 1000,
+      "p10": 600,
+      "p90": 1700,
+      "logPredictive": [
+        {
+          "mu": 6.7,
+          "sigma": 0.42,
+          "weight": 0.5
+        },
+        {
+          "mu": 7.0,
+          "sigma": 0.42,
+          "weight": 0.5
+        }
+      ]
+    }
+  ],
+  "meanAgeOfCompletions": [
+    {
+      "ym": "2026-09",
+      "predicted": 20
+    }
+  ],
+  "pendingOver6": [
+    {
+      "ym": "2026-09",
+      "predicted": 340000
+    }
+  ],
+  "referenceCase": {
+    "pWithin12": 0.09229,
+    "q50": 54
+  }
+}

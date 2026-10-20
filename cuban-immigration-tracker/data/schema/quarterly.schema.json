@@ -1,0 +1,374 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/quarterly.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "approvalBaselines": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "denominator": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer"
+          },
+          "kind": {
+            "const": "share",
+            "type": "string"
+          },
+          "label": {
+            "additionalProperties": false,
+            "properties": {
+              "en": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              },
+              "es": {
+                "minLength": 1,
+                "pattern": "\\S",
+                "type": "string"
+              }
+            },
+            "required": [
+              "es",
+              "en"
+            ],
+            "type": "object"
+          },
+          "numerator": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "period": {
+            "minLength": 1,
+            "pattern": "\\S",
+            "type": "string"
+          },
+          "share": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "label",
+          "numerator",
+          "denominator",
+          "share",
+          "period",
+          "kind"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "historicMedians": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "cutDate": {
+            "anyOf": [
+              {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence": {
+            "enum": [
+              "F",
+              "S",
+              "S-sec",
+              "T",
+              "I",
+              "U",
+              "V"
+            ],
+            "type": "string"
+          },
+          "fy": {
+            "maximum": 2100,
+            "minimum": 2000,
+            "type": "integer"
+          },
+          "fyToDate": {
+            "type": "boolean"
+          },
+          "months": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "sourceUrl": {
+            "pattern": "^https?:\\/\\/\\S+$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "fy",
+          "months",
+          "cutDate",
+          "fyToDate",
+          "sourceUrl",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "rows": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "approved": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "completions": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "denied": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "form": {
+            "enum": [
+              "I-485 (Cuban)",
+              "I-765 (Adjustment Of Status)",
+              "I-765 (All Other)",
+              "I-485 (Refugee)",
+              "I-485 (Asylum)"
+            ],
+            "type": "string"
+          },
+          "fytd": {
+            "additionalProperties": {},
+            "properties": {
+              "approved": {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "completions": {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "denied": {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "received": {
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "received",
+              "approved",
+              "denied"
+            ],
+            "type": "object"
+          },
+          "medianMonths": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pendingWorkbook": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "quarter": {
+            "additionalProperties": false,
+            "properties": {
+              "fy": {
+                "maximum": 2100,
+                "minimum": 2000,
+                "type": "integer"
+              },
+              "q": {
+                "anyOf": [
+                  {
+                    "const": 1,
+                    "type": "number"
+                  },
+                  {
+                    "const": 2,
+                    "type": "number"
+                  },
+                  {
+                    "const": 3,
+                    "type": "number"
+                  },
+                  {
+                    "const": 4,
+                    "type": "number"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "fy",
+              "q"
+            ],
+            "type": "object"
+          },
+          "received": {
+            "maximum": 9007199254740991,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "source": {
+            "additionalProperties": {},
+            "properties": {
+              "evidence": {
+                "enum": [
+                  "F",
+                  "S",
+                  "S-sec",
+                  "T",
+                  "I",
+                  "U",
+                  "V"
+                ],
+                "type": "string"
+              },
+              "period": {
+                "anyOf": [
+                  {
+                    "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+                    "type": "string"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "fy": {
+                        "maximum": 2100,
+                        "minimum": 2000,
+                        "type": "integer"
+                      },
+                      "q": {
+                        "anyOf": [
+                          {
+                            "const": 1,
+                            "type": "number"
+                          },
+                          {
+                            "const": 2,
+                            "type": "number"
+                          },
+                          {
+                            "const": 3,
+                            "type": "number"
+                          },
+                          {
+                            "const": 4,
+                            "type": "number"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "fy",
+                      "q"
+                    ],
+                    "type": "object"
+                  },
+                  {
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "type": "string"
+                  }
+                ]
+              },
+              "retrievedAt": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+                "type": "string"
+              },
+              "sha256": {
+                "pattern": "^[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "sourceId": {
+                "enum": [
+                  "uscis.monthly_csv",
+                  "uscis.quarterly_all_forms",
+                  "uscis.i485_by_office",
+                  "uscis.portal_index",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "uscis.historic_pt",
+                  "fr.api",
+                  "courtlistener.v4",
+                  "uscis.rss",
+                  "curated",
+                  "bundled_sample"
+                ],
+                "type": "string"
+              },
+              "url": {
+                "pattern": "^https?:\\/\\/\\S+$",
+                "type": "string"
+              },
+              "via": {
+                "enum": [
+                  "direct",
+                  "mirror.visualizer",
+                  "mirror.jzebedee",
+                  "curated"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "sourceId",
+              "url",
+              "via",
+              "retrievedAt",
+              "evidence"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "quarter",
+          "form",
+          "received",
+          "approved",
+          "denied",
+          "completions",
+          "pendingWorkbook",
+          "medianMonths",
+          "source"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "rows",
+    "historicMedians",
+    "approvalBaselines"
+  ],
+  "title": "quarterly",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

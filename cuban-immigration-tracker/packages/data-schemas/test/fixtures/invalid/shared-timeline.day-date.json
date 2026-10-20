@@ -1,0 +1,10 @@
+{
+  "description": "shared-timeline.day-date",
+  "base": "valid/shared-timeline.json",
+  "set": {
+    "filed_month": "2025-03-15"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "filed_month"
+}

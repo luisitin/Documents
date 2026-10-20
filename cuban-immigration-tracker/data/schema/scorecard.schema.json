@@ -1,0 +1,117 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/scorecard.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": {},
+  "properties": {
+    "completions": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "logScore": {
+            "type": "number"
+          },
+          "pit": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "ym": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ym",
+          "pit",
+          "logScore"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "ksPValue": {
+      "anyOf": [
+        {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "meanAge": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "observed": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "predicted": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "ym": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ym",
+          "predicted",
+          "observed"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "monthsScored": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "pendingOver6": {
+      "items": {
+        "additionalProperties": {},
+        "properties": {
+          "observed": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "predicted": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "ym": {
+            "pattern": "^\\d{4}-(0[1-9]|1[0-2])$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ym",
+          "predicted",
+          "observed"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "updatedAt": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.\\d+)?Z$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "updatedAt",
+    "completions",
+    "meanAge",
+    "pendingOver6",
+    "ksPValue",
+    "monthsScored"
+  ],
+  "title": "scorecard",
+  "type": "object",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

@@ -1,0 +1,10 @@
+{
+  "description": "manifest.missing-params",
+  "base": "valid/manifest.json",
+  "set": {},
+  "delete": [
+    "files.params"
+  ],
+  "today": "2026-10-20",
+  "expect": "files\\.params"
+}

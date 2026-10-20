@@ -1,0 +1,75 @@
+{
+  "_comment": "TEST FIXTURE. Monthly rows Jul 2024, Sep 2024, Oct 2024 are [F] doc 04 §1.1 (Aug 2024 is missing from the mirror, so the gap before firstModelMonth is legal). The i765National row is SYNTHETIC: its denied value is invented for shape testing only.",
+  "rows": [
+    {
+      "ym": "2024-07",
+      "received": 12590,
+      "approved": 6920,
+      "denied": 1692,
+      "pending": 156790,
+      "pendingOver6": 90723,
+      "avgMonths": 7.1,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_july_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-07",
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-09",
+      "received": 10833,
+      "approved": 13464,
+      "denied": 202,
+      "pending": 151425,
+      "pendingOver6": 97685,
+      "avgMonths": 6.7,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_september_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-09",
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "ym": "2024-10",
+      "received": 17448,
+      "approved": 10807,
+      "denied": 299,
+      "pending": 157703,
+      "pendingOver6": 98392,
+      "avgMonths": 8.9,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_october_2024.csv",
+        "via": "mirror.visualizer",
+        "period": "2024-10",
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    }
+  ],
+  "i765National": [
+    {
+      "ym": "2026-08",
+      "received": 130329,
+      "approved": 125318,
+      "denied": 1,
+      "pending": 1921541,
+      "avgMonths": 6.8,
+      "source": {
+        "sourceId": "uscis.monthly_csv",
+        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
+        "via": "mirror.visualizer",
+        "period": "2026-08",
+        "retrievedAt": "2026-10-20T00:00:00Z",
+        "evidence": "F"
+      }
+    }
+  ],
+  "firstModelMonth": "2024-09"
+}

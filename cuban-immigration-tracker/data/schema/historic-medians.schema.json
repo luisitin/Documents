@@ -1,0 +1,60 @@
+{
+  "$id": "https://raw.githubusercontent.com/luisitin/Documents/main/cuban-immigration-tracker/data/schema/historic-medians.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "additionalProperties": {},
+    "properties": {
+      "cutDate": {
+        "anyOf": [
+          {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "evidence": {
+        "enum": [
+          "F",
+          "S",
+          "S-sec",
+          "T",
+          "I",
+          "U",
+          "V"
+        ],
+        "type": "string"
+      },
+      "fy": {
+        "maximum": 2100,
+        "minimum": 2000,
+        "type": "integer"
+      },
+      "fyToDate": {
+        "type": "boolean"
+      },
+      "months": {
+        "minimum": 0,
+        "type": "number"
+      },
+      "sourceUrl": {
+        "pattern": "^https?:\\/\\/\\S+$",
+        "type": "string"
+      }
+    },
+    "required": [
+      "fy",
+      "months",
+      "cutDate",
+      "fyToDate",
+      "sourceUrl",
+      "evidence"
+    ],
+    "type": "object"
+  },
+  "title": "historic-medians",
+  "type": "array",
+  "x-generatedBy": "scripts/export-schema.mjs (@caa/data-schemas v1)"
+}

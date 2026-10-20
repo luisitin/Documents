@@ -1,0 +1,226 @@
+{
+  "modelVersion": "VPH-1.1",
+  "dataThrough": "2026-08",
+  "beta": {
+    "value": 0.037390942739072994,
+    "targets": [
+      "2026-06",
+      "2026-07",
+      "2026-08"
+    ],
+    "sse": 4.851475826915298,
+    "fallbackUsed": false
+  },
+  "horizonMonths": 72,
+  "receiptsForecast": 1000,
+  "officeGroup": [
+    "HIA",
+    "KND",
+    "MIA",
+    "TAM",
+    "HOU"
+  ],
+  "officeMultipliers": [
+    {
+      "code": "HIA",
+      "completions": 3,
+      "avgPending": 37084.0,
+      "raw": 0.05509611763104056,
+      "shrunk": 0.9465148745828891,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "KND",
+      "completions": 35,
+      "avgPending": 40752.0,
+      "raw": 0.5849320681032651,
+      "shrunk": 0.8290896751013445,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "MIA",
+      "completions": 27,
+      "avgPending": 20531.5,
+      "raw": 0.895631582498384,
+      "shrunk": 0.963403282174758,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "TAM",
+      "completions": 117,
+      "avgPending": 34104.5,
+      "raw": 2.3364715102977853,
+      "shrunk": 1.9363303395499454,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    },
+    {
+      "code": "HOU",
+      "completions": 62,
+      "avgPending": 33707.0,
+      "raw": 1.2527312272053235,
+      "shrunk": 1.1399047864886611,
+      "quarters": [
+        {
+          "fy": 2026,
+          "q": 2
+        },
+        {
+          "fy": 2026,
+          "q": 3
+        }
+      ],
+      "basis": "approvals"
+    }
+  ],
+  "k0Office": 50,
+  "clampOffice": [
+    0.5,
+    2
+  ],
+  "grids": {
+    "beta": [
+      [
+        0.5,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        2,
+        0.25
+      ]
+    ],
+    "office": [
+      [
+        0.8,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1.25,
+        0.25
+      ]
+    ],
+    "classMix": [
+      [
+        0.5,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        2,
+        0.25
+      ]
+    ],
+    "ead": [
+      [
+        0.9,
+        0.25
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1.2,
+        0.25
+      ]
+    ]
+  },
+  "milestone": {
+    "noBiometricsAfter4mo": 0.7,
+    "rfeAnswered": {
+      "mult": 1.5,
+      "months": 3
+    },
+    "mandamus": {
+      "mult": 1.3,
+      "months": 4
+    },
+    "postInterview": {
+      "medianMonths": 3,
+      "sigma": 0.857
+    },
+    "expediteGranted": {
+      "medianMonths": 2,
+      "sigma": 0.857
+    }
+  },
+  "observation": {
+    "model": "lognormal",
+    "sigma": 0.3,
+    "tempering": 0.5,
+    "floorLevel": 50,
+    "weightFloor": 0.02
+  },
+  "scenarioWeights": {
+    "asOf": "2026-08",
+    "weights": {
+      "S0": 0.3,
+      "S1": 0.4,
+      "S2": 0.15,
+      "S3": 0.15
+    },
+    "caseDependentRules": [
+      "DORCAS_REVERSED",
+      "FIRST_CIR_STAY_BENEFITS_HOLD"
+    ]
+  },
+  "weightLedger": [],
+  "validation": {
+    "status": "not_validated"
+  },
+  "confidenceGates": {
+    "r4MonthsOfData": 2,
+    "pitNotRejectedMonths": 0,
+    "crowdDecisionsByOfficeGroup": {}
+  }
+}

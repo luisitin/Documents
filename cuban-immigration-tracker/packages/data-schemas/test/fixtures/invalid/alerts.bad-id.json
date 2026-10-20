@@ -1,0 +1,10 @@
+{
+  "description": "alerts.bad-id",
+  "base": "valid/alerts.json",
+  "set": {
+    "alerts.0.id": "pa-2026-05"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "alerts\\.0\\.id"
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "SYNTHETIC TEST FIXTURE.",
+  "updatedAt": "2026-10-20T00:00:00Z",
+  "completions": [
+    {
+      "ym": "2026-09",
+      "pit": 0.4,
+      "logScore": -6.1
+    }
+  ],
+  "meanAge": [
+    {
+      "ym": "2026-09",
+      "predicted": 20,
+      "observed": 21
+    }
+  ],
+  "pendingOver6": [],
+  "ksPValue": null,
+  "monthsScored": 1
+}

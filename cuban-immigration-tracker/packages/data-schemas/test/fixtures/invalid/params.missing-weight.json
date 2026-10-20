@@ -1,0 +1,10 @@
+{
+  "description": "params.missing-weight",
+  "base": "valid/params.json",
+  "set": {},
+  "delete": [
+    "scenarioWeights.weights.S3"
+  ],
+  "today": "2026-10-20",
+  "expect": "scenarioWeights\\.weights"
+}

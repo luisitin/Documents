@@ -1,0 +1,10 @@
+{
+  "description": "community.naive-median",
+  "base": "valid/community.json",
+  "set": {
+    "aggregates.0.method": "naive_median"
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "aggregates\\.0\\.method"
+}

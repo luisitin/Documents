@@ -1,0 +1,12 @@
+[
+  {
+    "id": "fr-sample",
+    "foundAt": "2026-10-20T00:00:00Z",
+    "source": "fr.api",
+    "title": "Sample candidate (test fixture)",
+    "url": "https://www.federalregister.gov/api/v1/documents.json",
+    "matchedTerms": [
+      "parole"
+    ]
+  }
+]

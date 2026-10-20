@@ -1,0 +1,33 @@
+{
+  "alerts": [
+    {
+      "id": "2026-08-05-sample-fixture",
+      "date": "2026-08-05",
+      "kind": "policy",
+      "severity": "info",
+      "title": {
+        "es": "Alerta de prueba (muestra, no es una alerta real)",
+        "en": "Test alert (sample, not a real alert)"
+      },
+      "body": {
+        "es": "Texto de prueba para validar el formato de las alertas.",
+        "en": "Test text used to validate the alert format."
+      },
+      "affects": {
+        "channels": [
+          "ALL_CUBAN"
+        ]
+      },
+      "ruleIds": [],
+      "sources": [
+        {
+          "label": "Fixture source (sample)",
+          "url": "https://www.uscis.gov/policy-manual/updates",
+          "evidence": "S"
+        }
+      ],
+      "reviewedBy": "fixture-reviewer",
+      "status": "published"
+    }
+  ]
+}

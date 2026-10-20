@@ -1,0 +1,10 @@
+{
+  "description": "national.negative-count",
+  "base": "valid/national.json",
+  "set": {
+    "rows.0.received": -1
+  },
+  "delete": [],
+  "today": "2026-10-20",
+  "expect": "rows\\.0\\.received"
+}
