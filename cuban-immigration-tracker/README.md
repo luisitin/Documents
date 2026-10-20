@@ -27,6 +27,10 @@ The goal is to replace guesswork and rumor with data:
   you already have Z, so your expected decision window is ...", with an honest
   confidence range.
 - **Alerts** when official data, policy, or court rulings change.
+- **English and Spanish**, switchable with one button inside the app; the whole interface
+  follows the chosen language.
+- **Runs on iOS, Android, and the web.** The web build is packaged as a single HTML
+  file so it can be published as a shareable Claude artifact.
 
 ## Reference case (used throughout the research, planning, and tests)
 
