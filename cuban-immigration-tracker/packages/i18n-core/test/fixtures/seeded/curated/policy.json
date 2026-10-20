@@ -1,0 +1,10 @@
+{
+  "SAMPLE_FIXTURE": "Seeded violations for check-i18n tests only; not real data.",
+  "items": [
+    { "label": { "es": "", "en": "Empty Spanish side" } },
+    { "label": { "es": "Su caso será aprobado", "en": "Fine English" } },
+    { "label": { "es": "Fecha {date}", "en": "Date" } },
+    { "label": { "en": "Missing Spanish side" } },
+    { "label": { "es": "Ley de Ajuste Cubano", "en": "Cuban Adjustment Act" } }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "ok": "Su caso sigue pendiente.",
+  "blank": "  ",
+  "due": "Vence el {fecha}",
+  "tuteo": "Tú puedes revisar el estado",
+  "possessive": "Revise tu caso",
+  "peers": "Casos como el suyo tardan más",
+  "directive": "Presente ahora su solicitud",
+  "onlyEs": "Solo en español"
+}

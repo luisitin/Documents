@@ -1,57 +1,65 @@
 /**
- * @caa/i18n-core — contract v1 STUBS (07-implementation-plan.md §6.0; written by WP1 in the
- * `contract: data-schemas v1` commit under declared ownership exception 2). WP4 owns this package
- * from now on: `resources` (merged locales/{es,en}/<namespace>.json), `createFmt` (02 §9, no `Intl`
- * in the output path, I18N-2), `probWord` (04 §8 thresholds) and `localize`.
+ * @caa/i18n-core (WP4) — locale resources, deterministic formatting and the shared words.
  *
- * Pure: imports only `@caa/data-schemas` types (ARCH-1).
+ * Contract v1 (07-implementation-plan.md §6.0): `Namespace`, `NAMESPACES`, `resources`, `I18nKey`,
+ * `Fmt`, `createFmt(lang)`, `probWord(p, lang)`, `localize(l, lang)`. Everything else exported here
+ * is additive (pure helpers the app, notifications and tools can share).
+ *
+ * Pure: imports only `@caa/data-schemas` types and its own JSON (ARCH-1). No `Intl` in any output
+ * path (I18N-2). Spanish is first-class and uses **usted** (I18N-1; STYLE-GUIDE.md).
  */
-import type { ISODate, Lang, Localized, YearMonth } from '@caa/data-schemas';
+import type { Lang, Localized } from '@caa/data-schemas';
+import { commonWord, probBand } from './words';
 
 /** 02 §1: the two app languages; Spanish is first-class. Defined in @caa/data-schemas. */
 export type { Lang };
 
-/** 07 §6.0 / I18N-3: locale namespaces, one owning WP each. */
-export type Namespace =
-  | 'common' | 'ui' | 'home' | 'case' | 'estimate' | 'peers' | 'ead' | 'remedies'
-  | 'offices' | 'alerts' | 'more' | 'method' | 'notifications' | 'welcome';
+export { NAMESPACES, NAMESPACE_OWNERS, NS_SEPARATOR, isNamespace, splitKey } from './keys';
+export type { I18nKey, Namespace } from './keys';
+export { resources } from './resources';
+export type { CommonKey, KeyOf, KnownI18nKey, ResourceShape } from './resources';
+export { createFmt } from './fmt';
+export type { Fmt } from './fmt';
+export {
+  I18NEXT_FORMAT_OPTIONS, PLACEHOLDER, hasKey, interpolate, interpolationVars, pluralCategory, pluralKey, translate,
+} from './interpolate';
+export { PROB_THRESHOLDS, monthNames, monthShortNames, probBand } from './words';
+export type { ProbBand } from './words';
 
-export const NAMESPACES: readonly Namespace[] = [
-  'common', 'ui', 'home', 'case', 'estimate', 'peers', 'ead', 'remedies',
-  'offices', 'alerts', 'more', 'method', 'notifications', 'welcome',
-] as const;
+/** The languages in display order (Spanish first, 00 §3.1). */
+export const LANGS: readonly Lang[] = ['es', 'en'] as const;
 
-/** `namespace:key` (07 §6.0). */
-export type I18nKey = `${Namespace}:${string}`;
-
-/** 02 §9 deterministic formatter (contract v1). */
-export interface Fmt {
-  int(n: number): string; dec(n: number, dp: number): string; pct(p: number): string; date(d: ISODate): string;
-  month(ym: YearMonth): string; monthLong(ym: YearMonth): string; relative(hours: number): string;
+/**
+ * Device-locale default (00 S0 step 1: "es* → es, else en"; owner requirement 1). Accepts BCP-47
+ * tags or bare language codes (`'es-US'`, `'es'`, `'en-GB'`); anything else → `'en'`.
+ */
+export function langFromLocale(tag: string | null | undefined): Lang {
+  return typeof tag === 'string' && /^es(?:$|[-_])/i.test(tag.trim()) ? 'es' : 'en';
 }
 
-function notImplemented(name: string, ...args: unknown[]): never {
-  void args;
-  throw new Error(`@caa/i18n-core.${name}: not implemented (contract v1 stub; WP4 implements it)`);
+/** The other language (the LangToggle target). */
+export function otherLang(lang: Lang): Lang {
+  return lang === 'es' ? 'en' : 'es';
 }
 
-const emptyNamespaces = (): Record<Namespace, Record<string, string>> =>
-  Object.fromEntries(NAMESPACES.map((n) => [n, {}])) as Record<Namespace, Record<string, string>>;
-
-/** Merged locale resources. Stub: every namespace is empty until WP4 lands the locale files. */
-export const resources: Record<Lang, Record<Namespace, Record<string, string>>> = { es: emptyNamespaces(), en: emptyNamespaces() };
-
-/** 02 §9: `createFmt(lang)`; there is no language-less fmt. */
-export function createFmt(lang: Lang): Fmt {
-  return notImplemented('createFmt', lang);
-}
-
-/** 04 §8 item 2 thresholds: < 5 % · 5–20 % · 20–50 % · 50–80 % · > 80 %. */
+/**
+ * 04 §8 item 2 word label for a probability: < 5 % muy poco probable / very unlikely; 5–20 % poco
+ * probable / unlikely; 20–50 % posible / possible; 50–80 % probable / likely; > 80 % muy probable /
+ * very likely. Non-finite input → the "missing" dash.
+ */
 export function probWord(p: number, lang: Lang): string {
-  return notImplemented('probWord', p, lang);
+  const band = probBand(p);
+  return band === null ? commonWord(lang, 'fmt.missing') : commonWord(lang, `prob.${band}`);
 }
 
-/** Picks one side of a data-file `Localized` (02 §1). */
+/**
+ * Picks one side of a data-file `Localized` (02 §1). The schema requires both sides non-empty
+ * (02 §8); if a side is nevertheless blank (an older cached file), the other side is shown rather
+ * than an empty string.
+ */
 export function localize(l: Localized, lang: Lang): string {
-  return notImplemented('localize', l, lang);
+  const own = l[lang];
+  if (typeof own === 'string' && own.trim() !== '') return own;
+  const other = l[otherLang(lang)];
+  return typeof other === 'string' ? other : '';
 }

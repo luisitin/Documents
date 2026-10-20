@@ -1,0 +1,7 @@
+{
+  "entries": [
+    { "rule": "register", "term": "tú", "file": "locales/es/more.json", "key": "quote", "reason": "Quotes a rumour verbatim (fixture)." },
+    { "rule": "register", "term": "tienes", "file": "locales/es/more.json", "key": "quote", "reason": "Quotes a rumour verbatim (fixture)." },
+    { "rule": "banned", "term": "file now", "file": "locales/en/nothing.json", "key": "*", "reason": "Unused entry (fixture)." }
+  ]
+}
