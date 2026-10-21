@@ -879,290 +879,1675 @@
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "MIA",
-      "months80": null,
-      "inquiryDate": "2023-06-17",
-      "publicationDate": "2026-10-15",
+      "officeCode": "ABQ",
+      "months80": 28,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2024-06-22",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "HIA",
-      "months80": null,
-      "inquiryDate": "2024-07-05",
-      "publicationDate": "2026-10-15",
+      "officeCode": "AGA",
+      "months80": 38,
+      "monthsLowerLegacy": 21.5,
+      "inquiryDate": "2023-08-25",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "KND",
-      "months80": null,
-      "inquiryDate": "2024-05-28",
-      "publicationDate": "2026-10-15",
+      "officeCode": "ALB",
+      "months80": 26.5,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2024-08-06",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "TAM",
-      "months80": null,
-      "inquiryDate": "2024-08-07",
-      "publicationDate": "2026-10-15",
+      "officeCode": "ANC",
+      "months80": 29.5,
+      "monthsLowerLegacy": 9.5,
+      "inquiryDate": "2024-05-14",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "ORL",
-      "months80": null,
-      "inquiryDate": "2024-01-28",
-      "publicationDate": "2026-10-15",
+      "officeCode": "ATL",
+      "months80": 31,
+      "monthsLowerLegacy": 16.5,
+      "inquiryDate": "2024-03-29",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "WPB",
-      "months80": null,
-      "inquiryDate": "2024-05-18",
-      "publicationDate": "2026-10-15",
+      "officeCode": "BAL",
+      "months80": 32.5,
+      "monthsLowerLegacy": 19,
+      "inquiryDate": "2024-02-05",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "OFM",
-      "months80": null,
-      "inquiryDate": "2024-05-11",
-      "publicationDate": "2026-10-15",
+      "officeCode": "BNY",
+      "months80": 40,
+      "monthsLowerLegacy": 19,
+      "inquiryDate": "2023-06-28",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "OKL",
-      "months80": null,
-      "inquiryDate": "2023-07-19",
-      "publicationDate": "2026-10-15",
+      "officeCode": "BOI",
+      "months80": 37.5,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2023-09-07",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "JAC",
-      "months80": null,
-      "inquiryDate": "2024-02-08",
-      "publicationDate": "2026-10-15",
+      "officeCode": "BOS",
+      "months80": 28.5,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2024-06-20",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "HOU",
-      "months80": null,
-      "inquiryDate": "2023-10-29",
-      "publicationDate": "2026-10-15",
+      "officeCode": "BUF",
+      "months80": 17.5,
+      "monthsLowerLegacy": 10,
+      "inquiryDate": "2025-05-13",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
-      "officeCode": "SNA",
-      "months80": null,
-      "inquiryDate": "2024-10-11",
-      "publicationDate": "2026-10-15",
+      "officeCode": "CHA",
+      "months80": 41.5,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2023-05-09",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
-      }
-    },
-    {
-      "form": "I-485",
-      "subtype": "131A-FAM",
-      "officeCode": "LOU",
-      "months80": null,
-      "inquiryDate": "2024-10-03",
-      "publicationDate": "2026-10-15",
-      "isProxyForCaa": true,
-      "source": {
-        "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
-      }
-    },
-    {
-      "form": "I-485",
-      "subtype": "131A-FAM",
-      "officeCode": "LVG",
-      "months80": null,
-      "inquiryDate": "2023-10-31",
-      "publicationDate": "2026-10-15",
-      "isProxyForCaa": true,
-      "source": {
-        "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
-      }
-    },
-    {
-      "form": "I-485",
-      "subtype": "131A-FAM",
-      "officeCode": "NYC",
-      "months80": null,
-      "inquiryDate": "2024-01-13",
-      "publicationDate": "2026-10-15",
-      "isProxyForCaa": true,
-      "source": {
-        "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-485",
       "subtype": "131A-FAM",
       "officeCode": "CHI",
-      "months80": null,
-      "inquiryDate": "2023-06-13",
-      "publicationDate": "2026-10-15",
+      "months80": 40.5,
+      "monthsLowerLegacy": 18.5,
+      "inquiryDate": "2023-06-18",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
-      "form": "I-765",
-      "subtype": "147-C9",
-      "officeCode": "NBC",
-      "months80": null,
-      "inquiryDate": "2025-06-13",
-      "publicationDate": "2026-10-15",
-      "isProxyForCaa": false,
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CHL",
+      "months80": 21.5,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2025-01-04",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CHR",
+      "months80": 37.5,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2023-09-14",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CIN",
+      "months80": 25,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2024-09-28",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CLE",
+      "months80": 30.5,
+      "monthsLowerLegacy": 15.5,
+      "inquiryDate": "2024-04-11",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CLM",
+      "months80": 35.5,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2023-11-20",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "CLT",
+      "months80": 31,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2024-03-23",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "DAL",
+      "months80": 29,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2024-05-30",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "DEN",
+      "months80": 39.5,
+      "monthsLowerLegacy": 22.5,
+      "inquiryDate": "2023-07-13",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "DET",
+      "months80": 34.5,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2023-12-15",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "DSM",
+      "months80": 22.5,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2024-12-18",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "ELP",
+      "months80": 22.5,
+      "monthsLowerLegacy": 12.5,
+      "inquiryDate": "2024-12-12",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "FRE",
+      "months80": 37.5,
+      "monthsLowerLegacy": 16,
+      "inquiryDate": "2023-09-13",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "FSA",
+      "months80": 21,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2025-01-23",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "GRR",
+      "months80": 20.5,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2025-02-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HAR",
+      "months80": 31.5,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2024-03-08",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HEL",
+      "months80": 14.5,
+      "monthsLowerLegacy": 9.5,
+      "inquiryDate": "2025-08-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HHW",
+      "months80": 37.5,
+      "monthsLowerLegacy": 18.5,
+      "inquiryDate": "2023-09-12",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HIA",
+      "months80": 27.5,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2024-07-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HLG",
+      "months80": 23,
+      "monthsLowerLegacy": 11,
+      "inquiryDate": "2024-11-20",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "HOU",
+      "months80": 36,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2023-11-03",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "IMP",
+      "months80": 33,
+      "monthsLowerLegacy": 12.5,
+      "inquiryDate": "2024-01-21",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "INP",
+      "months80": 35,
+      "monthsLowerLegacy": 22,
+      "inquiryDate": "2023-11-27",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "JAC",
+      "months80": 32.5,
+      "monthsLowerLegacy": 17,
+      "inquiryDate": "2024-02-13",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "KAN",
+      "months80": 27,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2024-08-04",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "KND",
+      "months80": 29,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2024-06-02",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LAC",
+      "months80": 38.5,
+      "monthsLowerLegacy": 17.5,
+      "inquiryDate": "2023-08-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LAW",
+      "months80": 39.5,
+      "monthsLowerLegacy": 20.5,
+      "inquiryDate": "2023-07-09",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LNY",
+      "months80": 33,
+      "monthsLowerLegacy": 16.5,
+      "inquiryDate": "2024-01-22",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LOS",
+      "months80": 37,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2023-10-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LOU",
+      "months80": 24.5,
+      "monthsLowerLegacy": 12.5,
+      "inquiryDate": "2024-10-08",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "LVG",
+      "months80": 36,
+      "monthsLowerLegacy": 19,
+      "inquiryDate": "2023-11-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MAN",
+      "months80": 21.5,
+      "monthsLowerLegacy": 13,
+      "inquiryDate": "2025-01-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MEM",
+      "months80": 33,
+      "monthsLowerLegacy": 22.5,
+      "inquiryDate": "2024-02-01",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MGA",
+      "months80": 21.5,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2025-01-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MIA",
+      "months80": 40,
+      "monthsLowerLegacy": 21.5,
+      "inquiryDate": "2023-06-22",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MIL",
+      "months80": 32.5,
+      "monthsLowerLegacy": 15.5,
+      "inquiryDate": "2024-02-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "MTL",
+      "months80": 33.5,
+      "monthsLowerLegacy": 21.5,
+      "inquiryDate": "2024-01-17",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NEW",
+      "months80": 38,
+      "monthsLowerLegacy": 22,
+      "inquiryDate": "2023-09-05",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NJC",
+      "months80": 34.5,
+      "monthsLowerLegacy": 17,
+      "inquiryDate": "2023-12-14",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NOL",
+      "months80": 36.5,
+      "monthsLowerLegacy": 21,
+      "inquiryDate": "2023-10-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NOR",
+      "months80": 41,
+      "monthsLowerLegacy": 19.5,
+      "inquiryDate": "2023-06-04",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NTN",
+      "months80": 23.5,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2024-11-11",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "NYC",
+      "months80": 33.5,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2024-01-18",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OFM",
+      "months80": 29.5,
+      "monthsLowerLegacy": 20,
+      "inquiryDate": "2024-05-16",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OKC",
+      "months80": 39,
+      "monthsLowerLegacy": 20.5,
+      "inquiryDate": "2023-07-31",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OKL",
+      "months80": 39,
+      "monthsLowerLegacy": 22.5,
+      "inquiryDate": "2023-07-24",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "OMA",
+      "months80": 21,
+      "monthsLowerLegacy": 12,
+      "inquiryDate": "2025-01-20",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "ORL",
+      "months80": 33,
+      "monthsLowerLegacy": 18.5,
+      "inquiryDate": "2024-02-02",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "PHI",
+      "months80": 31,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2024-03-29",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "PHO",
+      "months80": 24.5,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2024-10-12",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "PIT",
+      "months80": 27,
+      "monthsLowerLegacy": 14,
+      "inquiryDate": "2024-07-27",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "POM",
+      "months80": 36.5,
+      "monthsLowerLegacy": 22.5,
+      "inquiryDate": "2023-10-13",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "POO",
+      "months80": 37,
+      "monthsLowerLegacy": 16,
+      "inquiryDate": "2023-10-01",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "PRO",
+      "months80": 21,
+      "monthsLowerLegacy": 12.5,
+      "inquiryDate": "2025-01-31",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "QNS",
+      "months80": 40.5,
+      "monthsLowerLegacy": 21,
+      "inquiryDate": "2023-06-10",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "RAL",
+      "months80": 40,
+      "monthsLowerLegacy": 24.5,
+      "inquiryDate": "2023-06-30",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "REN",
+      "months80": 36.5,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2023-10-15",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SAA",
+      "months80": 43.5,
+      "monthsLowerLegacy": 27.5,
+      "inquiryDate": "2023-03-09",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SAC",
+      "months80": 39,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2023-08-02",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SAJ",
+      "months80": 30,
+      "monthsLowerLegacy": 14.5,
+      "inquiryDate": "2024-05-03",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SBD",
+      "months80": 33,
+      "monthsLowerLegacy": 19,
+      "inquiryDate": "2024-01-31",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SEA",
+      "months80": 56.5,
+      "monthsLowerLegacy": 36,
+      "inquiryDate": "2022-02-09",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SFR",
+      "months80": 41.5,
+      "monthsLowerLegacy": 18.5,
+      "inquiryDate": "2023-05-09",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SFV",
+      "months80": 38.5,
+      "monthsLowerLegacy": 13,
+      "inquiryDate": "2023-08-15",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SLC",
+      "months80": 21.5,
+      "monthsLowerLegacy": 15,
+      "inquiryDate": "2025-01-11",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SNA",
+      "months80": 24.5,
+      "monthsLowerLegacy": 13,
+      "inquiryDate": "2024-10-16",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SND",
+      "months80": 31.5,
+      "monthsLowerLegacy": 13,
+      "inquiryDate": "2024-03-20",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SNJ",
+      "months80": 43,
+      "monthsLowerLegacy": 32.5,
+      "inquiryDate": "2023-03-27",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SPM",
+      "months80": 34.5,
+      "monthsLowerLegacy": 16.5,
+      "inquiryDate": "2023-12-19",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "SPO",
+      "months80": 60.5,
+      "monthsLowerLegacy": 22,
+      "inquiryDate": "2021-10-14",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "STA",
+      "months80": 12.5,
+      "monthsLowerLegacy": 8.5,
+      "inquiryDate": "2025-10-06",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "STL",
+      "months80": 25,
+      "monthsLowerLegacy": 12,
+      "inquiryDate": "2024-09-25",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "TAM",
+      "months80": 26.5,
+      "monthsLowerLegacy": 17,
+      "inquiryDate": "2024-08-12",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "TUC",
+      "months80": 13.5,
+      "monthsLowerLegacy": 8.5,
+      "inquiryDate": "2025-09-09",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "WAS",
+      "months80": 24,
+      "monthsLowerLegacy": 18,
+      "inquiryDate": "2024-10-27",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "WIC",
+      "months80": 28.5,
+      "monthsLowerLegacy": 11.5,
+      "inquiryDate": "2024-06-18",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "WPB",
+      "months80": 29,
+      "monthsLowerLegacy": 16.5,
+      "inquiryDate": "2024-05-23",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-485",
+      "subtype": "131A-FAM",
+      "officeCode": "YAK",
+      "months80": 57.5,
+      "monthsLowerLegacy": 21,
+      "inquiryDate": "2022-01-20",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": true,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     },
     {
       "form": "I-765",
       "subtype": "147-C11",
       "officeCode": "NBC",
-      "months80": null,
-      "inquiryDate": "2025-04-26",
-      "publicationDate": "2026-10-15",
+      "months80": 18,
+      "monthsLowerLegacy": 13.5,
+      "inquiryDate": "2025-05-01",
+      "publicationDate": "2026-10-19",
       "isProxyForCaa": false,
       "source": {
         "sourceId": "mirror.jzebedee",
-        "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-        "via": "curated",
-        "period": "2026-10-15",
-        "retrievedAt": "2026-10-20T23:35:05Z",
-        "evidence": "S"
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-765",
+      "subtype": "147-C9",
+      "officeCode": "NBC",
+      "months80": 16.5,
+      "monthsLowerLegacy": 12,
+      "inquiryDate": "2025-06-18",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": false,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
+      }
+    },
+    {
+      "form": "I-765",
+      "subtype": "147-C9",
+      "officeCode": "SCD",
+      "months80": 16,
+      "monthsLowerLegacy": 12.5,
+      "inquiryDate": "2025-06-29",
+      "publicationDate": "2026-10-19",
+      "isProxyForCaa": false,
+      "source": {
+        "sourceId": "mirror.jzebedee",
+        "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+        "via": "mirror.jzebedee",
+        "period": "2026-10-19",
+        "retrievedAt": "2026-10-21T02:53:11Z",
+        "evidence": "F"
       }
     }
   ],
@@ -5826,12 +7211,296 @@
   ],
   "inquiryDateHistory": [
     {
+      "officeCode": "ABQ",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-06-22"
+        }
+      ]
+    },
+    {
+      "officeCode": "AGA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-08-25"
+        }
+      ]
+    },
+    {
+      "officeCode": "ALB",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-08-06"
+        }
+      ]
+    },
+    {
+      "officeCode": "ANC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-05-14"
+        }
+      ]
+    },
+    {
+      "officeCode": "ATL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "officeCode": "BAL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-02-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "BNY",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-28"
+        }
+      ]
+    },
+    {
+      "officeCode": "BOI",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-09-07"
+        }
+      ]
+    },
+    {
+      "officeCode": "BOS",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-06-20"
+        }
+      ]
+    },
+    {
+      "officeCode": "BUF",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-05-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "CHA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-05-09"
+        }
+      ]
+    },
+    {
       "officeCode": "CHI",
       "subtype": "131A-FAM",
       "points": [
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2023-06-13"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-18"
+        }
+      ]
+    },
+    {
+      "officeCode": "CHL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-04"
+        }
+      ]
+    },
+    {
+      "officeCode": "CHR",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-09-14"
+        }
+      ]
+    },
+    {
+      "officeCode": "CIN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-09-28"
+        }
+      ]
+    },
+    {
+      "officeCode": "CLE",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-04-11"
+        }
+      ]
+    },
+    {
+      "officeCode": "CLM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-11-20"
+        }
+      ]
+    },
+    {
+      "officeCode": "CLT",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-03-23"
+        }
+      ]
+    },
+    {
+      "officeCode": "DAL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-05-30"
+        }
+      ]
+    },
+    {
+      "officeCode": "DEN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-07-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "DET",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-12-15"
+        }
+      ]
+    },
+    {
+      "officeCode": "DSM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-12-18"
+        }
+      ]
+    },
+    {
+      "officeCode": "ELP",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-12-12"
+        }
+      ]
+    },
+    {
+      "officeCode": "FRE",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-09-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "FSA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-23"
+        }
+      ]
+    },
+    {
+      "officeCode": "GRR",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-02-10"
+        }
+      ]
+    },
+    {
+      "officeCode": "HAR",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-03-08"
+        }
+      ]
+    },
+    {
+      "officeCode": "HEL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "HHW",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-09-12"
         }
       ]
     },
@@ -5846,6 +7515,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-07-05"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-07-10"
+        }
+      ]
+    },
+    {
+      "officeCode": "HLG",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-11-20"
         }
       ]
     },
@@ -5860,6 +7543,30 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2023-10-29"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-11-03"
+        }
+      ]
+    },
+    {
+      "officeCode": "IMP",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-01-21"
+        }
+      ]
+    },
+    {
+      "officeCode": "INP",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-11-27"
         }
       ]
     },
@@ -5874,6 +7581,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-02-08"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-02-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "KAN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-08-04"
         }
       ]
     },
@@ -5888,6 +7609,50 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-05-28"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-06-02"
+        }
+      ]
+    },
+    {
+      "officeCode": "LAC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-08-10"
+        }
+      ]
+    },
+    {
+      "officeCode": "LAW",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-07-09"
+        }
+      ]
+    },
+    {
+      "officeCode": "LNY",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-01-22"
+        }
+      ]
+    },
+    {
+      "officeCode": "LOS",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-10-05"
         }
       ]
     },
@@ -5898,6 +7663,10 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-10-03"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-10-08"
         }
       ]
     },
@@ -5908,6 +7677,40 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2023-10-31"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-11-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "MAN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "MEM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-02-01"
+        }
+      ]
+    },
+    {
+      "officeCode": "MGA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-10"
         }
       ]
     },
@@ -5922,6 +7725,80 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2023-06-17"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-22"
+        }
+      ]
+    },
+    {
+      "officeCode": "MIL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-02-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "MTL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-01-17"
+        }
+      ]
+    },
+    {
+      "officeCode": "NEW",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-09-05"
+        }
+      ]
+    },
+    {
+      "officeCode": "NJC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-12-14"
+        }
+      ]
+    },
+    {
+      "officeCode": "NOL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-10-10"
+        }
+      ]
+    },
+    {
+      "officeCode": "NOR",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-04"
+        }
+      ]
+    },
+    {
+      "officeCode": "NTN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-11-11"
         }
       ]
     },
@@ -5932,6 +7809,10 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-01-13"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-01-18"
         }
       ]
     },
@@ -5946,6 +7827,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-05-11"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-05-16"
+        }
+      ]
+    },
+    {
+      "officeCode": "OKC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-07-31"
         }
       ]
     },
@@ -5960,6 +7855,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2023-07-19"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-07-24"
+        }
+      ]
+    },
+    {
+      "officeCode": "OMA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-20"
         }
       ]
     },
@@ -5974,6 +7883,180 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-01-28"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-02-02"
+        }
+      ]
+    },
+    {
+      "officeCode": "PHI",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-03-29"
+        }
+      ]
+    },
+    {
+      "officeCode": "PHO",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-10-12"
+        }
+      ]
+    },
+    {
+      "officeCode": "PIT",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-07-27"
+        }
+      ]
+    },
+    {
+      "officeCode": "POM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-10-13"
+        }
+      ]
+    },
+    {
+      "officeCode": "POO",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-10-01"
+        }
+      ]
+    },
+    {
+      "officeCode": "PRO",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-31"
+        }
+      ]
+    },
+    {
+      "officeCode": "QNS",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-10"
+        }
+      ]
+    },
+    {
+      "officeCode": "RAL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-06-30"
+        }
+      ]
+    },
+    {
+      "officeCode": "REN",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-10-15"
+        }
+      ]
+    },
+    {
+      "officeCode": "SAA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-03-09"
+        }
+      ]
+    },
+    {
+      "officeCode": "SAC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-08-02"
+        }
+      ]
+    },
+    {
+      "officeCode": "SAJ",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-05-03"
+        }
+      ]
+    },
+    {
+      "officeCode": "SBD",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-01-31"
+        }
+      ]
+    },
+    {
+      "officeCode": "SEA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2022-02-09"
+        }
+      ]
+    },
+    {
+      "officeCode": "SFR",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-05-09"
+        }
+      ]
+    },
+    {
+      "officeCode": "SFV",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-08-15"
+        }
+      ]
+    },
+    {
+      "officeCode": "SLC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-01-11"
         }
       ]
     },
@@ -5984,6 +8067,70 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-10-11"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-10-16"
+        }
+      ]
+    },
+    {
+      "officeCode": "SND",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-03-20"
+        }
+      ]
+    },
+    {
+      "officeCode": "SNJ",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-03-27"
+        }
+      ]
+    },
+    {
+      "officeCode": "SPM",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2023-12-19"
+        }
+      ]
+    },
+    {
+      "officeCode": "SPO",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2021-10-14"
+        }
+      ]
+    },
+    {
+      "officeCode": "STA",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-10-06"
+        }
+      ]
+    },
+    {
+      "officeCode": "STL",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-09-25"
         }
       ]
     },
@@ -5998,6 +8145,40 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-08-07"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-08-12"
+        }
+      ]
+    },
+    {
+      "officeCode": "TUC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-09-09"
+        }
+      ]
+    },
+    {
+      "officeCode": "WAS",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-10-27"
+        }
+      ]
+    },
+    {
+      "officeCode": "WIC",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-06-18"
         }
       ]
     },
@@ -6012,6 +8193,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2024-05-18"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2024-05-23"
+        }
+      ]
+    },
+    {
+      "officeCode": "YAK",
+      "subtype": "131A-FAM",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2022-01-20"
         }
       ]
     },
@@ -6026,6 +8221,10 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2025-04-26"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-05-01"
         }
       ]
     },
@@ -6040,6 +8239,20 @@
         {
           "publicationDate": "2026-10-15",
           "inquiryDate": "2025-06-13"
+        },
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-06-18"
+        }
+      ]
+    },
+    {
+      "officeCode": "SCD",
+      "subtype": "147-C9",
+      "points": [
+        {
+          "publicationDate": "2026-10-19",
+          "inquiryDate": "2025-06-29"
         }
       ]
     }

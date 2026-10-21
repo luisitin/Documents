@@ -1,0 +1,18 @@
+{
+  "sourceId": "uscis.monthly_csv",
+  "period": "2026-08",
+  "file": "appropriation_requirement_august_2026_v1.0.csv",
+  "url": "https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv",
+  "via": "direct",
+  "status": 200,
+  "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
+  "bytes": 3629,
+  "retrievedAt": "2026-10-21T02:53:11Z",
+  "headers": {
+    "content-type": "text/csv",
+    "content-length": "1519",
+    "etag": "\"e2d-65c8bc028cd88\"",
+    "last-modified": "Mon, 28 Sep 2026 14:19:14 GMT",
+    "date": "Wed, 21 Oct 2026 02:53:13 GMT"
+  }
+}

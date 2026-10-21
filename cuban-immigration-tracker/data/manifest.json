@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
   "minAppVersion": "0.1.0",
-  "dataChangedAt": "2026-10-20T23:35:05Z",
-  "lastCheckedAt": "2026-10-20T23:35:05Z",
+  "dataChangedAt": "2026-10-21T02:53:11Z",
+  "lastCheckedAt": "2026-10-21T02:53:11Z",
   "generatedBy": {
-    "runId": "local-20261020t233505z",
+    "runId": "39535458333",
     "ref": "claude/cuban-immigration-tracker-b6y4b1",
-    "sha": "e2514488ed8381c44567ca322cbb7322dabc9688"
+    "sha": "ae468726a50dcc9af4eefc93c7bb68bfb50f525f"
   },
   "latestOfficialMonth": "2026-08",
   "latestOfficialQuarter": {
     "fy": 2026,
     "q": 3
   },
-  "latestProcessingTimesPublication": "2026-10-15",
+  "latestProcessingTimesPublication": "2026-10-19",
   "files": {
     "national": {
       "path": "national.json",
-      "sha256": "2beb2c687e66d9b8854a5f9822264c9bb0e4ea51edb864b994a2553db2f7077a",
-      "bytes": 29351
+      "sha256": "6d38f2299e30434a5a498b24936a191de1f30b88d923ea127b8a7252154ef1a2",
+      "bytes": 29327
     },
     "quarterly": {
       "path": "quarterly.json",
@@ -27,8 +27,8 @@
     },
     "offices": {
       "path": "offices.json",
-      "sha256": "eb7da815c953c12ad380979b61d2202d5d128e622082833abd02a3b8a9832676",
-      "bytes": 161773
+      "sha256": "c2e660f58882230613f0e8bf8597b6b36cc202ceda0ab02cdcc27437df370fc6",
+      "bytes": 220972
     },
     "policy": {
       "path": "policy.json",
@@ -55,42 +55,44 @@
     {
       "id": "uscis.portal_index",
       "url": "https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data",
-      "status": "network_error",
-      "note": "TypeError: fetch failed: ENOTFOUND"
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
+      "note": "25 document links"
     },
     {
       "id": "uscis.monthly_csv",
-      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
-      "status": "fallback_used",
-      "lastSuccessAt": "2026-10-20T23:35:05Z",
+      "url": "https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv",
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
       "publishedPeriod": "2026-08",
       "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
-      "note": "USCIS direct: network_error (host unreachable from this run); new: 2024-07 … 2026-08 (25 months); 2026-09 not published yet; not found at USCIS or the mirror: 2024-08"
+      "note": "USCIS direct: not_yet 404; no new month; 2026-09 not published yet"
     },
     {
       "id": "uscis.quarterly_all_forms",
-      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/quarterly_all_forms_fy2026_q3_v1.xlsx",
-      "status": "fallback_used",
-      "lastSuccessAt": "2026-10-20T23:35:05Z",
+      "url": "https://www.uscis.gov/sites/default/files/document/data/quarterly_all_forms_fy2026_q3_v1.xlsx",
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
       "publishedPeriod": "FY2026 Q3",
       "sha256": "7e9b8fb9e89ee2f4b5815b09ed26a893101af68a15486675d8589c70a2bc5148",
-      "note": "USCIS direct: network_error (host unreachable from this run); new: FY2026 Q1, FY2026 Q2, FY2026 Q3"
+      "note": "USCIS direct: not_yet 404; no new quarter"
     },
     {
       "id": "uscis.i485_by_office",
-      "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/i485_performance_data_fy2026_q3_v1.xlsx",
-      "status": "fallback_used",
-      "lastSuccessAt": "2026-10-20T23:35:05Z",
+      "url": "https://www.uscis.gov/sites/default/files/document/data/i485_performance_data_fy2026_q3_v1.xlsx",
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
       "publishedPeriod": "FY2026 Q3",
       "sha256": "54db6464ba925bc5788cc05655be0b5a54c3f783afd9925d42f8c45a845c1784",
-      "note": "USCIS direct: network_error (host unreachable from this run); 97 offices; service centers without a state in the file, not listed: NBC, YSC"
+      "note": "USCIS direct: not_yet 404; 97 offices; service centers without a state in the file, not listed: NBC, YSC"
     },
     {
       "id": "mirror.jzebedee",
-      "url": "https://github.com/jzebedee/uscis/releases/tag/2026-10-15",
-      "status": "fallback_used",
-      "publishedPeriod": "2026-10-15",
-      "note": "GitHub release API http_error 401; SEEDED from the research transcription of the 2026-10-15 release diff (docs/research/04-uscis-data-sources.md §2.4), not a fresh download; months80 unknown"
+      "url": "https://github.com/jzebedee/uscis/releases/download/2026-10-20/2026-10-20.db",
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
+      "publishedPeriod": "2026-10-20",
+      "note": "93 records; derived fields only, DB not stored (no LICENSE upstream)"
     },
     {
       "id": "uscis.historic_pt",
@@ -103,20 +105,22 @@
       "id": "curated",
       "url": "https://github.com/luisitin/Documents/tree/main/cuban-immigration-tracker/data/curated",
       "status": "ok",
-      "lastSuccessAt": "2026-10-20T23:35:05Z",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
       "note": "policy curated-2026-10-20.1 reviewed 2026-10-20; 12 alerts"
     },
     {
       "id": "fr.api",
       "url": "https://www.federalregister.gov/api/v1/documents.json?conditions%5Bterm%5D=%28Cuban+OR+Cubans+OR+%22Cuban+Adjustment+Act%22+OR+parole+OR+parolees+OR+CHNV%29&conditions%5Bagencies%5D%5B%5D=homeland-security-department&conditions%5Bagencies%5D%5B%5D=u-s-citizenship-and-immigration-services&conditions%5Bagencies%5D%5B%5D=u-s-customs-and-border-protection&conditions%5Bpublication_date%5D%5Bgte%5D=2025-01-01&order=newest&per_page=100&fields%5B%5D=document_number&fields%5B%5D=title&fields%5B%5D=type&fields%5B%5D=publication_date&fields%5B%5D=agencies&fields%5B%5D=html_url&fields%5B%5D=pdf_url&fields%5B%5D=abstract",
-      "status": "network_error",
-      "note": "skipped"
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
+      "note": "0 documents since 2025-01-01 (1 page)"
     },
     {
       "id": "uscis.rss",
       "url": "https://www.uscis.gov/news/rss-feed/22984",
-      "status": "network_error",
-      "note": "skipped"
+      "status": "ok",
+      "lastSuccessAt": "2026-10-21T02:53:11Z",
+      "note": "2/2 feeds, 22 matching items"
     },
     {
       "id": "courtlistener.v4",
@@ -127,7 +131,7 @@
   ],
   "qa": {
     "status": "ok",
-    "lastGoodRunId": "local-20261020t233505z",
+    "lastGoodRunId": "39535458333",
     "notes": []
   },
   "canary": {

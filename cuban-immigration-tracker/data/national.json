@@ -442,10 +442,10 @@
       "avgMonths": 20.6,
       "source": {
         "sourceId": "uscis.monthly_csv",
-        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
-        "via": "mirror.visualizer",
+        "url": "https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv",
+        "via": "direct",
         "period": "2026-08",
-        "retrievedAt": "2026-10-20T23:35:05Z",
+        "retrievedAt": "2026-10-21T02:53:11Z",
         "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
         "evidence": "F"
       }
@@ -871,10 +871,10 @@
       "avgMonths": 6.8,
       "source": {
         "sourceId": "uscis.monthly_csv",
-        "url": "https://raw.githubusercontent.com/omairqazi29/visualizer/master/data/USCIS_I485/monthly_august_2026.csv",
-        "via": "mirror.visualizer",
+        "url": "https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv",
+        "via": "direct",
         "period": "2026-08",
-        "retrievedAt": "2026-10-20T23:35:05Z",
+        "retrievedAt": "2026-10-21T02:53:11Z",
         "sha256": "74aa7bce317fa19860b5ee59a29da0b432d5a2556ea13594fc0d4cfae7c96d8c",
         "evidence": "F"
       }
