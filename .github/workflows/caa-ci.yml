@@ -85,7 +85,56 @@ jobs:
       - run: npx tsc --noEmit
       - run: npx jest --ci
 
-  # >>> WP10 web block (owned by WP10; empty in the WP0 skeleton). 03 §6.3 "web" job:
-  # needs: app; root `npm ci` + `cd app && npm ci`; `npm run build:artifact`; `npm run prove`;
-  # assert one zod copy; upload web-artifact/ and prove-out/ as a workflow artifact.
+  # >>> WP10 web block (owned by WP10; 03 §6.3 "web" job; 07 WP10, §9).
+  # Builds the Claude artifact fragment from the Expo web export and proves it (P1–P14, sample and
+  # live variants) in headless Chromium under the host CSP. Never commits (workflow contents: read).
+  web:
+    needs: app
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22.13"
+          cache: npm
+          cache-dependency-path: |
+            cuban-immigration-tracker/package-lock.json
+            cuban-immigration-tracker/app/package-lock.json
+      # Root: puppeteer-core + @sparticuz/chromium (ADR WEB-2), tsx and zod (data validation,
+      # createFmt expectations). App: the Expo export.
+      - run: npm ci
+      - run: npm ci
+        working-directory: cuban-immigration-tracker/app
+      - name: Build-script self-test (routes, escaping, prelude, fragment shape)
+        run: node scripts/build-artifact.mjs --self-test
+      # The script generates the route list, runs `npx expo export --platform web` (CI is set, so it
+      # runs online), inlines JS/CSS/assets into the fragment, copies and validates data/, and
+      # asserts that the bundle holds exactly one zod copy (from app/node_modules; 07 §4).
+      - name: Build the artifact (npm run build:artifact)
+        run: npm run build:artifact -- --check-single-zod
+      - name: Prove (sample + live variants)
+        run: npm run prove
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### CAA Tracker web artifact"
+            if [ -f web-artifact/.build/summary.json ]; then echo '```json'; cat web-artifact/.build/summary.json; echo '```'; fi
+            if [ -f prove-out/report.json ]; then
+              node -e 'const r=require("./prove-out/report.json");console.log(`Prove: **${r.passed} passed, ${r.failed} failed** (${r.browser})`);for(const f of r.results.filter(x=>!x.ok))console.log(`- FAIL ${f.id} ${f.name}`)'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: caa-web-artifact
+          path: |
+            cuban-immigration-tracker/web-artifact/
+            cuban-immigration-tracker/prove-out/
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
   # <<< WP10 web block
