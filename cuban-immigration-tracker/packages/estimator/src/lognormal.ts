@@ -45,3 +45,14 @@ export function conditionalLognormalSurvival(s: number, median: number, sigma: n
   out[0] = 1;
   return out;
 }
+
+/**
+ * A lognormal clock that starts `delta` > 0 months after today (a pending RFE/NOID due date in the
+ * lognormal modes; milestones.ts): S(t) = 1 for t ≤ zeroUntil (= monthsCeil of the due date, EST-10),
+ * then 1 − F(t − delta), t = 0..horizon.
+ */
+export function delayedLognormalSurvival(delta: number, zeroUntil: number, median: number, sigma: number, horizon: number): number[] {
+  const out: number[] = [];
+  for (let t = 0; t <= horizon; t++) out.push(t <= zeroUntil ? 1 : lognormalSurvival(t - delta, median, sigma));
+  return out;
+}

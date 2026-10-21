@@ -11,7 +11,7 @@
  * The by-office workbook is taken ONLY from here when direct (its stem changed 4×, 03 P3).
  */
 import type { FiscalQuarter, YearMonth } from '@caa/data-schemas';
-import { monthNumber } from '../util';
+import { monthNumber, safeDecodeURIComponent } from '../util';
 
 export type PortalLinkKind = 'monthly_csv' | 'quarterly_all_forms' | 'i485_by_office' | 'i765_category' | 'other';
 
@@ -48,7 +48,7 @@ function monthOf(name: string): YearMonth | undefined {
 
 /** Classifies one file path (exported for tests). */
 export function classifyPortalHref(href: string): PortalLinkKind {
-  const name = decodeURIComponent(href.split(/[?#]/)[0]!.split('/').pop() ?? '');
+  const name = safeDecodeURIComponent(href.split(/[?#]/)[0]!.split('/').pop() ?? '');
   if (/appropriation_requirement/i.test(name) && /\.csv$/i.test(name)) return 'monthly_csv';
   if (/quarterly_all_forms/i.test(name) && /\.xlsx$/i.test(name)) return 'quarterly_all_forms';
   if (/i-?485_?performance/i.test(name) && /\.xlsx$/i.test(name)) return 'i485_by_office';
@@ -66,7 +66,7 @@ export function parsePortalIndex(html: string): PortalLink[] {
     if (!abs || !/\/sites\/default\/files\/document\//i.test(abs) || seen.has(abs)) continue;
     seen.add(abs);
     const text = m[3]!.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
-    const name = decodeURIComponent(abs.split(/[?#]/)[0]!.split('/').pop() ?? '');
+    const name = safeDecodeURIComponent(abs.split(/[?#]/)[0]!.split('/').pop() ?? '');
     const kind = classifyPortalHref(abs);
     const link: PortalLink = { href: abs, text, kind };
     if (kind === 'monthly_csv') { const ym = monthOf(name); if (ym) link.ym = ym; }

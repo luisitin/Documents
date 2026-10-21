@@ -16,7 +16,7 @@ export function IneligibleScreen() {
   const reason = est.flags?.noEstimateReason;
   const shown = reason === 'ewi' || reason === 'conditional_parole_236' ? reason : 'i220a';
   return (
-    <CaseFrame title={t('case:ineligible.title')} testID="screen-case-ineligible" back>
+    <CaseFrame title={t('case:ineligible.title')} testID="screen-case-ineligible" back discreet>
       <ExampleBanner />
       <IneligibleContent reason={shown} />
     </CaseFrame>

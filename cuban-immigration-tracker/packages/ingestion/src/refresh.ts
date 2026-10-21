@@ -29,7 +29,7 @@ import { DATA_FILE_NAMES } from '@caa/data-schemas';
 import type { Classification } from './classify';
 import { decideCommit, type CommitDecision } from './commitPolicy';
 import {
-  DOCKETS, FIRST_MODEL_MONTH, JZEBEDEE_LATEST_RELEASE, JZEBEDEE_RELEASES, MONTHLY_BACKFILL_FROM, OFFICE_QUARTERS_KEPT, PORTAL_INDEX_URL,
+  CANDIDATE_WINDOW_FLOOR, CANDIDATE_WINDOW_OVERLAP_DAYS, DOCKETS, FR_MAX_PAGES, FIRST_MODEL_MONTH, JZEBEDEE_LATEST_RELEASE, JZEBEDEE_RELEASES, MONTHLY_BACKFILL_FROM, OFFICE_QUARTERS_KEPT, PORTAL_INDEX_URL,
   QUARTERLY_BACKFILL_FROM, RSS_FEEDS, allFormsUrls, byOfficeUrls, monthlyCsvDirectUrls, monthlyCsvMirrorUrl,
 } from './constants';
 import { FIXTURES_DIR, runGoldenFixtures } from './fixtures';
@@ -46,7 +46,7 @@ import {
 } from './publish';
 import { authHeaders, clCandidates, docketEntriesUrl, MAX_REQUESTS_PER_RUN } from './sources/courtListener';
 import { loadCurated } from './sources/curated';
-import { frCandidates, frSearchUrl, parseFrSearch } from './sources/federalRegister';
+import { frCandidates, frSearchUrl, parseFrSearchPage } from './sources/federalRegister';
 import { parseByOffice, type ByOfficeResult } from './sources/i485ByOffice';
 import { parseMonthlyCsv } from './sources/monthlyCsv';
 import { findMonthLink, findQuarterLink, parsePortalIndex, type PortalLink } from './sources/portalIndex';
@@ -169,11 +169,23 @@ async function validatorsFor(ctx: Ctx, sourceId: SourceId, period: string): Prom
 async function loadPortal(ctx: Ctx): Promise<SourceStatus> {
   const r = await ctx.client.fetch({ url: PORTAL_INDEX_URL, accept: 'text/html,application/xhtml+xml' });
   if (r.classification === 'ok') {
-    ctx.portal = parsePortalIndex(bodyText(r));
+    try {
+      ctx.portal = parsePortalIndex(bodyText(r));
+    } catch (e) {
+      // A parser error on the external page must not abort the run (03 §1 principle 2): continue without it.
+      ctx.portal = [];
+      return { id: 'uscis.portal_index', url: PORTAL_INDEX_URL, status: 'schema_mismatch', note: `index not parseable: ${(e as Error).message}`.slice(0, 200) };
+    }
     return { id: 'uscis.portal_index', url: PORTAL_INDEX_URL, status: 'ok', lastSuccessAt: ctx.nowIso, note: `${ctx.portal.length} document links` };
   }
   ctx.portal = [];
   return { id: 'uscis.portal_index', url: PORTAL_INDEX_URL, status: r.classification as SourceStatus['status'], note: `${r.status ?? ''} ${r.error ?? ''}`.trim().slice(0, 200) || undefined };
+}
+
+/** sha256 of the mirror's CURRENT copy (fetched now), or undefined when it cannot be fetched (Q8 skipped). */
+async function liveMirrorSha(ctx: Ctx, url: string): Promise<string | undefined> {
+  const mr = await ctx.client.fetch({ url, predicted: true, accept: '*/*' });
+  return mr.classification === 'ok' && mr.body ? sha256Hex(mr.body) : undefined;
 }
 
 const prevStatus = (prev: PreviousSnapshot, id: SourceId) => prev.manifest?.sources.find((s) => s.id === id);
@@ -209,15 +221,11 @@ async function ingestMonthly(ctx: Ctx, prev: PreviousSnapshot): Promise<{ nation
     allAttempts.push(...r.attempts);
     if (r.notModified) { anyNotModified = true; continue; }
     if (!r.file) { if (!latest || m <= latest) missing.push(m); continue; }
-    // Q8 (fail = possible tampering): a month fetched directly is compared with the mirror copy — the
-    // published mirror-sourced row's sha when there is one, else the mirror file when it has the month.
+    // Q8 (fail = possible tampering): a month fetched directly is compared with the mirror copy fetched
+    // in this same run (03 §4 "when both were fetched"); no mirror copy → Q8 is skipped. A difference
+    // from the PUBLISHED row (e.g. a USCIS revision) is not Q8's business: it goes through Q3 (warn).
     if (r.file.via === 'direct') {
-      const pub = rows.find((x) => x.ym === m);
-      let mirrorSha = pub?.source.via === 'mirror.visualizer' ? pub.source.sha256 : undefined;
-      if (!pub) {
-        const mr = await ctx.client.fetch({ url: monthlyCsvMirrorUrl(m), predicted: true });
-        if (mr.classification === 'ok' && mr.body) mirrorSha = sha256Hex(mr.body);
-      }
+      const mirrorSha = await liveMirrorSha(ctx, monthlyCsvMirrorUrl(m));
       const q8 = q8MirrorSha('uscis.monthly_csv', sha256Hex(r.file.bytes), mirrorSha);
       if (mirrorSha) ctx.qa.push(q8);
       if (q8.level === 'fail') { quarantineAttempt(ctx, 'uscis.monthly_csv', m, r.file); continue; }
@@ -309,12 +317,7 @@ async function ingestAllForms(ctx: Ctx, prev: PreviousSnapshot): Promise<{ rows:
     const period = quarterKey(q).replace(' ', '-');
     const isNew = !rows.some((x) => x.form === 'I-485 (Cuban)' && sameQuarter(x.quarter, q));
     if (r.file.via === 'direct') {
-      const pub = rows.find((x) => x.form === 'I-485 (Cuban)' && sameQuarter(x.quarter, q));
-      let mirrorSha = pub?.source.via === 'mirror.visualizer' ? pub.source.sha256 : undefined;
-      if (!pub) {
-        const mr = await ctx.client.fetch({ url: u.mirror[0]!, predicted: true });
-        if (mr.classification === 'ok' && mr.body) mirrorSha = sha256Hex(mr.body);
-      }
+      const mirrorSha = await liveMirrorSha(ctx, u.mirror[0]!);
       const q8 = q8MirrorSha('uscis.quarterly_all_forms', sha256Hex(r.file.bytes), mirrorSha);
       if (mirrorSha) ctx.qa.push(q8);
       if (q8.level === 'fail') { quarantineAttempt(ctx, 'uscis.quarterly_all_forms', period, r.file); continue; }
@@ -421,7 +424,10 @@ async function ingestProcessingTimes(ctx: Ctx, prev: PreviousSnapshot): Promise<
   if (rel.classification !== 'ok') return keep(rel.classification as SourceStatus['status'], `GitHub release API ${rel.classification}${rel.status ? ` ${rel.status}` : ''}`);
   const asset = pickReleaseAsset(bodyJson(rel));
   if (!asset) return keep('schema_mismatch', 'latest release has no .db asset');
-  if (p?.publishedPeriod === asset.tag && prevRecords.length) {
+  // Shortcut only when the published records really came from this release: the research SEED
+  // (status fallback_used, via 'curated') carries the same tag but must still be replaced by a download.
+  const fromRelease = p?.status !== 'fallback_used' && prevRecords.every((x) => x.source.via === 'mirror.jzebedee');
+  if (p?.publishedPeriod === asset.tag && prevRecords.length && fromRelease) {
     return { records: prevRecords, history: prevHistory, status: { id: 'mirror.jzebedee', url: asset.url, status: 'not_modified', lastSuccessAt: ctx.nowIso, publishedPeriod: asset.tag, note: 'release unchanged' } };
   }
   const db = await ctx.client.fetch({ url: asset.url, accept: 'application/octet-stream', maxBytes: 512 * 1024 * 1024 });
@@ -448,19 +454,36 @@ async function ingestProcessingTimes(ctx: Ctx, prev: PreviousSnapshot): Promise<
 
 // ── P7–P9 candidates ────────────────────────────────────────────────────────────────────────
 
+/** Window start for a candidate source: its own last success minus the overlap, never before the floor. */
+export function candidateWindowStart(lastSuccessAt: string | undefined): ISODate {
+  if (!lastSuccessAt) return CANDIDATE_WINDOW_FLOOR;
+  const t = Date.parse(lastSuccessAt);
+  if (Number.isNaN(t)) return CANDIDATE_WINDOW_FLOOR;
+  const d = new Date(t - CANDIDATE_WINDOW_OVERLAP_DAYS * 86_400_000).toISOString().slice(0, 10);
+  return d < CANDIDATE_WINDOW_FLOOR ? CANDIDATE_WINDOW_FLOOR : d;
+}
+
 async function ingestCandidates(ctx: Ctx, prev: PreviousSnapshot, run: (k: SourceKey) => boolean): Promise<SourceStatus[]> {
   const out: SourceStatus[] = [];
-  const since = (prev.manifest?.lastCheckedAt ?? '2025-01-01T00:00:00Z').slice(0, 10);
+  const keptSuccess = (id: SourceId) => { const t = prevStatus(prev, id)?.lastSuccessAt; return t ? { lastSuccessAt: t } : {}; };
   if (run('fr.api')) {
+    const since = candidateWindowStart(prevStatus(prev, 'fr.api')?.lastSuccessAt);
     const url = frSearchUrl(since);
-    const r = await ctx.client.fetch({ url, accept: 'application/json' });
-    if (r.classification === 'ok') {
+    let next: string | null = url;
+    let pages = 0; let found = 0; let fail: { status: SourceStatus['status']; note: string } | null = null;
+    while (next && pages < FR_MAX_PAGES) {
+      const r = await ctx.client.fetch({ url: next, accept: 'application/json' });
+      if (r.classification !== 'ok') { fail = { status: r.classification as SourceStatus['status'], note: pages ? `page ${pages + 1} failed` : 'skipped' }; break; }
       try {
-        const c = frCandidates(parseFrSearch(bodyJson(r)), ctx.nowIso);
+        const page = parseFrSearchPage(bodyJson(r));
+        const c = frCandidates(page.docs, ctx.nowIso);
         ctx.candidates.push(...c);
-        out.push({ id: 'fr.api', url, status: 'ok', lastSuccessAt: ctx.nowIso, note: `${c.length} documents since ${since}` });
-      } catch (e) { out.push({ id: 'fr.api', url, status: 'schema_mismatch', note: (e as Error).message.slice(0, 200) }); }
-    } else out.push({ id: 'fr.api', url, status: r.classification as SourceStatus['status'], ...(prevStatus(prev, 'fr.api')?.lastSuccessAt ? { lastSuccessAt: prevStatus(prev, 'fr.api')!.lastSuccessAt! } : {}), note: 'skipped' });
+        found += c.length; pages++; next = page.next;
+      } catch (e) { fail = { status: 'schema_mismatch', note: (e as Error).message.slice(0, 200) }; break; }
+    }
+    // The window only moves forward when every page was read (a failure keeps the previous success).
+    if (fail) out.push({ id: 'fr.api', url, status: fail.status, ...keptSuccess('fr.api'), note: found ? `${fail.note}; ${found} documents kept from ${pages} page(s)` : fail.note });
+    else out.push({ id: 'fr.api', url, status: 'ok', lastSuccessAt: ctx.nowIso, note: `${found} documents since ${since} (${pages} page${pages === 1 ? '' : 's'}${next ? `, stopped at the ${FR_MAX_PAGES}-page cap` : ''})` });
   } else { const s = prevStatus(prev, 'fr.api'); if (s) out.push(s); }
 
   if (run('uscis.rss')) {
@@ -475,15 +498,17 @@ async function ingestCandidates(ctx: Ctx, prev: PreviousSnapshot, run: (k: Sourc
 
   if (run('courtlistener.v4')) {
     const token = ctx.env.COURTLISTENER_TOKEN;
-    if (!token) out.push({ id: 'courtlistener.v4', url: 'https://www.courtlistener.com/api/rest/v4/', status: 'skipped_no_secret', note: 'COURTLISTENER_TOKEN not set' });
+    if (!token) out.push({ id: 'courtlistener.v4', url: 'https://www.courtlistener.com/api/rest/v4/', status: 'skipped_no_secret', ...keptSuccess('courtlistener.v4'), note: 'COURTLISTENER_TOKEN not set' });
     else {
+      const since = candidateWindowStart(prevStatus(prev, 'courtlistener.v4')?.lastSuccessAt);
       let ok = 0; let fail: SourceStatus['status'] | null = null;
       for (const d of DOCKETS.slice(0, MAX_REQUESTS_PER_RUN)) {
         const r = await ctx.client.fetch({ url: docketEntriesUrl(d.id), accept: 'application/json', headers: authHeaders(token) });
         if (r.classification !== 'ok') { fail ??= r.classification as SourceStatus['status']; continue; }
         try { ctx.candidates.push(...clCandidates(bodyJson(r), d, since, ctx.nowIso)); ok++; } catch { fail ??= 'schema_mismatch'; }
       }
-      out.push({ id: 'courtlistener.v4', url: 'https://www.courtlistener.com/api/rest/v4/docket-entries/', status: ok ? 'ok' : fail ?? 'network_error', ...(ok ? { lastSuccessAt: ctx.nowIso } : {}), note: `${ok}/${Math.min(DOCKETS.length, MAX_REQUESTS_PER_RUN)} dockets` });
+      // lastSuccessAt (= the next window start) only advances when every docket was read.
+      out.push({ id: 'courtlistener.v4', url: 'https://www.courtlistener.com/api/rest/v4/docket-entries/', status: ok ? 'ok' : fail ?? 'network_error', ...(ok && !fail ? { lastSuccessAt: ctx.nowIso } : keptSuccess('courtlistener.v4')), note: `${ok}/${Math.min(DOCKETS.length, MAX_REQUESTS_PER_RUN)} dockets since ${since}` });
     }
   } else { const s = prevStatus(prev, 'courtlistener.v4'); if (s) out.push(s); }
   return out;

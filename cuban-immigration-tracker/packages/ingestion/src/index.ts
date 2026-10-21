@@ -18,7 +18,7 @@ export {
   readProcessingTimes, pickReleaseAsset, updateInquiryHistory, seedProcessingTimes, toMonths, loadSqlJs, INQUIRY_SEED_2024_10_18, RELEASE_2026_10_15_SEED,
   type ProcessingTimesResult,
 } from './sources/processingTimes';
-export { frSearchUrl, parseFrSearch, frCandidates } from './sources/federalRegister';
+export { frSearchUrl, parseFrSearch, parseFrSearchPage, frCandidates } from './sources/federalRegister';
 export { parseRss, rssMatches, rssCandidates, type RssItem } from './sources/uscisRss';
 export { clCandidates, docketEntriesUrl, MAX_REQUESTS_PER_RUN } from './sources/courtListener';
 export { loadCurated, sortAlerts, type CuratedInputs } from './sources/curated';

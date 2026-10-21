@@ -59,7 +59,7 @@ export function PeersScreen() {
   const est = useEstimate(subject.estimateId);
   const ineligible = est.flags !== null && est.flags.noEstimateReason !== null && est.flags.noEstimateReason !== 'decided';
   return (
-    <CaseFrame title={t('peers:title')} testID="screen-case-peers" back>
+    <CaseFrame title={t('peers:title')} testID="screen-case-peers" back discreet>
       {subject.timeline ? (
         <>
           <ExampleBanner />

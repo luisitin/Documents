@@ -25,8 +25,8 @@ import { stateCandidates, stateMixtureDetailed } from './stateMix';
 import { driverShares } from './drivers';
 import { structuralBand } from './structural';
 import { calendarDates, pByDate, quantile } from './quantiles';
-import { decideMode, interviewTransform, milestoneMultiplier } from './milestones';
-import { conditionalLognormalSurvival } from './lognormal';
+import { decideMode, effectiveMilestones, interviewTransform, lognormalClock, milestoneMultiplier, rfeNoidEvents } from './milestones';
+import { conditionalLognormalSurvival, delayedLognormalSurvival } from './lognormal';
 import { orderedScenarios, scenarioWeights } from './weights';
 import { WEAK_OFFICE_N, yardstickRecord } from './office';
 import { computeGuards, confidenceLevel } from './guards';
@@ -71,8 +71,10 @@ export function estimate(input: EstimateInput): EstimateResult {
     completionsLastMonth: last.approved + last.denied, beta,
   };
 
-  // 5. office
-  const multOf = (code: string) => params.officeMultipliers.find((m) => m.code === code);
+  // 5. office. m̂_o is applied only to offices in params.officeGroup (the cubanFocus offices r_G is
+  // measured on): elsewhere the humanitarian columns are mostly refugee/asylee adjustments and m̂_o
+  // does not measure Cuban I-485 throughput, so those offices get m = 1 and `weak` (review round 1).
+  const multOf = (code: string) => (params.officeGroup.includes(code) ? params.officeMultipliers.find((m) => m.code === code) : undefined);
   let mOffice = 1;
   let office: EstimateOk['office'] = { basis: 'national' };
   let groups: { code: string; pending: number; multiplier: number }[] | null = null;
@@ -115,23 +117,34 @@ export function estimate(input: EstimateInput): EstimateResult {
     survival: S,
   });
 
-  // post-interview / post-expedite: conditioned lognormal clock (§4), no grid
+  const mm = milestoneMultiplier(c, today, params, input.policy);
+  const lnClock = lognormalClock(decision.start ?? today, rfeNoidEvents(effectiveMilestones(c.milestones, today), today, input.policy));
+
+  // post-interview / post-expedite: conditioned lognormal clock (§4), no grid. A pending RFE/NOID
+  // holds S at 1 until its due date and the clock starts there; a later response restarts it.
   if (mode === 'post_interview' || mode === 'post_expedite') {
     const ln = mode === 'post_interview' ? params.milestone.postInterview : params.milestone.expediteGranted;
-    const s = daysBetween(decision.start ?? today, today) / DAYS_PER_MONTH;
-    const S = conditionalLognormalSurvival(s, ln.medianMonths, ln.sigma, horizon);
+    let S: number[];
+    if (lnClock.pendingDue !== null) {
+      const days = daysBetween(today, lnClock.pendingDue);
+      S = delayedLognormalSurvival(days / DAYS_PER_MONTH, monthsCeil(days), ln.medianMonths, ln.sigma, horizon);
+    } else {
+      S = conditionalLognormalSurvival(daysBetween(lnClock.clockStart, today) / DAYS_PER_MONTH, ln.medianMonths, ln.sigma, horizon);
+    }
     const p12 = 1 - S[12]!;
+    // TODO(EST-13): the bands collapse to P12 here because golden T28/T29 pin [p12, p12]; a real
+    // low-confidence band needs an owner-approved 04 §9 edit + oracle change (review round 1).
     return {
       ...head, ...readout(S), policyBand12: [p12, p12], structuralBand12: [p12, p12], perScenario: [],
       drivers: { scenario: 0, beta: 0, office: 0 }, queue, office: groups ? { basis: 'national', state: c.state } : office, yardstick,
-      delays: {}, confidence, validated, guards, weightTrace: sw.trace,
+      delays: mm.delays, confidence, validated, guards, weightTrace: sw.trace,
     };
   }
 
   // 5–6. grid, conditioning, mixture
-  const mm = milestoneMultiplier(c, today, params, input.policy);
+  const tStart = lnClock.pendingDue !== null ? monthsCeil(daysBetween(today, lnClock.pendingDue)) : undefined;
   const transform = mode === 'interview_scheduled' && decision.start !== undefined
-    ? interviewTransform(monthsCeil(daysBetween(today, decision.start)), params.milestone.postInterview.medianMonths, params.milestone.postInterview.sigma)
+    ? interviewTransform(monthsCeil(daysBetween(today, decision.start)), params.milestone.postInterview.medianMonths, params.milestone.postInterview.sigma, tStart)
     : null;
   const ratioCache = new Map<string, Float64Array>();
   const ratios = (sid: ScenarioId, bm: number): Float64Array => {

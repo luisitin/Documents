@@ -46,9 +46,15 @@ const TERMS: { label: string; re: RegExp }[] = [
 ];
 
 export function parseFrSearch(json: unknown): FrDoc[] {
+  return parseFrSearchPage(json).docs;
+}
+
+/** One result page plus the next page's URL (only when it is on the FR API itself; else null). */
+export function parseFrSearchPage(json: unknown): { docs: FrDoc[]; next: string | null } {
   const r = FrSearchSchema.safeParse(json);
   if (!r.success) throw new SourceError(`Federal Register response: ${r.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`).slice(0, 3).join('; ')}`);
-  return r.data.results;
+  const n = r.data.next_page_url;
+  return { docs: r.data.results, next: n && n.startsWith(`${FR_DOCUMENTS}?`) ? n : null };
 }
 
 /** FR documents → candidates keyed `fr:<document_number>`, with the matched terms. */

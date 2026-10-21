@@ -11,11 +11,17 @@
 #   changes. The orchestrator touches that file once, after the build, so bot data commits never race
 #   agent pushes. That run COMMITS: GitHub's runners have open internet, so it fetches the real
 #   USCIS / Federal Register / CourtListener data that the build sandbox cannot reach.
-# Least privilege: nothing at workflow level; contents: write on the refresh job only (default
-# GITHUB_TOKEN, no PAT); issues: write on the separate notify job. The bot commits ONLY under
-# cuban-immigration-tracker/data/ and never data/curated (human-reviewed inputs), with `git pull --rebase`
-# before `git push`. `[skip ci]` keeps CI off bot commits; the push path filter cannot match the files the
-# bot writes, so there is no loop.
+# Least privilege (05 §3.1; review round 1): nothing at workflow level. The work is split in two jobs:
+# - `refresh` (contents: read) runs npm ci, tsx and the parsers (exceljs, sql.js, fast-xml-parser,
+#   csv-parse) over files downloaded from the internet. It holds NO write token: checkout uses
+#   persist-credentials: false and the ingest step gets no GITHUB_TOKEN (its only use, the public
+#   jzebedee latest-release lookup in refresh.ts, works unauthenticated within the 60/h limit). It uploads
+#   data/ (minus data/curated and .refresh-request) as a short-lived workflow artifact.
+# - `commit` (contents: write, default GITHUB_TOKEN, no PAT) runs NO npm code: it checks out the same
+#   commit, mirrors the artifact into data/, and commits ONLY under cuban-immigration-tracker/data/ (never
+#   data/curated, the human-reviewed inputs), with `git pull --rebase` before `git push`.
+# issues: write lives on the separate notify job. `[skip ci]` keeps CI off bot commits; the push path
+# filter cannot match the files the bot writes, so there is no loop.
 name: caa-data-refresh
 
 on:
@@ -52,9 +58,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
-      contents: write
+      contents: read
     outputs:
-      committed: ${{ steps.commit.outputs.committed }}
+      sha: ${{ steps.head.outputs.sha }}
+      should_commit: ${{ steps.ingest.outputs.should_commit }}
+      summary: ${{ steps.ingest.outputs.summary }}
+      data_month: ${{ steps.ingest.outputs.data_month }}
       new_month: ${{ steps.ingest.outputs.new_month }}
       new_quarter: ${{ steps.ingest.outputs.new_quarter }}
       qa_status: ${{ steps.ingest.outputs.qa_status }}
@@ -64,6 +73,13 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
           fetch-depth: 1
+          # No token in .git/config for the npm/parser steps below.
+          persist-credentials: false
+
+      - id: head
+        name: Record the checked-out commit (the commit job checks out the same one)
+        working-directory: .
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - id: present
         name: Code present on this ref?
@@ -89,8 +105,8 @@ jobs:
       - id: ingest
         if: ${{ steps.present.outputs.ok == 'true' }}
         name: Ingest (03 §2–§7; writes data/ only when content changed or the 7-day heartbeat is due)
+        # No GITHUB_TOKEN here on purpose (least privilege): the GitHub release lookup runs unauthenticated.
         env:
-          GITHUB_TOKEN: ${{ github.token }}
           COURTLISTENER_TOKEN: ${{ secrets.COURTLISTENER_TOKEN }}
           ONLY: ${{ inputs.only }}
           DRY_RUN: ${{ inputs.dry_run }}
@@ -100,15 +116,51 @@ jobs:
           if [ "$DRY_RUN" = "true" ]; then set -- "$@" --dry-run; fi
           npm run data:refresh -- "$@"
 
+      - name: Hand data/ to the commit job
+        if: ${{ steps.present.outputs.ok == 'true' && github.event_name != 'pull_request' && inputs.dry_run != true && steps.ingest.outputs.should_commit == 'true' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: caa-data-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            cuban-immigration-tracker/data/
+            !cuban-immigration-tracker/data/curated/**
+            !cuban-immigration-tracker/data/.refresh-request
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1
+
+  commit:
+    needs: refresh
+    if: ${{ github.event_name != 'pull_request' && inputs.dry_run != true && needs.refresh.outputs.should_commit == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # The only job with a write token. It runs no npm/tsx/parser code: checkout, download, rsync, git.
+    permissions:
+      contents: write
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.refresh.outputs.sha }}
+          fetch-depth: 1
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: caa-data-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/caa-data
+
       - id: commit
         name: Commit data/** only (content changed or 7-day heartbeat)
-        if: ${{ steps.present.outputs.ok == 'true' && github.event_name != 'pull_request' && inputs.dry_run != true && steps.ingest.outputs.should_commit == 'true' }}
         env:
-          SUMMARY: ${{ steps.ingest.outputs.summary }}
-          NEW_MONTH: ${{ steps.ingest.outputs.new_month }}
-          DATA_MONTH: ${{ steps.ingest.outputs.data_month }}
+          SUMMARY: ${{ needs.refresh.outputs.summary }}
+          NEW_MONTH: ${{ needs.refresh.outputs.new_month }}
+          DATA_MONTH: ${{ needs.refresh.outputs.data_month }}
           BRANCH: ${{ github.ref_name }}
         run: |
+          # Mirror the ingest output into data/ (deletions included); curated inputs and the refresh
+          # request are never touched. --no-links: a symlink from the artifact is never followed or copied.
+          rsync -r --delete --no-links --exclude '/curated/' --exclude '/.refresh-request' "$RUNNER_TEMP/caa-data/" data/
           git config user.name "caa-data-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
@@ -132,8 +184,8 @@ jobs:
           exit 1
 
   notify:
-    needs: refresh
-    if: ${{ always() && (needs.refresh.result == 'failure' || (needs.refresh.outputs.qa_status != '' && needs.refresh.outputs.qa_status != 'ok') || needs.refresh.outputs.new_month == 'true' || needs.refresh.outputs.new_quarter == 'true' || needs.refresh.outputs.alerts_changed == 'true') }}
+    needs: [refresh, commit]
+    if: ${{ always() && (needs.refresh.result == 'failure' || needs.commit.result == 'failure' || (needs.refresh.outputs.qa_status != '' && needs.refresh.outputs.qa_status != 'ok') || needs.refresh.outputs.new_month == 'true' || needs.refresh.outputs.new_quarter == 'true' || needs.refresh.outputs.alerts_changed == 'true') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -146,6 +198,7 @@ jobs:
           REPO: ${{ github.repository }}
           QA: ${{ needs.refresh.outputs.qa_status }}
           RESULT: ${{ needs.refresh.result }}
+          COMMIT_RESULT: ${{ needs.commit.result }}
           NEWM: ${{ needs.refresh.outputs.new_month }}
           NEWQ: ${{ needs.refresh.outputs.new_quarter }}
           ALERTS: ${{ needs.refresh.outputs.alerts_changed }}
@@ -155,7 +208,7 @@ jobs:
             if [ -n "$n" ]; then gh issue comment "$n" -R "$REPO" --body "$2"; else gh issue create -R "$REPO" --title "$1" --body "$2"; fi
           }
           RUN="$GITHUB_SERVER_URL/$REPO/actions/runs/$GITHUB_RUN_ID"
-          if [ "$RESULT" = "failure" ]; then upsert "CAA data job failed" "Run: $RUN"; fi
+          if [ "$RESULT" = "failure" ] || [ "$COMMIT_RESULT" = "failure" ]; then upsert "CAA data job failed" "Run: $RUN"; fi
           if [ -n "$QA" ] && [ "$QA" != "ok" ]; then upsert "CAA data QA: $QA" "Run: $RUN (see cuban-immigration-tracker/data/quarantine/)"; fi
           if [ "$NEWM" = "true" ] || [ "$NEWQ" = "true" ] || [ "$ALERTS" = "true" ]; then
             upsert "Republish CAA Tracker artifact" "New data (month=$NEWM quarter=$NEWQ alerts=$ALERTS). Follow docs/planning/03-data-pipeline.md §9. Run: $RUN"

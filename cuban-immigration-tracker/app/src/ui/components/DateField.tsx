@@ -8,6 +8,11 @@
  * granularity: 'month'"). Dates are plain ISO strings; no `Date` parsing, no timezone (02 §1).
  * Range errors (e.g. "no future dates", 00 S2) are shown inline; the value is still reported so
  * the form can decide whether to block or warn.
+ *
+ * Without `max` the year list reaches FUTURE_YEARS ahead, so future dates printed on documents
+ * (an EAD card valid up to 5 years, 00 S5: the card date always wins) can be entered.
+ * `allowMonthOnly={false}` hides the "Solo sé el mes" toggle for callers that store only a day
+ * date and ignore the granularity argument (otherwise the real day would be replaced by 15).
  */
 import { useMemo, useState } from 'react';
 import { Pressable, View } from 'react-native';
@@ -28,12 +33,17 @@ export interface DateFieldProps {
   min?: ISODate;
   max?: ISODate;
   onChange(v: ISODate | null, g: 'day' | 'month'): void;
+  /** Show the "Solo sé el mes" toggle (default true). Pass false when the caller fixes granularity="day". */
+  allowMonthOnly?: boolean;
   help?: string;
   testID?: string;
 }
 
 /** Day 15 stands for "only the month is known" (00 S2). */
 export const MONTH_ONLY_DAY = 15;
+
+/** Years offered after the current one when no `max` is given (EAD cards run up to 5 years). */
+export const FUTURE_YEARS = 6;
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -83,7 +93,7 @@ function currentYear(): number {
   }
 }
 
-export function DateField({ label, value, granularity, min, max, onChange, help, testID }: DateFieldProps) {
+export function DateField({ label, value, granularity, min, max, onChange, allowMonthOnly = true, help, testID }: DateFieldProps) {
   const theme = useTheme();
   const { t, lang, fmt } = useLang();
   const [parts, setParts] = useState<Parts>(() => splitIso(value));
@@ -96,8 +106,9 @@ export function DateField({ label, value, granularity, min, max, onChange, help,
   }
 
   const id = testID ?? 'date';
-  const maxYear = max ? Number(max.slice(0, 4)) : currentYear() + 1;
-  const minYear = min ? Number(min.slice(0, 4)) : maxYear - 15;
+  const thisYear = currentYear();
+  const maxYear = max ? Number(max.slice(0, 4)) : thisYear + FUTURE_YEARS;
+  const minYear = min ? Number(min.slice(0, 4)) : Math.min(maxYear, thisYear + 1) - 15;
   const months = monthNames(lang);
 
   const yearOptions = useMemo(() => {
@@ -119,7 +130,9 @@ export function DateField({ label, value, granularity, min, max, onChange, help,
     err === 'min' && min ? t('ui:date.errorMin', { date: granularity === 'month' ? fmt.month(min) : fmt.date(min) })
       : err === 'max' && max ? t('ui:date.errorMax', { date: granularity === 'month' ? fmt.month(max) : fmt.date(max) })
         : undefined;
+  // A month-granularity value always shows the toggle, so the user can switch back to a day.
   const monthOnly = granularity === 'month';
+  const showToggle = allowMonthOnly || monthOnly;
   const toggleLabel = t('ui:date.onlyMonth');
 
   return (
@@ -155,29 +168,31 @@ export function DateField({ label, value, granularity, min, max, onChange, help,
           />
         </View>
       </View>
-      <Pressable
-        testID={`${id}-only-month`}
-        accessibilityRole="checkbox"
-        accessibilityLabel={toggleLabel}
-        accessibilityState={{ checked: monthOnly }}
-        onPress={() => emit(parts, monthOnly ? 'day' : 'month')}
-        style={{ minHeight: MIN_TOUCH, flexDirection: 'row', alignItems: 'center', gap: theme.space(2), alignSelf: 'flex-start' }}
-      >
-        <View
-          style={{
-            width: 24,
-            height: 24,
-            borderRadius: 6,
-            borderWidth: 2,
-            borderColor: monthOnly ? theme.colors.accent : theme.colors.border,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
+      {showToggle ? (
+        <Pressable
+          testID={`${id}-only-month`}
+          accessibilityRole="checkbox"
+          accessibilityLabel={toggleLabel}
+          accessibilityState={{ checked: monthOnly }}
+          onPress={() => emit(parts, monthOnly ? 'day' : 'month')}
+          style={{ minHeight: MIN_TOUCH, flexDirection: 'row', alignItems: 'center', gap: theme.space(2), alignSelf: 'flex-start' }}
         >
-          {monthOnly ? <Icon name="check" size={18} color={theme.colors.accent} /> : null}
-        </View>
-        <AppText>{toggleLabel}</AppText>
-      </Pressable>
+          <View
+            style={{
+              width: 24,
+              height: 24,
+              borderRadius: 6,
+              borderWidth: 2,
+              borderColor: monthOnly ? theme.colors.accent : theme.colors.border,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {monthOnly ? <Icon name="check" size={18} color={theme.colors.accent} /> : null}
+          </View>
+          <AppText>{toggleLabel}</AppText>
+        </Pressable>
+      ) : null}
       {value ? <Button testID={`${id}-clear`} variant="link" label={t('ui:date.clear')} onPress={() => emit({ y: null, m: null, d: null }, granularity)} /> : null}
     </FormField>
   );

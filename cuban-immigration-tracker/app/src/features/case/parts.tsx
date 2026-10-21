@@ -4,11 +4,12 @@
  * every screen shows an as-of date and whether data is live or sample), the in-tab back action
  * (Prove P5), the set-up prompt and the example banner.
  */
-import type { ReactNode } from 'react';
+import { useSyncExternalStore, type ReactNode } from 'react';
 import { View } from 'react-native';
 import { useRouter, type Href } from 'expo-router';
 import { useData } from '@/data/useData';
 import { useLang } from '@/i18n/useLang';
+import { subscribeSettings, useSettings } from '@/storage/settings';
 import { AppHeader, AppText, Banner, Button, Card, Screen, useTheme } from '@/ui';
 import { useCaseSubject } from './subject';
 
@@ -46,18 +47,68 @@ export function AsOfLine({ testID = 'case-as-of' }: { testID?: string }) {
   );
 }
 
+/*
+ * Discreet mode (05 §1 item 5; more:settings.discreet.help): while it is on, the tab's screens
+ * that show a saved case's nickname, dates or entry channel render a placeholder until the user
+ * taps "Mostrar". The reveal lives in memory only (never persisted), is shared by the tab's
+ * screens for this session, and is forgotten whenever the setting changes, so turning discreet
+ * mode on again hides the details again. The example case is never hidden. Not a security boundary.
+ */
+let revealed = false;
+const revealListeners = new Set<() => void>();
+function setRevealed(next: boolean): void {
+  if (revealed === next) return;
+  revealed = next;
+  for (const l of revealListeners) l();
+}
+function subscribeReveal(l: () => void): () => void {
+  revealListeners.add(l);
+  return () => {
+    revealListeners.delete(l);
+  };
+}
+const revealSnapshot = (): boolean => revealed;
+// Any change of the setting (on or off, or "Borrar mis datos") forgets an earlier "Mostrar".
+subscribeSettings((next, prev) => {
+  if (next.discreet !== prev.discreet) setRevealed(false);
+});
+
+/** Whether discreet mode currently hides the tab's case details, and the in-memory "show". */
+export function useDiscreetGate(): { hidden: boolean; reveal(): void } {
+  const { settings } = useSettings();
+  const { timeline, isExample } = useCaseSubject();
+  const shown = useSyncExternalStore(subscribeReveal, revealSnapshot, revealSnapshot);
+  return { hidden: settings.discreet && timeline !== null && !isExample && !shown, reveal: () => setRevealed(true) };
+}
+
+/** The placeholder shown in place of the case details while discreet mode hides them. */
+export function DiscreetCard({ onReveal }: { onReveal(): void }) {
+  const { t } = useLang();
+  return (
+    <Card title={t('more:settings.discreet.title')} testID="case-discreet">
+      <AppText muted>{t('more:settings.discreet.help')}</AppText>
+      <View style={{ alignSelf: 'flex-start' }}>
+        <Button testID="case-discreet-reveal" variant="secondary" label={t('case:share.reveal.confirm')} onPress={onReveal} />
+      </View>
+    </Card>
+  );
+}
+
 export interface CaseFrameProps {
   title: string;
   testID: string;
   /** Deep screens show a back action to the tab index (Prove P5). */
   back?: boolean;
+  /** The screen shows a saved case's details: discreet mode replaces them with `DiscreetCard`. */
+  discreet?: boolean;
   children: ReactNode;
 }
 
 /** Screen + AppHeader (title, LangToggle, DataStatusChip) + as-of line + optional back action. */
-export function CaseFrame({ title, testID, back = false, children }: CaseFrameProps) {
+export function CaseFrame({ title, testID, back = false, discreet = false, children }: CaseFrameProps) {
   const { t } = useLang();
   const nav = useCaseNav();
+  const gate = useDiscreetGate();
   return (
     <Screen testID={testID}>
       {back ? (
@@ -67,7 +118,7 @@ export function CaseFrame({ title, testID, back = false, children }: CaseFramePr
       ) : null}
       <AppHeader title={title} />
       <AsOfLine />
-      {children}
+      {discreet && gate.hidden ? <DiscreetCard onReveal={gate.reveal} /> : children}
     </Screen>
   );
 }

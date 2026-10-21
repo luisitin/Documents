@@ -135,6 +135,13 @@ export function readCachedSnapshot(kv: Kv): { snapshot: DataSnapshot; fetchedAt:
   for (const n of DATA_FILE_NAMES) {
     const e = env(n);
     if (!e) return null;
+    // The 8 keys are written one by one (native persists asynchronously; a web quota error is
+    // swallowed), so an interrupted write can leave a new manifest beside an old body. Such a mixed
+    // copy must never be reused as if it matched the manifest (review round 1).
+    if (e.sha256 !== pm.value.files[n].sha256) {
+      kv.remove(dataKey(n));
+      return null;
+    }
     const r = parseDataFile(n, e.body);
     if (!r.ok) {
       kv.remove(dataKey(n));

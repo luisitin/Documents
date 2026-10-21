@@ -10,7 +10,8 @@ import { describe, expect, it } from 'vitest';
 import { DOCKETS, MIRROR_DIR } from '../src/constants';
 import { runGoldenFixtures, syntheticJzebedeeDb } from '../src/fixtures';
 import { clCandidates } from '../src/sources/courtListener';
-import { frCandidates, frSearchUrl, parseFrSearch } from '../src/sources/federalRegister';
+import { frCandidates, frSearchUrl, parseFrSearch, parseFrSearchPage } from '../src/sources/federalRegister';
+import { fileNameOf } from '../src/raw';
 import { parseByOffice } from '../src/sources/i485ByOffice';
 import { parseMonthlyCsv } from '../src/sources/monthlyCsv';
 import { classifyPortalHref, findMonthLink, findQuarterLink, parsePortalIndex } from '../src/sources/portalIndex';
@@ -115,6 +116,16 @@ describe('portal index (03 P1/P3 discovery)', () => {
     expect(findQuarterLink(links, 'i485_by_office', { fy: 2026, q: 3 })).toBeDefined();
     expect(classifyPortalHref('/x/i485_performancedata_fy2023_qtr3.xlsx')).toBe('i485_by_office');
   });
+  it('regression: a malformed percent escape in an external href never throws (URIError)', () => {
+    const html = '<a href="/sites/default/files/document/reports/FY24_100%_review.pdf">x</a><a href="/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv">Aug</a>';
+    const links = parsePortalIndex(html);
+    expect(links.map((l) => l.kind)).toEqual(['other', 'monthly_csv']);
+    expect(links[1]!.ym).toBe('2026-08');
+    expect(classifyPortalHref('/x/FY24_100%_review.pdf')).toBe('other');
+    expect(fileNameOf('https://www.uscis.gov/a/FY24_100%_review.pdf')).toBe('FY24_100%_review.pdf');
+    expect(fileNameOf('https://www.uscis.gov/a/appropriation_requirement_august%202024.csv')).toBe('appropriation_requirement_august 2024.csv');
+    expect(fileNameOf('https://www.uscis.gov/a/..%2F..%2Fescape.csv')).toBe('.._.._escape.csv');
+  });
 });
 
 describe('P4 readProcessingTimes (03 §3.4; synthetic SQLite)', () => {
@@ -163,6 +174,12 @@ describe('P7–P9 candidates (synthetic payloads)', () => {
     expect(u).toContain('conditions[agencies][]=u-s-citizenship-and-immigration-services');
     expect(u).toContain('conditions[publication_date][gte]=2026-10-01');
     expect(() => parseFrSearch({ results: 'x' })).toThrow(SourceError);
+  });
+  it('Federal Register: next_page_url is followed only when it points at the FR API', () => {
+    const next = 'https://www.federalregister.gov/api/v1/documents.json?page=2&per_page=100';
+    expect(parseFrSearchPage({ count: 0, results: [], next_page_url: next }).next).toBe(next);
+    expect(parseFrSearchPage({ count: 0, results: [], next_page_url: 'https://evil.example/api/v1/documents.json?page=2' }).next).toBeNull();
+    expect(parseFrSearchPage({ count: 0, results: [], next_page_url: null }).next).toBeNull();
   });
   it('RSS: keyword filter keeps hold / CAA / PA-20xx items only', async () => {
     const p = parseRss(await readFile(join(FIX, 'synthetic', 'rss-alerts.xml'), 'utf8'));

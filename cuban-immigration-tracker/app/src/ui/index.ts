@@ -42,7 +42,7 @@ export { Sheet } from './components/Sheet';
 export type { SheetProps } from './components/Sheet';
 export { FormField } from './components/FormField';
 export type { FormFieldProps } from './components/FormField';
-export { DateField, MONTH_ONLY_DAY, composeIso, daysInMonth, rangeError, splitIso } from './components/DateField';
+export { DateField, FUTURE_YEARS, MONTH_ONLY_DAY, composeIso, daysInMonth, rangeError, splitIso } from './components/DateField';
 export type { DateFieldProps } from './components/DateField';
 export { Select } from './components/Select';
 export type { SelectOption, SelectProps } from './components/Select';

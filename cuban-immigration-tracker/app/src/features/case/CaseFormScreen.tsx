@@ -329,7 +329,7 @@ export function CaseFormScreen() {
 
   const title = editing ? t('case:form.title.edit') : t('case:form.title.new');
   return (
-    <CaseFrame title={title} testID="screen-case-edit" back>
+    <CaseFrame title={title} testID="screen-case-edit" back discreet={editing !== null}>
       <AppText size="sm" muted>
         {t('case:form.privacy')}
       </AppText>

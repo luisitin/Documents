@@ -34,7 +34,7 @@ export function CaseHomeScreen() {
   const options = cases.map((x) => ({ value: x.localId, label: nicknameLabel(x, t) }));
   const showSwitcher = !subject.isExample && cases.length > 1;
   return (
-    <CaseFrame title={t('case:title')} testID="screen-case">
+    <CaseFrame title={t('case:title')} testID="screen-case" discreet>
       <ExampleBanner />
       {showSwitcher ? (
         <Select

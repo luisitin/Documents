@@ -9,16 +9,16 @@
  * - dry run writes nothing; the 7-day heartbeat commits with only lastCheckedAt changed;
  * - the manifest validates with ManifestSchema; the canary stays GOLDEN T15 on the fixture data.
  */
-import { readFile, readdir, rm, stat } from 'node:fs/promises';
+import { readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { ManifestSchema, type Manifest, type MonthlyRow } from '@caa/data-schemas';
 import { validateDataDir } from '@caa/data-schemas/node';
 import { scenarioWeights } from '@caa/estimator';
 import { GOLDEN } from '@caa/estimator/golden';
 import { afterEach, describe, expect, it } from 'vitest';
-import { JZEBEDEE_LATEST_RELEASE, MIRROR_DIR } from '../src/constants';
+import { DOCKETS, FR_DOCUMENTS, JZEBEDEE_LATEST_RELEASE, MIRROR_DIR } from '../src/constants';
 import { syntheticJzebedeeDb } from '../src/fixtures';
-import { refresh } from '../src/refresh';
+import { candidateWindowStart, refresh } from '../src/refresh';
 import { FIX, fastClient, fixture, mockFetch, readJson, sampleDataDir, syntheticMonthCsv, type Route } from './helpers';
 
 const NOW = new Date('2026-10-21T06:17:04Z');
@@ -118,11 +118,11 @@ describe('refresh', () => {
     expect(r.qa.results.filter((x) => x.level === 'fail').map((x) => x.id)).toEqual(expect.arrayContaining(['Q4', 'Q11']));
   });
 
-  it('Q8: the USCIS copy replaces the mirror copy when byte-identical; a differing copy is quarantined', async () => {
+  it('Q8: the USCIS copy replaces the mirror copy when byte-identical; a copy differing from the live mirror is quarantined', async () => {
     const aug = await fixture('mirror/monthly_august_2026.csv');
     const direct = 'https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv';
-    // uscis.gov answers (portal index 404, other files 404); only the August file exists.
-    const client = (body: Uint8Array | string) => fastClient(mockFetch(new Map<string | RegExp, Route>([[direct, body]])));
+    // uscis.gov answers (portal index 404, other files 404); only the August file exists, plus the mirror copy.
+    const client = (body: Uint8Array | string) => fastClient(mockFetch(new Map<string | RegExp, Route>([[direct, body], [`${MIRROR_DIR}monthly_august_2026.csv`, aug]])));
     const d1 = await prepared();
     const ok = await refresh({ out: d1, now: NOW, client: client(aug), env: {}, log: () => {}, generatedBy: gen, dryRun: true });
     expect(ok.qa.results.find((x) => x.id === 'Q8')).toMatchObject({ level: 'pass' });
@@ -134,6 +134,34 @@ describe('refresh', () => {
     expect(bad.qa.results.find((x) => x.id === 'Q8')).toMatchObject({ level: 'fail' });
     expect(bad.qa.status).toBe('quarantined');
     expect(bad.files.national.rows.at(-1)).toMatchObject({ pending: 355520, source: { via: 'mirror.visualizer' } });
+  });
+
+  it('regression Q8: a USCIS revision that the live mirror also carries is a Q3 revision (warn), not tampering', async () => {
+    const aug = await fixture('mirror/monthly_august_2026.csv');
+    const direct = 'https://www.uscis.gov/sites/default/files/document/data/appropriation_requirement_august_2026_v1.0.csv';
+    // SYNTHETIC revision of the published (mirror-seeded) August row; the mirror has caught up too.
+    const revised = new TextDecoder().decode(aug).replace('"355,520"', '"355,521"');
+    const d = await prepared();
+    const r = await refresh({ out: d, now: NOW, client: fastClient(mockFetch(new Map<string | RegExp, Route>([[direct, revised], [`${MIRROR_DIR}monthly_august_2026.csv`, revised]]))), env: {}, log: () => {}, generatedBy: gen, dryRun: true });
+    expect(r.qa.results.find((x) => x.id === 'Q8')).toMatchObject({ level: 'pass' });
+    expect(r.qa.status).not.toBe('quarantined');
+    expect(r.qa.results.find((x) => x.id === 'Q3')).toMatchObject({ level: 'warn' });
+    expect(r.files.national.rows.at(-1)).toMatchObject({ ym: '2026-08', pending: 355521, source: { via: 'direct' }, revision: { previous: { pending: 355520 } } });
+    expect(r.decision.reason).toBe('content_changed');
+    // Mirror unreachable → Q8 is skipped (not compared with the old published sha).
+    const d2 = await prepared();
+    const r2 = await refresh({ out: d2, now: NOW, client: fastClient(mockFetch(new Map<string | RegExp, Route>([[direct, revised]]))), env: {}, log: () => {}, generatedBy: gen, dryRun: true });
+    expect(r2.qa.results.find((x) => x.id === 'Q8')).toBeUndefined();
+    expect(r2.files.national.rows.at(-1)).toMatchObject({ pending: 355521 });
+  });
+
+  it('regression: a malformed escape on the portal index does not abort the run', async () => {
+    const d = await prepared();
+    const html = '<a href="/sites/default/files/document/reports/FY24_100%_review.pdf">x</a>';
+    const fr = await readFile(join(FIX, 'synthetic', 'fr-search.json'), 'utf8');
+    const r = await refresh({ out: d, now: NOW, client: network([['https://www.uscis.gov/tools/reports-and-studies/immigration-and-citizenship-data', html], [/^https:\/\/www\.federalregister\.gov\/api\/v1\/documents\.json/, fr]]), env: {}, log: () => {}, generatedBy: gen, dryRun: true });
+    expect(r.manifest.sources.find((s) => s.id === 'fr.api')!.status).toBe('ok');
+    expect(r.manifest.sources.find((s) => s.id === 'uscis.portal_index')).toMatchObject({ status: 'ok', note: '1 document links' });
   });
 
   it('dry run: parses and runs QA but writes nothing', async () => {
@@ -173,6 +201,59 @@ describe('refresh', () => {
     expect(r.files.offices.processingTimes.find((x) => x.officeCode === 'MIA' && x.subtype === '131A-FAM')).toMatchObject({ months80: 30, source: { via: 'mirror.jzebedee', evidence: 'F' } });
     expect(r.candidates.map((c) => c.id)).toEqual(expect.arrayContaining(['fr:2025-05128']));
     expect(r.manifest.sources.find((s) => s.id === 'fr.api')!.status).toBe('ok');
+  });
+
+  it('regression: the jzebedee SEED with the same release tag is replaced by a download, a real release is not re-downloaded', async () => {
+    const d = await prepared();
+    expect((await readJson<Manifest>(join(d, 'manifest.json'))).sources.find((s) => s.id === 'mirror.jzebedee')).toMatchObject({ status: 'fallback_used', publishedPeriod: '2026-10-15' });
+    const db = await syntheticJzebedeeDb();
+    const asset = 'https://github.com/jzebedee/uscis/releases/download/2026-10-15/2026-10-15.db';
+    const release = JSON.stringify({ tag_name: '2026-10-15', assets: [{ name: '2026-10-15.db', browser_download_url: asset }] });
+    const calls: { url: string }[] = [];
+    const client = () => fastClient(mockFetch(new Map<string | RegExp, Route>([[JZEBEDEE_LATEST_RELEASE, release], [asset, db], [/^https:\/\/(www|egov)\.uscis\.gov\//, 'network_error']]), calls));
+    const r = await refresh({ out: d, now: NOW, client: client(), env: {}, log: () => {}, generatedBy: gen });
+    expect(calls.some((c) => c.url === asset)).toBe(true);
+    expect(r.manifest.sources.find((s) => s.id === 'mirror.jzebedee')).toMatchObject({ status: 'ok', publishedPeriod: '2026-10-15' });
+    expect(r.files.offices.processingTimes.find((x) => x.officeCode === 'MIA' && x.subtype === '131A-FAM')).toMatchObject({ months80: 30, source: { via: 'mirror.jzebedee', evidence: 'F' } });
+    // Second run against the now-real release output: the shortcut applies and the .db is not fetched.
+    calls.length = 0;
+    const r2 = await refresh({ out: d, now: new Date(NOW.getTime() + 3_600_000), client: client(), env: {}, log: () => {}, generatedBy: gen, dryRun: true });
+    expect(calls.some((c) => c.url === asset)).toBe(false);
+    expect(r2.manifest.sources.find((s) => s.id === 'mirror.jzebedee')).toMatchObject({ status: 'not_modified', note: 'release unchanged' });
+  });
+
+  it('regression: FR / CourtListener windows start at each source\'s own last success (minus overlap), not lastCheckedAt; FR pages are followed', async () => {
+    expect(candidateWindowStart(undefined)).toBe('2025-01-01');
+    expect(candidateWindowStart('2026-09-05T00:00:00Z')).toBe('2026-08-29');
+    expect(candidateWindowStart('2025-01-03T00:00:00Z')).toBe('2025-01-01');
+    const d = await prepared();
+    const mp = join(d, 'manifest.json');
+    const m = await readJson<Manifest>(mp);
+    expect(m.lastCheckedAt.slice(0, 10)).toBe('2026-10-20'); // the heartbeat moved past an FR / CL outage
+    for (const s of m.sources) if (s.id === 'fr.api' || s.id === 'courtlistener.v4') { s.status = 'ok'; s.lastSuccessAt = '2026-09-05T00:00:00Z'; }
+    await writeFile(mp, JSON.stringify(m));
+    const page1 = JSON.parse(await readFile(join(FIX, 'synthetic', 'fr-search.json'), 'utf8'));
+    const next = `${FR_DOCUMENTS}?page=2&per_page=100`;
+    page1.next_page_url = next; page1.total_pages = 2;
+    const page2 = { count: 1, total_pages: 2, next_page_url: null, results: [{ document_number: '2026-99999', title: 'SYNTHETIC page-2 notice on parole', publication_date: '2026-09-10', html_url: 'https://www.federalregister.gov/d/2026-99999' }] };
+    const cl = await readFile(join(FIX, 'synthetic', 'cl-entries.json'), 'utf8');
+    const calls: { url: string }[] = [];
+    const client = fastClient(mockFetch(new Map<string | RegExp, Route>([
+      [next, JSON.stringify(page2)], [/^https:\/\/www\.federalregister\.gov\/api\/v1\/documents\.json/, JSON.stringify(page1)],
+      [new RegExp(`docket-entries/\\?docket=${DOCKETS[0].id}&`), { status: 500 }], [/courtlistener\.com\/api\/rest\/v4\/docket-entries/, cl],
+      [/^https:\/\/(www|egov)\.uscis\.gov\//, 'network_error'],
+    ]), calls));
+    const r = await refresh({ out: d, now: NOW, client, env: { COURTLISTENER_TOKEN: 'test-token' }, log: () => {}, generatedBy: gen, dryRun: true });
+    const frCall = decodeURIComponent(calls.find((c) => c.url.startsWith(FR_DOCUMENTS) && c.url.includes('publication_date'))!.url);
+    expect(frCall).toContain('conditions[publication_date][gte]=2026-08-29');
+    expect(calls.some((c) => c.url === next)).toBe(true);
+    const ids = r.candidates.map((c) => c.id);
+    expect(ids).toEqual(expect.arrayContaining(['fr:2025-05128', 'fr:2026-99999']));
+    // The 2026-09-01 entry falls inside the outage window that lastCheckedAt (2026-10-20) would have skipped.
+    expect(ids).toEqual(expect.arrayContaining([`cl:${DOCKETS[1].docketNumber}:900000001`, `cl:${DOCKETS[1].docketNumber}:900000002`]));
+    expect(r.manifest.sources.find((s) => s.id === 'fr.api')).toMatchObject({ status: 'ok', lastSuccessAt: '2026-10-21T06:17:04Z' });
+    // One docket failed: the CourtListener window does not advance.
+    expect(r.manifest.sources.find((s) => s.id === 'courtlistener.v4')).toMatchObject({ status: 'ok', lastSuccessAt: '2026-09-05T00:00:00Z' });
   });
 
   it('--only rejects unknown keys and leaves other sources untouched', async () => {

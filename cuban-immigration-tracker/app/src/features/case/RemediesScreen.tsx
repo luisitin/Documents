@@ -86,7 +86,7 @@ export function RemediesScreen() {
   const est = useEstimate(subject.estimateId);
   const k = policy.classes.redEagle;
   return (
-    <CaseFrame title={t('remedies:title')} testID="screen-case-remedies" back>
+    <CaseFrame title={t('remedies:title')} testID="screen-case-remedies" back discreet>
       <Banner testID="remedies-pinned" tone="neutral" text={t('remedies:pinned')} />
       {subject.timeline ? (
         <>

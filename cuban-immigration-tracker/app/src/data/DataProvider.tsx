@@ -132,43 +132,51 @@ export function DataProvider(props: DataProviderProps) {
         const host = await hostRefresh().catch(() => null);
         if (host) outcome = { kind: 'updated', snapshot: host, fetchedAt: host.manifest.lastCheckedAt, fetchedFiles: [], base: 'host' };
       }
-      const prev = stateRef.current;
-      let next: State;
+      // Functional updates only: when `refreshSnapshot` returns quickly ('skipped', backoff) React
+      // may not have rendered the cold-start `setState(cached)` yet, so `stateRef` can still hold the
+      // bundled sample; rebuilding from it would overwrite the cached real data (review round 1).
       switch (outcome.kind) {
         case 'updated': {
-          for (const e of foregroundEvents(prev.snapshot, outcome.snapshot)) notifications.queueForeground(e);
-          next = {
+          const prevSnap = cached?.snapshot ?? stateRef.current.snapshot;
+          for (const e of foregroundEvents(prevSnap, outcome.snapshot)) notifications.queueForeground(e);
+          const next: State = {
             snapshot: outcome.snapshot,
             status: outcome.snapshot.manifest.artifactBuiltAt ? 'published' : 'live',
             fetchedAt: outcome.fetchedAt,
             notice: null,
             refreshing: false,
           };
+          setState(next);
           break;
         }
         case 'not_modified': {
-          const snap = cached?.snapshot ?? prev.snapshot;
-          next = { snapshot: snap, status: snap.manifest.artifactBuiltAt ? 'published' : 'live', fetchedAt: outcome.fetchedAt, notice: null, refreshing: false };
+          const fetchedAt = outcome.fetchedAt;
+          setState((s) => {
+            const snap = cached?.snapshot ?? s.snapshot;
+            return { snapshot: snap, status: snap.manifest.artifactBuiltAt ? 'published' : 'live', fetchedAt, notice: null, refreshing: false };
+          });
           break;
         }
         case 'skipped':
-          next = { ...prev, refreshing: false };
+          setState((s) => ({ ...s, refreshing: false }));
           break;
         case 'incompatible':
-          next = { ...prev, status: prev.status === 'sample' ? 'sample' : prev.status, notice: { kind: 'app_too_old' }, refreshing: false };
+          setState((s) => ({ ...s, notice: { kind: 'app_too_old' }, refreshing: false }));
           break;
         case 'failed': {
-          const hasCopy = prev.status !== 'sample';
-          next = {
-            ...prev,
-            status: hasCopy ? 'cached' : 'sample',
-            notice: hasCopy || manual ? { kind: 'update_failed', at: prev.fetchedAt, reason: outcome.reason } : null,
-            refreshing: false,
-          };
+          const reason = outcome.reason;
+          setState((s) => {
+            const hasCopy = s.status !== 'sample';
+            return {
+              ...s,
+              status: hasCopy ? 'cached' : 'sample',
+              notice: hasCopy || manual ? { kind: 'update_failed', at: s.fetchedAt, reason } : null,
+              refreshing: false,
+            };
+          });
           break;
         }
       }
-      setState(next);
       if (outcome.kind === 'updated') notifications.notifyOnForeground();
     })().finally(() => {
       inflight.current = null;
@@ -183,7 +191,7 @@ export function DataProvider(props: DataProviderProps) {
     store.ready.then(() => {
       if (!alive) return;
       const s = initialState(store);
-      if (s.status === 'cached' && stateRef.current.status === 'sample') setState(s);
+      if (s.status === 'cached') setState((cur) => (cur.status === 'sample' ? s : cur));
       void run(false);
     });
     return () => {

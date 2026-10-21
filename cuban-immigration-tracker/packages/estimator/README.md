@@ -32,6 +32,14 @@ Behaviour notes for consumers:
 - `opts.bands === false` skips the structural band and the state mixture (state-only cases then
   use the national path, `office.basis = 'national'`).
 - `office.weak` is true when the multiplier rests on fewer than 50 completions or the office has
-  no multiplier (then m = 1).
+  no multiplier (then m = 1). m̂_o is applied only to offices in `params.officeGroup`; any other
+  office (and any non-group office in a state mixture) uses m = 1 with `weak = true`.
+- Month-granularity milestone dates later than today (day 15 of the current month) are read as
+  today. `delays` is filled in every mode; in post_interview / post_expedite (and after t_D in
+  interview_scheduled) a pending RFE/NOID holds S = 1 until its due date and the lognormal clock
+  starts there, and a response after the clock start restarts it [I] (review round 1; awaiting an
+  owner-approved 04 §4 line and oracle cases).
+- `pByDate` in the month of today (31 Dec in December) interpolates by the days left instead of
+  returning 0.
 - Source constraint: no array destructuring and no default JSON imports in `src/` (jest-expo
   would need `@babel/runtime` helpers that only exist in `app/node_modules`).

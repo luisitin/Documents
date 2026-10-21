@@ -179,7 +179,7 @@ export function EadScreen() {
   const c = subject.timeline;
   const hasEad = !!c?.milestones.some((m) => m.key === 'ead_c9');
   return (
-    <CaseFrame title={t('ead:title')} testID="screen-case-ead" back>
+    <CaseFrame title={t('ead:title')} testID="screen-case-ead" back discreet>
       <ExampleBanner />
       <AppText>{t('ead:intro')}</AppText>
       {c ? null : <Banner tone="info" text={t('ead:noCase')} />}

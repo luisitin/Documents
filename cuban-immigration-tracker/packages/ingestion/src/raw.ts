@@ -12,7 +12,7 @@
 import { mkdir, readFile, readdir, rename, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import type { ISODateTime, SourceId, SourceRef } from '@caa/data-schemas';
-import { serializeJson, sha256Hex } from './util';
+import { safeDecodeURIComponent, serializeJson, sha256Hex } from './util';
 
 export interface RawMeta {
   sourceId: SourceId;
@@ -36,10 +36,13 @@ export function pickHeaders(h: Record<string, string>): Record<string, string> {
   return out;
 }
 
-/** The file name part of a URL, percent-decoded (`appropriation_requirement_august%202024.csv` → with a space). */
+/**
+ * The file name part of a URL, percent-decoded (`appropriation_requirement_august%202024.csv` → with a space).
+ * Never throws on a malformed escape; decoded path separators become `_` so the name stays one path segment.
+ */
 export function fileNameOf(url: string): string {
   const path = url.split(/[?#]/)[0]!;
-  return decodeURIComponent(path.slice(path.lastIndexOf('/') + 1));
+  return safeDecodeURIComponent(path.slice(path.lastIndexOf('/') + 1)).replace(/[\\/]/g, '_');
 }
 
 export function rawPaths(outDir: string, sourceId: SourceId, period: string, file: string): { file: string; meta: string } {

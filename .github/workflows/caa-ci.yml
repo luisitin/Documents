@@ -146,6 +146,8 @@ jobs:
             echo "### CAA Tracker web artifact"
             if [ -f web-artifact/.build/summary.json ]; then echo '```json'; cat web-artifact/.build/summary.json; echo '```'; fi
             if [ -f prove-out/report.json ]; then
+              # The JS template literals must NOT be expanded by the shell, so single quotes are intended.
+              # shellcheck disable=SC2016
               node -e 'const r=require("./prove-out/report.json");console.log(`Prove: **${r.passed} passed, ${r.failed} failed** (${r.browser})`);for(const f of r.results.filter(x=>!x.ok))console.log(`- FAIL ${f.id} ${f.name}`)'
             fi
           } >> "$GITHUB_STEP_SUMMARY"

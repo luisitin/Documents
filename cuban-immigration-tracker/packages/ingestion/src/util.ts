@@ -107,6 +107,14 @@ export function quarterRange(from: FiscalQuarter, to: FiscalQuarter): FiscalQuar
 // ── errors ──────────────────────────────────────────────────────────────────────────────────
 
 /** A parser rejection: the bytes are not the documented format (classified `schema_mismatch`, 03 §2.1). */
+/**
+ * `decodeURIComponent` that never throws: external hrefs can hold a malformed escape (`FY24_100%_review.pdf`),
+ * which must not crash a run (03 §1 principle 2). Returns the input unchanged when it cannot be decoded.
+ */
+export function safeDecodeURIComponent(s: string): string {
+  try { return decodeURIComponent(s); } catch { return s; }
+}
+
 export class SourceError extends Error {
   readonly classification = 'schema_mismatch' as const;
   constructor(message: string) {

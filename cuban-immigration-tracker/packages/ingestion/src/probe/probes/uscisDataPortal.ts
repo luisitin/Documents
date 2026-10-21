@@ -9,6 +9,7 @@
 import type { YearMonth } from '@caa/data-schemas';
 import { PORTAL_INDEX_URL, USCIS_DATA_DIR, allFormsUrls, byOfficeUrls, monthlyCsvDirectUrls } from '../../constants';
 import { bodyText } from '../../http';
+import { fileNameOf } from '../../raw';
 import { GOLDEN_FIXTURES } from '../../qa';
 import { parseByOffice } from '../../sources/i485ByOffice';
 import { parseMonthlyCsv } from '../../sources/monthlyCsv';
@@ -74,7 +75,7 @@ export const uscisDataPortalProbes: ProbeModule = {
     // portal.i765: the first I-765 by-category workbook linked from the index (doc 04 §1.4; file name unknown).
     const links = index.classification === 'ok' ? parsePortalIndex(bodyText(ctx.bodies.get('portal.index')!)) : [];
     const i765 = links.find((l) => l.kind === 'i765_category');
-    if (i765) await ctx.probe(g, { id: 'portal.i765', url: i765.href, accept: '*/*', sample: `uscis-portal/${decodeURIComponent(i765.href.split('/').pop()!)}` });
+    if (i765) await ctx.probe(g, { id: 'portal.i765', url: i765.href, accept: '*/*', sample: `uscis-portal/${fileNameOf(i765.href)}` });
     else ctx.skip(g, 'portal.i765', PORTAL_INDEX_URL, index.classification === 'ok' ? 'not_yet' : index.classification, index.classification === 'ok' ? 'no i765 + eligib/categor link on the index' : 'index not reachable');
   },
 };

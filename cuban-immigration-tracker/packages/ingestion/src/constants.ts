@@ -137,6 +137,18 @@ export const FR_TERM = '(Cuban OR Cubans OR "Cuban Adjustment Act" OR parole OR 
 export const FR_AGENCIES = ['homeland-security-department', 'u-s-citizenship-and-immigration-services', 'u-s-customs-and-border-protection'] as const;
 /** Regression fixture (doc 13 §6): the CHNV termination notice, published 2025-03-25. */
 export const FR_FIXTURE_DOC = '2025-05128';
+/** At most this many result pages (100 each) are followed through `next_page_url` per run. */
+export const FR_MAX_PAGES = 5;
+
+// ── Candidate windows (P7, P9) ──────────────────────────────────────────────────────────────
+
+/** Window start when a candidate source never succeeded. */
+export const CANDIDATE_WINDOW_FLOOR = '2025-01-01';
+/**
+ * A candidate source's window starts at ITS OWN last success minus this overlap (not at the
+ * manifest's lastCheckedAt, which the heartbeat moves past outages); re-sightings are de-duplicated.
+ */
+export const CANDIDATE_WINDOW_OVERLAP_DAYS = 7;
 
 // ── P8 USCIS RSS (03 P8; doc 13 §9) ─────────────────────────────────────────────────────────
 

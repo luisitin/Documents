@@ -17,7 +17,7 @@
 import { useState } from 'react';
 import { Platform, Switch, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { SCHEMA_VERSION, type Lang } from '@caa/data-schemas';
+import { SCHEMA_VERSION, type CaseTimeline, type Lang } from '@caa/data-schemas';
 import { LANGS } from '@caa/i18n-core';
 import { ym } from '@caa/case-rules';
 import { appVersion } from '@/data/DataProvider';
@@ -25,8 +25,9 @@ import { useData } from '@/data/useData';
 import { useLang } from '@/i18n/useLang';
 import { notifications } from '@/notifications';
 import { MAX_CASES, useCases } from '@/storage/cases';
-import { useSettings, type Settings } from '@/storage/settings';
+import { getSettings, useSettings, type Settings } from '@/storage/settings';
 import { AppHeader, AppText, Banner, Button, Card, Chip, Screen, Sheet, quarterLabel, statusLine, useTheme } from '@/ui';
+import { nicknameLabel } from '../case/format';
 import { BackLink, Disclaimer, FilterChip, hrefOf } from '../home/shared';
 
 const LANG_NAME = { es: 'common:lang.es', en: 'common:lang.en' } as const;
@@ -137,7 +138,18 @@ function Discreet() {
   const { settings, update } = useSettings();
   return (
     <Card title={t('more:settings.discreet.title')} testID="settings-discreet">
-      <Row testID="settings-discreet-switch" label={t('more:settings.discreet.label')} help={t('more:settings.discreet.help')} value={settings.discreet} onChange={(v) => update({ discreet: v })} />
+      <Row
+        testID="settings-discreet-switch"
+        label={t('more:settings.discreet.label')}
+        help={t('more:settings.discreet.help')}
+        value={settings.discreet}
+        onChange={(v) => {
+          update({ discreet: v });
+          // Already-scheduled reminders carry dated text: re-plan them so discreet mode hides the
+          // dates on the lock screen too (00 F20; 05 §3). A no-op on web / with notifications off.
+          void notifications.rescheduleAll(getSettings().lang).catch(() => undefined);
+        }}
+      />
     </Card>
   );
 }
@@ -150,7 +162,8 @@ function Cases() {
   const { cases, active, setActive, remove } = useCases();
   const [pending, setPending] = useState<string | null>(null);
   const target = cases.find((c) => c.localId === pending) ?? null;
-  const name = (i: number, nickname: string) => (settings.discreet || !nickname.trim() ? t('more:settings.cases.unnamed', { n: fmt.int(i + 1) }) : nickname);
+  // Preset nickname tokens ('mine', 'family', …) are translated like the case switcher does.
+  const name = (i: number, c: CaseTimeline) => (settings.discreet || !c.nickname.trim() ? t('more:settings.cases.unnamed', { n: fmt.int(i + 1) }) : nicknameLabel(c, t));
   return (
     <Card title={t('more:settings.cases.title', { n: fmt.int(cases.length), max: fmt.int(MAX_CASES) })} testID="settings-cases">
       {cases.length === 0 ? <AppText testID="settings-cases-empty">{t('more:settings.cases.none')}</AppText> : null}
@@ -160,7 +173,7 @@ function Cases() {
         return (
           <View key={c.localId} testID={`settings-case-${i}`} style={{ gap: theme.space(1), borderTopWidth: i === 0 ? 0 : 1, borderTopColor: theme.colors.border, paddingTop: i === 0 ? 0 : theme.space(2) }}>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: theme.space(2) }}>
-              <AppText weight="medium">{name(i, c.nickname)}</AppText>
+              <AppText weight="medium">{name(i, c)}</AppText>
               {isActive ? <Chip tone="info" label={t('more:settings.cases.active')} /> : null}
             </View>
             {when ? (
@@ -180,7 +193,7 @@ function Cases() {
         testID="sheet-case-delete"
         visible={target !== null}
         destructive
-        title={t('more:settings.cases.deleteTitle', { name: target ? name(cases.indexOf(target), target.nickname) : '' })}
+        title={t('more:settings.cases.deleteTitle', { name: target ? name(cases.indexOf(target), target) : '' })}
         body={t('more:settings.cases.deleteBody')}
         confirmLabel={t('common:action.delete')}
         cancelLabel={t('common:action.cancel')}
