@@ -1,0 +1,6129 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`kit renders in en / dark matches the snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#111317",
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+  testID="screen"
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "flexGrow": 1,
+      }
+    }
+    keyboardShouldPersistTaps="handled"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          {
+            "alignSelf": "center",
+            "gap": 12,
+            "maxWidth": 592,
+            "paddingBottom": 24,
+            "paddingHorizontal": 16,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "gap": 8,
+              "paddingBottom": 4,
+            }
+          }
+          testID="app-header"
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                accessibilityRole="header"
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "lineHeight": 31,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Inicio
+              </Text>
+            </View>
+            <View
+              accessibilityHint="Instantly switches every text, date and number."
+              accessibilityLabel="Switch language to Spanish"
+              accessibilityRole="button"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#1b1e24",
+                  "borderColor": "#2c313a",
+                  "borderRadius": 999,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 12,
+                }
+              }
+              testID="lang-toggle"
+            >
+              <RNSVGSvgView
+                accessibilityElementsHidden={true}
+                align="xMidYMid"
+                aria-hidden={true}
+                bbHeight={18}
+                bbWidth={18}
+                focusable={false}
+                height={18}
+                importantForAccessibility="no-hide-descendants"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                testID="icon-language"
+                vbHeight={24}
+                vbWidth={24}
+                width={18}
+              >
+                <RNSVGGroup
+                  fill={
+                    {
+                      "payload": 4278190080,
+                      "type": 0,
+                    }
+                  }
+                >
+                  <RNSVGPath
+                    d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M3 12h18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c3 3.2 3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c-3 3.2-3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 4,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#a9afbb",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  ES
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#a9afbb",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  |
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#eceef2",
+                        "fontSize": 15,
+                        "fontWeight": "700",
+                        "lineHeight": 21,
+                      },
+                      {
+                        "color": "#7aa7ff",
+                      },
+                    ]
+                  }
+                >
+                  EN
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Data status: ○ Sample · example data bundled · USCIS through Aug 2026. Tap to see where the data comes from."
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#2c313a",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "justifyContent": "center",
+                "maxWidth": "100%",
+                "minHeight": 48,
+                "opacity": 1,
+                "paddingHorizontal": 12,
+                "paddingVertical": 4,
+              }
+            }
+            testID="data-status"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              ○ Sample · example data bundled · USCIS through Aug 2026
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#1b1e24",
+              "borderColor": "#2c313a",
+              "borderLeftColor": "#7aa7ff",
+              "borderLeftWidth": 4,
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "gap": 8,
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityRole="header"
+            style={
+              [
+                {
+                  "color": "#7aa7ff",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "lineHeight": 25,
+                },
+                undefined,
+              ]
+            }
+          >
+            Card
+          </Text>
+          <View
+            accessibilityLabel="chip"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#23272f",
+                "borderColor": "#2c313a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              chip
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityLiveRegion="polite"
+          style={
+            {
+              "alignItems": "flex-start",
+              "backgroundColor": "#33291a",
+              "borderColor": "#f0b94a",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "gap": 8,
+              "padding": 12,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "paddingTop": 1,
+              }
+            }
+          >
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-warning"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M12 3.5 2.5 20h19z"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGPath
+                  d="M12 10v4.5"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx={12}
+                  cy={17.25}
+                  fill={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r={1.25}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "gap": 4,
+                "minWidth": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              banner
+            </Text>
+            <View
+              accessibilityLabel="go"
+              accessibilityRole="link"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "transparent",
+                  "borderColor": "#2c313a",
+                  "borderRadius": 12,
+                  "borderWidth": 0,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 4,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "color": "#7aa7ff",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                go
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="tile"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            [
+              {
+                "backgroundColor": "#1b1e24",
+                "borderColor": "#2c313a",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "minHeight": 48,
+                "padding": 12,
+              },
+              {
+                "opacity": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "gap": 4,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                tile
+              </Text>
+            </View>
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-chevron-right"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M9 5l7 7-7 7"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4289310651,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="Pending: 355,520. Aug 2026. Pending at period end. Source: USCIS monthly report (CSV)."
+          accessible={true}
+          style={
+            {
+              "backgroundColor": "#1b1e24",
+              "borderColor": "#2c313a",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexBasis": 150,
+              "flexGrow": 1,
+              "gap": 4,
+              "minWidth": 0,
+              "padding": 12,
+            }
+          }
+          testID="stat-national.rows[].pending"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+            Pending
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#eceef2",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "lineHeight": 31,
+                },
+                undefined,
+              ]
+            }
+          >
+            355,520
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Aug 2026
+          </Text>
+          <View
+            accessibilityLabel="Pending at period end"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#23272f",
+                "borderColor": "#2c313a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Pending at period end
+            </Text>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Source: USCIS monthly report (CSV)
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "gap": 8,
+            }
+          }
+        >
+          <View
+            accessibilityLabel="Not validated"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#f0b94a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Not validated
+            </Text>
+          </View>
+          <View
+            accessibilityLabel="Confidence: low"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#f0b94a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Confidence: low
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+            }
+          }
+          testID="ladder"
+        >
+          <View
+            accessibilityLabel="Within 3 months: 1%, very unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-3"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                3 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                1%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                very unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "1.4844805046055454%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 6 months: 4%, very unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-6"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                6 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                4%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                very unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "3.6653500143097206%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 12 months: 9%, unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-12"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                12 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                9%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "9.228810312356273%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 24 months: 22%, possible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-24"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                24 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                22%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                possible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "22.050456474753044%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 36 months: 35%, possible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-36"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                36 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                35%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                possible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "35.453101850422186%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="ok"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={4}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "backgroundColor": "#7aa7ff",
+              "borderColor": "#2c313a",
+              "borderRadius": 12,
+              "borderWidth": 0,
+              "justifyContent": "center",
+              "minHeight": 48,
+              "minWidth": 48,
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#eceef2",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                  "lineHeight": 21,
+                },
+                {
+                  "color": "#111317",
+                  "textAlign": "center",
+                  "textDecorationLine": "none",
+                },
+              ]
+            }
+          >
+            ok
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`kit renders in en / light matches the snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#f7f7f5",
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+  testID="screen"
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "flexGrow": 1,
+      }
+    }
+    keyboardShouldPersistTaps="handled"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          {
+            "alignSelf": "center",
+            "gap": 12,
+            "maxWidth": 592,
+            "paddingBottom": 24,
+            "paddingHorizontal": 16,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "gap": 8,
+              "paddingBottom": 4,
+            }
+          }
+          testID="app-header"
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                accessibilityRole="header"
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "lineHeight": 31,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Inicio
+              </Text>
+            </View>
+            <View
+              accessibilityHint="Instantly switches every text, date and number."
+              accessibilityLabel="Switch language to Spanish"
+              accessibilityRole="button"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderColor": "#d9dce1",
+                  "borderRadius": 999,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 12,
+                }
+              }
+              testID="lang-toggle"
+            >
+              <RNSVGSvgView
+                accessibilityElementsHidden={true}
+                align="xMidYMid"
+                aria-hidden={true}
+                bbHeight={18}
+                bbWidth={18}
+                focusable={false}
+                height={18}
+                importantForAccessibility="no-hide-descendants"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                testID="icon-language"
+                vbHeight={24}
+                vbWidth={24}
+                width={18}
+              >
+                <RNSVGGroup
+                  fill={
+                    {
+                      "payload": 4278190080,
+                      "type": 0,
+                    }
+                  }
+                >
+                  <RNSVGPath
+                    d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M3 12h18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c3 3.2 3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c-3 3.2-3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 4,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#565d6b",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  ES
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#565d6b",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  |
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#16181d",
+                        "fontSize": 15,
+                        "fontWeight": "700",
+                        "lineHeight": 21,
+                      },
+                      {
+                        "color": "#1d4ed8",
+                      },
+                    ]
+                  }
+                >
+                  EN
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Data status: ○ Sample · example data bundled · USCIS through Aug 2026. Tap to see where the data comes from."
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#d9dce1",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "justifyContent": "center",
+                "maxWidth": "100%",
+                "minHeight": 48,
+                "opacity": 1,
+                "paddingHorizontal": 12,
+                "paddingVertical": 4,
+              }
+            }
+            testID="data-status"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              ○ Sample · example data bundled · USCIS through Aug 2026
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#d9dce1",
+              "borderLeftColor": "#1d4ed8",
+              "borderLeftWidth": 4,
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "gap": 8,
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityRole="header"
+            style={
+              [
+                {
+                  "color": "#1d4ed8",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "lineHeight": 25,
+                },
+                undefined,
+              ]
+            }
+          >
+            Card
+          </Text>
+          <View
+            accessibilityLabel="chip"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#f0f1f3",
+                "borderColor": "#d9dce1",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              chip
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityLiveRegion="polite"
+          style={
+            {
+              "alignItems": "flex-start",
+              "backgroundColor": "#fdf3e1",
+              "borderColor": "#8a5300",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "gap": 8,
+              "padding": 12,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "paddingTop": 1,
+              }
+            }
+          >
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-warning"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M12 3.5 2.5 20h19z"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGPath
+                  d="M12 10v4.5"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx={12}
+                  cy={17.25}
+                  fill={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r={1.25}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "gap": 4,
+                "minWidth": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              banner
+            </Text>
+            <View
+              accessibilityLabel="go"
+              accessibilityRole="link"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "transparent",
+                  "borderColor": "#d9dce1",
+                  "borderRadius": 12,
+                  "borderWidth": 0,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 4,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "color": "#1d4ed8",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                go
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="tile"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            [
+              {
+                "backgroundColor": "#ffffff",
+                "borderColor": "#d9dce1",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "minHeight": 48,
+                "padding": 12,
+              },
+              {
+                "opacity": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "gap": 4,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                tile
+              </Text>
+            </View>
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-chevron-right"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M9 5l7 7-7 7"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4283850091,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="Pending: 355,520. Aug 2026. Pending at period end. Source: USCIS monthly report (CSV)."
+          accessible={true}
+          style={
+            {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#d9dce1",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexBasis": 150,
+              "flexGrow": 1,
+              "gap": 4,
+              "minWidth": 0,
+              "padding": 12,
+            }
+          }
+          testID="stat-national.rows[].pending"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+            Pending
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#16181d",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "lineHeight": 31,
+                },
+                undefined,
+              ]
+            }
+          >
+            355,520
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Aug 2026
+          </Text>
+          <View
+            accessibilityLabel="Pending at period end"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#f0f1f3",
+                "borderColor": "#d9dce1",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Pending at period end
+            </Text>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Source: USCIS monthly report (CSV)
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "gap": 8,
+            }
+          }
+        >
+          <View
+            accessibilityLabel="Not validated"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#8a5300",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Not validated
+            </Text>
+          </View>
+          <View
+            accessibilityLabel="Confidence: low"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#8a5300",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Confidence: low
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+            }
+          }
+          testID="ladder"
+        >
+          <View
+            accessibilityLabel="Within 3 months: 1%, very unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-3"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                3 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                1%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                very unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "1.4844805046055454%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 6 months: 4%, very unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-6"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                6 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                4%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                very unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "3.6653500143097206%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 12 months: 9%, unlikely"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-12"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                12 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                9%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                unlikely
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "9.228810312356273%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 24 months: 22%, possible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-24"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                24 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                22%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                possible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "22.050456474753044%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Within 36 months: 35%, possible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-36"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                36 months
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                35%
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                possible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "35.453101850422186%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="ok"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={4}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "backgroundColor": "#1d4ed8",
+              "borderColor": "#d9dce1",
+              "borderRadius": 12,
+              "borderWidth": 0,
+              "justifyContent": "center",
+              "minHeight": 48,
+              "minWidth": 48,
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#16181d",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                  "lineHeight": 21,
+                },
+                {
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "textDecorationLine": "none",
+                },
+              ]
+            }
+          >
+            ok
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`kit renders in es / dark matches the snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#111317",
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+  testID="screen"
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "flexGrow": 1,
+      }
+    }
+    keyboardShouldPersistTaps="handled"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          {
+            "alignSelf": "center",
+            "gap": 12,
+            "maxWidth": 592,
+            "paddingBottom": 24,
+            "paddingHorizontal": 16,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "gap": 8,
+              "paddingBottom": 4,
+            }
+          }
+          testID="app-header"
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                accessibilityRole="header"
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "lineHeight": 31,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Inicio
+              </Text>
+            </View>
+            <View
+              accessibilityHint="Cambia al instante todos los textos, fechas y números."
+              accessibilityLabel="Cambiar el idioma a inglés"
+              accessibilityRole="button"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#1b1e24",
+                  "borderColor": "#2c313a",
+                  "borderRadius": 999,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 12,
+                }
+              }
+              testID="lang-toggle"
+            >
+              <RNSVGSvgView
+                accessibilityElementsHidden={true}
+                align="xMidYMid"
+                aria-hidden={true}
+                bbHeight={18}
+                bbWidth={18}
+                focusable={false}
+                height={18}
+                importantForAccessibility="no-hide-descendants"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                testID="icon-language"
+                vbHeight={24}
+                vbWidth={24}
+                width={18}
+              >
+                <RNSVGGroup
+                  fill={
+                    {
+                      "payload": 4278190080,
+                      "type": 0,
+                    }
+                  }
+                >
+                  <RNSVGPath
+                    d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M3 12h18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c3 3.2 3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c-3 3.2-3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4289310651,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 4,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#eceef2",
+                        "fontSize": 15,
+                        "fontWeight": "700",
+                        "lineHeight": 21,
+                      },
+                      {
+                        "color": "#7aa7ff",
+                      },
+                    ]
+                  }
+                >
+                  ES
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#a9afbb",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  |
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#a9afbb",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  EN
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Estado de los datos: ○ Muestra · datos de ejemplo incluidos · USCIS hasta ago 2026. Toque para ver de dónde vienen."
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#2c313a",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "justifyContent": "center",
+                "maxWidth": "100%",
+                "minHeight": 48,
+                "opacity": 1,
+                "paddingHorizontal": 12,
+                "paddingVertical": 4,
+              }
+            }
+            testID="data-status"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              ○ Muestra · datos de ejemplo incluidos · USCIS hasta ago 2026
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#1b1e24",
+              "borderColor": "#2c313a",
+              "borderLeftColor": "#7aa7ff",
+              "borderLeftWidth": 4,
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "gap": 8,
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityRole="header"
+            style={
+              [
+                {
+                  "color": "#7aa7ff",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "lineHeight": 25,
+                },
+                undefined,
+              ]
+            }
+          >
+            Card
+          </Text>
+          <View
+            accessibilityLabel="chip"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#23272f",
+                "borderColor": "#2c313a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              chip
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityLiveRegion="polite"
+          style={
+            {
+              "alignItems": "flex-start",
+              "backgroundColor": "#33291a",
+              "borderColor": "#f0b94a",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "gap": 8,
+              "padding": 12,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "paddingTop": 1,
+              }
+            }
+          >
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-warning"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M12 3.5 2.5 20h19z"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGPath
+                  d="M12 10v4.5"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx={12}
+                  cy={17.25}
+                  fill={
+                    {
+                      "payload": 4293966154,
+                      "type": 0,
+                    }
+                  }
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r={1.25}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "gap": 4,
+                "minWidth": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              banner
+            </Text>
+            <View
+              accessibilityLabel="go"
+              accessibilityRole="link"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "transparent",
+                  "borderColor": "#2c313a",
+                  "borderRadius": 12,
+                  "borderWidth": 0,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 4,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "color": "#7aa7ff",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                go
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="tile"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            [
+              {
+                "backgroundColor": "#1b1e24",
+                "borderColor": "#2c313a",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "minHeight": 48,
+                "padding": 12,
+              },
+              {
+                "opacity": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "gap": 4,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                tile
+              </Text>
+            </View>
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-chevron-right"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M9 5l7 7-7 7"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4289310651,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="Pendientes: 355,520. ago 2026. Pendientes al cierre del período. Fuente: USCIS, informe mensual (CSV)."
+          accessible={true}
+          style={
+            {
+              "backgroundColor": "#1b1e24",
+              "borderColor": "#2c313a",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexBasis": 150,
+              "flexGrow": 1,
+              "gap": 4,
+              "minWidth": 0,
+              "padding": 12,
+            }
+          }
+          testID="stat-national.rows[].pending"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+            Pendientes
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#eceef2",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "lineHeight": 31,
+                },
+                undefined,
+              ]
+            }
+          >
+            355,520
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            ago 2026
+          </Text>
+          <View
+            accessibilityLabel="Pendientes al cierre del período"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#23272f",
+                "borderColor": "#2c313a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#a9afbb",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Pendientes al cierre del período
+            </Text>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#a9afbb",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Fuente: USCIS, informe mensual (CSV)
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "gap": 8,
+            }
+          }
+        >
+          <View
+            accessibilityLabel="No validado"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#f0b94a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              No validado
+            </Text>
+          </View>
+          <View
+            accessibilityLabel="Confianza: baja"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#33291a",
+                "borderColor": "#f0b94a",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#f0b94a",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Confianza: baja
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+            }
+          }
+          testID="ladder"
+        >
+          <View
+            accessibilityLabel="En 3 meses: 1 %, muy poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-3"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                3 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                1 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                muy poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "1.4844805046055454%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 6 meses: 4 %, muy poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-6"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                6 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                4 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                muy poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "3.6653500143097206%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 12 meses: 9 %, poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-12"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                12 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                9 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "9.228810312356273%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 24 meses: 22 %, posible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-24"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                24 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                22 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                posible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "22.050456474753044%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 36 meses: 35 %, posible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-36"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                36 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#eceef2",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                35 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#a9afbb",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                posible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#2c313a",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#3987e5",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "35.453101850422186%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="ok"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={4}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "backgroundColor": "#7aa7ff",
+              "borderColor": "#2c313a",
+              "borderRadius": 12,
+              "borderWidth": 0,
+              "justifyContent": "center",
+              "minHeight": 48,
+              "minWidth": 48,
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#eceef2",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                  "lineHeight": 21,
+                },
+                {
+                  "color": "#111317",
+                  "textAlign": "center",
+                  "textDecorationLine": "none",
+                },
+              ]
+            }
+          >
+            ok
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
+
+exports[`kit renders in es / light matches the snapshot 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#f7f7f5",
+      "flex": 1,
+      "overflow": "hidden",
+    }
+  }
+  testID="screen"
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "flexGrow": 1,
+      }
+    }
+    keyboardShouldPersistTaps="handled"
+    style={
+      {
+        "flex": 1,
+      }
+    }
+  >
+    <View>
+      <View
+        style={
+          {
+            "alignSelf": "center",
+            "gap": 12,
+            "maxWidth": 592,
+            "paddingBottom": 24,
+            "paddingHorizontal": 16,
+            "paddingTop": 8,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "gap": 8,
+              "paddingBottom": 4,
+            }
+          }
+          testID="app-header"
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                accessibilityRole="header"
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 22,
+                      "fontWeight": "700",
+                      "lineHeight": 31,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                Inicio
+              </Text>
+            </View>
+            <View
+              accessibilityHint="Cambia al instante todos los textos, fechas y números."
+              accessibilityLabel="Cambiar el idioma a inglés"
+              accessibilityRole="button"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#ffffff",
+                  "borderColor": "#d9dce1",
+                  "borderRadius": 999,
+                  "borderWidth": 1,
+                  "flexDirection": "row",
+                  "gap": 6,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 12,
+                }
+              }
+              testID="lang-toggle"
+            >
+              <RNSVGSvgView
+                accessibilityElementsHidden={true}
+                align="xMidYMid"
+                aria-hidden={true}
+                bbHeight={18}
+                bbWidth={18}
+                focusable={false}
+                height={18}
+                importantForAccessibility="no-hide-descendants"
+                meetOrSlice={0}
+                minX={0}
+                minY={0}
+                style={
+                  [
+                    {
+                      "backgroundColor": "transparent",
+                      "borderWidth": 0,
+                    },
+                    {
+                      "flex": 0,
+                      "height": 18,
+                      "width": 18,
+                    },
+                  ]
+                }
+                testID="icon-language"
+                vbHeight={24}
+                vbWidth={24}
+                width={18}
+              >
+                <RNSVGGroup
+                  fill={
+                    {
+                      "payload": 4278190080,
+                      "type": 0,
+                    }
+                  }
+                >
+                  <RNSVGPath
+                    d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M3 12h18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c3 3.2 3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                  <RNSVGPath
+                    d="M12 3c-3 3.2-3 14.8 0 18"
+                    fill={null}
+                    propList={
+                      [
+                        "fill",
+                        "stroke",
+                        "strokeWidth",
+                        "strokeLinecap",
+                        "strokeLinejoin",
+                      ]
+                    }
+                    stroke={
+                      {
+                        "payload": 4283850091,
+                        "type": 0,
+                      }
+                    }
+                    strokeLinecap={1}
+                    strokeLinejoin={1}
+                    strokeWidth={2}
+                  />
+                </RNSVGGroup>
+              </RNSVGSvgView>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 4,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#16181d",
+                        "fontSize": 15,
+                        "fontWeight": "700",
+                        "lineHeight": 21,
+                      },
+                      {
+                        "color": "#1d4ed8",
+                      },
+                    ]
+                  }
+                >
+                  ES
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#565d6b",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  |
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#565d6b",
+                        "fontSize": 15,
+                        "fontWeight": "400",
+                        "lineHeight": 21,
+                      },
+                      undefined,
+                    ]
+                  }
+                >
+                  EN
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Estado de los datos: ○ Muestra · datos de ejemplo incluidos · USCIS hasta ago 2026. Toque para ver de dónde vienen."
+            accessibilityRole="button"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#d9dce1",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "justifyContent": "center",
+                "maxWidth": "100%",
+                "minHeight": 48,
+                "opacity": 1,
+                "paddingHorizontal": 12,
+                "paddingVertical": 4,
+              }
+            }
+            testID="data-status"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              ○ Muestra · datos de ejemplo incluidos · USCIS hasta ago 2026
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#d9dce1",
+              "borderLeftColor": "#1d4ed8",
+              "borderLeftWidth": 4,
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "gap": 8,
+              "padding": 16,
+            }
+          }
+        >
+          <Text
+            accessibilityRole="header"
+            style={
+              [
+                {
+                  "color": "#1d4ed8",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "lineHeight": 25,
+                },
+                undefined,
+              ]
+            }
+          >
+            Card
+          </Text>
+          <View
+            accessibilityLabel="chip"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#f0f1f3",
+                "borderColor": "#d9dce1",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              chip
+            </Text>
+          </View>
+        </View>
+        <View
+          accessibilityLiveRegion="polite"
+          style={
+            {
+              "alignItems": "flex-start",
+              "backgroundColor": "#fdf3e1",
+              "borderColor": "#8a5300",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexDirection": "row",
+              "gap": 8,
+              "padding": 12,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "paddingTop": 1,
+              }
+            }
+          >
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-warning"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M12 3.5 2.5 20h19z"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGPath
+                  d="M12 10v4.5"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+                <RNSVGCircle
+                  cx={12}
+                  cy={17.25}
+                  fill={
+                    {
+                      "payload": 4287255296,
+                      "type": 0,
+                    }
+                  }
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r={1.25}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "gap": 4,
+                "minWidth": 0,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 13,
+                    "fontWeight": "400",
+                    "lineHeight": 18,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              banner
+            </Text>
+            <View
+              accessibilityLabel="go"
+              accessibilityRole="link"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": false,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              hitSlop={4}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "backgroundColor": "transparent",
+                  "borderColor": "#d9dce1",
+                  "borderRadius": 12,
+                  "borderWidth": 0,
+                  "justifyContent": "center",
+                  "minHeight": 48,
+                  "minWidth": 48,
+                  "opacity": 1,
+                  "paddingHorizontal": 4,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "color": "#1d4ed8",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                go
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="tile"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            [
+              {
+                "backgroundColor": "#ffffff",
+                "borderColor": "#d9dce1",
+                "borderRadius": 12,
+                "borderWidth": 1,
+                "minHeight": 48,
+                "padding": 12,
+              },
+              {
+                "opacity": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "gap": 8,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flex": 1,
+                  "gap": 4,
+                  "minWidth": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "600",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                tile
+              </Text>
+            </View>
+            <RNSVGSvgView
+              accessibilityElementsHidden={true}
+              align="xMidYMid"
+              aria-hidden={true}
+              bbHeight={20}
+              bbWidth={20}
+              focusable={false}
+              height={20}
+              importantForAccessibility="no-hide-descendants"
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 20,
+                    "width": 20,
+                  },
+                ]
+              }
+              testID="icon-chevron-right"
+              vbHeight={24}
+              vbWidth={24}
+              width={20}
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+              >
+                <RNSVGPath
+                  d="M9 5l7 7-7 7"
+                  fill={null}
+                  propList={
+                    [
+                      "fill",
+                      "stroke",
+                      "strokeWidth",
+                      "strokeLinecap",
+                      "strokeLinejoin",
+                    ]
+                  }
+                  stroke={
+                    {
+                      "payload": 4283850091,
+                      "type": 0,
+                    }
+                  }
+                  strokeLinecap={1}
+                  strokeLinejoin={1}
+                  strokeWidth={2}
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="Pendientes: 355,520. ago 2026. Pendientes al cierre del período. Fuente: USCIS, informe mensual (CSV)."
+          accessible={true}
+          style={
+            {
+              "backgroundColor": "#ffffff",
+              "borderColor": "#d9dce1",
+              "borderRadius": 12,
+              "borderWidth": 1,
+              "flexBasis": 150,
+              "flexGrow": 1,
+              "gap": 4,
+              "minWidth": 0,
+              "padding": 12,
+            }
+          }
+          testID="stat-national.rows[].pending"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 13,
+                  "fontWeight": "600",
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+            Pendientes
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#16181d",
+                  "fontSize": 22,
+                  "fontWeight": "700",
+                  "lineHeight": 31,
+                },
+                undefined,
+              ]
+            }
+          >
+            355,520
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            ago 2026
+          </Text>
+          <View
+            accessibilityLabel="Pendientes al cierre del período"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#f0f1f3",
+                "borderColor": "#d9dce1",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#565d6b",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Pendientes al cierre del período
+            </Text>
+          </View>
+          <Text
+            style={
+              [
+                {
+                  "color": "#565d6b",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "lineHeight": 17,
+                },
+                undefined,
+              ]
+            }
+          >
+            Fuente: USCIS, informe mensual (CSV)
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "gap": 8,
+            }
+          }
+        >
+          <View
+            accessibilityLabel="No validado"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#8a5300",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              No validado
+            </Text>
+          </View>
+          <View
+            accessibilityLabel="Confianza: baja"
+            accessible={true}
+            style={
+              {
+                "alignSelf": "flex-start",
+                "backgroundColor": "#fdf3e1",
+                "borderColor": "#8a5300",
+                "borderRadius": 999,
+                "borderWidth": 1,
+                "flexShrink": 1,
+                "paddingHorizontal": 10,
+                "paddingVertical": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#8a5300",
+                    "fontSize": 12,
+                    "fontWeight": "600",
+                    "lineHeight": 17,
+                  },
+                  undefined,
+                ]
+              }
+            >
+              Confianza: baja
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "gap": 8,
+            }
+          }
+          testID="ladder"
+        >
+          <View
+            accessibilityLabel="En 3 meses: 1 %, muy poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-3"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                3 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                1 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                muy poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "1.4844805046055454%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 6 meses: 4 %, muy poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-6"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                6 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                4 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                muy poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "3.6653500143097206%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 12 meses: 9 %, poco probable"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-12"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                12 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                9 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                poco probable
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "9.228810312356273%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 24 meses: 22 %, posible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-24"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                24 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                22 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                posible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "22.050456474753044%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            accessibilityLabel="En 36 meses: 35 %, posible"
+            accessible={true}
+            style={
+              {
+                "gap": 4,
+              }
+            }
+            testID="ladder-row-36"
+          >
+            <View
+              style={
+                {
+                  "alignItems": "baseline",
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "gap": 8,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "600",
+                      "lineHeight": 21,
+                    },
+                    {
+                      "minWidth": 76,
+                    },
+                  ]
+                }
+              >
+                36 meses
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#16181d",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "lineHeight": 21,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                35 %
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#565d6b",
+                      "fontSize": 13,
+                      "fontWeight": "400",
+                      "lineHeight": 18,
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                posible
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#d9dce1",
+                  "borderRadius": 4,
+                  "height": 8,
+                  "overflow": "hidden",
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#2a78d6",
+                    "borderRadius": 4,
+                    "height": 8,
+                    "width": "35.453101850422186%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          accessibilityLabel="ok"
+          accessibilityRole="button"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": false,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          hitSlop={4}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "alignSelf": "stretch",
+              "backgroundColor": "#1d4ed8",
+              "borderColor": "#d9dce1",
+              "borderRadius": 12,
+              "borderWidth": 0,
+              "justifyContent": "center",
+              "minHeight": 48,
+              "minWidth": 48,
+              "opacity": 1,
+              "paddingHorizontal": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#16181d",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                  "lineHeight": 21,
+                },
+                {
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "textDecorationLine": "none",
+                },
+              ]
+            }
+          >
+            ok
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

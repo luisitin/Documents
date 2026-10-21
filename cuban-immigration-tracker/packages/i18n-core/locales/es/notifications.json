@@ -1,1 +1,24 @@
-{}
+{
+  "channel.name": "Recordatorios",
+
+  "ead.title": "Su permiso de trabajo (EAD)",
+  "ead.body": "Su permiso de trabajo vence el {date}. Las renovaciones ya no se extienden automáticamente; puede presentar la renovación desde ahora.",
+  "rfe.title": "Solicitud de Evidencia (RFE)",
+  "noid.title": "Notificación de Intención de Denegar (NOID)",
+  "response.body": "Su respuesta a USCIS vence el {date}.",
+  "c9Inquiry.title": "Permiso de trabajo (c)(9)",
+  "c9Inquiry.body": "Ya puede presentar una consulta por demora de su permiso (c)(9).",
+  "dataMonth.title": "Datos nuevos de USCIS",
+  "dataMonth.body": "USCIS publicó datos de {month}. Su estimado se actualizó.",
+  "discreet.title": "Recordatorio de CAA Tracker",
+  "discreet.body": "Tiene un recordatorio. Abra la app para verlo.",
+
+  "shell.tab.index": "Inicio",
+  "shell.tab.case": "Mi caso",
+  "shell.tab.offices": "Oficinas",
+  "shell.tab.alerts": "Alertas",
+  "shell.tab.more": "Más",
+  "shell.error.title": "Algo salió mal en esta pantalla.",
+  "shell.error.body": "Sus datos guardados no se perdieron. Puede intentarlo de nuevo.",
+  "shell.loading": "Cargando…"
+}

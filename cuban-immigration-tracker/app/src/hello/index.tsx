@@ -13,6 +13,8 @@ import { Platform, Pressable, ScrollView, Text, View, useColorScheme } from 'rea
 import { getLocales } from 'expo-localization';
 import { SCHEMA_VERSION, parseManifest } from '@caa/data-schemas';
 import { quantile } from '@caa/estimator';
+import { DataContext } from '@/data/DataProvider';
+import { useLang } from '@/i18n/useLang';
 
 export type HelloLang = 'es' | 'en';
 type TabKey = 'index' | 'case' | 'offices' | 'alerts' | 'more';
@@ -93,10 +95,6 @@ interface HelloCtx {
 }
 const Ctx = createContext<HelloCtx | null>(null);
 
-declare global {
-  // Set by the artifact prelude (WEB-1) before the bundle runs.
-  var __CAA_DATA_BASE__: string | undefined;
-}
 
 export function HelloProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<HelloLang>(() => readLang() ?? deviceLang());
@@ -128,8 +126,13 @@ export function HelloProvider({ children }: { children: ReactNode }) {
 
 export function useHello(): HelloCtx {
   const c = useContext(Ctx);
-  if (!c) throw new Error('useHello outside HelloProvider');
-  return c;
+  // WP6 bridge: the root layout no longer mounts HelloProvider; the placeholder screens read the
+  // real platform state (settings language, data layer) until WP8a/WP8b replace them.
+  const { lang, setLang } = useLang();
+  const data = useContext(DataContext);
+  if (c) return c;
+  const d: DataState = data && data.status !== 'sample' ? { status: 'published', month: data.manifest.latestOfficialMonth } : { status: 'sample' };
+  return { lang, setLang, s: STRINGS[lang], data: d };
 }
 
 export function useTabTitle(key: TabKey): string {

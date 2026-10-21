@@ -1,1 +1,24 @@
-{}
+{
+  "channel.name": "Reminders",
+
+  "ead.title": "Your work permit (EAD)",
+  "ead.body": "Your work permit expires {date}. Renewals no longer auto-extend; you can file your renewal now.",
+  "rfe.title": "Request for Evidence (RFE)",
+  "noid.title": "Notice of Intent to Deny (NOID)",
+  "response.body": "Your response to USCIS is due {date}.",
+  "c9Inquiry.title": "(c)(9) work permit",
+  "c9Inquiry.body": "You can now file a delay inquiry for your (c)(9) work permit.",
+  "dataMonth.title": "New USCIS data",
+  "dataMonth.body": "USCIS published {month} data. Your estimate was updated.",
+  "discreet.title": "CAA Tracker reminder",
+  "discreet.body": "You have a reminder. Open the app to see it.",
+
+  "shell.tab.index": "Home",
+  "shell.tab.case": "My case",
+  "shell.tab.offices": "Offices",
+  "shell.tab.alerts": "Alerts",
+  "shell.tab.more": "More",
+  "shell.error.title": "Something went wrong on this screen.",
+  "shell.error.body": "Your saved data was not lost. You can try again.",
+  "shell.loading": "Loading…"
+}
