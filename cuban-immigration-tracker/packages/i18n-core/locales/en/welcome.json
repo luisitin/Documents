@@ -1,1 +1,12 @@
-{}
+{
+  "title": "Welcome to CAA Tracker",
+  "intro": "This app uses official USCIS data to explain how Cuban Adjustment Act green card applications (I-485) are moving, and what could happen with your case.",
+  "step1.title": "First, choose your language",
+  "step1.hint": "You can change it any time with the ES | EN button at the top, or in More → Settings.",
+  "step2.title": "Before you start",
+  "card.device": "Your data stays on your phone. We never ask for your name or your full receipt number.",
+  "card.device.web": "Your data stays in this browser. It is not sent to anyone, and we never ask for your name or your full receipt number.",
+  "action.ok": "Got it",
+  "action.setup": "Set up my case",
+  "storageNote": "If your browser does not allow saving data, this welcome will appear again next time."
+}

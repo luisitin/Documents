@@ -1,6 +1,6 @@
-// WP0 hello-world placeholder (replaced by the owning screen WP, 07 §2).
-import { HelloScreen } from '@/hello';
+// Route wrapper (07 §2: routes are thin wrappers; WP8b screens live in src/features/case).
+import { CaseHomeScreen } from '@/features/case';
 
-export default function Screen() {
-  return <HelloScreen tab="case" />;
+export default function Route() {
+  return <CaseHomeScreen />;
 }

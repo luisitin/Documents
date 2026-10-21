@@ -1,1 +1,72 @@
-{}
+{
+  "title": "¿Qué puedo hacer?",
+  "intro": "Opciones informativas, en orden. Cada una dice cuándo aplica a su caso; ninguna es obligatoria.",
+  "state.available": "✓ disponible",
+  "state.not_yet": "✕ aún no",
+  "state.not_yetEta": "✕ aún no (≈ {month})",
+  "state.depends": "⚠ depende",
+  "state.not_applicable": "— no aplica",
+  "gate.notAvailable": "Fecha de consulta: no disponible.",
+  "gate.inquiry": "Fecha de consulta usada: {date}.",
+  "expand": "Ver los pasos",
+  "collapse": "Ocultar los pasos",
+  "link.label": "Sitio oficial: {url}",
+  "link.open": "Abrir el sitio oficial",
+  "legal.consult": "Consulte a un abogado o representante acreditado.",
+  "redEagle": "Según la definición publicada por el tribunal (N.D. Cal. {docket}, {date}), su caso parece estar dentro de la clase. USCIS no ha publicado un canal para miembros de la clase.",
+  "pinned": "Esto no es asesoría legal.",
+
+  "a_i485.title": "a. Consulta por demora del I-485 (e-Request)",
+  "a_i485.body.available": "Su fecha de recibo ({receiptDate}) es anterior a la fecha de consulta de {officeCode} ({inquiryDate}, publicada el {publicationDate}). Puede presentar una consulta de caso fuera del tiempo normal de procesamiento.",
+  "a_i485.body.not_yet": "Según el propio criterio de USCIS, su I-485 todavía está dentro del tiempo normal de procesamiento en {officeCode} (fecha de consulta {inquiryDate}, publicada el {publicationDate}). USCIS rechazará una consulta por demora hasta que esa fecha pase su fecha de recibo ({receiptDate}); al ritmo de los últimos años, eso podría ocurrir hacia {etaMonth} (cálculo aproximado). Aun así puede pedir ayuda a su congresista o solicitar procesamiento expedito si tiene una emergencia documentada.",
+  "a_i485.body.no_eta": "La fecha de consulta de {officeCode} es el {inquiryDate} (publicada el {publicationDate}) y su recibo es del {receiptDate}. No tenemos suficientes fechas publicadas para calcular cuándo podría consultar.",
+  "a_i485.body.office_unknown": "Sin su oficina no podemos leer la fecha de consulta: no disponible. Indique su oficina en su caso para comparar su fecha de recibo ({receiptDate}).",
+  "a_i485.body.no_inquiry_date": "La fecha de consulta de {officeCode} no está disponible ahora (no disponible), así que no decimos si esta opción aplica.",
+  "a_i485.body.same_month": "La fecha de consulta de {officeCode} ({inquiryDate}, publicada el {publicationDate}) cae en el mismo mes de su recibo; con solo el mes no podemos saber si ya puede consultar. Revise el día en su aviso de recibo.",
+  "a_i485.steps": "1. Confirme la fecha de consulta en la página de tiempos de procesamiento de USCIS (I-485, familiar, su oficina). 2. Si su fecha de recibo es anterior, presente la consulta en línea (e-Request, «caso fuera del tiempo normal de procesamiento») o desde su cuenta de USCIS. 3. Guarde el número de confirmación. 4. Si en unos 30 días no hay respuesta útil, llame al Centro de Contacto de USCIS (oprima 2) con ese número.",
+
+  "a_c9.title": "a. Consulta por demora del permiso de trabajo (c)(9)",
+  "a_c9.body.available": "Su solicitud de permiso de trabajo (c)(9) ya pasó la fecha de consulta de USCIS ({inquiryDate}, {officeCode}, publicada el {publicationDate}); hoy puede presentar una consulta de caso fuera del tiempo normal de procesamiento. Si perdió un empleo o beneficios porque terminó su permiso del parole, también puede pedir procesamiento expedito con pruebas.",
+  "a_c9.body.not_yet": "La fecha de consulta del (c)(9) en {officeCode} es el {inquiryDate} (publicada el {publicationDate}); su recibo es del {receiptDate}. Al ritmo actual podría consultar hacia {etaMonth} (cálculo aproximado).",
+  "a_c9.body.no_eta": "La fecha de consulta del (c)(9) en {officeCode} es el {inquiryDate} y su recibo es del {receiptDate}. No tenemos suficientes fechas publicadas para calcular cuándo podría consultar.",
+  "a_c9.body.no_inquiry_date": "La fecha de consulta del (c)(9) en {officeCode} no está disponible ahora (no disponible), así que no decimos si esta opción aplica.",
+  "a_c9.body.same_month": "La fecha de consulta del (c)(9) ({inquiryDate}) cae en el mismo mes de su recibo; revise el día en su aviso de recibo.",
+  "a_c9.body.ead_received": "Ya tiene el permiso de trabajo (c)(9), así que esta consulta no aplica.",
+  "a_c9.body.no_i765": "Usted indicó que no presentó el I-765 con el I-485, así que esta consulta no aplica.",
+  "a_c9.steps": "1. Confirme la fecha de consulta del I-765 (c)(9) en el Centro Nacional de Beneficios en la página de tiempos de procesamiento. 2. Si su fecha de recibo es anterior, presente la consulta en línea (e-Request) o desde su cuenta de USCIS. 3. Guarde el número de confirmación.",
+
+  "b.title": "b. Procesamiento expedito",
+  "b.body.hardship": "Usted indicó: {hardship}. Con pruebas, puede pedir procesamiento expedito llamando al {phone} (español: oprima 2) o desde su cuenta. USCIS decide a su discreción y no hay apelación. Necesitar el permiso de trabajo por sí solo no es motivo de expedito.",
+  "b.body.no_hardship": "Solo aplica con uno de los cinco criterios de USCIS: pérdida financiera grave documentada, emergencia o razón humanitaria, organización sin fines de lucro, interés del gobierno, o un error claro de USCIS. Necesitar el permiso de trabajo por sí solo no es motivo de expedito. Teléfono: {phone} (español: oprima 2).",
+  "b.steps": "1. Reúna pruebas de la situación (cartas, despidos, informes médicos). 2. Llame al Centro de Contacto de USCIS y pida el procesamiento expedito, o envíe un mensaje desde su cuenta. 3. Anote la fecha y el número de referencia.",
+
+  "d.title": "d. Su congresista",
+  "d.body.default": "La oficina de su representante en el Congreso puede preguntar a USCIS por su caso. Le pedirán que firme una autorización de privacidad. Puede negarse si su caso está dentro del tiempo normal.",
+  "d.body.state_offices": "En {state}, las oficinas con más casos cubanos son {districts}. Le pedirán que firme una autorización de privacidad. Puede negarse si su caso está dentro del tiempo normal.",
+  "d.steps": "1. Busque a su representante por su dirección. 2. Llene el formulario de ayuda con casos de su sitio web y la autorización de privacidad. 3. USCIS suele responder a la oficina en unos 30 días.",
+
+  "c.title": "c. Ombudsman de CIS (DHS-7001)",
+  "c.body.available": "Ya pasaron {waitDays} días desde su consulta a USCIS o a su congresista. Puede presentar el Formulario DHS-7001 en línea, pero es posible que nunca reciba una respuesta de fondo: la oficina perdió a la mayoría de su personal en 2025.",
+  "c.body.contact_uscis_first": "Primero hay que consultar a USCIS (o a su congresista) y esperar {waitDays} días. La oficina del Ombudsman perdió a la mayoría de su personal en 2025; puede que nunca reciba una respuesta de fondo.",
+  "c.body.within_normal": "Ya consultó a USCIS hace más de {waitDays} días, pero su caso parece dentro del tiempo normal y no indicó una situación difícil; el Ombudsman suele rechazar esos casos. Puede que nunca reciba una respuesta de fondo.",
+  "c.steps": "1. Tenga a mano los números de sus consultas anteriores. 2. Presente el Formulario DHS-7001 en línea. 3. No dependa solo de este paso.",
+
+  "e.title": "e. Demanda de mandamus",
+  "e.body.strong": "Su I-485 lleva {monthsPending} meses pendiente. Muchos abogados consideran una demanda de mandamus desde unos 36 meses. La demanda de 143 cubanos en Tampa no logró que el tribunal ordenara acelerar casos (jul 2026).",
+  "e.body.soft": "Su I-485 lleva {monthsPending} meses pendiente. Algunos abogados consideran una demanda de mandamus desde unos 24 meses (con más fuerza desde el {strongDate}). La demanda de 143 cubanos en Tampa no logró que el tribunal ordenara acelerar casos (jul 2026).",
+  "e.body.hold_argument": "Su I-485 lleva {monthsPending} meses pendiente, menos que los 24 meses que suelen usar los abogados (el {softDate}). Como su caso pasó tiempo bajo pausas que un tribunal anuló, un abogado podría evaluar otro argumento. La demanda de 143 cubanos en Tampa no logró que el tribunal ordenara acelerar casos (jul 2026).",
+  "e.body.not_yet": "Su I-485 lleva {monthsPending} meses pendiente. Los abogados suelen considerar una demanda de mandamus desde unos 24 meses (el {softDate}).",
+  "e.fee": "Costo: {fee} de presentación en la corte federal (verificado el {asOf}), más los honorarios del abogado.",
+  "e.steps": "1. Hable con un abogado de inmigración sobre su caso y los costos. 2. El gobierno suele tener 60 días para responder la demanda. 3. Una demanda no garantiza una decisión rápida ni favorable.",
+
+  "f.title": "f. Cita o llamada a USCIS",
+  "f.body.default": "Solo para una necesidad concreta (sello en el pasaporte, viaje de emergencia, prueba de estatus). Centro de Contacto de USCIS: {phone} (español: oprima {spanishOption}); TTY {tty}. No hay citas sin cita previa.",
+  "f.steps": "1. Llame al Centro de Contacto y explique la necesidad concreta. 2. Si la aceptan, USCIS le dará una cita en una oficina local.",
+
+  "denial.title": "Si su I-485 fue negado",
+  "denial.body.default": "Puede presentar una moción o apelación (Formulario I-290B) dentro de {days} días ({mailedDays} si la decisión le llegó por correo). Consulte a un abogado cuanto antes.",
+  "denial.deadline": "Con la fecha de decisión que indicó, el plazo vence el {deadlineDate} ({deadlineMailedDate} si llegó por correo).",
+  "denial.steps": "1. Lea la carta de negación completa. 2. Consulte a un abogado o representante acreditado de inmediato. 3. Presente el I-290B dentro del plazo si así lo deciden.",
+
+  "decided.body": "Su caso ya tiene una decisión ({outcome}); estas opciones ya no aplican."
+}

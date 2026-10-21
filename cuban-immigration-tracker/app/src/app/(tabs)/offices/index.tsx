@@ -1,6 +1,6 @@
-// WP0 hello-world placeholder (replaced by the owning screen WP, 07 §2).
-import { HelloScreen } from '@/hello';
+// S6 Offices list (00 S6). Thin route wrapper (07 §2); the screen lives in features/.
+import { OfficesScreen } from '@/features/offices/OfficesScreen';
 
-export default function Screen() {
-  return <HelloScreen tab="offices" />;
+export default function Route() {
+  return <OfficesScreen />;
 }

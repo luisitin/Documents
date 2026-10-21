@@ -1,1 +1,15 @@
-{}
+{
+  "title": "Why did others get it and not me?",
+  "subtitle": "Possible reasons",
+  "intro": "These are reasons that could explain why other cases moved sooner. We cannot know which one applies to your case.",
+  "national": "Our estimate uses the national average for Cuban I-485s: the chance is the same with CHNV or CBP One, and with or without a work permit. What changes is your case's clock and these notes.",
+  "confidence.low": "low",
+  "confidence.medium": "medium",
+  "confidence.medium_high": "medium-high",
+  "confidence.high": "high",
+  "confidence.chip": "Confidence: {level}",
+  "empty": "We found no specific reasons for your case with the data we have.",
+  "closing": "A neighbor's approval or a screenshot proves nothing about your case; always check on the official USCIS website.",
+  "ineligible": "For this entry we do not compute estimates; see \"Your entry\".",
+  "compare": "Compare with someone else's code"
+}

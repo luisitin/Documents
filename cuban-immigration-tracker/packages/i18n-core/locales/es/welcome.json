@@ -1,1 +1,12 @@
-{}
+{
+  "title": "Bienvenido a CAA Tracker",
+  "intro": "Esta app explica, con datos oficiales de USCIS, cómo avanzan las solicitudes de residencia por la Ley de Ajuste Cubano (I-485), y qué podría pasar con su caso.",
+  "step1.title": "Primero, elija su idioma",
+  "step1.hint": "Puede cambiarlo cuando quiera con el botón ES | EN de arriba, o en Más → Ajustes.",
+  "step2.title": "Antes de empezar",
+  "card.device": "Sus datos se quedan en su teléfono. No pedimos su nombre ni su número de recibo completo.",
+  "card.device.web": "Sus datos se quedan en este navegador. No se envían a nadie, y no pedimos su nombre ni su número de recibo completo.",
+  "action.ok": "Entendido",
+  "action.setup": "Configurar mi caso",
+  "storageNote": "Si su navegador no permite guardar datos, esta bienvenida aparecerá otra vez la próxima vez."
+}

@@ -1,1 +1,15 @@
-{}
+{
+  "title": "¿Por qué a otros sí y a mí no?",
+  "subtitle": "Posibles razones",
+  "intro": "Estas son razones que podrían explicar por qué otros casos avanzaron antes. No podemos saber cuál aplica a su caso.",
+  "national": "Nuestro estimado usa el promedio del grupo nacional de I-485 cubanos: la probabilidad es la misma con CHNV o CBP One, y con o sin permiso de trabajo. Lo que cambia es el reloj de su caso y estas notas.",
+  "confidence.low": "baja",
+  "confidence.medium": "media",
+  "confidence.medium_high": "media-alta",
+  "confidence.high": "alta",
+  "confidence.chip": "Confianza: {level}",
+  "empty": "No encontramos razones específicas para su caso con los datos que tenemos.",
+  "closing": "Una aprobación de un vecino o una captura de pantalla no prueba nada sobre su caso; verifique siempre en el sitio oficial de USCIS.",
+  "ineligible": "Para esta entrada no calculamos estimados; vea «Su entrada».",
+  "compare": "Comparar con el código de otra persona"
+}

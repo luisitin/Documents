@@ -1,1 +1,72 @@
-{}
+{
+  "title": "What can I do?",
+  "intro": "Informational options, in order. Each one says when it applies to your case; none is required.",
+  "state.available": "✓ available",
+  "state.not_yet": "✕ not yet",
+  "state.not_yetEta": "✕ not yet (≈ {month})",
+  "state.depends": "⚠ it depends",
+  "state.not_applicable": "— does not apply",
+  "gate.notAvailable": "Inquiry date: not available.",
+  "gate.inquiry": "Inquiry date used: {date}.",
+  "expand": "See the steps",
+  "collapse": "Hide the steps",
+  "link.label": "Official website: {url}",
+  "link.open": "Open the official website",
+  "legal.consult": "Consult an attorney or accredited representative.",
+  "redEagle": "Under the definition published by the court (N.D. Cal. {docket}, {date}), your case appears to be in the class. USCIS has not published a channel for class members.",
+  "pinned": "This is not legal advice.",
+
+  "a_i485.title": "a. I-485 delay inquiry (e-Request)",
+  "a_i485.body.available": "Your receipt date ({receiptDate}) is earlier than the inquiry date at {officeCode} ({inquiryDate}, published {publicationDate}). You can file a case outside normal processing time inquiry.",
+  "a_i485.body.not_yet": "By USCIS's own yardstick your I-485 is still within normal processing time at {officeCode} (inquiry date {inquiryDate}, published {publicationDate}). USCIS will refuse a delay inquiry until that date passes your receipt date ({receiptDate}); at the pace of recent years that could happen around {etaMonth} (rough calculation). You can still ask your member of Congress for help, or request an expedite if you have a documented emergency.",
+  "a_i485.body.no_eta": "The inquiry date at {officeCode} is {inquiryDate} (published {publicationDate}) and your receipt is from {receiptDate}. We do not have enough published dates to calculate when you could ask.",
+  "a_i485.body.office_unknown": "Without your office we cannot read the inquiry date: not available. Add your office to your case to compare it with your receipt date ({receiptDate}).",
+  "a_i485.body.no_inquiry_date": "The inquiry date at {officeCode} is not available right now (not available), so we do not say whether this option applies.",
+  "a_i485.body.same_month": "The inquiry date at {officeCode} ({inquiryDate}, published {publicationDate}) falls in the same month as your receipt; with only the month we cannot tell whether you can ask yet. Check the day on your receipt notice.",
+  "a_i485.steps": "1. Confirm the inquiry date on the USCIS processing times page (I-485, family-based, your office). 2. If your receipt date is earlier, file the inquiry online (e-Request, \"case outside normal processing time\") or from your USCIS account. 3. Keep the confirmation number. 4. If there is no useful answer in about 30 days, call the USCIS Contact Center with that number.",
+
+  "a_c9.title": "a. Work permit (c)(9) delay inquiry",
+  "a_c9.body.available": "Your (c)(9) work-permit application is past USCIS's inquiry date ({inquiryDate}, {officeCode}, published {publicationDate}); you can file a case outside normal processing time inquiry today. If you lost a job or benefits because your parole work permit ended, you may also request an expedite with proof.",
+  "a_c9.body.not_yet": "The (c)(9) inquiry date at {officeCode} is {inquiryDate} (published {publicationDate}); your receipt is from {receiptDate}. At the current pace you could ask around {etaMonth} (rough calculation).",
+  "a_c9.body.no_eta": "The (c)(9) inquiry date at {officeCode} is {inquiryDate} and your receipt is from {receiptDate}. We do not have enough published dates to calculate when you could ask.",
+  "a_c9.body.no_inquiry_date": "The (c)(9) inquiry date at {officeCode} is not available right now (not available), so we do not say whether this option applies.",
+  "a_c9.body.same_month": "The (c)(9) inquiry date ({inquiryDate}) falls in the same month as your receipt; check the day on your receipt notice.",
+  "a_c9.body.ead_received": "You already have the (c)(9) work permit, so this inquiry does not apply.",
+  "a_c9.body.no_i765": "You said you did not file the I-765 with the I-485, so this inquiry does not apply.",
+  "a_c9.steps": "1. Confirm the I-765 (c)(9) inquiry date at the National Benefits Center on the processing times page. 2. If your receipt date is earlier, file the inquiry online (e-Request) or from your USCIS account. 3. Keep the confirmation number.",
+
+  "b.title": "b. Expedite request",
+  "b.body.hardship": "You marked: {hardship}. With proof, you can request an expedite by calling {phone} (Spanish: press 2) or from your account. USCIS decides at its discretion and there is no appeal. Needing the work permit by itself is not a reason to expedite.",
+  "b.body.no_hardship": "It only applies with one of USCIS's five criteria: documented severe financial loss, emergency or humanitarian reason, nonprofit organization, government interest, or a clear USCIS error. Needing the work permit by itself is not a reason to expedite. Phone: {phone} (Spanish: press 2).",
+  "b.steps": "1. Gather proof of the situation (letters, layoff notices, medical reports). 2. Call the USCIS Contact Center and ask for an expedite, or send a message from your account. 3. Write down the date and the reference number.",
+
+  "d.title": "d. Your member of Congress",
+  "d.body.default": "Your representative's office can ask USCIS about your case. They will ask you to sign a privacy release. They may decline if your case is within normal processing time.",
+  "d.body.state_offices": "In {state}, the offices with the most Cuban cases are {districts}. They will ask you to sign a privacy release. They may decline if your case is within normal processing time.",
+  "d.steps": "1. Find your representative by your address. 2. Fill in the casework form on their website and the privacy release. 3. USCIS usually answers the office within about 30 days.",
+
+  "c.title": "c. CIS Ombudsman (DHS-7001)",
+  "c.body.available": "More than {waitDays} days have passed since your inquiry to USCIS or your member of Congress. You can file Form DHS-7001 online, but you may never receive a substantive reply: the office lost most of its staff in 2025.",
+  "c.body.contact_uscis_first": "First you have to contact USCIS (or your member of Congress) and wait {waitDays} days. The Ombudsman office lost most of its staff in 2025; you may never receive a substantive reply.",
+  "c.body.within_normal": "You contacted USCIS more than {waitDays} days ago, but your case seems within normal processing time and you did not mark a hardship; the Ombudsman usually declines those cases. You may never receive a substantive reply.",
+  "c.steps": "1. Have the numbers of your earlier inquiries at hand. 2. File Form DHS-7001 online. 3. Do not rely on this step alone.",
+
+  "e.title": "e. Mandamus lawsuit",
+  "e.body.strong": "Your I-485 has been pending for {monthsPending} months. Many attorneys consider a mandamus lawsuit from about 36 months. The lawsuit by 143 Cubans in Tampa did not get the court to order faster decisions (Jul 2026).",
+  "e.body.soft": "Your I-485 has been pending for {monthsPending} months. Some attorneys consider a mandamus lawsuit from about 24 months (more strongly from {strongDate}). The lawsuit by 143 Cubans in Tampa did not get the court to order faster decisions (Jul 2026).",
+  "e.body.hold_argument": "Your I-485 has been pending for {monthsPending} months, less than the 24 months attorneys often use ({softDate}). Because your case spent time under holds that a court vacated, an attorney could weigh another argument. The lawsuit by 143 Cubans in Tampa did not get the court to order faster decisions (Jul 2026).",
+  "e.body.not_yet": "Your I-485 has been pending for {monthsPending} months. Attorneys usually consider a mandamus lawsuit from about 24 months ({softDate}).",
+  "e.fee": "Cost: a {fee} federal court filing fee (checked {asOf}), plus attorney fees.",
+  "e.steps": "1. Talk to an immigration attorney about your case and the costs. 2. The government usually has 60 days to answer the lawsuit. 3. A lawsuit does not guarantee a fast or favorable decision.",
+
+  "f.title": "f. USCIS appointment or call",
+  "f.body.default": "Only for a concrete need (passport stamp, emergency travel, proof of status). USCIS Contact Center: {phone} (Spanish: press {spanishOption}); TTY {tty}. There are no walk-ins.",
+  "f.steps": "1. Call the Contact Center and explain the concrete need. 2. If accepted, USCIS will give you an appointment at a field office.",
+
+  "denial.title": "If your I-485 was denied",
+  "denial.body.default": "You can file a motion or appeal (Form I-290B) within {days} days ({mailedDays} if the decision was mailed to you). Consult an attorney as soon as possible.",
+  "denial.deadline": "With the decision date you entered, the deadline is {deadlineDate} ({deadlineMailedDate} if it was mailed).",
+  "denial.steps": "1. Read the whole denial letter. 2. Consult an attorney or accredited representative right away. 3. File the I-290B within the deadline if you decide to.",
+
+  "decided.body": "Your case already has a decision ({outcome}); these options no longer apply."
+}

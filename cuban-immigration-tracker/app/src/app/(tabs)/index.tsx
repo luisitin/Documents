@@ -1,6 +1,6 @@
-// WP0 hello-world placeholder (WP8a replaces it with S1 Home).
-import { HelloScreen } from '@/hello';
+// S1 Home (00 S1). Thin route wrapper (07 §2); the screen lives in features/home.
+import { HomeScreen } from '@/features/home/HomeScreen';
 
-export default function Home() {
-  return <HelloScreen tab="index" />;
+export default function HomeRoute() {
+  return <HomeScreen />;
 }
