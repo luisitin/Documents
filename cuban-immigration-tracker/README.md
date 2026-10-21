@@ -84,12 +84,14 @@ The goal is to replace guesswork and rumor with data:
       (what was built, commands, Expo Go vs dev build, sample vs live data, owner steps) and
       [`docs/screenshots/`](docs/screenshots/) (every tab, the estimate and the language toggle,
       in Spanish and English, at 390×844).
-- [ ] CI observed green on the branch, and the first real data refresh on GitHub's runners
-      (the orchestrator touches `data/.refresh-request`).
+- [x] CI green on the branch on every commit (`caa-ci`), and the first real data refresh ran on
+      GitHub's runners on 2026-10-21 (run 39535458333): USCIS files fetched directly from
+      uscis.gov and matched the mirror byte for byte; office processing times as of 2026-10-19.
 - [ ] Native device test (Expo Go or a development build) on one iOS and one Android phone.
 - [ ] Native Cuban-Spanish review of every string, alert, notification and disclaimer.
 - [ ] Workflows merged to `main`, so the scheduled data refresh runs.
-- [ ] Web artifact published, with its URL recorded below.
+- [x] Web artifact published: https://claude.ai/artifact/9NWfbvyxvVr282Rngsmb6u (private until
+      the owner shares it from the page's Share menu).
 - [ ] Owner decision on the personal PDFs at the repository root.
 - Details for every open item: [`docs/planning/adr-log.md`](docs/planning/adr-log.md) §D.
 
@@ -100,7 +102,8 @@ The goal is to replace guesswork and rumor with data:
   `https://raw.githubusercontent.com/luisitin/Documents/<ref>/cuban-immigration-tracker/data/manifest.json`
   and the files it lists. The app uses `ref = main` (`app/app.json` `extra.data`). Until the
   data reaches `main`, the app shows the bundled sample, labelled "Muestra" / "Sample".
-- **Web artifact**: *not published yet.* `npm run build:artifact` writes one self-contained
+- **Web artifact**: https://claude.ai/artifact/9NWfbvyxvVr282Rngsmb6u (version 1, built
+  2026-10-21 from the data in run 39535458333). `npm run build:artifact` writes one self-contained
   HTML fragment, `web-artifact/index.html`, plus `web-artifact/data/`. `npm run prove` checks it
   in headless Chromium under the artifact host's rules. Publish it with the runbook in
   [`docs/planning/03-data-pipeline.md`](docs/planning/03-data-pipeline.md) §9, always to the

@@ -137,3 +137,16 @@ designed; a preview build can override `extra.data.ref` with the branch name to 
 `get_file_contents` call inside claude.ai, implement the parser in `app/src/data/hostRefresh.web.ts`
 (zod + sha256 like `fetchers.ts`), set `HOST_REFRESH_ENABLED = true`, and declare the `mcp`
 capability when publishing. Until then the page silently uses the shipped `./data/` files.
+
+## E. Release log
+
+- **2026-10-21, first real data refresh.** `data/.refresh-request` was touched in commit ae46872;
+  `caa-data-refresh` run 39535458333 committed 7fa5e1a ("content_changed; changed national,offices;
+  qa ok"). The USCIS monthly CSV was fetched directly from uscis.gov and its sha256 matched the
+  mirror copy. Office processing times come from the jzebedee mirror (publication 2026-10-19),
+  because egov.uscis.gov answers GitHub's runners with a Cloudflare 403. The canary still equals
+  GOLDEN T15 (P12 0.0923, q50 54). CourtListener docket checks are skipped until a
+  `COURTLISTENER_TOKEN` secret is added.
+- **2026-10-21, artifact published (D5).** https://claude.ai/artifact/9NWfbvyxvVr282Rngsmb6u,
+  version 1, from `web-artifact/` rebuilt on that data; `npm run prove` passed 641/641 before
+  publishing. Republish to the same URL after each new USCIS month.
