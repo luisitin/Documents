@@ -11,8 +11,9 @@
  * URL changes; Prove P2 expects `/` after boot); WP8a's Home shows the first-launch content there.
  */
 import { useEffect } from 'react';
-import { Platform, type ColorValue } from 'react-native';
+import { Platform, View, type ColorValue } from 'react-native';
 import { Tabs, useRouter } from 'expo-router';
+import { useUnreadAlertCount } from '@/features/alerts/readState';
 import { useLang } from '@/i18n/useLang';
 import { kv } from '@/storage/kv';
 import { getSettings } from '@/storage/settings';
@@ -46,21 +47,47 @@ const icon = (name: TabName) =>
     return <Icon name={TAB_ICON[name]} color={typeof color === 'string' ? color : undefined} size={size} testID={`tab-icon-${name}`} />;
   };
 
+/**
+ * Alerts tab icon with the "dot when unread" of 00 §5. The dot is drawn, not text, so the tab's
+ * visible label stays exactly "Alertas"/"Alerts" (Prove P6 reads it); the count is announced
+ * through the tab's accessibility label instead.
+ */
+function AlertsTabIcon({ color, size }: { color: ColorValue; size: number }) {
+  const unread = useUnreadAlertCount();
+  const theme = useTheme();
+  return (
+    <View>
+      <Icon name="alerts" color={typeof color === 'string' ? color : undefined} size={size} testID="tab-icon-alerts" />
+      {unread > 0 ? (
+        <View
+          testID="tab-alerts-unread-dot"
+          style={{ position: 'absolute', top: 0, right: -2, width: 9, height: 9, borderRadius: 5, backgroundColor: theme.colors.deadline, borderWidth: 1, borderColor: theme.colors.surface }}
+        />
+      ) : null}
+    </View>
+  );
+}
+
 const ICONS = {
   index: icon('index'),
   case: icon('case'),
   offices: icon('offices'),
-  alerts: icon('alerts'),
+  alerts: AlertsTabIcon,
   more: icon('more'),
 } as const;
 
 export default function TabLayout() {
-  const { t } = useLang();
+  const { t, fmt } = useLang();
   const theme = useTheme();
+  const unread = useUnreadAlertCount();
   useFirstLaunch();
   const opts = (name: TabName) => {
     const title = t(`notifications:shell.tab.${name}`);
-    return { title, tabBarAccessibilityLabel: title, tabBarButtonTestID: `tab-${name}`, tabBarIcon: ICONS[name] };
+    const a11y =
+      name === 'alerts' && unread > 0
+        ? `${title}, ${t(unread === 1 ? 'alerts:unread.one' : 'alerts:unread.other', { n: fmt.int(unread) })}`
+        : title;
+    return { title, tabBarAccessibilityLabel: a11y, tabBarButtonTestID: `tab-${name}`, tabBarIcon: ICONS[name] };
   };
   return (
     <Tabs

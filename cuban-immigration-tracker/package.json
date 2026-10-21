@@ -23,7 +23,8 @@
     "i18n:check": "node scripts/check-i18n.mjs",
     "build:artifact": "node scripts/build-artifact.mjs --app app --data data --out web-artifact",
     "prove": "node scripts/prove-artifact.mjs --dir web-artifact --out prove-out --variant both",
-    "check": "npm run typecheck && npm run lint && npm test && npm run golden:check && npm run i18n:check && npm run data:validate"
+    "personal:check": "node scripts/check-no-personal-files.mjs",
+    "check": "npm run typecheck && npm run lint && npm test && npm run golden:check && npm run i18n:check && npm run data:validate && npm run personal:check"
   },
   "dependencies": {
     "@sparticuz/chromium": "153.0.0",

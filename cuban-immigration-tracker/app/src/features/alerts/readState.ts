@@ -6,13 +6,16 @@
  * "nothing read" and writes stay in memory. "Borrar mis datos" (`kv.clear('caa:')`) removes it
  * with everything else; the hook re-reads the KV on every render, so it never shows stale state.
  *
- * TODO(WP6): the tab layout may show the "dot when unread" of 00 §5 with `useUnreadCount()`.
+ * The tab layout shows the "dot when unread" of 00 §5 with `useUnreadAlertCount()` (WP11
+ * integration, adr-log.md).
  */
 import { useCallback, useSyncExternalStore } from 'react';
 import { z } from 'zod';
 import type { Alert } from '@caa/data-schemas';
+import { useData } from '@/data/useData';
 import { kv } from '@/storage/kv';
 import { readJson, writeJson } from '@/storage/kvCore';
+import { isLive } from '../home/model';
 
 export const ALERTS_READ_KEY = 'caa:v1:alerts:read' as const;
 
@@ -61,4 +64,11 @@ export function useReadAlerts(): { read: ReadonlySet<string>; markRead(ids: read
 /** How many of `alerts` are unread. */
 export function unreadCount(alerts: readonly Alert[], read: ReadonlySet<string>): number {
   return alerts.reduce((n, a) => n + (read.has(a.id) ? 0 : 1), 0);
+}
+
+/** Unread alerts among the ones the Alerts tab lists (live: not retracted or expired). */
+export function useUnreadAlertCount(): number {
+  const d = useData();
+  const { read } = useReadAlerts();
+  return unreadCount(d.alerts.alerts.filter((a) => isLive(a, d.today)), read);
 }

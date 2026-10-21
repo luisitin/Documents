@@ -1,0 +1,48 @@
+CAA Tracker (Cuban Immigration Tracker): licence terms
+
+This directory (cuban-immigration-tracker/) uses two licences:
+
+  1. Source code (app/, packages/, scripts/, tools/, test/, and the workflow files under
+     /.github/workflows/caa-*.yml): the MIT License, below.
+  2. Data and written content produced by this project (data/*.json, data/curated/**,
+     packages/i18n-core/locales/**, docs/**): Creative Commons Attribution 4.0 International
+     (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/
+     Suggested attribution: "CAA Tracker (github.com/luisitin/Documents), data from USCIS".
+
+Exceptions (not covered by either licence above):
+
+  - Official U.S. government data (the USCIS files archived under data/raw/ and the numbers
+    derived from them) are works of the U.S. Government and are not subject to copyright in the
+    United States. Source: USCIS.
+  - Fields derived from third-party projects keep their own terms. In particular, the
+    processing-time history derived from github.com/jzebedee/uscis (which has no LICENSE file)
+    is used for derived fields only, with attribution, pending the maintainer's permission
+    (docs/planning/05-privacy-security-legal.md section 6).
+  - Personal files elsewhere in this git repository (outside cuban-immigration-tracker/) are not
+    part of this project and are not licensed by this file.
+
+This project is not legal advice and is not affiliated with USCIS, DHS or any government agency.
+
+-------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2026 luisitin (github.com/luisitin)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

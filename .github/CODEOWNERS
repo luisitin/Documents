@@ -1,0 +1,13 @@
+# CODEOWNERS (WP11; 05-privacy-security-legal.md §3.1).
+# The owner's review is required for the paths that can publish data, change the estimator, run
+# in CI with write permission, or change the curated (human-reviewed) facts. Later rules win, so
+# there is no catch-all rule: everything else follows the normal pull-request review.
+# For the review to be *required*, the owner must enable "Require review from Code Owners" in
+# the branch protection rule for `main` (owner follow-up, docs/planning/adr-log.md).
+
+/.github/workflows/                              @luisitin
+/.github/CODEOWNERS                              @luisitin
+/cuban-immigration-tracker/packages/ingestion/   @luisitin
+/cuban-immigration-tracker/packages/estimator/   @luisitin
+/cuban-immigration-tracker/data/curated/         @luisitin
+/cuban-immigration-tracker/scripts/              @luisitin

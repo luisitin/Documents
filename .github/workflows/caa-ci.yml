@@ -1,11 +1,17 @@
-# caa-ci — WP0 SKELETON (07-implementation-plan.md WP0 step 6; 03-data-pipeline.md §6.3).
-# Ownership: handed to WP11 (jobs `tools`, `app`) and WP10 (the marked `web` block) by the
-# commit "handoff: workflow skeletons → WP5 (refresh, probe, staleness), WP11 (ci), WP10 (ci web block)".
+# caa-ci (WP11 owns this file except the marked WP10 `web` block; 03-data-pipeline.md §6.3;
+# 07-implementation-plan.md WP11, §7; 05-privacy-security-legal.md §2–§3).
 #
 # Triggers (orchestrator override 3): push to claude/cuban-immigration-tracker-b6y4b1 and
-# pull_request, both limited to the project paths. CI never commits (contents: read).
-# Steps whose script or source file does not exist yet are green no-ops, so the skeleton is
-# green before WP1–WP5 land; WP11 removes the guards once everything exists.
+# pull_request, both limited to the project paths and this file. Scheduled workflows only run on
+# the default branch, so CI deliberately has no schedule. CI never commits: every job has
+# `contents: read` and checkout does not persist credentials.
+#
+# Jobs:
+#   tools  root tooling: tsc, eslint, vitest, oracle cross-check, JSON Schema drift, strict data
+#          validation, i18n check, and the personal-files guard (05 §2).
+#   app    the Expo app on its own (no root `npm ci`: proves zod resolves from app/node_modules
+#          only, 07 §4): typed routes, `expo install --check`, `expo lint`, tsc, jest.
+#   web    (WP10 block) the Claude artifact fragment build and Prove (07 §9).
 name: caa-ci
 
 on:
@@ -14,10 +20,12 @@ on:
     paths:
       - "cuban-immigration-tracker/**"
       - ".github/workflows/caa-ci.yml"
+      - ".github/CODEOWNERS"
   pull_request:
     paths:
       - "cuban-immigration-tracker/**"
       - ".github/workflows/caa-ci.yml"
+      - ".github/CODEOWNERS"
 
 permissions:
   contents: read
@@ -34,6 +42,8 @@ jobs:
   tools:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -43,26 +53,33 @@ jobs:
           node-version: "22.13"
           cache: npm
           cache-dependency-path: cuban-immigration-tracker/package-lock.json
-      - run: npm ci
-      - run: npm run --if-present typecheck
-      - run: npm run --if-present lint
-      - run: npm run --if-present test
-      - name: Oracle cross-check (golden:check)
+      # Root install scripts are not needed (only esbuild's optional binary check and fsevents,
+      # which is macOS-only; verified by WP11): 05 §3.1 "npm ci --ignore-scripts".
+      - run: npm ci --ignore-scripts
+      - name: Personal-files guard (05 §2; warns about the pre-existing owner PDFs, fails on new ones)
+        run: node scripts/check-no-personal-files.mjs
+      - name: Typecheck (tsc)
+        run: npm run typecheck
+      - name: Lint (eslint + typescript-eslint; ARCH-1 purity rules)
+        run: npm run lint
+      - name: Unit tests (vitest; packages/* incl. golden T1–T32, U1–U8)
+        run: npm test
+      - name: Oracle cross-check (golden:check; Python stdlib only, 04 §9)
         run: |
-          if [ -f tools/oracle/golden_cases.py ]; then npm run golden:check; else echo "tools/oracle not present yet (WP2)"; fi
+          python3 --version
+          npm run golden:check
       - name: JSON Schema drift (schema:export --check)
-        run: |
-          if [ -f scripts/export-schema.mjs ]; then npm run schema:export -- --check; else echo "scripts/export-schema.mjs not present yet (WP1)"; fi
-      - name: Validate data (data:validate)
-        run: |
-          if [ -f packages/ingestion/src/cli.ts ]; then npm run data:validate; else echo "ingestion CLI not present yet (WP5)"; fi
-      - name: i18n check
-        run: |
-          if [ -f scripts/check-i18n.mjs ]; then npm run i18n:check; else echo "scripts/check-i18n.mjs not present yet (WP4)"; fi
+        run: npm run schema:export -- --check
+      - name: Validate data/ and data/curated/ (strict zod)
+        run: npm run data:validate
+      - name: i18n check (key parity, register guard, banned wording)
+        run: npm run i18n:check
 
   app:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
     defaults:
       run:
         working-directory: cuban-immigration-tracker/app
@@ -76,14 +93,19 @@ jobs:
           cache: npm
           cache-dependency-path: cuban-immigration-tracker/app/package-lock.json
       # No root `npm ci` in this job: proves the app resolves zod from app/node_modules only (07 §4).
+      # Install scripts stay on here (unrs-resolver and @parcel/watcher need their postinstall).
       - run: npm ci
       # Generates .expo/types/router.d.ts and expo-env.d.ts so typedRoutes is enforced by tsc
       # (non-interactive in CI: verified by WP0 acceptance (h)).
       - run: npx expo customize tsconfig.json
-      - run: npx expo install --check
-      - run: npx expo lint
-      - run: npx tsc --noEmit
-      - run: npx jest --ci
+      - name: Dependencies match the SDK (expo install --check; online in CI)
+        run: npx expo install --check
+      - name: Lint (expo lint; ARCH-3 bans, react/jsx-no-literals)
+        run: npx expo lint
+      - name: Typecheck (tsc, typed routes)
+        run: npx tsc --noEmit
+      - name: Tests (jest)
+        run: npx jest --ci
 
   # >>> WP10 web block (owned by WP10; 03 §6.3 "web" job; 07 WP10, §9).
   # Builds the Claude artifact fragment from the Expo web export and proves it (P1–P14, sample and
