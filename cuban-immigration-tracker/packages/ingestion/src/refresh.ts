@@ -41,7 +41,7 @@ import {
 } from './qa';
 import { fileNameOf, listRawMetas, planRaw, writeRaw, type RawMeta } from './raw';
 import {
-  buildManifest, loadPublished, mergeCandidates, publish, pruneQuarantine, serializeFiles, writeAtomic, writeQuarantine,
+  buildManifest, knownQuarantineAttempts, loadPublished, mergeCandidates, publish, pruneQuarantine, serializeFiles, writeAtomic, writeQuarantine,
   type PreviousSnapshot, type PublishedFiles,
 } from './publish';
 import { authHeaders, clCandidates, docketEntriesUrl, MAX_REQUESTS_PER_RUN } from './sources/courtListener';
@@ -107,13 +107,19 @@ interface Ctx {
   env: Record<string, string | undefined>;
   log: (line: string) => void;
   raw: { meta: RawMeta; bytes: Uint8Array; isNew: boolean }[];
-  quarantine: { file: string; bytes: Uint8Array }[];
+  /** Failed attempts: `key` = gate|source|period|sha256 of the bytes (dedupes the quarantine across runs). */
+  quarantine: { file: string; bytes: Uint8Array; key: string }[];
   qa: QaResult[];
   candidates: AlertCandidate[];
   portal: PortalLink[] | null;
 }
 
 const ym = (d: ISODate) => d.slice(0, 7);
+
+/** The sorted, de-duplicated identity of this run's failures (see the commit decision). */
+export function failKeys(failed: QaResult[], attempts: { key: string }[]): string[] {
+  return [...new Set([...failed.map((r) => `${r.id}|${r.source}|${r.message}`), ...attempts.map((a) => `attempt|${a.key}`)])].sort();
+}
 const last = <T>(a: T[]) => a[a.length - 1];
 
 function gitInfo(env: Record<string, string | undefined>): { ref: string; sha: string } {
@@ -155,8 +161,24 @@ async function archive(ctx: Ctx, sourceId: SourceId, period: string, f: Fetched)
   return plan.meta;
 }
 
-function quarantineAttempt(ctx: Ctx, sourceId: string, period: string, f: Fetched): void {
-  ctx.quarantine.push({ file: `${sourceId}/${period}/${fileNameOf(f.url)}`, bytes: f.bytes });
+function quarantineAttempt(ctx: Ctx, gate: string, sourceId: string, period: string, f: Fetched): void {
+  ctx.quarantine.push({ file: `${sourceId}/${period}/${fileNameOf(f.url)}`, bytes: f.bytes, key: `${gate}|${sourceId}|${period}|${sha256Hex(f.bytes)}` });
+}
+
+/** The row's values without its provenance, with sorted keys (published JSON and a fresh parse may order keys differently). */
+const coreOf = (x: { source: SourceRef; revision?: unknown }): string => JSON.stringify({ ...x, source: null, revision: null }, (_k, v: unknown) =>
+  v && typeof v === 'object' && !Array.isArray(v) ? Object.fromEntries(Object.entries(v).sort(([a], [b]) => (a < b ? -1 : 1))) : v);
+
+/**
+ * Re-parsing an already published period must not flip its provenance (direct ↔ mirror, new url /
+ * retrievedAt) when nothing changed: same values and the same source bytes (sha256) keep the published
+ * row as it is. The only provenance change allowed on identical bytes is the upgrade mirror → direct.
+ */
+export function keepUnchanged<T extends { source: SourceRef; revision?: unknown }>(existing: T | undefined, next: T): T {
+  if (!existing || !existing.source.sha256 || existing.source.sha256 !== next.source.sha256) return next;
+  if (coreOf(existing) !== coreOf(next)) return next;
+  const upgrade = next.source.via === 'direct' && existing.source.via !== 'direct';
+  return upgrade ? next : existing;
 }
 
 /** The latest archived validators (ETag / Last-Modified) for one period. */
@@ -228,7 +250,7 @@ async function ingestMonthly(ctx: Ctx, prev: PreviousSnapshot): Promise<{ nation
       const mirrorSha = await liveMirrorSha(ctx, monthlyCsvMirrorUrl(m));
       const q8 = q8MirrorSha('uscis.monthly_csv', sha256Hex(r.file.bytes), mirrorSha);
       if (mirrorSha) ctx.qa.push(q8);
-      if (q8.level === 'fail') { quarantineAttempt(ctx, 'uscis.monthly_csv', m, r.file); continue; }
+      if (q8.level === 'fail') { quarantineAttempt(ctx, 'Q8', 'uscis.monthly_csv', m, r.file); continue; }
     }
     const meta = await archive(ctx, 'uscis.monthly_csv', m, r.file);
     let parsed;
@@ -237,12 +259,12 @@ async function ingestMonthly(ctx: Ctx, prev: PreviousSnapshot): Promise<{ nation
     } catch (e) {
       if (!(e instanceof SourceError)) throw e;
       ctx.qa.push({ id: 'Q1', source: 'uscis.monthly_csv', level: 'fail', message: `${m}: schema_mismatch: ${e.message}` });
-      quarantineAttempt(ctx, 'uscis.monthly_csv', m, r.file);
+      quarantineAttempt(ctx, 'Q1', 'uscis.monthly_csv', m, r.file);
       continue;
     }
     if (parsed.month !== m) {
       ctx.qa.push({ id: 'Q1', source: 'uscis.monthly_csv', level: 'fail', message: `${fileNameOf(r.file.url)} is titled ${parsed.month}, expected ${m}` });
-      quarantineAttempt(ctx, 'uscis.monthly_csv', m, r.file);
+      quarantineAttempt(ctx, 'Q1', 'uscis.monthly_csv', m, r.file);
       continue;
     }
     const row = parsed.cuban;
@@ -252,7 +274,7 @@ async function ingestMonthly(ctx: Ctx, prev: PreviousSnapshot): Promise<{ nation
     const changed = !rows.some((x) => x.ym === m) || q3.revision === true;
     if (prevRow && changed) gates.push(q4FlowIdentity(prevRow, row), q11PendingJump(prevRow, row));
     ctx.qa.push(...gates.filter((g) => g.level !== 'pass' || changed));
-    if (gates.some((g) => g.level === 'fail')) { quarantineAttempt(ctx, 'uscis.monthly_csv', m, r.file); continue; }
+    if (gates.some((g) => g.level === 'fail')) { quarantineAttempt(ctx, gates.filter((g) => g.level === 'fail').map((g) => g.id).join('+'), 'uscis.monthly_csv', m, r.file); continue; }
     const existing = rows.find((x) => x.ym === m);
     let final: MonthlyRow = row;
     if (q3.revision && existing) {
@@ -261,10 +283,11 @@ async function ingestMonthly(ctx: Ctx, prev: PreviousSnapshot): Promise<{ nation
     } else if (existing?.revision) {
       final = { ...row, revision: existing.revision }; // unchanged values: keep the recorded revision
     }
+    final = keepUnchanged(existing, final);
     const idx = rows.findIndex((x) => x.ym === m);
     if (idx >= 0) rows[idx] = final; else { rows.push(final); if (!latest || m > latest) newMonths.push(m); }
     const j = i765.findIndex((x) => x.ym === m);
-    if (j >= 0) i765[j] = parsed.i765; else i765.push(parsed.i765);
+    if (j >= 0) i765[j] = keepUnchanged(i765[j], parsed.i765); else i765.push(parsed.i765);
     if (!latest || m >= latest) { obtainedLatest = r.file; latestSha = meta.sha256; }
   }
   rows.sort((a, b) => (a.ym < b.ym ? -1 : 1));
@@ -320,20 +343,21 @@ async function ingestAllForms(ctx: Ctx, prev: PreviousSnapshot): Promise<{ rows:
       const mirrorSha = await liveMirrorSha(ctx, u.mirror[0]!);
       const q8 = q8MirrorSha('uscis.quarterly_all_forms', sha256Hex(r.file.bytes), mirrorSha);
       if (mirrorSha) ctx.qa.push(q8);
-      if (q8.level === 'fail') { quarantineAttempt(ctx, 'uscis.quarterly_all_forms', period, r.file); continue; }
+      if (q8.level === 'fail') { quarantineAttempt(ctx, 'Q8', 'uscis.quarterly_all_forms', period, r.file); continue; }
     }
     const meta = await archive(ctx, 'uscis.quarterly_all_forms', period, r.file);
     try {
       const p = await parseAllForms(r.file.bytes, { url: meta.url, via: meta.via, retrievedAt: meta.retrievedAt, sha256: meta.sha256 });
       if (!sameQuarter(p.quarter, q)) throw new SourceError(`workbook is ${quarterKey(p.quarter)}, expected ${quarterKey(q)}`);
-      rows = mergeQuarterRows(rows, p.rows);
+      const before = rows;
+      rows = mergeQuarterRows(rows, p.rows.map((n) => keepUnchanged(before.find((x) => x.form === n.form && sameQuarter(x.quarter, n.quarter)), n)));
       parsedRows.push(...p.rows);
       if (isNew) newQuarters.push(q);
       if (!latest || cmpQuarter(q, latest) >= 0) { obtained = r.file; sha = meta.sha256; }
     } catch (e) {
       if (!(e instanceof SourceError)) throw e;
       ctx.qa.push({ id: 'Q1', source: 'uscis.quarterly_all_forms', level: 'fail', message: `${quarterKey(q)}: schema_mismatch: ${e.message}` });
-      quarantineAttempt(ctx, 'uscis.quarterly_all_forms', period, r.file);
+      quarantineAttempt(ctx, 'Q1', 'uscis.quarterly_all_forms', period, r.file);
     }
   }
   const lq = last(rows.filter((r) => r.form === 'I-485 (Cuban)').sort((a, b) => cmpQuarter(a.quarter, b.quarter)))?.quarter;
@@ -379,12 +403,13 @@ async function ingestByOffice(ctx: Ctx, prev: PreviousSnapshot): Promise<{ offic
       const p = await parseByOffice(r.file.bytes, { url: meta.url, via: meta.via, retrievedAt: meta.retrievedAt, sha256: meta.sha256 });
       if (!sameQuarter(p.quarter, q)) throw new SourceError(`workbook is ${quarterKey(p.quarter)}, expected ${quarterKey(q)}`);
       parsed.push(p);
-      stats = [...stats.filter((s) => !sameQuarter(s.quarter, q)), ...p.stats];
+      const before = stats;
+      stats = [...stats.filter((s) => !sameQuarter(s.quarter, q)), ...p.stats.map((n) => keepUnchanged(before.find((x) => x.officeCode === n.officeCode && sameQuarter(x.quarter, n.quarter)), n))];
       if (!parsed.slice(0, -1).some((x) => cmpQuarter(x.quarter, q) > 0) && (!latest || cmpQuarter(q, latest) >= 0)) { obtained = r.file; sha = meta.sha256; offices = p.offices; stateOffices = p.stateOffices; }
     } catch (e) {
       if (!(e instanceof SourceError)) throw e;
       ctx.qa.push({ id: 'Q1', source: 'uscis.i485_by_office', level: 'fail', message: `${quarterKey(q)}: schema_mismatch: ${e.message}` });
-      quarantineAttempt(ctx, 'uscis.i485_by_office', period, r.file);
+      quarantineAttempt(ctx, 'Q1', 'uscis.i485_by_office', period, r.file);
     }
   }
   // Keep the last OFFICE_QUARTERS_KEPT quarters, and only offices listed in the newest workbook.
@@ -641,9 +666,22 @@ export async function refresh(o: RefreshOptions): Promise<RefreshResult> {
   const candidatesChanged = serializeJson(candidates) !== serializeJson(prev.candidates ?? []) && candidates.length > 0;
   const rawNew = ctx.raw.filter((r) => r.isNew);
   const failed = qa.results.filter((r) => r.level === 'fail');
-  const decision = decideCommit({ previous: prev.manifest ?? null, shas, now: nowIso, sideFilesChanged: rawNew.length > 0 || candidatesChanged || failed.length > 0 });
+  // A failure that keeps happening (a USCIS revision the mirror lacks → Q8, a skipped month → Q3 gap, a
+  // parser regression → Q2) must not commit a new quarantine copy and notify on every run: only a CHANGE
+  // in the set of failing keys (gate|source|message, plus gate|source|period|sha256 per quarantined
+  // attempt) is a side-file change. The set's hash is kept in manifest.qa.failKeysSha256 (additive field).
+  const fk = failKeys(failed, ctx.quarantine);
+  const failKeysSha256 = fk.length ? sha256Hex(fk.join('\n')) : undefined;
+  const prevFailKeysSha256 = (prev.manifest?.qa as { failKeysSha256?: string } | undefined)?.failKeysSha256;
+  const failSetChanged = !!prev.manifest && failKeysSha256 !== prevFailKeysSha256;
+  const decision = decideCommit({ previous: prev.manifest ?? null, shas, now: nowIso, sideFilesChanged: rawNew.length > 0 || candidatesChanged || failSetChanged });
   const prevLastGood = prev.manifest?.qa.lastGoodRunId;
-  const manifest = provisional(can, { status: qa.status, lastGoodRunId: qa.status === 'ok' ? ctx.runId : prevLastGood ?? ctx.runId, notes: qa.notes }, { dataChangedAt: decision.dataChangedAt, lastCheckedAt: decision.lastCheckedAt });
+  const manifest = provisional(can, {
+    status: qa.status, lastGoodRunId: qa.status === 'ok' ? ctx.runId : prevLastGood ?? ctx.runId, notes: qa.notes, ...(failKeysSha256 ? { failKeysSha256 } : {}),
+  }, { dataChangedAt: decision.dataChangedAt, lastCheckedAt: decision.lastCheckedAt });
+  // For the notify job: comment only when the committed QA picture changed (TODO(workflow): gate the
+  // "CAA data QA" upsert on qa_changed instead of qa_status != 'ok').
+  const qaChanged = !o.dryRun && decision.shouldCommit && (failSetChanged || !prev.manifest || prev.manifest.qa.status !== qa.status);
   const alertsChanged = !!prev.manifest && prev.manifest.files.alerts.sha256 !== shas.alerts;
 
   // ── write ────────────────────────────────────────────────────────────────────────────────
@@ -651,8 +689,16 @@ export async function refresh(o: RefreshOptions): Promise<RefreshResult> {
   let quarantineDir: string | null = null;
   if (!o.dryRun && decision.shouldCommit) {
     for (const r of rawNew) written.push(await writeRaw(o.out, r));
-    if (failed.length) {
-      quarantineDir = await writeQuarantine(o.out, ctx.runId, { at: nowIso, runId: ctx.runId, status: qa.status, results: qa.results.filter((r) => r.level !== 'pass') }, ctx.quarantine);
+    if (failed.length && (failSetChanged || !prev.manifest)) {
+      // Bytes already held by an earlier quarantine run (same key) are referenced, not copied again.
+      const known = await knownQuarantineAttempts(o.out);
+      const attempts = ctx.quarantine.filter((a, i, all) => all.findIndex((b) => b.key === a.key) === i);
+      const report = {
+        at: nowIso, runId: ctx.runId, status: qa.status, failKeys: fk,
+        attempts: attempts.map((a) => ({ key: a.key, file: a.file, ...(known.has(a.key) ? { storedIn: known.get(a.key)! } : {}) })),
+        results: qa.results.filter((r) => r.level !== 'pass'),
+      };
+      quarantineDir = await writeQuarantine(o.out, ctx.runId, report, attempts.filter((a) => !known.has(a.key)));
       written.push(quarantineDir);
     }
     if (candidates.length) { const p = join(o.out, 'candidates', 'alert-candidates.json'); await writeAtomic(p, serializeJson(candidates)); written.push(p); }
@@ -675,7 +721,7 @@ export async function refresh(o: RefreshOptions): Promise<RefreshResult> {
   if (o.githubOutput) {
     const out = {
       should_commit: String(!o.dryRun && decision.shouldCommit), new_month: String(decision.shouldCommit && newMonth), new_quarter: String(decision.shouldCommit && newQuarter),
-      qa_status: qa.status, alerts_changed: String(decision.shouldCommit && alertsChanged), data_month: latestOfficialMonth, summary,
+      qa_status: qa.status, qa_changed: String(qaChanged), alerts_changed: String(decision.shouldCommit && alertsChanged), data_month: latestOfficialMonth, summary,
     };
     await appendFile(o.githubOutput, Object.entries(out).map(([k, v]) => `${k}=${v}\n`).join(''));
   }

@@ -12,7 +12,7 @@ import { localize } from '@caa/i18n-core';
 import { useData } from '@/data/useData';
 import { useLang } from '@/i18n/useLang';
 import { AppText, Button, Card, Chip, useTheme } from '@/ui';
-import { ExternalLink } from '../home/shared';
+import { ExternalLink, sourceLabel } from '../home/shared';
 import { CHANNEL_KEY, EVIDENCE_KEY, KIND_KEY, SEVERITY_KEY, SEVERITY_TONE } from './copy';
 
 export interface AlertCardProps {
@@ -109,7 +109,7 @@ export function AlertCard({ alert: a, unread = false, full = false, onOpen }: Al
             {t('alerts:sources')}
           </AppText>
           {a.sources.map((s) => (
-            <ExternalLink key={s.url} label={t('alerts:sourceItem', { label: s.label, evidence: t(EVIDENCE_KEY[s.evidence]) })} url={s.url} />
+            <ExternalLink key={s.url} label={t('alerts:sourceItem', { label: sourceLabel(s, lang, fmt), evidence: t(EVIDENCE_KEY[s.evidence]) })} url={s.url} />
           ))}
         </View>
       ) : onOpen ? (

@@ -9,10 +9,18 @@
  *    explicit `# shellcheck disable=SC2016` directive. When ACTIONLINT (path to the binary) is set, the
  *    real linter runs too.
  *
+ * 3. caa-data-refresh push boundary (review round 2): the write-token `commit` job takes its checkout ref
+ *    from the trusted event context (`github.sha`), never from an output of the untrusted `refresh` job,
+ *    and a push guard refuses to push anything but ONE commit touching only data/** (not data/curated/).
+ *    The guard is exercised for real: the commit job's run script runs against local git repos, including
+ *    the attack where the checked-out commit is a foreign (fork / PR head) grafted root.
+ *
  * Line-based on purpose (no YAML dependency): the workflows use the standard 2-space layout.
  */
-import { execFileSync } from 'node:child_process';
-import { readFileSync, readdirSync } from 'node:fs';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync, chmodSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 
@@ -107,7 +115,7 @@ describe('caa-data-refresh least privilege', () => {
     for (const { script } of runBlocks(commit)) {
       for (const l of script.filter((x) => !x.startsWith('#'))) expect(l).not.toMatch(/\b(npm|npx|tsx|node|yarn|pnpm)\b/);
     }
-    expect(commit).toMatch(/git pull --rebase origin "\$BRANCH" && git push origin "HEAD:\$BRANCH"/);
+    expect(commit).toMatch(/git pull --rebase origin "\$BRANCH" && guard && git push origin "HEAD:\$BRANCH"/);
     expect(commit).toMatch(/git reset -q -- data\/curated data\/.refresh-request/);
   });
 
@@ -115,6 +123,143 @@ describe('caa-data-refresh least privilege', () => {
     expect(j.notify).toMatch(/permissions:\n\s+issues: write\n/);
     expect(j.notify).not.toMatch(/contents: write/);
     expect(j.notify).toMatch(/needs\.commit\.result == 'failure'/);
+  });
+});
+
+describe('caa-data-refresh push boundary (review round 2)', () => {
+  const src = read('caa-data-refresh.yml');
+  const j = jobs(src);
+  const BR = 'claude/cuban-immigration-tracker-b6y4b1';
+
+  it('no checkout ref comes from a job output; both jobs check out github.sha', () => {
+    for (const [id, t] of Object.entries(j)) {
+      for (const s of steps(t).filter((x) => /actions\/checkout@/.test(x))) {
+        expect(s, id).not.toMatch(/ref:\s*\$\{\{\s*needs\./);
+        expect(s, id).toMatch(/^\s+ref: \$\{\{ github\.sha \}\}$/m);
+      }
+    }
+    expect(j.refresh).not.toMatch(/^\s+sha: \$\{\{/m);
+    expect(j.commit).not.toMatch(/needs\.refresh\.outputs\.sha/);
+  });
+
+  const commitScript = runBlocks(j.commit!)[0]!.script.join('\n');
+  const hasRsync = spawnSync('sh', ['-c', 'command -v rsync']).status === 0;
+
+  /** Runs `git` with a clean config in `cwd`. */
+  const git = (cwd: string, ...args: string[]): string =>
+    execFileSync('git', ['-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'init.defaultBranch=main', ...args], {
+      cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], env: gitEnv,
+    }).trim();
+  let root = '';
+  let gitEnv: NodeJS.ProcessEnv = {};
+  const put = (dir: string, rel: string, body: string): void => {
+    mkdirSync(dirname(join(dir, rel)), { recursive: true });
+    writeFileSync(join(dir, rel), body);
+  };
+
+  /** A bare "origin" with the branch, plus a working clone checked out the way actions/checkout does. */
+  function setup(checkoutRef: 'branch' | 'foreign', upstreamMovesAfterCheckout = false) {
+    root = mkdtempSync(join(tmpdir(), 'caa-guard-'));
+    gitEnv = { PATH: process.env.PATH, HOME: root, GIT_CONFIG_NOSYSTEM: '1', GIT_CONFIG_GLOBAL: join(root, 'gitconfig') };
+    writeFileSync(join(root, 'gitconfig'), '[protocol "file"]\n\tallow = always\n');
+    const origin = join(root, 'origin.git');
+    git(root, 'init', '-q', '--bare', origin);
+    const seed = join(root, 'seed');
+    git(root, 'init', '-q', seed);
+    put(seed, 'cuban-immigration-tracker/package.json', '{}\n');
+    put(seed, 'cuban-immigration-tracker/packages/a.ts', 'export {};\n');
+    put(seed, 'cuban-immigration-tracker/data/x.json', '1\n');
+    put(seed, 'cuban-immigration-tracker/data/curated/c.json', '1\n');
+    git(seed, 'add', '-A');
+    git(seed, 'commit', '-qm', 'seed');
+    git(seed, 'push', '-q', `file://${origin}`, `HEAD:refs/heads/${BR}`);
+    // A fork / PR head: an unrelated commit whose tree is the branch tree plus a non-data file.
+    git(seed, 'checkout', '-q', '--orphan', 'fork');
+    put(seed, 'cuban-immigration-tracker/packages/evil.ts', 'export const pwned = 1;\n');
+    git(seed, 'add', '-A');
+    git(seed, 'commit', '-qm', 'foreign');
+    git(seed, 'push', '-q', `file://${origin}`, 'HEAD:refs/pull/1/head');
+    const work = join(root, 'work');
+    git(root, 'init', '-q', work);
+    git(work, 'remote', 'add', 'origin', `file://${origin}`);
+    git(work, 'fetch', '-q', '--depth', '1', 'origin', checkoutRef === 'branch' ? `refs/heads/${BR}` : 'refs/pull/1/head');
+    git(work, 'checkout', '-q', '--detach', 'FETCH_HEAD');
+    if (upstreamMovesAfterCheckout) {
+      git(seed, 'fetch', '-q', `file://${origin}`, `refs/heads/${BR}`);
+      git(seed, 'checkout', '-q', '-B', 'other', 'FETCH_HEAD');
+      put(seed, 'cuban-immigration-tracker/packages/b.ts', 'export {};\n');
+      git(seed, 'add', '-A');
+      git(seed, 'commit', '-qm', 'someone else pushed code');
+      git(seed, 'push', '-q', `file://${origin}`, `HEAD:refs/heads/${BR}`);
+    }
+    const tmp = join(root, 'runner-temp');
+    put(tmp, 'caa-data/new.json', '{"sample":true}\n');
+    const bin = join(root, 'bin');
+    mkdirSync(bin);
+    if (!hasRsync) {
+      // Local stand-in (this sandbox has no rsync; ubuntu-latest does): copy SRC/ into DEST/.
+      writeFileSync(join(bin, 'rsync'), '#!/bin/sh\nfor a; do s="$d"; d="$a"; done\ncp -R "$s." "$d"\n');
+      chmodSync(join(bin, 'rsync'), 0o755);
+    }
+    return { origin, work, tmp, bin };
+  }
+
+  function runCommit(env: ReturnType<typeof setup>, script = commitScript) {
+    const out = join(root, 'github-output');
+    writeFileSync(out, '');
+    const r = spawnSync('bash', ['--noprofile', '--norc', '-eo', 'pipefail', '-c', script], {
+      cwd: join(env.work, 'cuban-immigration-tracker'), encoding: 'utf8',
+      env: { ...gitEnv, PATH: `${env.bin}:${process.env.PATH}`, RUNNER_TEMP: env.tmp, GITHUB_OUTPUT: out,
+        SUMMARY: 'test', NEW_MONTH: 'false', DATA_MONTH: '', BRANCH: BR },
+      timeout: 30_000,
+    });
+    const tipFiles = git(root, '--git-dir', env.origin, 'ls-tree', '-r', '--name-only', `refs/heads/${BR}`).split('\n');
+    return { status: r.status, log: r.stdout + r.stderr, output: readFileSync(out, 'utf8'), tipFiles };
+  }
+
+  it('pushes a data-only commit on top of the branch', () => {
+    const r = runCommit(setup('branch'));
+    try {
+      expect(r.status, r.log).toBe(0);
+      expect(r.output).toContain('committed=true');
+      expect(r.tipFiles).toContain('cuban-immigration-tracker/data/new.json');
+    } finally { rmSync(root, { recursive: true, force: true }); }
+  });
+
+  it('still pushes when someone else moved the branch (rebase onto new code is fine)', () => {
+    const r = runCommit(setup('branch', true));
+    try {
+      expect(r.status, r.log).toBe(0);
+      expect(r.tipFiles).toEqual(expect.arrayContaining(['cuban-immigration-tracker/data/new.json', 'cuban-immigration-tracker/packages/b.ts']));
+    } finally { rmSync(root, { recursive: true, force: true }); }
+  });
+
+  it('refuses to push when the checked-out commit is a foreign grafted root (fork / PR head)', () => {
+    const env = setup('foreign');
+    try {
+      // Non-vacuous: without the guard the same script would push packages/evil.ts to the branch.
+      const unguarded = runCommit(env, commitScript.replace('&& guard &&', '&&'));
+      expect(unguarded.tipFiles, unguarded.log).toContain('cuban-immigration-tracker/packages/evil.ts');
+    } finally { rmSync(root, { recursive: true, force: true }); }
+    const r = runCommit(setup('foreign'));
+    try {
+      expect(r.status, r.log).not.toBe(0);
+      expect(r.log).toMatch(/push guard/);
+      expect(r.output).not.toContain('committed=true');
+      expect(r.tipFiles).not.toContain('cuban-immigration-tracker/packages/evil.ts');
+      expect(r.tipFiles).not.toContain('cuban-immigration-tracker/data/new.json');
+    } finally { rmSync(root, { recursive: true, force: true }); }
+  });
+
+  it('the guard rejects a commit that touches data/curated/', () => {
+    const env = setup('branch');
+    try {
+      // Smuggle a curated change into the bot commit (the script's own `git reset` normally drops it).
+      const script = commitScript.replace('git commit -m', 'echo 2 > data/curated/c.json && git add data/curated && git commit -m');
+      const r = runCommit(env, script);
+      expect(r.status, r.log).not.toBe(0);
+      expect(r.log).toMatch(/push guard: paths outside data\/ \(or curated\) changed/);
+    } finally { rmSync(root, { recursive: true, force: true }); }
   });
 });
 

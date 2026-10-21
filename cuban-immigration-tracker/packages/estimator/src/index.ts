@@ -49,3 +49,5 @@ export { discreteCrps, kaplanMeier, kmAt, kmConditional } from './crowd';
 export type { KmStep } from './crowd';
 export { referenceCase, REFERENCE_CASE_ID, REFERENCE_TODAY } from './reference';
 export { DAYS_PER_MONTH } from './dates';
+export { headlineRange, MIN_BAND_WIDTH } from './headline';
+export type { HeadlineRange } from './headline';

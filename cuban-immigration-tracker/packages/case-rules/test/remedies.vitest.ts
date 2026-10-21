@@ -181,6 +181,41 @@ describe('remedyLadder', () => {
     expect(steps[0]!.params).toMatchObject({ deadlineDate: '2026-10-31', deadlineMailedDate: '2026-11-03', days: 30, mailedDays: 33 });
   });
 
+  it('denial with a month-only decision date: no deadline dates (they could be ~2 weeks late), only the 30/33-day rule', () => {
+    const steps = ladder(variant({}, { add: [ms('decision', '2026-09-15', { outcome: 'denied' }, 'month')] }));
+    expect(steps).toHaveLength(1);
+    const p = steps[0]!.params;
+    expect(p).toMatchObject({ days: 30, mailedDays: 33, decisionMonth: '2026-09' });
+    expect(p.deadlineDate).toBeUndefined();
+    expect(p.deadlineMailedDate).toBeUndefined();
+    expect(p.decisionDate).toBeUndefined();
+  });
+
+  it('e-Request ETA on or before today (stale publication): depends / eta_passed, never a past "not yet" month', () => {
+    // Synthetic TEST history: pub 2026-01-15 inq 2024-01-01 → pub 2026-08-15 inq 2024-07-05; receipt 2024-07-06 → ETA 2026-08-17.
+    const stale: OfficesFile = {
+      ...offices,
+      processingTimes: offices.processingTimes.map((r) => (r.form === 'I-485' && r.subtype === '131A-FAM' && r.officeCode === 'MIA'
+        ? { ...r, inquiryDate: '2024-07-05', publicationDate: '2026-08-15' } : r)),
+      inquiryDateHistory: offices.inquiryDateHistory.filter((h) => !(h.officeCode === 'MIA' && h.subtype === '131A-FAM')).concat([
+        { officeCode: 'MIA', subtype: '131A-FAM', points: [
+          { publicationDate: '2026-01-15', inquiryDate: '2024-01-01' }, { publicationDate: '2026-08-15', inquiryDate: '2024-07-05' }] }]),
+    };
+    const c = variant({ officeCode: 'MIA', i485ReceiptDate: '2024-07-06' });
+    expect(remedyEta(stale.inquiryDateHistory.find((h) => h.officeCode === 'MIA')!, '2024-07-06')!.etaDate).toBe('2026-08-17');
+    const s = rung(ladder(c, '2026-10-21', stale), 'a_i485');
+    expect(s.state).toBe('depends');
+    expect(s.bodyKey).toBe('remedies:a_i485.body.eta_passed');
+    expect(s.etaMonth).toBeUndefined();
+    expect(s.params.etaMonth).toBeUndefined();
+    expect(s.params.etaDate).toBeUndefined();
+    expect(s.gate).toMatchObject({ inquiryDate: '2024-07-05' });
+    // G0 sample: HIA receipt 2024-07-08 → ETA 2026-10-20, i.e. today: also eta_passed, not "not yet (Oct 2026)".
+    expect(rung(ladder(variant({ officeCode: 'HIA', i485ReceiptDate: '2024-07-08' })), 'a_i485').bodyKey).toBe('remedies:a_i485.body.eta_passed');
+    // A future ETA stays not_yet.
+    expect(rung(ladder(variant({ officeCode: 'HIA', i485ReceiptDate: '2024-07-08' }), '2026-10-19'), 'a_i485').state).toBe('not_yet');
+  });
+
   it('approved case: every rung not applicable', () => {
     const steps = ladder(variant({}, { add: [ms('decision', '2026-10-01', { outcome: 'approved' })] }));
     expect(steps.every((s) => s.state === 'not_applicable')).toBe(true);
@@ -212,6 +247,8 @@ describe('REMEDY_KEYS (i18n contract for the `remedies` namespace, WP8b)', () =>
       ladder(t15(), '2028-04-01'),
       ladder(variant({}, { add: [ms('decision', '2026-10-01', { outcome: 'denied' })] })),
       ladder(variant({}, { add: [ms('decision', '2026-10-01', { outcome: 'approved' })] })),
+      ladder(variant({ officeCode: 'HIA', i485ReceiptDate: '2024-07-08' })),
+      ladder(variant({ i485ReceiptDate: '2025-06-14' }, noEad), TODAY, nbcHistory),
     ];
     const seen = new Set<string>();
     for (const steps of runs) for (const s of steps) { seen.add(s.titleKey); seen.add(s.bodyKey); }
@@ -219,5 +256,9 @@ describe('REMEDY_KEYS (i18n contract for the `remedies` namespace, WP8b)', () =>
     const c9 = rung(ladder(variant({ i485ReceiptDate: '2025-08-01' }, noEad), TODAY, nbcHistory), 'a_c9');
     expect(c9.state).toBe('not_yet');
     expect(c9.etaMonth).toMatch(/^\d{4}-\d{2}$/);
+    // (c)(9) regression: receipt one day after the NBC inquiry date → ETA 2026-10-18, before today.
+    const c9Passed = rung(ladder(variant({ i485ReceiptDate: '2025-06-14' }, noEad), TODAY, nbcHistory), 'a_c9');
+    expect(c9Passed).toMatchObject({ state: 'depends', bodyKey: 'remedies:a_c9.body.eta_passed' });
+    expect(c9Passed.etaMonth).toBeUndefined();
   });
 });

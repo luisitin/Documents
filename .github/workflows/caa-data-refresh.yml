@@ -20,6 +20,11 @@
 # - `commit` (contents: write, default GITHUB_TOKEN, no PAT) runs NO npm code: it checks out the same
 #   commit, mirrors the artifact into data/, and commits ONLY under cuban-immigration-tracker/data/ (never
 #   data/curated, the human-reviewed inputs), with `git pull --rebase` before `git push`.
+#   Review round 2: the commit job trusts NOTHING from `refresh` for git: both jobs check out
+#   `github.sha` (event context, never a job output), and a push guard refuses to push unless the result is
+#   exactly one commit on top of the fetched branch tip that changes only cuban-immigration-tracker/data/**
+#   (not data/curated/, not .refresh-request). The artifact and the text outputs (summary, flags) are the
+#   only things that cross from the untrusted job, and they only reach data/ and env vars.
 # issues: write lives on the separate notify job. `[skip ci]` keeps CI off bot commits; the push path
 # filter cannot match the files the bot writes, so there is no loop.
 name: caa-data-refresh
@@ -60,7 +65,6 @@ jobs:
     permissions:
       contents: read
     outputs:
-      sha: ${{ steps.head.outputs.sha }}
       should_commit: ${{ steps.ingest.outputs.should_commit }}
       summary: ${{ steps.ingest.outputs.summary }}
       data_month: ${{ steps.ingest.outputs.data_month }}
@@ -71,15 +75,12 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.ref_name }}
+          # The event's commit (trusted context). The commit job checks out the same `github.sha`; it never
+          # takes a ref from this job's outputs (review round 2).
+          ref: ${{ github.sha }}
           fetch-depth: 1
           # No token in .git/config for the npm/parser steps below.
           persist-credentials: false
-
-      - id: head
-        name: Record the checked-out commit (the commit job checks out the same one)
-        working-directory: .
-        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - id: present
         name: Code present on this ref?
@@ -142,7 +143,9 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ needs.refresh.outputs.sha }}
+          # Same commit as `refresh`, from the trusted event context, NOT from a job output: the refresh job
+          # runs internet-fed parsers and could forge any output (review round 2).
+          ref: ${{ github.sha }}
           fetch-depth: 1
 
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
@@ -167,8 +170,21 @@ jobs:
           git reset -q -- data/curated data/.refresh-request
           if git diff --cached --quiet; then echo "nothing staged"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -m "data: ${SUMMARY} [skip ci]"
+          # Push guard (review round 2): after the rebase, HEAD must be exactly ONE commit on top of the tip
+          # just fetched (FETCH_HEAD), and that commit may change only cuban-immigration-tracker/data/**,
+          # never data/curated/ or data/.refresh-request. Anything else (a foreign or grafted base, replayed
+          # non-data commits) aborts before `git push`. Fail-closed: any git error exits non-zero.
+          guard() {
+            # Called inside an `if` condition, where `set -e` is off: every step checks its own status.
+            base=$(git rev-parse --verify "FETCH_HEAD^{commit}") || exit 1
+            n=$(git rev-list --count "$base..HEAD") || exit 1
+            if [ "$n" = "0" ]; then echo "already on $BRANCH"; echo "committed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+            if [ "$n" != "1" ]; then echo "::error::push guard: $n commits on top of origin/$BRANCH (expected 1)"; exit 1; fi
+            bad=$(git diff --name-only "$base" HEAD | awk '!/^cuban-immigration-tracker\/data\// || /^cuban-immigration-tracker\/data\/(curated\/|\.refresh-request$)/') || exit 1
+            if [ -n "$bad" ]; then echo "::error::push guard: paths outside data/ (or curated) changed:"; echo "$bad"; exit 1; fi
+          }
           for i in 1 2 3; do
-            if git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH"; then
+            if git pull --rebase origin "$BRANCH" && guard && git push origin "HEAD:$BRANCH"; then
               echo "committed=true" >> "$GITHUB_OUTPUT"
               # 03 §7: a lightweight tag per new official month (covered by contents: write).
               if [ "$NEW_MONTH" = "true" ] && [ -n "$DATA_MONTH" ]; then

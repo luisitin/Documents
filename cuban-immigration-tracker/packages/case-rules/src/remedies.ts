@@ -18,7 +18,13 @@
  *   (§6.2). Fee from `policy.fees` id `mandamusFiling` (405 USD, re-check after 2026-12-01; 00 S7).
  * - Rung f, appointments: only for a concrete need; Contact Center 1-800-375-5283, Spanish: press 2
  *   (§7).
- * - Denied → I-290B within 30 days (33 if mailed), not this ladder (§6.5, §9.1 step 9).
+ * - Denied → I-290B within 30 days (33 if mailed), not this ladder (§6.5, §9.1 step 9). The
+ *   deadline dates are emitted only for a day-granularity decision date: a month-only date (stored
+ *   as day 15, 00 S2) could put the real deadline up to ~2 weeks earlier, so then only the 30/33-day
+ *   rule is shown and the person reads the date on the letter.
+ * - A computed e-Request ETA on or before today (stale publication, receipt just after the inquiry
+ *   date) is not shown as a past "not yet" month: the rung says `depends` with `eta_passed` ("may be
+ *   soon; check the next publication").
  *
  * The ETA formula is pinned by 07 WP3 (supersedes doc 15's month-rounded arithmetic):
  * `rate = days(inq_first → inq_latest) / days(pub_first → pub_latest)`; `gap = days(inq_latest →
@@ -61,9 +67,10 @@ export const I290B_MAILED_DAYS = 33;
 export const REMEDY_KEYS = [
   'remedies:a_i485.title', 'remedies:a_i485.body.available', 'remedies:a_i485.body.not_yet', 'remedies:a_i485.body.no_eta',
   'remedies:a_i485.body.office_unknown', 'remedies:a_i485.body.no_inquiry_date', 'remedies:a_i485.body.same_month',
+  'remedies:a_i485.body.eta_passed',
   'remedies:a_c9.title', 'remedies:a_c9.body.available', 'remedies:a_c9.body.not_yet', 'remedies:a_c9.body.no_eta',
   'remedies:a_c9.body.no_inquiry_date', 'remedies:a_c9.body.same_month', 'remedies:a_c9.body.ead_received',
-  'remedies:a_c9.body.no_i765',
+  'remedies:a_c9.body.no_i765', 'remedies:a_c9.body.eta_passed',
   'remedies:b.title', 'remedies:b.body.hardship', 'remedies:b.body.no_hardship',
   'remedies:d.title', 'remedies:d.body.default', 'remedies:d.body.state_offices',
   'remedies:c.title', 'remedies:c.body.available', 'remedies:c.body.contact_uscis_first', 'remedies:c.body.within_normal',
@@ -143,7 +150,7 @@ function gateOf(rec: ProcessingTimeRecord | null): RemedyStep['gate'] {
 }
 
 /** Rung a (I-485): 131A-FAM inquiry date at the case's office. */
-function rungI485(c: CaseTimeline, offices: OfficesFile): RemedyStep {
+function rungI485(c: CaseTimeline, offices: OfficesFile, today: ISODate): RemedyStep {
   const receipt = c.i485ReceiptDate;
   const base = { receiptDate: receipt, subtype: I485_SUBTYPE };
   if (c.officeCode === undefined) {
@@ -165,13 +172,15 @@ function rungI485(c: CaseTimeline, offices: OfficesFile): RemedyStep {
   const h = historyFor(offices, office, I485_SUBTYPE);
   const eta = h ? remedyEta(h, receipt) : null;
   if (eta === null) return step('a_i485', 'depends', 'remedies:a_i485.body.no_eta', p, { gate: gateOf(rec) });
+  // Projected crossing already behind us, but the latest published inquiry date has not passed the receipt.
+  if (eta.etaDate <= today) return step('a_i485', 'depends', 'remedies:a_i485.body.eta_passed', p, { gate: gateOf(rec) });
   p.etaMonth = eta.etaMonth;
   p.etaDate = eta.etaDate;
   return step('a_i485', 'not_yet', 'remedies:a_i485.body.not_yet', p, { gate: gateOf(rec), etaMonth: eta.etaMonth });
 }
 
 /** Rung a ((c)(9)): 147-C9 inquiry date at NBC; the I-765 is filed with the I-485 (concurrent). */
-function rungC9(c: CaseTimeline, offices: OfficesFile): RemedyStep {
+function rungC9(c: CaseTimeline, offices: OfficesFile, today: ISODate): RemedyStep {
   const receipt = c.i485ReceiptDate;
   const base: RemedyStep['params'] = { receiptDate: receipt, subtype: C9_SUBTYPE, officeCode: C9_OFFICE };
   const ead = eadOf(c);
@@ -193,6 +202,7 @@ function rungC9(c: CaseTimeline, offices: OfficesFile): RemedyStep {
   const h = historyFor(offices, C9_OFFICE, C9_SUBTYPE);
   const eta = h ? remedyEta(h, receipt) : null;
   if (eta === null) return step('a_c9', 'depends', 'remedies:a_c9.body.no_eta', base, { gate: gateOf(rec) });
+  if (eta.etaDate <= today) return step('a_c9', 'depends', 'remedies:a_c9.body.eta_passed', base, { gate: gateOf(rec) });
   base.etaMonth = eta.etaMonth;
   base.etaDate = eta.etaDate;
   return step('a_c9', 'not_yet', 'remedies:a_c9.body.not_yet', base, { gate: gateOf(rec), etaMonth: eta.etaMonth });
@@ -297,7 +307,10 @@ export function remedyLadder(c: CaseTimeline, flags: DerivedFlags, offices: Offi
     const outcome = decision.meta?.outcome;
     if (outcome === 'denied') {
       const p: RemedyStep['params'] = { days: I290B_DAYS, mailedDays: I290B_MAILED_DAYS };
-      if (decision.date !== null) {
+      if (decision.date !== null && decision.dateGranularity === 'month') {
+        // Day unknown: no deadline dates (they could be up to ~2 weeks late); the UI shows the 30/33-day rule only.
+        p.decisionMonth = ym(decision.date);
+      } else if (decision.date !== null) {
         p.decisionDate = decision.date;
         p.deadlineDate = addDays(decision.date, I290B_DAYS);
         p.deadlineMailedDate = addDays(decision.date, I290B_MAILED_DAYS);
@@ -307,10 +320,10 @@ export function remedyLadder(c: CaseTimeline, flags: DerivedFlags, offices: Offi
     const rungs: RemedyStep['rung'][] = ['a_i485', 'a_c9', 'b', 'd', 'c', 'e', 'f'];
     return rungs.map((r) => step(r, 'not_applicable', 'remedies:decided.body', { outcome: outcome ?? 'unknown' }));
   }
-  const a = rungI485(c, offices);
+  const a = rungI485(c, offices, today);
   return [
     a,
-    rungC9(c, offices),
+    rungC9(c, offices, today),
     rungExpedite(c),
     rungCongress(c, policy),
     rungOmbudsman(c, a, today),

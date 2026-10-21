@@ -16,7 +16,7 @@ import { validateDataDir } from '@caa/data-schemas/node';
 import { scenarioWeights } from '@caa/estimator';
 import { GOLDEN } from '@caa/estimator/golden';
 import { afterEach, describe, expect, it } from 'vitest';
-import { DOCKETS, FR_DOCUMENTS, JZEBEDEE_LATEST_RELEASE, MIRROR_DIR } from '../src/constants';
+import { DOCKETS, FR_DOCUMENTS, JZEBEDEE_LATEST_RELEASE, MIRROR_DIR, allFormsUrls, byOfficeUrls, monthlyCsvDirectUrls, monthlyCsvMirrorUrl } from '../src/constants';
 import { syntheticJzebedeeDb } from '../src/fixtures';
 import { candidateWindowStart, refresh } from '../src/refresh';
 import { FIX, fastClient, fixture, mockFetch, readJson, sampleDataDir, syntheticMonthCsv, type Route } from './helpers';
@@ -261,5 +261,72 @@ describe('refresh', () => {
     await expect(refresh({ out: d, now: NOW, client: network(), env: {}, log: () => {}, only: ['nope'] })).rejects.toThrow(/unknown source key/);
     const r = await refresh({ out: d, now: NOW, client: network(), env: {}, log: () => {}, only: ['curated'], generatedBy: gen, dryRun: true });
     expect(r.manifest.sources.find((s) => s.id === 'uscis.monthly_csv')).toEqual((await readJson<Manifest>(join(d, 'manifest.json'))).sources.find((s) => s.id === 'uscis.monthly_csv'));
+  });
+
+  it('regression: a QA failure that keeps happening commits and quarantines once, not on every run', async () => {
+    const aug = await fixture('mirror/monthly_august_2026.csv');
+    const direct = monthlyCsvDirectUrls('2026-08')[0]!;
+    // SYNTHETIC: USCIS revised August in place, the visualizer mirror still has the old copy → Q8 fails every run.
+    const revised = new TextDecoder().decode(aug).replace('"355,520"', '"355,529"');
+    const up = () => fastClient(mockFetch(new Map<string | RegExp, Route>([[direct, revised], [monthlyCsvMirrorUrl('2026-08'), aug]])));
+    const d = await prepared();
+    const runs = [];
+    for (let i = 0; i < 3; i++) {
+      const gh = join(d, `gh${i}.txt`);
+      const r = await refresh({ out: d, now: new Date(NOW.getTime() + i * 12 * 3_600_000), client: up(), env: {}, log: () => {}, generatedBy: { ...gen, runId: `run${i}` }, githubOutput: gh });
+      runs.push({ r, gh: await readFile(gh, 'utf8') });
+    }
+    expect(runs.map((x) => x.r.qa.status)).toEqual(['quarantined', 'quarantined', 'quarantined']);
+    expect(runs.map((x) => x.r.decision.reason)).toEqual(['side_files_changed', 'no_change', 'no_change']);
+    expect(runs.map((x) => x.gh.includes('qa_changed=true'))).toEqual([true, false, false]);
+    expect(await readdir(join(d, 'quarantine'))).toEqual(['run0']);
+    const m = await readJson<Manifest & { qa: { failKeysSha256?: string } }>(join(d, 'manifest.json'));
+    expect(m.qa).toMatchObject({ status: 'quarantined', failKeysSha256: expect.stringMatching(/^[0-9a-f]{64}$/) });
+    expect(ManifestSchema.safeParse(m).success).toBe(true);
+    // The failure clears (USCIS unreachable, mirror only): one commit records it, still no content change.
+    const cleared = await refresh({ out: d, now: new Date(NOW.getTime() + 36 * 3_600_000), client: network([[monthlyCsvMirrorUrl('2026-08'), aug]]), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'run3' } });
+    expect(cleared.qa.status).not.toBe('quarantined');
+    expect(cleared.decision).toMatchObject({ shouldCommit: true, reason: 'side_files_changed', changedFiles: [] });
+    expect((await readJson<{ qa: Record<string, unknown> }>(join(d, 'manifest.json'))).qa.failKeysSha256).toBeUndefined();
+    // It comes back: a new report is written, but the bytes already held by run0 are referenced, not copied.
+    const again = await refresh({ out: d, now: new Date(NOW.getTime() + 48 * 3_600_000), client: up(), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'run4' } });
+    expect(again.decision.reason).toBe('side_files_changed');
+    expect(await readdir(join(d, 'quarantine', 'run4'))).toEqual(['qa-report.json']);
+    const rep = await readJson<{ attempts: { key: string; storedIn?: string }[] }>(join(d, 'quarantine', 'run4', 'qa-report.json'));
+    expect(rep.attempts).toEqual([expect.objectContaining({ key: expect.stringMatching(/^Q8\|uscis\.monthly_csv\|2026-08\|[0-9a-f]{64}$/), storedIn: 'run0' })]);
+  });
+
+  it('regression: intermittent USCIS access does not flip provenance (direct ↔ mirror) or move dataChangedAt', async () => {
+    const aug = await fixture('mirror/monthly_august_2026.csv');
+    const allForms = await fixture('mirror/quarterly_all_forms_fy2026_q3_v1.xlsx');
+    const byOffice = await fixture('mirror/i485_performance_data_fy2026_q3_v1.xlsx');
+    const q = { fy: 2026, q: 3 } as const;
+    const mirrors: [string, Route][] = [[monthlyCsvMirrorUrl('2026-08'), aug], [allFormsUrls(q).mirror[0]!, allForms], [byOfficeUrls(q).mirror[0]!, byOffice]];
+    const up = () => fastClient(mockFetch(new Map<string | RegExp, Route>([
+      ...mirrors, [monthlyCsvDirectUrls('2026-08')[0]!, aug], [allFormsUrls(q).direct[0]!, allForms], [byOfficeUrls(q).direct[0]!, byOffice],
+    ])));
+    const down = () => network(mirrors); // uscis.gov unreachable (Drupal / Cloudflare from shared runner IPs)
+    const d = await prepared();
+    const at = (h: number) => new Date(NOW.getTime() + h * 3_600_000);
+    const r1 = await refresh({ out: d, now: at(0), client: up(), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'up1' } });
+    // mirror → direct on identical bytes is an upgrade: published once.
+    expect(r1.decision.reason).toBe('content_changed');
+    expect(r1.decision.changedFiles).toEqual(expect.arrayContaining(['national', 'quarterly', 'offices']));
+    const via = (r: Awaited<ReturnType<typeof refresh>>) => [
+      r.files.national.rows.at(-1)!.source.via, r.files.national.i765National.at(-1)!.source.via,
+      r.files.quarterly.rows.find((x) => x.form === 'I-485 (Cuban)' && x.quarter.fy === 2026 && x.quarter.q === 3)!.source.via,
+      r.files.offices.quarterly.find((x) => x.quarter.fy === 2026 && x.quarter.q === 3)!.source.via,
+    ];
+    expect(via(r1)).toEqual(['direct', 'direct', 'direct', 'direct']);
+    const changedAt = (await readJson<Manifest>(join(d, 'manifest.json'))).dataChangedAt;
+    const r2 = await refresh({ out: d, now: at(12), client: down(), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'down1' } });
+    expect(r2.decision.reason).not.toBe('content_changed'); // at most the mirror file's first raw archive
+    expect(r2.decision.changedFiles).toEqual([]);
+    expect(via(r2)).toEqual(['direct', 'direct', 'direct', 'direct']);
+    const r3 = await refresh({ out: d, now: at(24), client: up(), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'up2' } });
+    const r4 = await refresh({ out: d, now: at(36), client: down(), env: {}, log: () => {}, generatedBy: { ...gen, runId: 'down2' } });
+    expect([r3.decision.reason, r4.decision.reason]).toEqual(['no_change', 'no_change']);
+    expect((await readJson<Manifest>(join(d, 'manifest.json'))).dataChangedAt).toBe(changedAt);
+    expect(r4.files.national.rows.at(-1)!.source.retrievedAt).toBe(r1.files.national.rows.at(-1)!.source.retrievedAt);
   });
 });

@@ -19,7 +19,8 @@
 import { createContext, useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { AppState } from 'react-native';
 import Constants from 'expo-constants';
-import { localToday, type ISODateTime } from '@caa/data-schemas';
+import { localToday, type CaseTimeline, type ISODate, type ISODateTime } from '@caa/data-schemas';
+import { deriveFlags, remedyLadder } from '@caa/case-rules';
 import { computeGuards } from '@caa/estimator';
 import { notifications, type ForegroundEvent } from '@/notifications';
 import { getCases } from '@/storage/cases';
@@ -63,17 +64,39 @@ function initialState(store: Kv): State {
     : { snapshot: sampleSnapshot(), status: 'sample', fetchedAt: null, notice: null, refreshing: false };
 }
 
-/** New-month and high-severity-alert events for the foreground notifications (00 §7). */
-function foregroundEvents(prev: DataSnapshot, next: DataSnapshot): ForegroundEvent[] {
+/** State of remedy rung a ((c)(9) e-Request, 147-C9 at NBC) for a case on a snapshot. */
+function c9RungState(c: CaseTimeline, snap: DataSnapshot, today: ISODate): string | null {
+  try {
+    const ladder = remedyLadder(c, deriveFlags(c, snap.policy, today), snap.offices, snap.policy, today);
+    return ladder.find((s) => s.rung === 'a_c9')?.state ?? null;
+  } catch {
+    return null; // never let a malformed case block the refresh
+  }
+}
+
+/**
+ * Foreground notification events after a refresh (00 §7): a new official month, the (c)(9)
+ * delay-inquiry window opening (rung a_c9 becomes `available` between the previous and the next
+ * snapshot: no EAD yet, I-765 filed with the I-485, receipt now before the NBC 147-C9 inquiry
+ * date), and a new high-severity alert affecting a saved case. Exported for tests.
+ */
+export function foregroundEvents(
+  prev: DataSnapshot, next: DataSnapshot, today: ISODate, cases: readonly CaseTimeline[] = getCases().cases,
+): ForegroundEvent[] {
   const out: ForegroundEvent[] = [];
   if (next.manifest.latestOfficialMonth > prev.manifest.latestOfficialMonth) out.push({ kind: 'data_month', month: next.manifest.latestOfficialMonth });
+  for (const c of cases) {
+    if (c.concurrentI765 === false || c.milestones.some((m) => m.key === 'ead_c9')) continue;
+    if (c9RungState(c, next, today) === 'available' && c9RungState(c, prev, today) !== 'available') {
+      out.push({ kind: 'c9_inquiry', caseId: c.localId });
+    }
+  }
   const known = new Set(prev.alerts.alerts.map((a) => a.id));
-  const active = getCases().cases;
   for (const a of next.alerts.alerts) {
     if (known.has(a.id) || a.severity !== 'high' || a.status !== 'published') continue;
     const ch = a.affects.channels;
-    const affects = !ch || ch.includes('ALL_CUBAN') || active.some((c) => ch.includes(c.entryChannel));
-    if (affects && active.length > 0) out.push({ kind: 'alert', alertId: a.id, title: a.title });
+    const affects = !ch || ch.includes('ALL_CUBAN') || cases.some((c) => ch.includes(c.entryChannel));
+    if (affects && cases.length > 0) out.push({ kind: 'alert', alertId: a.id, title: a.title });
   }
   return out;
 }
@@ -138,7 +161,8 @@ export function DataProvider(props: DataProviderProps) {
       switch (outcome.kind) {
         case 'updated': {
           const prevSnap = cached?.snapshot ?? stateRef.current.snapshot;
-          for (const e of foregroundEvents(prevSnap, outcome.snapshot)) notifications.queueForeground(e);
+          const today = localToday(new Date(nowMs));
+          for (const e of foregroundEvents(prevSnap, outcome.snapshot, today)) notifications.queueForeground(e);
           const next: State = {
             snapshot: outcome.snapshot,
             status: outcome.snapshot.manifest.artifactBuiltAt ? 'published' : 'live',

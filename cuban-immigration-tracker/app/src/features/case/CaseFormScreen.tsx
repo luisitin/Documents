@@ -92,6 +92,7 @@ function MilestoneEditor({ k, m, set, show, errors, today }: {
               label={t(`case:milestone.${metaKey}`)}
               value={m.metaDate}
               granularity="day"
+              allowMonthOnly={false}
               min={MIN_DATE}
               onChange={(v) => set({ ...m, metaDate: v })}
             />
@@ -214,6 +215,7 @@ export function CaseFormScreen() {
           label={t('case:dates.paroleDate')}
           value={draft.paroleDate}
           granularity="day"
+          allowMonthOnly={false}
           min={MIN_DATE}
           max={today}
           onChange={(d) => upd({ paroleDate: d })}
@@ -225,6 +227,7 @@ export function CaseFormScreen() {
           help={t('case:dates.paroleEnd.help')}
           value={draft.paroleEndDateOriginal}
           granularity="day"
+          allowMonthOnly={false}
           min={MIN_DATE}
           onChange={(d) => upd({ paroleEndDateOriginal: d })}
         />

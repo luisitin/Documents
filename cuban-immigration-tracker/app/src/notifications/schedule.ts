@@ -9,7 +9,10 @@
  *   or after 2025-10-30 get no automatic extension).
  * - RFE / NOID response due −21 / −7 days, at 10:00 local. The due date is the notice's `dueDate`,
  *   else derived from PA-2026-05 (key facts; `policy.pa202605`): RFE ≤ 84 days, NOID 30 days + 3
- *   mailing days.
+ *   mailing days. When the notice date is "solo sé el mes" (stored as day 15, a placeholder), the
+ *   derivation starts from the FIRST day of that month, so the date is the EARLIEST possible due
+ *   date and the reminders can only come early, never after the real deadline (same rule as
+ *   case-rules `eadStatus` for the card expiry).
  * - Foreground events (new official month, (c)(9) inquiry window, high-severity alert) are shown
  *   immediately when the app comes to the foreground, never during quiet hours (21:00–08:00).
  *
@@ -19,7 +22,7 @@
  * receipt number — and in discreet mode a generic text hides even the dates (00 F20; 05 §3).
  */
 import type { CaseTimeline, ISODate, Lang, PolicyFile } from '@caa/data-schemas';
-import { addDays, decisionOf, eadStatus } from '@caa/case-rules';
+import { addDays, decisionOf, eadStatus, ym } from '@caa/case-rules';
 import { createFmt, translate } from '@caa/i18n-core';
 
 export type NotificationKind = 'ead_expiry' | 'rfe_due' | 'noid_due' | 'data_month' | 'c9_inquiry' | 'alert';
@@ -89,8 +92,12 @@ function text(lang: Lang, discreet: boolean, title: string, body: string): Copy 
   return { title, body };
 }
 
-/** The RFE / NOID response deadline of a notice milestone, or null when already answered. */
-function responseDue(c: CaseTimeline, key: 'rfe' | 'noid', policy: PolicyFile): ISODate | null {
+/**
+ * The RFE / NOID response deadline of a notice milestone, or null when already answered. The
+ * notice's own `dueDate` wins; otherwise PA-2026-05 is applied to the notice date, or to the first
+ * day of its month when only the month is known (earliest possible deadline; never late).
+ */
+export function responseDue(c: CaseTimeline, key: 'rfe' | 'noid', policy: PolicyFile): ISODate | null {
   const notices = c.milestones.filter((m) => m.key === key && m.date !== null);
   const last = notices[notices.length - 1];
   if (!last || last.date === null) return null;
@@ -98,7 +105,8 @@ function responseDue(c: CaseTimeline, key: 'rfe' | 'noid', policy: PolicyFile): 
   if (answered) return null;
   if (last.meta?.dueDate) return last.meta.dueDate;
   const pa = policy.pa202605;
-  return addDays(last.date, key === 'rfe' ? pa.rfeMaxDays : pa.noidDays + pa.noidMailDays);
+  const from = last.dateGranularity === 'month' ? `${ym(last.date)}-01` : last.date;
+  return addDays(from, key === 'rfe' ? pa.rfeMaxDays : pa.noidDays + pa.noidMailDays);
 }
 
 /**

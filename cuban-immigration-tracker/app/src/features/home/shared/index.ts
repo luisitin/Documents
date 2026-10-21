@@ -9,5 +9,5 @@ export { DataBanners } from './DataBanners';
 export { Disclaimer } from './Disclaimer';
 export { ExternalLink } from './ExternalLink';
 export { FilterChip } from './FilterChip';
-export { byYm, daysText, fold, monthsText, nextQuarter, pct1, quarterIndex, shortSha } from './format';
+export { byYm, daysText, fold, monthsText, nextQuarter, pct1, quarterIndex, shortSha, sourceLabel } from './format';
 export { goBackOr, hrefOf, seg } from './nav';

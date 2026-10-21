@@ -63,7 +63,8 @@ export interface ManifestInput {
   latestProcessingTimesPublication: ISODate | null;
   serialized: Record<DataFileName, { sha256: string; bytes: number }>;
   sources: SourceStatus[];
-  qa: { status: 'ok' | 'degraded' | 'quarantined'; lastGoodRunId: string; notes: Localized[] };
+  /** `failKeysSha256`: hash of the failing-key set (additive; manifest.qa is a loose object). */
+  qa: { status: 'ok' | 'degraded' | 'quarantined'; lastGoodRunId: string; notes: Localized[]; failKeysSha256?: string };
   canary: Manifest['canary'];
 }
 
@@ -116,6 +117,19 @@ export async function writeQuarantine(dir: string, runId: string, report: unknow
   for (const a of attempts) await writeAtomic(join(q, a.file), a.bytes);
   await writeAtomic(join(q, 'qa-report.json'), serializeJson(report));
   return q;
+}
+
+/** Attempt key → quarantine run id, from every `quarantine/<runId>/qa-report.json` still on disk whose bytes were stored there. */
+export async function knownQuarantineAttempts(dir: string): Promise<Map<string, string>> {
+  const root = join(dir, 'quarantine');
+  const out = new Map<string, string>();
+  let names: string[] = [];
+  try { names = (await readdir(root)).sort(); } catch { return out; }
+  for (const n of names) {
+    const report = (await readJson(join(root, n, 'qa-report.json'))) as { attempts?: { key?: unknown; storedIn?: unknown }[] } | undefined;
+    for (const a of report?.attempts ?? []) if (typeof a.key === 'string' && a.storedIn === undefined && !out.has(a.key)) out.set(a.key, n);
+  }
+  return out;
 }
 
 /** Removes quarantine runs older than 30 days (03 §4). Returns the removed run ids. */

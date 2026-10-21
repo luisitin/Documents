@@ -12,7 +12,7 @@ import { useData } from '@/data/useData';
 import { useLang } from '@/i18n/useLang';
 import { AppHeader, AppText, Card, Chip, Screen, useTheme, type Tone } from '@/ui';
 import { EVIDENCE_KEY } from '../alerts/copy';
-import { BackLink, Disclaimer, ExternalLink } from '../home/shared';
+import { BackLink, Disclaimer, ExternalLink, sourceLabel } from '../home/shared';
 
 const VERDICT_TONE: Record<Myth['verdict'], Tone> = { false: 'warning', misleading: 'warning', true: 'info', unknown: 'neutral' };
 
@@ -58,7 +58,7 @@ export function MythsScreen() {
                     {t('alerts:sources')}
                   </AppText>
                   {m.sources.map((s) => (
-                    <ExternalLink key={s.url} label={t('alerts:sourceItem', { label: s.label, evidence: t(EVIDENCE_KEY[s.evidence]) })} url={s.url} />
+                    <ExternalLink key={s.url} label={t('alerts:sourceItem', { label: sourceLabel(s, lang, fmt), evidence: t(EVIDENCE_KEY[s.evidence]) })} url={s.url} />
                   ))}
                 </View>
               ) : null}
