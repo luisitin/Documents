@@ -37,6 +37,20 @@ describe('classifyPaths', () => {
     ]);
   });
 
+  it('allows PNG Prove screenshots directly in docs/screenshots, and nothing else there', () => {
+    const r = classifyPaths([
+      'cuban-immigration-tracker/docs/screenshots/es-01-home.png',
+      'cuban-immigration-tracker/docs/screenshots/scan.pdf',
+      'cuban-immigration-tracker/docs/screenshots/photo.jpg',
+      'cuban-immigration-tracker/docs/screenshots/sub/es-01-home.png',
+    ]);
+    expect(r.violations.map((v) => v.path)).toEqual([
+      'cuban-immigration-tracker/docs/screenshots/scan.pdf',
+      'cuban-immigration-tracker/docs/screenshots/photo.jpg',
+      'cuban-immigration-tracker/docs/screenshots/sub/es-01-home.png',
+    ]);
+  });
+
   it('only warns about the four pre-existing owner PDFs (05 §2), and does not fail on them', () => {
     const r = classifyPaths([...KNOWN_OWNER_FILES]);
     expect(r.violations).toEqual([]);

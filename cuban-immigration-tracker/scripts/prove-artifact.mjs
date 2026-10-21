@@ -17,6 +17,7 @@
 //
 // Scenarios per variant (each in its own browser context, so storage never leaks between them):
 //   phone           390×844, device locale es-US  (P1–P8, P11, P12, P13; settings language)
+//   phone-en        390×844, device locale en-US  (P1–P8, P12, P13; the English screenshot set)
 //   desktop         1280×800, device locale en-US (P1–P8, P11, P12 centred column, P13)
 //   storage-throws  390×844, es-US, localStorage getter throws (P9 = P1, P5, P6, P7 still pass)
 //   history-throws  390×844, en-US, History.prototype.pushState/replaceState throw (P10 = P1, P5)
@@ -440,7 +441,13 @@ async function scenario(browser, env, spec) {
           });
           c('P7', 'the example is never written to storage', leaked === false, String(leaked));
         }
-        if (!spec.throwStorage && !spec.throwHistory) await shot('estimate');
+        if (!spec.throwStorage && !spec.throwHistory) {
+          // Bring the estimate (headline and bands) into view for the screenshot, then restore.
+          await page.evaluate(() => window.__live('[data-testid="estimate-headline-pct"]')?.scrollIntoView({ block: 'center' }));
+          await sleep(150);
+          await shot('estimate');
+          await page.evaluate(() => window.__live('[data-testid="screen-case"]')?.scrollIntoView({ block: 'start' }));
+        }
         await deep('case', tid('case-nav-peers'), tid('screen-case-peers'), tid('case-back'), tid('screen-case'), 'case/peers');
       }
     }
@@ -483,10 +490,12 @@ async function scenario(browser, env, spec) {
       return o;
     };
     await observe(L0);
+    if (!spec.throwStorage && !spec.throwHistory) await shot(`lang-${L0}`);
     await clickLive(page, tid('lang-toggle'));
     const switched = await waitTabLabels(page, exp[L1].tabs);
     c('P6', `header LangToggle switches the whole app ${L0} → ${L1} at runtime`, switched);
     await observe(L1);
+    if (!spec.throwStorage && !spec.throwHistory) await shot(`lang-${L1}`);
     let current = L1;
 
     if (spec.settingsLang) {
@@ -568,6 +577,9 @@ async function scenario(browser, env, spec) {
 
 const SCENARIOS = [
   { name: 'phone', viewport: { width: 390, height: 844 }, locale: 'es-US', theme: true, settingsLang: true },
+  // Same 390×844 flow from an English device locale: the docs/screenshots en set (every tab, the
+  // estimate, the toggle en → es) comes from here; it repeats P1–P8, P12 and P13 in en.
+  { name: 'phone-en', viewport: { width: 390, height: 844 }, locale: 'en-US' },
   { name: 'desktop', viewport: { width: 1280, height: 800 }, locale: 'en-US', theme: true },
   { name: 'storage-throws', viewport: { width: 390, height: 844 }, locale: 'es-US', throwStorage: true },
   { name: 'history-throws', viewport: { width: 390, height: 844 }, locale: 'en-US', throwHistory: true },

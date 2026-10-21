@@ -6,7 +6,8 @@
  *
  *  1. FILE TYPES. Any `*.pdf`, Word/office document or image outside the two allowed folders
  *     `cuban-immigration-tracker/app/assets/` (app icons, WP7) and `cuban-immigration-tracker/data/raw/`
- *     (the archived official source files, 03 §5).
+ *     (the archived official source files, 03 §5). PNG Prove screenshots directly in
+ *     `cuban-immigration-tracker/docs/screenshots/` are also allowed (SCREENSHOT_DIR).
  *  2. RECEIPT NUMBERS. A full USCIS receipt number (three letters + ten digits, e.g. `IOE` + 10 digits)
  *     in any text file under `cuban-immigration-tracker/`. The app never stores one (02 §2.8); only
  *     the documented synthetic values in RECEIPT_ALLOWLIST may appear in tests and docs.
@@ -32,6 +33,12 @@ export const PROJECT = 'cuban-immigration-tracker/';
 
 /** Folders where binary documents and images are expected (05 §2). */
 export const ALLOWED_DIRS = Object.freeze([`${PROJECT}app/assets/`, `${PROJECT}data/raw/`]);
+
+/**
+ * Prove screenshots of the web artifact (08-build-report.md): PNG only, directly in this folder.
+ * They show the app's synthetic "Ver un ejemplo" case and public data, never a real person's case.
+ */
+export const SCREENSHOT_DIR = `${PROJECT}docs/screenshots/`;
 
 /** Document and image extensions that must not be committed elsewhere. */
 export const BLOCKED_EXTENSIONS = Object.freeze([
@@ -81,6 +88,7 @@ export function classifyPaths(paths) {
     const ext = extOf(p);
     if (!BLOCKED_EXTENSIONS.includes(ext)) continue;
     if (ALLOWED_DIRS.some((d) => p.startsWith(d))) continue;
+    if (ext === 'png' && p.startsWith(SCREENSHOT_DIR) && !p.slice(SCREENSHOT_DIR.length).includes('/')) continue;
     if (KNOWN_OWNER_FILES.includes(p)) {
       warnings.push({ path: p, reason: 'pre-existing personal file (05 §2): owner decision pending, see docs/planning/adr-log.md' });
       continue;

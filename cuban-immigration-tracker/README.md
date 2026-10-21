@@ -77,11 +77,21 @@ The goal is to replace guesswork and rumor with data:
 - [x] Phase 2: planning (product spec, architecture, data model, estimation model)
 - [x] Phase 3: implementation (mobile app, data ingestion, estimator, tests), on the branch
       `claude/cuban-immigration-tracker-b6y4b1`. All checks pass locally (2026-10-21): root
-      `npm run check`, `cd app && npm run check`, `npm run build:artifact` and `npm run prove`.
-- [ ] Release: owner follow-ups in [`docs/planning/adr-log.md`](docs/planning/adr-log.md) §D,
-      including the native-device test, the native Spanish review, merging the workflows to
-      `main`, publishing the web artifact, and a decision about the personal PDFs at the
-      repository root.
+      `npm run check` (vitest 477 passed), `cd app && npm run check` (jest 244 passed),
+      `npm run build:artifact` (one 2.55 MB fragment) and `npm run prove` (P1–P14, 641 checks,
+      0 failures).
+- [x] Build report and screenshots: [`docs/planning/08-build-report.md`](docs/planning/08-build-report.md)
+      (what was built, commands, Expo Go vs dev build, sample vs live data, owner steps) and
+      [`docs/screenshots/`](docs/screenshots/) (every tab, the estimate and the language toggle,
+      in Spanish and English, at 390×844).
+- [ ] CI observed green on the branch, and the first real data refresh on GitHub's runners
+      (the orchestrator touches `data/.refresh-request`).
+- [ ] Native device test (Expo Go or a development build) on one iOS and one Android phone.
+- [ ] Native Cuban-Spanish review of every string, alert, notification and disclaimer.
+- [ ] Workflows merged to `main`, so the scheduled data refresh runs.
+- [ ] Web artifact published, with its URL recorded below.
+- [ ] Owner decision on the personal PDFs at the repository root.
+- Details for every open item: [`docs/planning/adr-log.md`](docs/planning/adr-log.md) §D.
 
 ## Data and the web artifact
 

@@ -5,6 +5,7 @@ export interface Finding {
 }
 export declare const PROJECT: string;
 export declare const ALLOWED_DIRS: readonly string[];
+export declare const SCREENSHOT_DIR: string;
 export declare const BLOCKED_EXTENSIONS: readonly string[];
 export declare const KNOWN_OWNER_FILES: readonly string[];
 export declare const RECEIPT_RE: RegExp;
